@@ -1,0 +1,272 @@
+ARW MONOTONICITY: POSITIVE FLOW USING AVOIDANCE AND FORCED JUMPS
+2026-10-06 UTC; continuation of RECONSTRUCTION.txt
+
+STATUS AND RESTART POINT
+
+The general add-one conjecture remains unproved. This pass finds a concrete
+way to group the signed terms from the preceding renewal calculation. An
+actual avoidance probability is superharmonic under a forced particle jump.
+The previous test used only its decrease under adding particles, which lost
+this constraint. In the new tests, nonnegative combinations of avoidance
+probabilities and forced-jump defects account for every response row examined.
+One genuinely signed four-site identity is verified exactly, independently
+from raw-instruction transitions.
+
+The next target is an arbitrary-graph positive-flow lemma in Section 4.
+It concerns the original one-site occupation increment, at a specified target
+sleep rate. It does not prove the stronger ordering of whole chance-count laws.
+The numerical certificates are not a proof of the positive-flow lemma.
+
+1. THE MISSING CONSTRAINT IS DYNAMICAL
+
+Keep the finite vertex set V, accessible sink dagger, jump kernel K and
+0 <= p_z < 1. For a fixed target v let
+
+    a_v(eta) = P_eta(no particle ever visits v),
+
+starting from all-active eta. A visit at time zero counts. Thus a_v(0)=1,
+and a_v(eta)=0 whenever eta(v)>0. For binary eta=1_A abbreviate a_v(A).
+
+For any occupied z != v, force one particle at z to jump once before running
+ordinary stabilization. All other particles are held fixed during this jump.
+Then
+
+    a_v(eta) >= sum_w K(z,w) a_v(eta-delta_z+delta_w),          (1)
+
+where delta_dagger=0.
+
+Proof. On the original stack field, topple z through its first jump, waking
+its particle whenever necessary. Follow by legal stabilization with the
+remaining stacks. This is an acceptable stabilizing toppling sequence for
+the original input. Least action bounds the original legal odometer by this
+acceptable odometer. Therefore every originally used jump is also used by
+the modified execution, so the original visited set is included in the new
+one. Conditional on the first jump destination, unused stack suffixes are
+fresh. The modified law after that jump is the all-active law appearing on
+the right of (1). This proves the inequality for arbitrary finite K, including
+directed edges and self-loops. One can equivalently replace all initial sleep
+cards preceding the first jump at z by neutral instructions.
+
+This uses standard acceptable-toppling/least-action facts; it is not presented
+as a new ARW monotonicity theorem. A reference for that framework is Rolla,
+Activated Random Walks on Z^d, Probability Surveys 17 (2020), Section 2.2,
+especially Lemma 2.1 and equation (2.3):
+https://arxiv.org/pdf/1906.05037
+The argument above spells out the finite-graph application needed here.
+
+After the forced jump, eliminate multiplicities by legal sleep-free IDLA:
+move surplus particles until every remaining site has at most one active
+particle. This retains an active particle at any visited site, so any visit
+to v is still detectable in the resulting support. It gives a substochastic
+kernel J_z(A,B) on supports B not containing v. The missing mass corresponds
+to visiting v, whose avoidance value is zero. A jump to dagger can instead
+reduce the common particle count, and is included through the smaller support
+B; it is not the same as visiting v.
+
+Define the forced-jump defect
+
+    e_v(A,z) = a_v(A) - sum_B J_z(A,B) a_v(B) >= 0.            (2)
+
+Under the coupling in the proof of (1), e_v(A,z) is exactly the probability
+that ordinary stabilization avoids v but the forced-jump execution visits v.
+It therefore already groups complete histories into a nonnegative event.
+There is no claim that final sleeping indicators are ordered by this coupling.
+
+2. HOW THIS FITS THE PRECEDING SIGNED RENEWAL
+
+For binary common support A and x outside A put
+
+    D_A(x;v) = F_v(1_A+delta_x)-F_v(1_A).
+
+The preceding checkpoint gives, after unreading sleepers, IDLA reduction and
+source harmonicity, the finite exact identity
+
+    D = M D + G_v a_v.                                      (3)
+
+Rows are support edges (A,x), with 1 <= |A| <= N and x outside A.
+The reward entry is
+
+    (G_v a_v)_(A,x) = H_A(x,v) a_v(A),
+
+where H_A is the first-sleep kernel with sleep suppressed on A. H_A(x,v)=0
+when v is in A. The matrix M is genuinely signed. Existing negative entries,
+including -8/2025 on the four-site path, remain negative: this continuation
+does not claim to turn M itself into a Markov kernel.
+
+In all computed cases I-M is invertible. Define
+
+    L_v = (I-M)^(-1) G_v,
+    D_A(x;v) = sum_B L_v((A,x),B) a_v(B).                    (4)
+
+The coefficients of L_v can also be negative, even when v is outside A.
+Thus merely summing all renewals does not supply coefficientwise positivity.
+The new observation is that these signed rows admit the decomposition
+
+    L_v((A,x),.) = c(.)
+        + sum_(B,z in B) d(B,z) [delta_B(.)-J_z(B,.)],       (5)
+
+with c >= 0 and d >= 0, in the tested cases. Combining (2), (4), (5) gives
+
+    D_A(x;v) = sum_B c(B) a_v(B) + sum_(B,z) d(B,z)e_v(B,z)
+               >= 0.                                      (6)
+
+The coefficients may depend on K, p, v, A and x. Equation (5) is stronger
+than positivity at the actual ARW avoidance vector: it guarantees positivity
+for every nonnegative vector superharmonic under all these forced jumps.
+It is not a disguised numerical check that the actual D happens to be positive.
+
+Initially the tests included decreasing-set constraints as well. Those were
+then removed: the saved dual certificates use only nonnegative coordinates
+and the defects (2). This is the cleaner proposed lemma.
+
+3. A SMALL EXACT SIGNED EXAMPLE, WITH AN EXPLICIT POSITIVE GROUPING
+
+Take V={0,1,2,3}, sink dagger, p_z=1/2, and jump laws
+
+    0 -> 3 or dagger, each with probability 1/2;
+    1 -> 0, 2, 3 or dagger, each with probability 1/4;
+    2 -> 3 or dagger, each with probability 1/2;
+    3 -> 2 or dagger, each with probability 1/2.
+
+Let target v=2, common A={0,1}, and extra source x=3. Write a(B)=a_2(B).
+Exact elimination gives
+
+    D_{0,1}(3;2)
+      = a({1,3})/26 + 7 a({0,3})/240 + 2 a({0,1})/15
+        - a({3})/1560.                                    (7)
+
+This is a negative coefficient in the fully summed response, at a target
+outside the common initial support.
+
+Now force the common particle at 0 to jump when the common set is {0,3}.
+With probability 1/2 it exits directly, leaving {3}. Otherwise it reaches 3,
+where the surplus particle must jump to 2 or dagger, each with probability
+1/2. The first alternative visits the target, while the second leaves {3}.
+Consequently
+
+    J_0 a({0,3}) = (3/4) a({3}),
+    e_2({0,3},0) = a({0,3})-(3/4)a({3}) >= 0.              (8)
+
+Substitution makes every term nonnegative:
+
+    D_{0,1}(3;2)
+      = a({1,3})/26 + 53 a({0,3})/1872 + 2 a({0,1})/15
+        + [a({0,3})-(3/4)a({3})]/1170.                    (9)
+
+The exact ordinary values are
+
+    a({3})=3/4, a({1,3})=153/256,
+    a({0,3})=21/32, a({0,1})=393/512.
+
+A separate raw-instruction absorption calculation gives
+
+    F_2(1_{0,1})=49/390,
+    F_2(1_{0,1,3})=673/2496,
+    D_{0,1}(3;2)=599/4160,
+
+in exact agreement with both (7) and (9). The verification rebuilds the
+24-edge signed system using Fraction arithmetic and independent raw-state
+elimination. It does not rationalize saved floating-point matrices.
+
+4. THE NEXT GENERAL LEMMA, AND ITS COUPLING INTERPRETATION
+
+Proposed positive-flow lemma: for every admissible finite K and p, every
+target v and support edge (A,x), the signed response admits (5).
+This lemma remains UNPROVED. For p_z=0, the previous sleeper-elimination
+formula divides by p_z; a general proof through that formula should first
+treat p_z>0 and then justify the finite-system continuity limit.
+
+There is a formulation that avoids assuming I-M invertible in general.
+Seek a signed row w and nonnegative c,d satisfying
+
+    w(I-M)=delta_(A,x),
+    w G_v = c + sum_(B,z) d(B,z)(delta_B-J_z(B,. )).          (10)
+
+Equations (2), (3), (10) would already prove the desired response positive.
+The computations use w=delta_(A,x)(I-M)^(-1); they do not establish that
+this inverse exists for every graph and parameter choice. Additional exact
+relations among response edges can also be included if needed.
+
+The flow interpretation of (5) is concrete. Regard the positive coefficients
+of the signed row L as supply and its negative coefficients as demand. From
+a support B one is allowed to redistribute an amount d(B,z) according to
+the actual forced-jump kernel J_z(B,.). After all these redistributions the
+remaining coefficient vector c must be nonnegative. A local move changes
+the paired-history ledger by exactly the nonnegative event e_v(B,z).
+Cycles and branching destinations are handled by flow balance. The jump law
+cannot be chosen selectively after seeing a favorable destination.
+
+This is a promising way to retain the relevant creation histories in grouped
+form. The earlier state-only failure treated different avoidance coordinates
+as nearly arbitrary; (2) records which alternate histories a forced jump
+must produce. One may not simply discard the negative renewal branches.
+
+A general construction of this flow is the main outstanding task. Even a
+proof of (5) would first yield the occupation inequality and an exact ledger;
+it would not automatically give the desired explicit, inverse-recognizable
+stack-field transformation. A full coupling construction would still need to
+realize the ledger on disjoint histories, or use an appropriate conditional
+law construction. Neither of these is claimed here.
+
+5. NUMERICAL EVIDENCE AND ITS LIMITS
+
+The initial cone tests minimize each response over nonnegative avoidance
+vectors that are decreasing and satisfy (2), normalized by a(empty)=1.
+There were no violations beyond roundoff in 47 parameter/bound cases:
+
+  - the four previous path/directed cases;
+  - seven additional cases, including a five-site path with four common
+    particles and directed kernels up to six sites;
+  - 36 rational directed kernels on four to six sites, with heterogeneous
+    sleep probabilities from {0.1,0.3,0.5,0.7,0.9} and up to three common
+    particles. Seed and full kernels are saved.
+
+The stronger dual tests seek coefficients in (5) using NO decreasing-set
+constraints. They succeeded for all 4,364 response rows across the four
+baseline cases and nine of the rational directed cases. Of those, 1,378
+certificates use a positive forced-jump-defect coefficient. Maximum equality
+residual was 1.39e-17.
+
+Five further dual cases include five-site paths at p=0.01 and p=0.99,
+six-site paths with up to four common particles, heterogeneous sleep rates,
+and a directed five-site kernel. All 3,285 rows were feasible at solver
+tolerance, with maximum residual 9.99e-10. These weaker residuals can hide
+very small terms, so they should not be described as exact certificates.
+The exact audit in Section 3 is independent and has zero rational residual.
+
+Do not infer an arbitrary-graph result from these counts. Also do not infer
+that D itself is superharmonic in its common-particle positions: that proposed
+shortcut already fails numerically on the three-site path at p=1/2, with
+common A={2}, extra x=1, target v=0, forcing the common particle at z=2.
+The inequality (2) is for AVOIDANCE, not for the occupation response D.
+
+6. FILES AND REPRODUCTION
+
+avoidance_constraints.py
+  Builds IDLA reductions and the forced-jump constraints; tests the original
+  cone; solves for dual positive-flow coefficients without decreasing-set
+  constraints. It checks row equality residuals for feasible numerical flows.
+
+run_avoidance_probes.py
+  Reproduces all saved numerical batches. Run from this directory:
+
+    OPENBLAS_NUM_THREADS=1 python3 run_avoidance_probes.py --batch base
+    OPENBLAS_NUM_THREADS=1 python3 run_avoidance_probes.py --batch all
+
+  Requires NumPy/SciPy, as did the preceding reconstruction solver.
+
+verify_avoidance_exact.py
+  Standard-library-only Fraction audit of (7)--(9), including full raw-state
+  absorption and direct reconstruction of the signed renewal system.
+
+    python3 verify_avoidance_exact.py
+
+Primary audit: avoidance_exact_verification.json.
+Numerical outputs: avoidance_constraints_results.json,
+avoidance_constraints_extended_results.json,
+avoidance_constraints_stress_results.json, avoidance_dual_results.json,
+avoidance_dual_larger_results.json.
+
+All earlier checkpoints and certificates are retained. The main conjecture,
+the arbitrary-graph positive-flow lemma, and the global history coupling
+remain open in this archive.

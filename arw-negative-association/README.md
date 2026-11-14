@@ -1,5 +1,7 @@
 # Stationary ARW negative dependence
 
+[Proof and verification map](CLAIMS.md).
+
 The [selected technical proofs](report.md) supply the longer calculations
 identified in the 20-page reader. They retain exact hypotheses and equation
 labels; independent human verification remains outstanding.

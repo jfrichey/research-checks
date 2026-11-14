@@ -1,0 +1,179 @@
+N1 FOURTH CHUNK: CONDITIONAL ORDER FAILS; WEIGHTED TRANSFERS REPAIR IT
+2026-10-06. General all-active single-site monotonicity remains OPEN.
+
+Question and decision
+---------------------
+Test the weakest CE inequality while preserving the first-contact corridor
+2->3->0 and the way the common sleeper was created. Keep the entire jump
+kernel and change only p_1 from 3/5 to 1/10. The first exact test already
+violates the proposed inequality, so the search stopped; the other listed
+candidate cases were NOT run. The complete target increment remains
+positive. An explicit transfer repairs the coarse-history coupling.
+
+1. Exact obstruction to the proposed structural inequality
+-----------------------------------------------------------
+Use exactly CE's K:
+  0 -> 1,2,sink with probabilities 1/4,1/4,1/2;
+  1 -> 2,3 with probabilities 1/2,1/2;
+  2 -> 2,3 with probabilities 1/2,1/2;
+  3 -> 0,3 with probabilities 1/2,1/2.
+Now p=(1/2,1/10,1/2,1/2), all strictly between zero and one. The sink is
+accessible from every vertex. S={1,3}, C={0,1,2}, D={0,1,2,3}, target 0.
+
+This is still an attainable intermediate state of legitimate all-active
+inputs A={0,1,2}, A+{3}: activate 3, then 1. The event that the upper sleeper
+at 3 immediately sleeps and both particles at 1 immediately sleep has
+probability (1/2)(1/10)^2=1/200 if these histories are coupled independently.
+This gives attainability with the recorded creation history. The earlier
+claim of a forced 1/10 probability was for p_1=3/5 and is NOT asserted here.
+
+Let l_b=P_minus(I=1|J=b), u_b=P_plus(I=1|J=b), where J is seed-2 contact
+with 0 and I is eventual occupation of 0. The corridor calculation from CE
+is unchanged: c_minus=1/9, c_plus=1/3. The conditional values are
+
+ l_0=358126177938643/586935927302200,
+ l_1=8483432067262/14673398182555,
+ u_0=4409200663019129/6720416367610190,
+ u_1=407036482804361/672041636761019.
+
+In particular,
+
+ u_1-l_0 = -603598187077047/134408327352203800 < 0.
+
+This is exactly the failure of
+
+ (3/4)g(1,-1,-1,0)+(1/4)g(1,-1,0,-1) <= g(2,-1,0,1),
+
+where -1 denotes a sleeper and positive integers count active particles.
+Both same-contact gaps u_0-l_0 and u_1-l_1 remain positive. The full
+completion increment at this intermediate state is
+
+ G = 1647107230216591/50403122757076425 > 0
+   (approximately .03267867).
+
+Neither the conditional-order failure nor these sleeping-state calculations
+are a counterexample to the all-active conjecture.
+
+Any coupling that first reveals contact flags, and then insists that each
+copy keep its original target probability conditional on its own flag EVEN
+AFTER conditioning on both flags, has a quantitative obstruction. Every
+coupling of flags has P(J_minus=0,J_plus=1)>=c_plus-c_minus=2/9. On that
+pair, target order fails with probability at least l_0-u_1. Consequently
+its total bad-target mass is at least
+
+ d = (2/9)(l_0-u_1)
+   = 67066465230783/67204163676101900
+   (approximately .000997951).
+
+Nested flags and optimal conditional Bernoulli couplings attain this lower
+bound here, since the other two gaps are positive. This rules out the
+unchanged-conditional-law flag scheme, not all contact-preserving couplings.
+
+2. General weighted-transfer lemma (PROOF)
+------------------------------------------
+Consider any two complete-history laws with contact bit J and target bit I.
+Assume 0<c_minus<c_plus<1, and set
+
+ a=1-c_plus, b=c_plus-c_minus, c=c_minus.
+
+Use nested flag-pair masses a,b,c for (0,0),(0,1),(1,1). Suppose
+
+ D_0=u_0-l_0 >= 0, D_1=u_1-l_1 >= 0, delta=l_0-u_1 > 0.
+
+The bad cross-pair demand is d=b*delta. The two ordered pairs have capacities
+a*D_0 and c*D_1. If
+
+             a*D_0+c*D_1 >= d,                         (B)
+
+set e=min(d,a*D_0), t=d-e. Then 0<=t<=c*D_1. Replace the conditional target
+parameters within the three flag pairs by
+
+ pair     lower target parameter          upper target parameter
+ (0,0)    l_0+e/a                         u_0
+ (0,1)    l_0-e/b                         u_1+t/b
+ (1,1)    l_1                             u_1-t/c.
+
+Each pair is ordered; in (0,1) the parameters are equal because e+t=d.
+All six parameters lie in [0,1]. For example l_0+e/a<=u_0<=1,
+l_0-e/b>=u_1>=0, u_1+t/b<=l_0<=1, and u_1-t/c>=l_1>=0.
+Couple the target bits using a shared uniform within each flag pair.
+
+The lower success mass moved into (0,0) is e and the mass removed from
+(0,1) is e. Both pairs have lower J=0. The upper success mass moved into
+(0,1) is t and removed from (1,1) is t; both have upper J=1. Hence each
+copy's full OWN (J,I) distribution is unchanged. Finish by sampling its
+original complete history conditional on its own (J,I). Disintegration
+preserves both complete-history laws, while target and contact indicators
+are ordered. No stack-by-stack inverse or LP is required for this abstract
+normalization lemma.
+
+What changes relative to CE: a copy's target law may depend on the partner's
+contact flag. It returns to the correct law after averaging over that flag.
+This conditional tilt is necessary in the perturbed example. There is no
+assumption of unchanged conditional path laws at the intermediate boundary.
+
+3. Explicit repair and exact certificate
+----------------------------------------
+In the example,
+
+ d = 67066465230783/67204163676101900,
+ a*D_0 = 2057706170811111/67204163676101900,
+ c*D_1 = 30825490206269/10080624551415285.
+
+The first capacity already exceeds d. Thus take e=d and t=0: shift only
+lower success mass from flag pair (0,1) to (0,0). The new lower parameters
+are
+
+ (0,0): 20553023535910399/33602081838050950,
+ (0,1): 407036482804361/672041636761019 = u_1,
+ (1,1): l_1.
+
+All upper parameters remain unchanged within their own flag class.
+The exact implementation has 488 positive rational entries. It checks both
+joint laws of (contact flag, full terminal support), unit mass, zero bad
+target mass, and contact order. Full-history preservation follows from the
+conditional sampling argument. The weighted five-configuration decomposition
+is also checked against direct complete stabilization of (1,-1,1,0) and
+(1,-1,1,-1) at these new sleep probabilities.
+
+4. The remaining bottleneck is substantive, not normalization
+-------------------------------------------------------------
+There is an important limitation to the lemma. Direct expansion gives
+
+ a*D_0+c*D_1-d
+   = a*u_0+(b+c)*u_1 - (a+b)*l_0-c*l_1
+   = P_plus(I=1)-P_minus(I=1) = G.
+
+Thus (B) is EXACTLY the target inequality, once the other conditional signs
+are assumed. It is not an independent proof of ARW monotonicity. In this
+finite example we know G from exact absorption; using that sign to build a
+coupling is legitimate finite construction but cannot bootstrap a general
+proof. More fitting of contact transports would not resolve this bottleneck.
+
+What this chunk establishes is (i) the earlier proposed cross-class
+inequality is not structurally valid, even with the same corridor and an
+explicit generating history; (ii) individual negative branches can be
+repaired with exact normalization; (iii) the unresolved task is an
+ARW-specific positive certificate for the TOTAL budget, permitting negative
+intermediate contributions.
+
+Next direction: park attempts to prove individual contact-conditioned
+orders. Return to the checkpoint's positive avoidance-flow direction (AF),
+starting with its complete-response identity only. Seek a telescoping or
+forced-jump-defect certificate for the full budget after all renewal
+responses are summed. Do not demand positivity of a generation or prefix
+(F5), and do not present an abstract transport criterion as a proof of the
+budget it assumes. Retain the contact constructions as a way to convert an
+established positive budget into an explicitly normalized coupling.
+
+Reproduction
+------------
+From n1_cross_test/ in this artifact:
+
+ PYTHONPATH=source OPENBLAS_NUM_THREADS=1 python3 search_cross.py
+ PYTHONPATH=source OPENBLAS_NUM_THREADS=1 python3 repair_cross.py
+
+Python 3 and numpy are required. The search stops after its first test;
+search_cross.json stores that exact witness. repair_cross.json contains all
+488 coupling entries and the budget calculations. The two source modules
+are unchanged from source archive version 9.

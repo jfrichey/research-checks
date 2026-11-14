@@ -1,0 +1,191 @@
+{
+  "status": "Exact face and insertion checks for the working rectangular background theorem; no arbitrary-exterior filling assertion",
+  "face_audits": [
+    {
+      "q": 2,
+      "shape": [
+        2,
+        2
+      ],
+      "patterns": 16,
+      "schemes": {
+        "constant": 12,
+        "stripes": 4
+      }
+    },
+    {
+      "q": 2,
+      "shape": [
+        2,
+        3
+      ],
+      "patterns": 64,
+      "schemes": {
+        "constant": 54,
+        "stripes": 10
+      }
+    },
+    {
+      "q": 2,
+      "shape": [
+        2,
+        4
+      ],
+      "patterns": 256,
+      "schemes": {
+        "constant": 222,
+        "stripes": 34
+      }
+    },
+    {
+      "q": 2,
+      "shape": [
+        3,
+        3
+      ],
+      "patterns": 512,
+      "schemes": {
+        "constant": 480,
+        "stripes": 32
+      }
+    },
+    {
+      "q": 2,
+      "shape": [
+        3,
+        4
+      ],
+      "patterns": 4096,
+      "schemes": {
+        "constant": 3936,
+        "stripes": 160
+      }
+    },
+    {
+      "q": 2,
+      "shape": [
+        4,
+        4
+      ],
+      "patterns": 65536,
+      "schemes": {
+        "constant": 64512,
+        "stripes": 1024
+      }
+    },
+    {
+      "q": 2,
+      "shape": [
+        2,
+        2,
+        2
+      ],
+      "patterns": 256,
+      "schemes": {
+        "constant": 250,
+        "stripes": 6
+      }
+    },
+    {
+      "q": 2,
+      "shape": [
+        2,
+        2,
+        3
+      ],
+      "patterns": 4096,
+      "schemes": {
+        "constant": 4060,
+        "stripes": 36
+      }
+    },
+    {
+      "q": 3,
+      "shape": [
+        2,
+        2
+      ],
+      "patterns": 81,
+      "schemes": {
+        "constant": 81
+      }
+    },
+    {
+      "q": 3,
+      "shape": [
+        2,
+        3
+      ],
+      "patterns": 729,
+      "schemes": {
+        "constant": 729
+      }
+    },
+    {
+      "q": 3,
+      "shape": [
+        3,
+        3
+      ],
+      "patterns": 19683,
+      "schemes": {
+        "constant": 19683
+      }
+    },
+    {
+      "q": 3,
+      "shape": [
+        2,
+        2,
+        2
+      ],
+      "patterns": 6561,
+      "schemes": {
+        "constant": 6561
+      }
+    }
+  ],
+  "exhaustive_insertions": [
+    {
+      "pattern_shape": [
+        2,
+        2
+      ],
+      "patch_shape": [
+        3,
+        3
+      ],
+      "exact_insertions": 6322
+    },
+    {
+      "pattern_shape": [
+        2,
+        3
+      ],
+      "patch_shape": [
+        3,
+        4
+      ],
+      "exact_insertions": 246130
+    },
+    {
+      "pattern_shape": [
+        3,
+        2
+      ],
+      "patch_shape": [
+        4,
+        3
+      ],
+      "exact_insertions": 246130
+    }
+  ],
+  "random_insertions": {
+    "seed": 20261113,
+    "exact_two_patch_insertions": {
+      "2": 991,
+      "3": 990,
+      "4": 1019
+    }
+  }
+}

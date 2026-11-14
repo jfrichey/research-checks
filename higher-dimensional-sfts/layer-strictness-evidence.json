@@ -1,0 +1,2719 @@
+{
+  "status": "Exact finite local and factorization certificates; limiting entropy uses the separate working proof.",
+  "marker_isolation": [
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "k": 2,
+      "compatible_pairs": 24,
+      "translated_windows": 352,
+      "extra_contained_occurrences": 0
+    },
+    {
+      "shape": [
+        2,
+        3
+      ],
+      "k": 2,
+      "compatible_pairs": 124,
+      "translated_windows": 3128,
+      "extra_contained_occurrences": 4
+    },
+    {
+      "shape": [
+        2,
+        4
+      ],
+      "k": 2,
+      "compatible_pairs": 548,
+      "translated_windows": 19792,
+      "extra_contained_occurrences": 12
+    },
+    {
+      "shape": [
+        3,
+        3
+      ],
+      "k": 2,
+      "compatible_pairs": 1232,
+      "translated_windows": 53856,
+      "extra_contained_occurrences": 16
+    },
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "k": 3,
+      "compatible_pairs": 72,
+      "translated_windows": 1080,
+      "extra_contained_occurrences": 0
+    },
+    {
+      "shape": [
+        2,
+        3
+      ],
+      "k": 3,
+      "compatible_pairs": 765,
+      "translated_windows": 19899,
+      "extra_contained_occurrences": 9
+    }
+  ],
+  "small_layer_identities": [
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "exact_layer_identities": 29
+    },
+    {
+      "shape": [
+        2,
+        3
+      ],
+      "exact_layer_identities": 589
+    },
+    {
+      "shape": [
+        2,
+        4
+      ],
+      "exact_layer_identities": 7277
+    },
+    {
+      "shape": [
+        3,
+        3
+      ],
+      "exact_layer_identities": 20137
+    }
+  ],
+  "critical_four_covers": [
+    {
+      "shape": [
+        3,
+        7
+      ],
+      "covers": [
+        {
+          "g": 2686976512,
+          "h": 2686976544,
+          "first_G": 2686976512,
+          "new_first_G": 3769107104,
+          "marker_G": 2720825952,
+          "old_first": "010001000101010101010",
+          "new_first": "111010101010101010111",
+          "marker": "010001000101000100010",
+          "local_identity": {
+            "displacement": [
+              0,
+              6
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            "local_volume": 39,
+            "old_avoidance": 549755289600,
+            "new_avoidance": 549755289601,
+            "marker_inner": [
+              7,
+              25
+            ]
+          },
+          "universal_collar_windows": 5560,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 2686976032,
+          "h": 2686976544,
+          "first_G": 2686976032,
+          "new_first_G": 3769107104,
+          "marker_G": 2720825952,
+          "old_first": "010001010000110101010",
+          "new_first": "111010101010101010111",
+          "marker": "010001000101000100010",
+          "local_identity": {
+            "displacement": [
+              1,
+              -3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "local_volume": 34,
+            "old_avoidance": 17179852800,
+            "new_avoidance": 17179852801,
+            "marker_inner": [
+              8,
+              22
+            ]
+          },
+          "universal_collar_windows": 5448,
+          "universal_collar_patches": 4
+        },
+        {
+          "g": 2684879392,
+          "h": 2686976544,
+          "first_G": 2684879392,
+          "new_first_G": 3769107104,
+          "marker_G": 2720825952,
+          "old_first": "010100010001110111010",
+          "new_first": "111010101010101010111",
+          "marker": "010001000101000100010",
+          "local_identity": {
+            "displacement": [
+              2,
+              -4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 39,
+            "old_avoidance": 549755289600,
+            "new_avoidance": 549755289601,
+            "marker_inner": [
+              9,
+              23
+            ]
+          },
+          "universal_collar_windows": 5576,
+          "universal_collar_patches": 4
+        },
+        {
+          "g": 2150105632,
+          "h": 2686976544,
+          "first_G": 2150105760,
+          "new_first_G": 3769107104,
+          "marker_G": 2720825952,
+          "old_first": "000101010101010101110",
+          "new_first": "111010101010101010111",
+          "marker": "010001000101000100010",
+          "local_identity": {
+            "displacement": [
+              2,
+              4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 39,
+            "old_avoidance": 549755289600,
+            "new_avoidance": 549755289601,
+            "marker_inner": [
+              9,
+              23
+            ]
+          },
+          "universal_collar_windows": 5576,
+          "universal_collar_patches": 4
+        },
+        {
+          "g": 2687008768,
+          "h": 2687008800,
+          "first_G": 2687008768,
+          "new_first_G": 2822406176,
+          "marker_G": 2720825952,
+          "old_first": "010001010101000101010",
+          "new_first": "101011101010101110101",
+          "marker": "010001000101000100010",
+          "local_identity": {
+            "displacement": [
+              0,
+              6
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            "local_volume": 39,
+            "old_avoidance": 549755289600,
+            "new_avoidance": 549755289601,
+            "marker_inner": [
+              7,
+              25
+            ]
+          },
+          "universal_collar_windows": 5560,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 2686976032,
+          "h": 2687008800,
+          "first_G": 2686976032,
+          "new_first_G": 2822406176,
+          "marker_G": 2720825952,
+          "old_first": "010001010000110101010",
+          "new_first": "101011101010101110101",
+          "marker": "010001000101000100010",
+          "local_identity": {
+            "displacement": [
+              1,
+              3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "local_volume": 34,
+            "old_avoidance": 17179852800,
+            "new_avoidance": 17179852801,
+            "marker_inner": [
+              8,
+              22
+            ]
+          },
+          "universal_collar_windows": 5448,
+          "universal_collar_patches": 4
+        },
+        {
+          "g": 2684911648,
+          "h": 2687008800,
+          "first_G": 2685042720,
+          "new_first_G": 2822406176,
+          "marker_G": 2720825952,
+          "old_first": "010100010101010111010",
+          "new_first": "101011101010101110101",
+          "marker": "010001000101000100010",
+          "local_identity": {
+            "displacement": [
+              2,
+              -4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 39,
+            "old_avoidance": 549755289600,
+            "new_avoidance": 549755289601,
+            "marker_inner": [
+              9,
+              23
+            ]
+          },
+          "universal_collar_windows": 5576,
+          "universal_collar_patches": 4
+        },
+        {
+          "g": 2150137888,
+          "h": 2687008800,
+          "first_G": 2150137888,
+          "new_first_G": 2822406176,
+          "marker_G": 2720825952,
+          "old_first": "000101011100010101110",
+          "new_first": "101011101010101110101",
+          "marker": "010001000101000100010",
+          "local_identity": {
+            "displacement": [
+              2,
+              4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 39,
+            "old_avoidance": 549755289600,
+            "new_avoidance": 549755289601,
+            "marker_inner": [
+              9,
+              23
+            ]
+          },
+          "universal_collar_windows": 5576,
+          "universal_collar_patches": 4
+        }
+      ]
+    },
+    {
+      "shape": [
+        3,
+        8
+      ],
+      "covers": [
+        {
+          "g": 69008883712,
+          "h": 69008884736,
+          "first_G": 86188752896,
+          "new_first_G": 86188754080,
+          "marker_G": 73314337792,
+          "old_first": "010111010000000110111010",
+          "new_first": "101000100010010001000101",
+          "marker": "100010001000000100010001",
+          "local_identity": {
+            "displacement": [
+              1,
+              -4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "local_volume": 40,
+            "old_avoidance": 1099511496704,
+            "new_avoidance": 1099511496705,
+            "marker_inner": [
+              8,
+              26
+            ]
+          },
+          "universal_collar_windows": 7064,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 69004690432,
+          "h": 69008884736,
+          "first_G": 69004690432,
+          "new_first_G": 86188754080,
+          "marker_G": 73314337792,
+          "old_first": "100100010001001000100011",
+          "new_first": "101000100010010001000101",
+          "marker": "100010001000000100010001",
+          "local_identity": {
+            "displacement": [
+              2,
+              -7
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                7
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              9,
+              29
+            ]
+          },
+          "universal_collar_windows": 7346,
+          "universal_collar_patches": 1
+        },
+        {
+          "g": 68992107520,
+          "h": 69008884736,
+          "first_G": 68992107648,
+          "new_first_G": 86188754080,
+          "marker_G": 73314337792,
+          "old_first": "100000100010000000000101",
+          "new_first": "101000100010010001000101",
+          "marker": "100010001000000100010001",
+          "local_identity": {
+            "displacement": [
+              2,
+              -5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                5
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              9,
+              27
+            ]
+          },
+          "universal_collar_windows": 7210,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 68740449280,
+          "h": 69008884736,
+          "first_G": 68740449280,
+          "new_first_G": 86188754080,
+          "marker_G": 73314337792,
+          "old_first": "000000100010010101010010",
+          "new_first": "101000100010010001000101",
+          "marker": "100010001000000100010001",
+          "local_identity": {
+            "displacement": [
+              2,
+              -1
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "local_volume": 41,
+            "old_avoidance": 2199022993408,
+            "new_avoidance": 2199022993409,
+            "marker_inner": [
+              9,
+              23
+            ]
+          },
+          "universal_collar_windows": 6938,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 289408000,
+          "h": 69008884736,
+          "first_G": 289408128,
+          "new_first_G": 86188754080,
+          "marker_G": 73314337792,
+          "old_first": "001000100010010001000101",
+          "new_first": "101000100010010001000101",
+          "marker": "100010001000000100010001",
+          "local_identity": {
+            "displacement": [
+              2,
+              7
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                7
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              9,
+              29
+            ]
+          },
+          "universal_collar_windows": 7346,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 86977282048,
+          "h": 86977544192,
+          "first_G": 86994059264,
+          "new_first_G": 86996418592,
+          "marker_G": 121404391552,
+          "old_first": "101110100000000101011101",
+          "new_first": "010001010010010010100010",
+          "marker": "000100011000000110001000",
+          "local_identity": {
+            "displacement": [
+              1,
+              4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "local_volume": 40,
+            "old_avoidance": 1099511496704,
+            "new_avoidance": 1099511496705,
+            "marker_inner": [
+              8,
+              26
+            ]
+          },
+          "universal_collar_windows": 7064,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 86973349888,
+          "h": 86977544192,
+          "first_G": 86975447040,
+          "new_first_G": 86996418592,
+          "marker_G": 121404391552,
+          "old_first": "010001000010010010100010",
+          "new_first": "010001010010010010100010",
+          "marker": "000100011000000110001000",
+          "local_identity": {
+            "displacement": [
+              2,
+              -7
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                7
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              9,
+              29
+            ]
+          },
+          "universal_collar_windows": 7346,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 85903802368,
+          "h": 86977544192,
+          "first_G": 85903802368,
+          "new_first_G": 86996418592,
+          "marker_G": 121404391552,
+          "old_first": "010000001010010001001010",
+          "new_first": "010001010010010010100010",
+          "marker": "000100011000000110001000",
+          "local_identity": {
+            "displacement": [
+              2,
+              1
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "local_volume": 41,
+            "old_avoidance": 2199022993408,
+            "new_avoidance": 2199022993409,
+            "marker_inner": [
+              9,
+              23
+            ]
+          },
+          "universal_collar_windows": 6938,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 69797675008,
+          "h": 86977544192,
+          "first_G": 69799772160,
+          "new_first_G": 86996418592,
+          "marker_G": 121404391552,
+          "old_first": "000001010010000010000010",
+          "new_first": "010001010010010010100010",
+          "marker": "000100011000000110001000",
+          "local_identity": {
+            "displacement": [
+              2,
+              5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                5
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              9,
+              27
+            ]
+          },
+          "universal_collar_windows": 7210,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 18258067456,
+          "h": 86977544192,
+          "first_G": 18258067456,
+          "new_first_G": 86996418592,
+          "marker_G": 121404391552,
+          "old_first": "001000110001001010010001",
+          "new_first": "010001010010010010100010",
+          "marker": "000100011000000110001000",
+          "local_identity": {
+            "displacement": [
+              2,
+              7
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                7
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              9,
+              29
+            ]
+          },
+          "universal_collar_windows": 7346,
+          "universal_collar_patches": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        4,
+        6
+      ],
+      "covers": [
+        {
+          "g": 138110566912,
+          "h": 138110566944,
+          "first_G": 138110566912,
+          "new_first_G": 209044767392,
+          "marker_G": 146708963880,
+          "old_first": "000010000101001011010110",
+          "new_first": "001010010101101010010100",
+          "marker": "100010000100001000010001",
+          "local_identity": {
+            "displacement": [
+              1,
+              -5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              11,
+              21
+            ]
+          },
+          "universal_collar_windows": 4460,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 138110566432,
+          "h": 138110566944,
+          "first_G": 138177806368,
+          "new_first_G": 209044767392,
+          "marker_G": 146708963880,
+          "old_first": "001010000101101000010110",
+          "new_first": "001010010101101010010100",
+          "marker": "100010000100001000010001",
+          "local_identity": {
+            "displacement": [
+              1,
+              -1
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "local_volume": 33,
+            "old_avoidance": 8589933568,
+            "new_avoidance": 8589933569,
+            "marker_inner": [
+              11,
+              17
+            ]
+          },
+          "universal_collar_windows": 4244,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 137976349216,
+          "h": 138110566944,
+          "first_G": 137976349216,
+          "new_first_G": 209044767392,
+          "marker_G": 146708963880,
+          "old_first": "000110001100011001110010",
+          "new_first": "001010010101101010010100",
+          "marker": "100010000100001000010001",
+          "local_identity": {
+            "displacement": [
+              3,
+              -5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 1
+        },
+        {
+          "g": 671613472,
+          "h": 138110566944,
+          "first_G": 2819228320,
+          "new_first_G": 209044767392,
+          "marker_G": 146708963880,
+          "old_first": "001010010101101010010101",
+          "new_first": "001010010101101010010100",
+          "marker": "100010000100001000010001",
+          "local_identity": {
+            "displacement": [
+              3,
+              5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 138118430752,
+          "h": 138118438944,
+          "first_G": 138185539616,
+          "new_first_G": 209052639264,
+          "marker_G": 146708963880,
+          "old_first": "000010001001110000010010",
+          "new_first": "001010010001100010010100",
+          "marker": "100010000100001000010001",
+          "local_identity": {
+            "displacement": [
+              1,
+              3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "local_volume": 39,
+            "old_avoidance": 549755748352,
+            "new_avoidance": 549755748353,
+            "marker_inner": [
+              11,
+              19
+            ]
+          },
+          "universal_collar_windows": 4352,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 138110050336,
+          "h": 138118438944,
+          "first_G": 138177159200,
+          "new_first_G": 209052639264,
+          "marker_G": 146708963880,
+          "old_first": "001010000001110000010110",
+          "new_first": "001010010001100010010100",
+          "marker": "100010000100001000010001",
+          "local_identity": {
+            "displacement": [
+              2,
+              2
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "local_volume": 40,
+            "old_avoidance": 1099511496704,
+            "new_avoidance": 1099511496705,
+            "marker_inner": [
+              12,
+              18
+            ]
+          },
+          "universal_collar_windows": 4356,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 137984221216,
+          "h": 138118438944,
+          "first_G": 137984221216,
+          "new_first_G": 209052639264,
+          "marker_G": 146708963880,
+          "old_first": "000110001000010001110010",
+          "new_first": "001010010001100010010100",
+          "marker": "100010000100001000010001",
+          "local_identity": {
+            "displacement": [
+              3,
+              -5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 1
+        },
+        {
+          "g": 137581568032,
+          "h": 138118438944,
+          "first_G": 206368153632,
+          "new_first_G": 209052639264,
+          "marker_G": 146708963880,
+          "old_first": "001000010001100010010100",
+          "new_first": "001010010001100010010100",
+          "marker": "100010000100001000010001",
+          "local_identity": {
+            "displacement": [
+              3,
+              -3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              13,
+              19
+            ]
+          },
+          "universal_collar_windows": 4468,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 138143604736,
+          "h": 138143604768,
+          "first_G": 138143604736,
+          "new_first_G": 172780199968,
+          "marker_G": 146734129184,
+          "old_first": "000010100000110100010110",
+          "new_first": "010111101010010101111010",
+          "marker": "100010010100001010010001",
+          "local_identity": {
+            "displacement": [
+              1,
+              -5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              11,
+              21
+            ]
+          },
+          "universal_collar_windows": 4460,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 138143596576,
+          "h": 138143604768,
+          "first_G": 138143629344,
+          "new_first_G": 172780199968,
+          "marker_G": 146734129184,
+          "old_first": "100010010001110010010101",
+          "new_first": "010111101010010101111010",
+          "marker": "100010010100001010010001",
+          "local_identity": {
+            "displacement": [
+              1,
+              3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "local_volume": 39,
+            "old_avoidance": 549755748352,
+            "new_avoidance": 549755748353,
+            "marker_inner": [
+              11,
+              19
+            ]
+          },
+          "universal_collar_windows": 4352,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 138110050336,
+          "h": 138143604768,
+          "first_G": 138110083104,
+          "new_first_G": 172780199968,
+          "marker_G": 146734129184,
+          "old_first": "101010000101111000010111",
+          "new_first": "010111101010010101111010",
+          "marker": "100010010100001010010001",
+          "local_identity": {
+            "displacement": [
+              2,
+              4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 44,
+            "old_avoidance": 17592183947264,
+            "new_avoidance": 17592183947265,
+            "marker_inner": [
+              12,
+              20
+            ]
+          },
+          "universal_collar_windows": 4464,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 138009387040,
+          "h": 138143604768,
+          "first_G": 138009387040,
+          "new_first_G": 172780199968,
+          "marker_G": 146734129184,
+          "old_first": "000011100000010100011010",
+          "new_first": "010111101010010101111010",
+          "marker": "100010010100001010010001",
+          "local_identity": {
+            "displacement": [
+              3,
+              -5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 1
+        },
+        {
+          "g": 137606733856,
+          "h": 138143604768,
+          "first_G": 171966504992,
+          "new_first_G": 172780199968,
+          "marker_G": 146734129184,
+          "old_first": "101000010101101010011101",
+          "new_first": "010111101010010101111010",
+          "marker": "100010010100001010010001",
+          "local_identity": {
+            "displacement": [
+              3,
+              -3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              13,
+              19
+            ]
+          },
+          "universal_collar_windows": 4468,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 138144120832,
+          "h": 138144120864,
+          "first_G": 138144120832,
+          "new_first_G": 172772327968,
+          "marker_G": 209078321184,
+          "old_first": "010010100101001001010110",
+          "new_first": "010111101110011101111010",
+          "marker": "001010000101101000010100",
+          "local_identity": {
+            "displacement": [
+              1,
+              -5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              11,
+              21
+            ]
+          },
+          "universal_collar_windows": 4460,
+          "universal_collar_patches": 4
+        },
+        {
+          "g": 138143596576,
+          "h": 138144120864,
+          "first_G": 138143629344,
+          "new_first_G": 172772327968,
+          "marker_G": 209078321184,
+          "old_first": "100010010001110010010101",
+          "new_first": "010111101110011101111010",
+          "marker": "001010000101101000010100",
+          "local_identity": {
+            "displacement": [
+              2,
+              -2
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "local_volume": 40,
+            "old_avoidance": 1099511496704,
+            "new_avoidance": 1099511496705,
+            "marker_inner": [
+              12,
+              18
+            ]
+          },
+          "universal_collar_windows": 4356,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 138110566432,
+          "h": 138144120864,
+          "first_G": 138379034656,
+          "new_first_G": 172772327968,
+          "marker_G": 209078321184,
+          "old_first": "101000000001100000000111",
+          "new_first": "010111101110011101111010",
+          "marker": "001010000101101000010100",
+          "local_identity": {
+            "displacement": [
+              2,
+              4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 44,
+            "old_avoidance": 17592183947264,
+            "new_avoidance": 17592183947265,
+            "marker_inner": [
+              12,
+              20
+            ]
+          },
+          "universal_collar_windows": 4464,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 138009903136,
+          "h": 138144120864,
+          "first_G": 138009903136,
+          "new_first_G": 172772327968,
+          "marker_G": 209078321184,
+          "old_first": "000001100010000100001010",
+          "new_first": "010111101110011101111010",
+          "marker": "001010000101101000010100",
+          "local_identity": {
+            "displacement": [
+              3,
+              -5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 3
+        },
+        {
+          "g": 137607249952,
+          "h": 138144120864,
+          "first_G": 171967021088,
+          "new_first_G": 172772327968,
+          "marker_G": 209078321184,
+          "old_first": "101000010101100010010101",
+          "new_first": "010111101110011101111010",
+          "marker": "001010000101101000010100",
+          "local_identity": {
+            "displacement": [
+              3,
+              -3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              13,
+              19
+            ]
+          },
+          "universal_collar_windows": 4468,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 705167392,
+          "h": 138144120864,
+          "first_G": 973602848,
+          "new_first_G": 172772327968,
+          "marker_G": 209078321184,
+          "old_first": "001000010001100000000101",
+          "new_first": "010111101110011101111010",
+          "marker": "001010000101101000010100",
+          "local_identity": {
+            "displacement": [
+              3,
+              5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 3
+        },
+        {
+          "g": 171933073408,
+          "h": 171933073536,
+          "first_G": 171933073440,
+          "new_first_G": 241189945504,
+          "marker_G": 174156054656,
+          "old_first": "010001100010010011101010",
+          "new_first": "111010010101101010010111",
+          "marker": "010001001010010100100010",
+          "local_identity": {
+            "displacement": [
+              1,
+              -3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "local_volume": 39,
+            "old_avoidance": 549755748352,
+            "new_avoidance": 549755748353,
+            "marker_inner": [
+              11,
+              19
+            ]
+          },
+          "universal_collar_windows": 4352,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 171933040768,
+          "h": 171933073536,
+          "first_G": 171933040768,
+          "new_first_G": 241189945504,
+          "marker_G": 174156054656,
+          "old_first": "010000000001001011011010",
+          "new_first": "111010010101101010010111",
+          "marker": "010001001010010100100010",
+          "local_identity": {
+            "displacement": [
+              1,
+              5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              11,
+              21
+            ]
+          },
+          "universal_collar_windows": 4460,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 171932942464,
+          "h": 171933073536,
+          "first_G": 171932942496,
+          "new_first_G": 241189945504,
+          "marker_G": 174156054656,
+          "old_first": "010101101000000111111010",
+          "new_first": "111010010101101010010111",
+          "marker": "010001001010010100100010",
+          "local_identity": {
+            "displacement": [
+              2,
+              -4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 44,
+            "old_avoidance": 17592183947264,
+            "new_avoidance": 17592183947265,
+            "marker_inner": [
+              12,
+              20
+            ]
+          },
+          "universal_collar_windows": 4464,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 137573335168,
+          "h": 171933073536,
+          "first_G": 138110206112,
+          "new_first_G": 241189945504,
+          "marker_G": 174156054656,
+          "old_first": "000101101010010101101110",
+          "new_first": "111010010101101010010111",
+          "marker": "010001001010010100100010",
+          "local_identity": {
+            "displacement": [
+              3,
+              3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              13,
+              19
+            ]
+          },
+          "universal_collar_windows": 4468,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 34494120064,
+          "h": 171933073536,
+          "first_G": 34494120064,
+          "new_first_G": 241189945504,
+          "marker_G": 174156054656,
+          "old_first": "011010010100100000000011",
+          "new_first": "111010010101101010010111",
+          "marker": "010001001010010100100010",
+          "local_identity": {
+            "displacement": [
+              3,
+              5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 1
+        },
+        {
+          "g": 171933466624,
+          "h": 171933466752,
+          "first_G": 171933466656,
+          "new_first_G": 241189945504,
+          "marker_G": 174156449928,
+          "old_first": "010001101010000111101010",
+          "new_first": "000101101010010101101000",
+          "marker": "010001001000000100100010",
+          "local_identity": {
+            "displacement": [
+              1,
+              -3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "local_volume": 39,
+            "old_avoidance": 549755748352,
+            "new_avoidance": 549755748353,
+            "marker_inner": [
+              11,
+              19
+            ]
+          },
+          "universal_collar_windows": 4352,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 171932942464,
+          "h": 171933466752,
+          "first_G": 171932942496,
+          "new_first_G": 241189945504,
+          "marker_G": 174156449928,
+          "old_first": "010101101000000111111010",
+          "new_first": "000101101010010101101000",
+          "marker": "010001001000000100100010",
+          "local_identity": {
+            "displacement": [
+              2,
+              -2
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "local_volume": 40,
+            "old_avoidance": 1099511496704,
+            "new_avoidance": 1099511496705,
+            "marker_inner": [
+              12,
+              18
+            ]
+          },
+          "universal_collar_windows": 4356,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 137573728384,
+          "h": 171933466752,
+          "first_G": 138110730400,
+          "new_first_G": 241189945504,
+          "marker_G": 174156449928,
+          "old_first": "000101101010010101101010",
+          "new_first": "000101101010010101101000",
+          "marker": "010001001000000100100010",
+          "local_identity": {
+            "displacement": [
+              3,
+              3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              13,
+              19
+            ]
+          },
+          "universal_collar_windows": 4468,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 34494513280,
+          "h": 171933466752,
+          "first_G": 34494513280,
+          "new_first_G": 241189945504,
+          "marker_G": 174156449928,
+          "old_first": "001001001100100110110001",
+          "new_first": "000101101010010101101000",
+          "marker": "010001001000000100100010",
+          "local_identity": {
+            "displacement": [
+              3,
+              5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 1
+        },
+        {
+          "g": 171941330944,
+          "h": 171941332992,
+          "first_G": 240660807712,
+          "new_first_G": 241197811744,
+          "marker_G": 174156449928,
+          "old_first": "000101100000000001111000",
+          "new_first": "000101100010010001101000",
+          "marker": "010001001000000100100010",
+          "local_identity": {
+            "displacement": [
+              1,
+              1
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "local_volume": 33,
+            "old_avoidance": 8589933568,
+            "new_avoidance": 8589933569,
+            "marker_inner": [
+              11,
+              17
+            ]
+          },
+          "universal_collar_windows": 4244,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 171941300224,
+          "h": 171941332992,
+          "first_G": 171941300224,
+          "new_first_G": 241197811744,
+          "marker_G": 174156449928,
+          "old_first": "010000101000110100011010",
+          "new_first": "000101100010010001101000",
+          "marker": "010001001000000100100010",
+          "local_identity": {
+            "displacement": [
+              1,
+              5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              11,
+              21
+            ]
+          },
+          "universal_collar_windows": 4460,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 171807115264,
+          "h": 171941332992,
+          "first_G": 240526592000,
+          "new_first_G": 241197811744,
+          "marker_G": 174156449928,
+          "old_first": "000100100010010001101000",
+          "new_first": "000101100010010001101000",
+          "marker": "010001001000000100100010",
+          "local_identity": {
+            "displacement": [
+              3,
+              -5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 34502379520,
+          "h": 171941332992,
+          "first_G": 34502379520,
+          "new_first_G": 241197811744,
+          "marker_G": 174156449928,
+          "old_first": "001001000100100010110001",
+          "new_first": "000101100010010001101000",
+          "marker": "010001001000000100100010",
+          "local_identity": {
+            "displacement": [
+              3,
+              5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 1
+        },
+        {
+          "g": 171941429248,
+          "h": 171941462016,
+          "first_G": 171941429248,
+          "new_first_G": 174156054656,
+          "marker_G": 241197811744,
+          "old_first": "010010101001100100011010",
+          "new_first": "010001001010010100100010",
+          "marker": "000101100010010001101000",
+          "local_identity": {
+            "displacement": [
+              1,
+              5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              11,
+              21
+            ]
+          },
+          "universal_collar_windows": 4460,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 171941330944,
+          "h": 171941462016,
+          "first_G": 172008439808,
+          "new_first_G": 174156054656,
+          "marker_G": 241197811744,
+          "old_first": "010001001000000100110010",
+          "new_first": "010001001010010100100010",
+          "marker": "000101100010010001101000",
+          "local_identity": {
+            "displacement": [
+              2,
+              -4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 44,
+            "old_avoidance": 17592183947264,
+            "new_avoidance": 17592183947265,
+            "marker_inner": [
+              12,
+              20
+            ]
+          },
+          "universal_collar_windows": 4464,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 171933073408,
+          "h": 171941462016,
+          "first_G": 172000182272,
+          "new_first_G": 174156054656,
+          "marker_G": 241197811744,
+          "old_first": "010001000010011000101010",
+          "new_first": "010001001010010100100010",
+          "marker": "000101100010010001101000",
+          "local_identity": {
+            "displacement": [
+              2,
+              2
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "local_volume": 40,
+            "old_avoidance": 1099511496704,
+            "new_avoidance": 1099511496705,
+            "marker_inner": [
+              12,
+              18
+            ]
+          },
+          "universal_collar_windows": 4356,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 171807244288,
+          "h": 171941462016,
+          "first_G": 171874353152,
+          "new_first_G": 174156054656,
+          "marker_G": 241197811744,
+          "old_first": "101110110111101011111101",
+          "new_first": "010001001010010100100010",
+          "marker": "000101100010010001101000",
+          "local_identity": {
+            "displacement": [
+              3,
+              -5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 137581723648,
+          "h": 171941462016,
+          "first_G": 137648832512,
+          "new_first_G": 174156054656,
+          "marker_G": 241197811744,
+          "old_first": "000001001010010000100010",
+          "new_first": "010001001010010100100010",
+          "marker": "000101100010010001101000",
+          "local_identity": {
+            "displacement": [
+              3,
+              3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            "local_volume": 45,
+            "old_avoidance": 35184367894528,
+            "new_avoidance": 35184367894529,
+            "marker_inner": [
+              13,
+              19
+            ]
+          },
+          "universal_collar_windows": 4468,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 34502508544,
+          "h": 171941462016,
+          "first_G": 34502508544,
+          "new_first_G": 174156054656,
+          "marker_G": 241197811744,
+          "old_first": "001010000100100010000001",
+          "new_first": "010001001010010100100010",
+          "marker": "000101100010010001101000",
+          "local_identity": {
+            "displacement": [
+              3,
+              5
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737471578112,
+            "new_avoidance": 140737471578113,
+            "marker_inner": [
+              13,
+              21
+            ]
+          },
+          "universal_collar_windows": 4576,
+          "universal_collar_patches": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        5,
+        5
+      ],
+      "covers": [
+        {
+          "g": 560526794752,
+          "h": 560526794784,
+          "first_G": 839699668992,
+          "new_first_G": 839699673120,
+          "marker_G": 630324207648,
+          "old_first": "1100000001000001000100011",
+          "new_first": "1100000001010101000000011",
+          "marker": "1001010100000000010101001",
+          "local_identity": {
+            "displacement": [
+              1,
+              -3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "local_volume": 42,
+            "old_avoidance": 4398046248960,
+            "new_avoidance": 4398046248961,
+            "marker_inner": [
+              14,
+              16
+            ]
+          },
+          "universal_collar_windows": 3360,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 560526786592,
+          "h": 560526794784,
+          "first_G": 564821753888,
+          "new_first_G": 839699673120,
+          "marker_G": 630324207648,
+          "old_first": "1000000001010000000000011",
+          "new_first": "1100000001010101000000011",
+          "marker": "1001010100000000010101001",
+          "local_identity": {
+            "displacement": [
+              2,
+              -4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737479966720,
+            "new_avoidance": 140737479966721,
+            "marker_inner": [
+              15,
+              17
+            ]
+          },
+          "universal_collar_windows": 3456,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 560493240352,
+          "h": 560526794784,
+          "first_G": 564788211744,
+          "new_first_G": 839699673120,
+          "marker_G": 630324207648,
+          "old_first": "1000000001010101000000011",
+          "new_first": "1100000001010101000000011",
+          "marker": "1001010100000000010101001",
+          "local_identity": {
+            "displacement": [
+              3,
+              -1
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                1
+              ]
+            ],
+            "local_volume": 42,
+            "old_avoidance": 4398046248960,
+            "new_avoidance": 4398046248961,
+            "marker_inner": [
+              16,
+              14
+            ]
+          },
+          "universal_collar_windows": 3360,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 551936860192,
+          "h": 560526794784,
+          "first_G": 826814767136,
+          "new_first_G": 839699673120,
+          "marker_G": 630324207648,
+          "old_first": "0010101110101010101111100",
+          "new_first": "1100000001010101000000011",
+          "marker": "1001010100000000010101001",
+          "local_identity": {
+            "displacement": [
+              4,
+              -2
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737479966720,
+            "new_avoidance": 140737479966721,
+            "marker_inner": [
+              17,
+              15
+            ]
+          },
+          "universal_collar_windows": 3456,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 10770980896,
+          "h": 560526794784,
+          "first_G": 15065948192,
+          "new_first_G": 839699673120,
+          "marker_G": 630324207648,
+          "old_first": "0011111110100010111111101",
+          "new_first": "1100000001010101000000011",
+          "marker": "1001010100000000010101001",
+          "local_identity": {
+            "displacement": [
+              4,
+              4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "local_volume": 49,
+            "old_avoidance": 562949919866880,
+            "new_avoidance": 562949919866881,
+            "marker_inner": [
+              17,
+              17
+            ]
+          },
+          "universal_collar_windows": 3552,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 560527310880,
+          "h": 560527319072,
+          "first_G": 564822278176,
+          "new_first_G": 839700197408,
+          "marker_G": 630324731936,
+          "old_first": "1000000001011000000000011",
+          "new_first": "1100000001011101000000011",
+          "marker": "1001010100001000010101001",
+          "local_identity": {
+            "displacement": [
+              2,
+              -4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737479966720,
+            "new_avoidance": 140737479966721,
+            "marker_inner": [
+              15,
+              17
+            ]
+          },
+          "universal_collar_windows": 3456,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 560526794784,
+          "h": 560527319072,
+          "first_G": 839699673120,
+          "new_first_G": 839700197408,
+          "marker_G": 630324731936,
+          "old_first": "0011111110101010111111100",
+          "new_first": "1100000001011101000000011",
+          "marker": "1001010100001000010101001",
+          "local_identity": {
+            "displacement": [
+              2,
+              2
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "local_volume": 41,
+            "old_avoidance": 2199023124480,
+            "new_avoidance": 2199023124481,
+            "marker_inner": [
+              15,
+              15
+            ]
+          },
+          "universal_collar_windows": 3360,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 560493764608,
+          "h": 560527319072,
+          "first_G": 560493764608,
+          "new_first_G": 839700197408,
+          "marker_G": 630324731936,
+          "old_first": "0001000101010001100101010",
+          "new_first": "1100000001011101000000011",
+          "marker": "1001010100001000010101001",
+          "local_identity": {
+            "displacement": [
+              1,
+              -3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "local_volume": 42,
+            "old_avoidance": 4398046248960,
+            "new_avoidance": 4398046248961,
+            "marker_inner": [
+              14,
+              16
+            ]
+          },
+          "universal_collar_windows": 3360,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 551937384480,
+          "h": 560527319072,
+          "first_G": 826815291424,
+          "new_first_G": 839700197408,
+          "marker_G": 630324731936,
+          "old_first": "0010101110100010101111100",
+          "new_first": "1100000001011101000000011",
+          "marker": "1001010100001000010101001",
+          "local_identity": {
+            "displacement": [
+              4,
+              -2
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737479966720,
+            "new_avoidance": 140737479966721,
+            "marker_inner": [
+              17,
+              15
+            ]
+          },
+          "universal_collar_windows": 3456,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 689478565888,
+          "h": 689478567936,
+          "first_G": 707732176896,
+          "new_first_G": 707736373248,
+          "marker_G": 968651442192,
+          "old_first": "0100100100000001010010010",
+          "new_first": "0100100101000001010010010",
+          "marker": "0001110000010100000111000",
+          "local_identity": {
+            "displacement": [
+              1,
+              3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "local_volume": 42,
+            "old_avoidance": 4398046248960,
+            "new_avoidance": 4398046248961,
+            "marker_inner": [
+              14,
+              16
+            ]
+          },
+          "universal_collar_windows": 3360,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 689476470784,
+          "h": 689478567936,
+          "first_G": 689480665088,
+          "new_first_G": 707736373248,
+          "marker_G": 968651442192,
+          "old_first": "1010011010101110101001101",
+          "new_first": "0100100101000001010010010",
+          "marker": "0001110000010100000111000",
+          "local_identity": {
+            "displacement": [
+              2,
+              4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737479966720,
+            "new_avoidance": 140737479966721,
+            "marker_inner": [
+              15,
+              17
+            ]
+          },
+          "universal_collar_windows": 3456,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 689344350208,
+          "h": 689478567936,
+          "first_G": 690422286336,
+          "new_first_G": 707736373248,
+          "marker_G": 968651442192,
+          "old_first": "0100100001000001000011010",
+          "new_first": "0100100101000001010010010",
+          "marker": "0001110000010100000111000",
+          "local_identity": {
+            "displacement": [
+              3,
+              1
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                1
+              ]
+            ],
+            "local_volume": 42,
+            "old_avoidance": 4398046248960,
+            "new_avoidance": 4398046248961,
+            "marker_inner": [
+              16,
+              14
+            ]
+          },
+          "universal_collar_windows": 3360,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 687331084288,
+          "h": 689478567936,
+          "first_G": 688404826112,
+          "new_first_G": 707736373248,
+          "marker_G": 968651442192,
+          "old_first": "0100000101000001010010010",
+          "new_first": "0100100101000001010010010",
+          "marker": "0001110000010100000111000",
+          "local_identity": {
+            "displacement": [
+              4,
+              -4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "local_volume": 49,
+            "old_avoidance": 562949919866880,
+            "new_avoidance": 562949919866881,
+            "marker_inner": [
+              17,
+              17
+            ]
+          },
+          "universal_collar_windows": 3552,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 552039614464,
+          "h": 689478567936,
+          "first_G": 553113356288,
+          "new_first_G": 707736373248,
+          "marker_G": 968651442192,
+          "old_first": "0000100100000001000010010",
+          "new_first": "0100100101000001010010010",
+          "marker": "0001110000010100000111000",
+          "local_identity": {
+            "displacement": [
+              4,
+              2
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737479966720,
+            "new_avoidance": 140737479966721,
+            "marker_inner": [
+              17,
+              15
+            ]
+          },
+          "universal_collar_windows": 3456,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 689478567936,
+          "h": 689478600704,
+          "first_G": 707736373248,
+          "new_first_G": 707736406016,
+          "marker_G": 968651474960,
+          "old_first": "1011011010111110101101101",
+          "new_first": "0100100101001001010010010",
+          "marker": "0001110000011100000111000",
+          "local_identity": {
+            "displacement": [
+              2,
+              -2
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "local_volume": 41,
+            "old_avoidance": 2199023124480,
+            "new_avoidance": 2199023124481,
+            "marker_inner": [
+              15,
+              15
+            ]
+          },
+          "universal_collar_windows": 3360,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 689476503552,
+          "h": 689478600704,
+          "first_G": 689480697856,
+          "new_first_G": 707736406016,
+          "marker_G": 968651474960,
+          "old_first": "1010011010100110101001101",
+          "new_first": "0100100101001001010010010",
+          "marker": "0001110000011100000111000",
+          "local_identity": {
+            "displacement": [
+              2,
+              4
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737479966720,
+            "new_avoidance": 140737479966721,
+            "marker_inner": [
+              15,
+              17
+            ]
+          },
+          "universal_collar_windows": 3456,
+          "universal_collar_patches": 0
+        },
+        {
+          "g": 689344380928,
+          "h": 689478600704,
+          "first_G": 689344380928,
+          "new_first_G": 707736406016,
+          "marker_G": 968651474960,
+          "old_first": "0100010011000100111101010",
+          "new_first": "0100100101001001010010010",
+          "marker": "0001110000011100000111000",
+          "local_identity": {
+            "displacement": [
+              1,
+              3
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "local_volume": 42,
+            "old_avoidance": 4398046248960,
+            "new_avoidance": 4398046248961,
+            "marker_inner": [
+              14,
+              16
+            ]
+          },
+          "universal_collar_windows": 3360,
+          "universal_collar_patches": 2
+        },
+        {
+          "g": 552039647232,
+          "h": 689478600704,
+          "first_G": 553113389056,
+          "new_first_G": 707736406016,
+          "marker_G": 968651474960,
+          "old_first": "0000100100001001000010010",
+          "new_first": "0100100101001001010010010",
+          "marker": "0001110000011100000111000",
+          "local_identity": {
+            "displacement": [
+              4,
+              2
+            ],
+            "active_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "local_volume": 47,
+            "old_avoidance": 140737479966720,
+            "new_avoidance": 140737479966721,
+            "marker_inner": [
+              17,
+              15
+            ]
+          },
+          "universal_collar_windows": 3456,
+          "universal_collar_patches": 2
+        }
+      ]
+    }
+  ]
+}

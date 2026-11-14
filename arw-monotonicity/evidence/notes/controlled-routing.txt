@@ -1,0 +1,294 @@
+ARW MONOTONICITY: PARTICLE SWAPS AND TERMINATING CONTROLLED ROUTING
+2026-10-06 UTC; continuation of AVOIDANCE_FLOW.txt
+
+STATUS
+
+The main add-one occupation conjecture and the general positive-flow lemma
+remain open. This continuation makes the proposed flow more concrete:
+
+  * its permitted moves are single-particle walks to a vacancy;
+  * those moves have an explicit attractive one-discrepancy coupling;
+  * every feasible positive-flow certificate has a causal randomized
+    realization, with an explicit finite expected running-time bound;
+  * the realization can be implemented by acceptable stack topplings, giving
+    a nonnegative visitation-event representation of the signed response;
+  * a small exact example rules out both coefficientwise positivity at a
+    fixed particle count and the simplest uniform-routing formula.
+
+The missing part is now the existence/construction of nonnegative flow
+weights for the ARW response. Termination and the causal realization of a
+given finite certificate need not remain separate conjectural steps.
+This does NOT yet couple stabilization of the original two initial inputs.
+The source mixture in the routing construction is determined by the signed
+response coefficients, not by either original initial configuration.
+
+1. THE FORCED-JUMP KERNEL IS A SINGLE MOVING PARTICLE
+
+Use the notation of the preceding note. A is a binary common support,
+v is the target, and J_z(A,B) is the forced-jump/IDLA kernel for z in A.
+
+Remove the particle at z, hold one active particle at each site of A\{z},
+and run a K-walk from z with a mandatory first step. Stop at the first vacant
+site or the original sink. If it stops at y in V, the new support is
+(A\{z}) union {y}; at the sink it is A\{z}. This is exactly J_z.
+After a collision there is just one surplus particle to keep moving.
+Sleep cards read with two active particles present have no effect.
+
+For target-avoidance calculations, omit outcomes that hit v. Thus J_z is
+substochastic on target-free supports, INCLUDING the empty support. Hitting
+the original sink can remove a particle and is not the same as hitting v.
+
+2. A RIGOROUS AUXILIARY PARTICLE-SWAP COUPLING
+
+Consider the continuous-time process in which each occupied site z rings
+at rate one and performs the update above. Couple supports A and A union {x}
+using common site clocks and the same walk at common departures.
+
+At a common departure z, remove z in both configurations and follow one walk.
+Until it finds a vacancy in A\{z}, both walks coincide.
+
+  * If the lower stopping site y is not x (including the sink), both stop
+    there, the common support updates, and x remains the extra site.
+  * If the lower walk stops at x, the upper walk continues through the
+    occupied support (A\{z}) union {x}. Its eventual vacancy w is the new
+    extra site. If the continuation exits, the two supports coalesce.
+
+At an upper-only departure x, the moving extra particle walks through A
+until a vacancy or the sink. This moves the discrepancy or removes it.
+
+Every update preserves inclusion, so this is a genuine attractive process.
+The same construction works with fixed site-dependent clock rates.
+It is an auxiliary process, NOT ARW stabilization. In ARW the upper system
+can wake a common particle which stays asleep below. A later upper-only
+departure at that common occupied site need not preserve inclusion. The
+auxiliary comparison does not by itself account for this sleep history.
+
+Let R_support be minus the auxiliary generator, and R_edge minus the killed
+generator on one-discrepancy states (A,x). The construction proves
+
+    R_edge grad = grad R_support,
+    (grad f)(A,x) = f(A union {x}) - f(A).                   (11)
+
+R_edge has nonpositive off-diagonal entries and nonnegative row sums.
+exclusion_edge_process.py constructs both matrices and the discrepancy
+transitions. Numerical checks of (11) have residual below 9e-16; the coupling
+argument above supplies the general justification.
+
+3. A STRICT POTENTIAL FOR EVERY CONTROLLED ROUTING POLICY
+
+Let h(z) be the expected number of K-walk steps from z to the original sink.
+It is finite since the sink is accessible from every vertex, and satisfies
+
+    h(z) = 1 + sum_w K(z,w) h(w),   h(sink)=0.
+
+For a support A define Phi(A)=sum_{z in A} h(z), with Phi(empty)=0.
+If a forced update from z stops at Y after tau steps, optional stopping gives
+
+    Phi(A) - E[Phi((A\{z}) union {Y})] = E[tau] >= 1,       (12)
+
+with the obvious deletion at the sink. On killing the routing procedure
+when it hits v, assign potential zero to that cemetery state. Omitting the
+nonnegative potential of the other remaining particles only increases the
+left side of (12). Consequently
+
+    (delta_A - J_z(A,.)) Phi >= 1                          (13)
+
+on every nonempty target-free support and every occupied z.
+
+This holds regardless of how the next occupied site is selected, including
+randomized, history-dependent choices. A procedure that keeps making these
+moves until it empties, hits v, or stops voluntarily therefore satisfies
+
+    E_A[number of forced updates] <= Phi(A).               (14)
+
+In particular it terminates almost surely. For any stationary policy pi,
+the transition matrix J_pi restricted to nonempty target-free supports is
+transient; I-J_pi is invertible and its inverse is nonnegative. No assumption
+about the signed ARW matrix I-M is needed for this fact.
+
+Equation (13) also excludes a nonzero nonnegative circulation:
+if d>=0 and sum d(A,z)(delta_A-J_z(A,.)) is identically zero, multiplying by
+Phi gives 0 >= sum d(A,z), forcing d=0. This is the useful no-hidden-cycles
+statement for the proposed flow.
+
+4. EVERY FEASIBLE CERTIFICATE HAS A CAUSAL REALIZATION
+
+Fix one signed response row ell, indexed by target-free supports, with
+ell(empty)=0. In the preceding renewal, ell is a row of L_v=(I-M)^(-1)G_v
+when that inverse exists. More generally it can be wG_v for any w satisfying
+w(I-M)=delta_(A,x), without assuming general invertibility.
+
+Suppose the proposed lemma has supplied
+
+    ell = c + sum_(B,z) d(B,z)(delta_B-J_z(B,.)), c,d>=0.   (15)
+
+First all residual c on nonempty supports can be removed from the formula.
+Choose any fixed stationary routing policy pi. On nonempty supports T,
+write u=c_T (I-J_pi|_T)^(-1)>=0. Add u(B)pi(z|B) to d(B,z), and add the
+resulting flow into empty to c(empty). This replaces (15) by
+
+    ell = c0 delta_empty + sum_(B,z) d(B,z)(delta_B-J_z),
+    c0>=0, d>=0.                                         (16)
+
+This is an equivalent form of the certificate, not a stronger conjecture.
+In particular, arbitrary nonempty residual coefficients are unnecessary.
+
+Here is an explicit routing algorithm from (16). On nonempty supports put
+
+    P(B)=max(ell(B),0),  N(B)=max(-ell(B),0),
+    d_B=sum_z d(B,z),    W(B)=d_B+N(B).
+
+Start with mass P(B) at B. At every visit to a state with W(B)>0:
+
+  * stop there to pay its negative demand with probability N(B)/W(B);
+  * choose the forced move z with probability d(B,z)/W(B), then sample
+    its destination according to the actual J_z(B,.).
+
+The missing J mass is a target hit. Reaching empty is another terminal
+outcome. A state with W=0 receives no source or incoming mass and needs no
+rule. The local balance equation is
+
+    W(B) = P(B) + sum_(C,z) d(C,z) J_z(C,B).               (17)
+
+By transience, its unique finite solution is the actual expected arrival
+mass. Hence demand B receives exactly N(B), empty receives exactly c0,
+and every routing step uses the original jump probabilities. This turns
+the finite algebraic certificate into an executable, causal procedure.
+It never spends negative mass or assumes funding from an inaccessible cycle.
+
+There is also a quantitative audit:
+
+    sum_(B,z) d(B,z) <= ell Phi <= sum_B P(B) Phi(B).      (18)
+
+The first inequality follows from (13) and (16); the second from N>=0.
+
+For the actual avoidance vector a_v, the route has a stack realization.
+Choose its source B with probability P(B)/m, m=sum P. At each forced update,
+topple through the first jump acceptably, then legally move the surplus
+until vacant. All remaining suffixes are fresh. Make the stop/action choice
+using independent auxiliary randomness and the exposed support only. On
+termination, finish ordinary stabilization (also after a target hit).
+The entire modified execution is acceptable and stabilizing. Least action
+implies that its visited set contains the original legal execution's visited
+set. Let I_original and I_routed be their target-avoidance indicators. Then
+
+    I_original >= I_routed,
+    m E[I_original] = sum_B P(B)a_v(B),
+    m E[I_routed] = sum_B N(B)a_v(B) + c0.
+
+Consequently the desired response, conditional on (16), has the identity
+
+    D = ell a_v
+      = c0 + m P(I_original=1, I_routed=0) >= 0.           (19)
+
+If m=0 the certificate is zero and no routing is needed. Formula (19) is
+a genuine nonnegative event representation for a certified row. It is not
+an inverse-recognizable transformation between the original lower and upper
+ARW stack histories. The source mixture P comes from ell.
+
+5. AN EXACT SMALL OBSTRUCTION AND AN EXACT REPAIR
+
+Take vertices 0,1,2,3, with the following jump laws:
+
+    0 -> 2 with probability 1;
+    1 -> 0 or sink, each probability 1/2;
+    2 -> 3 or sink, each probability 1/2;
+    3 -> 0 or 1, each probability 1/2.
+
+Let p=(1/16,1/2,1/2,1/16), common A={1,3}, extra x=2, target v=1.
+Rebuild the entire 24-edge renewal with at most two common particles using
+exact Fraction arithmetic. In its response row, the coefficient of a_v({0,2})
+is strictly negative, approximately -0.00941462267. Since |{0,2}|=|A|=2,
+one cannot group every row by only moving mass to smaller particle counts.
+Redistribution at the same particle count is essential in this formulation.
+
+For fixed site rates r_z, define on nonempty target-free supports
+
+    R_r(B,.) = sum_(z in B) r_z (delta_B-J_z(B,.)),
+    U_r = ell_T R_r^(-1).                                 (20)
+
+If U_r>=0, then d(B,z)=U_r(B)r_z gives (16), with the empty coefficient
+determined by the outgoing empty flux. The inverse exists by Section 3.
+
+For uniform r_z=1 in this example, U_r({0,2}) is strictly negative,
+approximately -0.00101936137. Thus a uniform Green-function formula cannot
+prove the heterogeneous theorem. Taking r=(15,1,1,15)=(1-p)/p repairs this
+particular row: every U_r coefficient is nonnegative. The exact audit checks
+the row equality, the causal route's transition probabilities, its full
+expected arrival masses, every paid demand, and the empty flux. It also
+checks the strict potential bound and verifies D independently through raw
+ARW absorption. The exact rational coefficients are in the JSON certificate.
+
+Do not promote r=(1-p)/p to a general answer: a different six-site directed
+example already gives a numerical coefficient near -1.99e-6 for that rule
+(sleep_rate_flow_probe_results.json). Flexible action weights still pass the
+cone check in the tested cases. The necessary rule may depend on the current
+support and the response row; existence of one such rule is what is missing.
+
+6. COMPUTATION, LIMITS, AND THE NEXT PROOF TARGET
+
+edge_renewal.py builds the same signed matrix directly on binary edges.
+It batches trapped stabilization laws, evaluates IDLA by successive one-
+particle walks, and avoids dense matrices on all particle multiplicities.
+Its four baseline matrices agree with the old implementation to 1.4e-16;
+forced-jump kernels agree to 1.2e-16. This makes the full seven-site support
+hierarchy practical (about ten seconds in this environment).
+
+New cone tests used only a>=0 and J_z a<=a, normalized by sum a=1.
+There were no violations beyond solver tolerance in 18 more recurrent
+four/five-site cases or in six full-support six/seven-site cases. The latter
+include homogeneous and heterogeneous sleep rates and a single sink exit.
+These numerical tests are evidence for (15), not a proof. Same-particle-count
+negative coefficients also occur in the homogeneous larger examples.
+
+Uniform-rate U in (20) remained nonnegative up to roundoff in all 18 saved
+additional homogeneous cases and in the six larger full-support cases
+(including their heterogeneous members). This is a possible simpler
+homogeneous sub-lemma, still unproved. Neither this observation nor the
+attractive auxiliary chain establishes ARW occupation monotonicity.
+
+Other diagnostics: individual M^k G_v rows for k=1,...,4 pass the cone test
+in the exact obstruction example (baseline checks also passed). Square
+identities exchanging which particle is called extra do not suffice to make
+the signed M rows coefficientwise nonnegative in all tested cases. Applying
+the natural auxiliary edge Laplacian directly to the uniform Green weights
+also leaves negative forcing terms. These are failed shortcuts, not proofs
+against a more elaborate use of the particle-swap chain.
+
+The next general proof target can now be stated without a termination gap:
+
+    construct w, d>=0, c0>=0 with
+    w(I-M)=delta_(A,x),
+    wG_v=c0 delta_empty + sum d(B,z)(delta_B-J_z(B,.)).     (21)
+
+One possible route is to trace an unmatched sleep history backwards and
+transfer the distinguished extra particle when a common walk reaches its
+site, as in Section 2. The missing invariant must show that the associated
+weights satisfy the balance in (21) without becoming negative. Once those
+weights exist, Sections 3-4 provide the terminating realization. No such
+general invariant is claimed in this checkpoint.
+
+REPRODUCTION
+
+  python3 verify_controlled_routing_exact.py
+    Exact raw-chain reconstruction, obstruction, repaired certificate,
+    causal-route audit, and independent final occupation calculation.
+    Output: controlled_routing_exact_verification.json.
+
+  OPENBLAS_NUM_THREADS=1 python3 edge_renewal.py
+    Independent comparison with the preceding signed solver and kernels.
+
+  OPENBLAS_NUM_THREADS=1 python3 exclusion_edge_process.py
+    Checks the auxiliary discrepancy-generator identity on two cases.
+
+  OPENBLAS_NUM_THREADS=1 python3 run_controlled_flow_probes.py --batch smoke
+  OPENBLAS_NUM_THREADS=1 python3 run_controlled_flow_probes.py --batch all
+    Replays recorded kernels; no dependence on prior random-generator state.
+    The smoke replay includes the four baselines and the exact obstruction.
+
+Other retained results: full_support_avoidance_probe_results.json,
+full_support_flow_details.json, recurrent_avoidance_probe_results.json,
+homogeneous_fixed_flow_probe_results.json, uniform_flow_probe_results.json,
+sleep_rate_flow_probe_results.json, renewal_power_probe_results.json.
+increasing_event_probe_results.json records a side diagnostic on full output
+laws; it supplies no general domination theorem and is not used above.

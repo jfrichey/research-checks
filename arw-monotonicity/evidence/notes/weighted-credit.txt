@@ -1,0 +1,219 @@
+ARW: WEIGHTED TARGET CREDIT AND HARMONIC CHANGE OF MEASURE
+2026-10-08 UTC. Continuation of TC, N2_target_credit_2026-10-08.zip.
+
+STATUS
+
+The general single-site occupation conjecture remains OPEN, with the
+checkpoint's assumptions unchanged. This chunk did NOT prove the proposed
+weighted budget and found no counterexample to it. Record: NO PROGRESS ON
+THE SIGN OF THE BUDGET. There is a general structural identity: harmonic
+change of measure preserves the entire family of ARW creation laws, with
+the same sleep probabilities and an explicit endpoint factor. It also
+preserves coefficient signs, so normalization alone cannot prove positivity.
+These identities are proved below; no originality claim is made.
+
+Question: does C >= sum_y (-d_y)_+ [2h(y)-h(y)^2] follow from the actual
+creation coefficients at common-particle bound two? Mechanism: use the
+ordinary-walk hitting ceiling to price negative collision sources. Stop at
+a proof, an exact obstruction, or the roughly ten-minute research limit.
+Research and exact checking ran approximately 18:09-18:20 UTC; writing and
+saving followed. No job remains running. F1-F13 were checked. Unlike F13,
+this budget prices target hitting quantitatively, and unlike F6 it retains
+the actual creation law, not merely harmonic constraints on arbitrary data.
+
+1. WHAT WAS TESTED, AND WHAT THE TESTS DO NOT SHOW
+
+Keep TC's exact representation, wherever its finite response inverse exists:
+
+ Delta = C + sum_y d_y G_y,
+ G_y = P(target v ever visited from two actives at y),
+ u_y = 2h(y)-h(y)^2,
+ B = C - sum_y (-d_y)_+ u_y.                         (1)
+
+Here h is the ordinary jump-chain probability of reaching v before the sink.
+TC proves 0<=G_y<=u_y. Thus B>=0 suffices for occupation monotonicity, but
+is stronger than it. The general signed-renewal inverse remains unproved.
+No G values were used to form the screened budget or optimize parameters.
+
+The first screen varied TC's five-site failure into 36 trap/cycle cases,
+separating slow target access from still slower sink loss. This tests whether
+the no-sleep ceiling seriously overcharges particles that usually fall
+asleep in the trap. It then tested 2,000 seeded sparse five-site kernels.
+No violation was found. A second screen tested 1,000 six-site kernels;
+717 response rows had weighted debt exceeding 1e-12. Its largest observed
+debt/credit ratio was about 0.08369. The six-site screen also found no failure.
+These are finite floating-point tests, not an exhaustive classification.
+
+The first screen originally stored only minimum slack per case. Its final
+script additionally records debt counts and largest ratios; those added
+diagnostics were used for the six-site screen. The original first-screen
+output was not replaced or represented as containing these diagnostics.
+
+Next, remove the unused vertex of the largest-ratio six-site case and vary
+the remaining five-site topology's sleep rates and jump probabilities.
+Differential evolution made 2,809 evaluations, reaching ratio about 0.52172.
+It exhausted its iteration budget; no global optimizer claim is made.
+This example's small absolute scale required an exact rational check.
+
+2. NONTRIVIAL EXACT CHECK
+
+rational_case.json contains an exact nearby rational kernel and sleep vector
+(27/139,16/197,185/191,1/256,108/109). Original common actives are {3,4},
+extra site 2, target 4. Rationalizing probabilities changed the ratio, as
+expected; this is a new exact case, not exact validation of rounded decimals.
+
+Exact reconstruction gives, approximately:
+ C                 = 4.756988394106441e-10,
+ weighted debt     = 2.327076083092828e-10,
+ B                 = 2.429912311013613e-10,
+ weighted debt / C = 0.4891910364918914,
+ Delta             = 2.689064586422443e-10.
+
+There is one negative collision coefficient, at site 1, and one positive
+coefficient, at site 0. The negative source's actual target-hit probability
+is 1416000080/1417202059, close to its random-walk ceiling. Thus this is not
+another zero-hitting-debt example. The budget is strictly positive exactly.
+
+verify_rational.py checks the complete creation-law representation, the
+collision representation, all collision hitting ceilings, and the raw
+occupation increment by independent exact stabilization (66 transient
+states in that calculation). It also checks the constant identity in
+Section 4. Full fractions are in rational_certificate.json. This successful
+finite certificate is NOT a proof of (1) on arbitrary graphs.
+
+3. GENERAL CREATION-LAW CHANGE OF MEASURE (PROOF)
+
+Write t(x)=1-h(x), t(v)=0 and t(sink)=1. First assume t(x)>0 at every
+non-target vertex. Define, for x!=v,
+
+ K^t(x,y)=K(x,y)t(y)/t(x),                         (2)
+
+including the sink. Since t is harmonic off v and the sink, these rows sum
+to one, and the transformed kernel has no jump into v. It still has an
+accessible sink: any positive-probability original sink path avoiding v
+has positive transformed probability. KEEP p_x UNCHANGED.
+
+For a finite configuration c, let rho(c) be the product of t(x) over all
+particles, counting multiplicity and ignoring activity/sleep status. A
+sleep leaves rho unchanged. A jump x->y changes it by t(y)/t(x), including
+waking and sink loss. Therefore every finite legal history avoiding v
+satisfies the telescoping likelihood identity
+
+ P^t(history)=P(history) rho(final)/rho(initial).  (3)
+
+The same identity holds for any prescribed causal legal scheduler used
+in both systems. It also holds with ineffective sleep self-loops, or after
+discarding them. For stopped stabilization histories, sum (3) over their
+countable disjoint realizations; finite ARW stabilization is almost sure.
+
+Apply this to DF's creator: stabilize active A\{z} while avoiding v and z,
+ending at sleeping support B. Let nu be its original SUBPROBABILITY law,
+and let nu^t be the corresponding creator law under (2), with the SAME
+sleep probabilities, avoiding z. Then
+
+ rho(B) nu(B) = rho(A\{z}) nu^t(B).                (4)
+
+This holds at every particle bound, not just two. It preserves the
+generating law; no arbitrary sleeping input distribution is substituted.
+Neither side is divided by a success probability.
+
+IMPORTANT SCOPE: (2) conditions the extended jump paths to avoid v. It is
+not the ordinary ARW law conditioned on the event that stabilization never
+visits v. That latter conditioning would generally change sleep decisions.
+Equation (4), with its endpoint weight, is the precise assertion used here.
+
+If some t(x)=0, division in (2) is not defined. Add positive direct sink
+leakage, prove the identities for that regularized kernel, then consider
+limits of cross-multiplied identities. Such a limit need not provide a
+nondegenerate tilted representation at the original zero-t states. This
+remains an explicit issue for using the transformation in a general proof;
+it is not a restriction added to the occupation conjecture.
+
+verify_tilt.py checks (4) exactly on all 16 creator laws and 36 nonzero
+creation masses of Section 2, including subprobability normalization.
+
+4. THE UNIFORM CONSTANT IS A HARMONIC PROJECTION (PROOF)
+
+For a target-free binary support A, put rho(A)=product_(x in A)t(x), with
+rho(empty)=1. For every z in A,
+
+ J_z rho(A)=rho(A).                              (5)
+
+Indeed, hold A\{z} fixed and follow the released particle until a vacancy
+or the sink. Its t-value is a bounded martingale. Multiplying by the fixed
+particles' t-values gives (5), with target-hit exits assigned value zero.
+This does not require t>0; zeros cause no division here.
+
+Let R(A,.)=sum_(z in A)(delta_A-J_z(A,.)), the uniform forced-jump defect
+matrix. In the saved uniform decomposition
+
+ ell = c0 delta_empty + U R,
+
+multiply by rho and use (5). The result is
+
+ c0 = sum_A ell(A)rho(A).                         (6)
+
+This identifies the constant at every finite particle bound where the
+response row ell is defined. It does NOT establish c0>=0 because ell can
+have either sign. Equation (5) also shows the harmonic transform of J_z
+is exactly the forced-vacancy walk for K^t; it introduces no new routing
+rule. The earlier AF/CR source sections were checked before using R.
+
+5. WHAT THE TRANSFORM DOES TO THE SIGNED CREATION COEFFICIENTS
+
+Define U^t(A)=U(A)rho(A). By (4), the creation coefficients satisfy
+
+ kappa^t(B,z)=rho(B)t(z) kappa(B,z),               (7)
+
+where kappa^t is built from U^t, nu^t and the SAME odds p_z/(1-p_z).
+For the no-contact kernel Q_B(x,y)=(1-p_x)K(x,y),
+
+ (I-Q_B^t)^(-1)(x,y)
+       = (I-Q_B)^(-1)(x,y) t(y)/t(x).
+
+Consequently the resummed weights obey
+
+ w_B^t(y)=rho(B)t(y)w_B(y).                       (8)
+
+At common bound two, collision at y has B={y}, so its transformed
+coefficient is d_y^t=t(y)^2 d_y. These are algebraic identities, not a claim
+that U^t is the occupation-response row of a new target problem. The
+transform preserves every sign when t>0. It cannot by itself fix F10 or
+prove a positive budget. Any proof must compare different histories or
+combine direct credit with negative mass after this normalization.
+
+One further useful exact identity follows by summing (3) over all terminal
+supports S for two initial actives at y:
+
+ G_y=1-t(y)^2 E^t_y[1/rho(S)].                    (9)
+
+Hence the ceiling gap is
+ u_y-G_y=t(y)^2(E^t_y[1/rho(S)]-1)>=0.
+This records exactly what the hitting ceiling discards: terminal sleeping
+mass under a genuine ARW law. It is a structural identity, not an independent
+proof of the budget, and using the computed expectation as an oracle would
+merely recover G_y.
+
+6. NEXT QUESTION AND REPRODUCTION
+
+No more broad random searches are justified by this chunk. The next question
+is algebraic: can the weighted budget B in (1) be represented as a
+nonnegative balance of creator histories after the normalization (4)?
+Trace negative first-collision coefficients backward through nu^t and seek
+a pairing with direct-credit histories that preserves BOTH creation mass
+and total credit. Stop at a pairing lemma or an explicit violated necessary
+balance. Merely substituting (9) into Delta, or observing that (2) is
+stochastic, would not be progress on its sign.
+
+Reproduction, with Python 3, numpy and scipy:
+
+ OPENBLAS_NUM_THREADS=1 python3 weighted_test.py
+ OPENBLAS_NUM_THREADS=1 python3 stress_test.py
+ OPENBLAS_NUM_THREADS=1 python3 optimize_budget.py
+ OPENBLAS_NUM_THREADS=1 python3 verify_rational.py
+ OPENBLAS_NUM_THREADS=1 python3 verify_tilt.py
+
+The exact checks use fractions.Fraction. The exact case is supplied in
+rational_case.json, so its checks do not require reproducing the optimizer.
+Copied source solvers are unchanged; previously completed audits were not
+rerun. Screening uses tolerances and is labeled computational throughout.

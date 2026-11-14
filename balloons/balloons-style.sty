@@ -1,0 +1,34 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{balloons-style}[2026/11/14 Shared style for balloon writeups]
+
+% Match the Latin Modern article format used by the current MathLab notes.
+% Prose follows the central context/mathematical-writing.md and working-style.md.
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{lmodern}
+\RequirePackage[letterpaper,margin=1in]{geometry}
+\RequirePackage{mathtools,amssymb,amsthm}
+\RequirePackage{microtype,booktabs,array,enumitem}
+\RequirePackage[dvipsnames]{xcolor}
+\colorlet{inkblue}{MidnightBlue}
+\RequirePackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+  urlcolor=MidnightBlue,filecolor=MidnightBlue}
+\RequirePackage{bookmark}
+\pagestyle{plain}
+\setlength{\parindent}{15pt}
+\setlength{\parskip}{0pt plus 1pt}
+\setlength{\emergencystretch}{1.5em}
+\setlist{itemsep=2pt,topsep=4pt,leftmargin=*}
+\allowdisplaybreaks[1]
+\numberwithin{equation}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newenvironment{sketch}{\begin{proof}[Proof sketch]}{\end{proof}}

@@ -1,0 +1,72 @@
+{
+  "status": "Exact universal pinned-letter obstruction checks; the all-size UFP conclusion uses the working proof",
+  "exhaustive": [
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "q": 3,
+      "inner": [
+        2,
+        3
+      ],
+      "patterns": 81,
+      "blocked_windows": 30618,
+      "patched_corners": 60
+    },
+    {
+      "shape": [
+        2,
+        3
+      ],
+      "q": 3,
+      "inner": [
+        2,
+        3
+      ],
+      "patterns": 729,
+      "blocked_windows": 570078,
+      "patched_corners": 620
+    },
+    {
+      "shape": [
+        3,
+        2
+      ],
+      "q": 3,
+      "inner": [
+        2,
+        3
+      ],
+      "patterns": 729,
+      "blocked_windows": 571536,
+      "patched_corners": 620
+    },
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "q": 4,
+      "inner": [
+        2,
+        3
+      ],
+      "patterns": 256,
+      "blocked_windows": 96768,
+      "patched_corners": 164
+    }
+  ],
+  "random": {
+    "seed": 20261120,
+    "patterns": 1000,
+    "blocked_windows": 2147263,
+    "patched_corners": 862
+  },
+  "totals": {
+    "patterns": 2795,
+    "blocked_windows": 3416263,
+    "patched_corners": 2326
+  }
+}

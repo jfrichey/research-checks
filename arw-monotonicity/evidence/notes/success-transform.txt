@@ -1,0 +1,193 @@
+ARW: TWO-SIDED TARGET NORMALIZATION AND COLOURED UNUSED PATHS
+2026-10-08 UTC. Continuation of WC, N2_weighted_credit_2026-10-08.zip.
+
+STATUS AND CHUNK SCOPE
+
+The general single-site occupation conjecture remains OPEN. Its assumptions
+are unchanged: finite graph, absorbing sink accessible from every vertex,
+0<p_x<1, and finite all-active original input. This chunk proves a precise
+limitation of the proposed one-law normalization and gives its complementary
+marked-path representation. It does NOT prove the weighted budget or a
+coupling between the two original particle systems. No novelty claim.
+
+Question: can negative collision-creation histories be paired with direct
+target-credit histories after WC's avoidance normalization? Stop at a
+pairing lemma or a precise obstruction, within roughly ten research minutes.
+The substantive work ran approximately 18:46-18:57 UTC; writing/saving
+followed. No job is running. F1-F13 were checked. No broad sweep was run.
+
+Record NO PROGRESS ON THE WEIGHTED BUDGET'S SIGN, for a second chunk.
+The next approach therefore changes from scalar budget matching to an
+explicit instruction/history transformation using the coloured law below.
+
+1. WHAT THE PROPOSED PAIRING STILL NEEDS
+
+At common bound two the saved creation-law representation is
+
+ Delta=C+sum_y d_y G_y,
+ 0<=G_y<=u_y=2h(y)-h(y)^2,
+ B=C-sum_y(-d_y)_+u_y.
+
+h(x) is ordinary-walk target hitting before the sink. Proving B>=0 would
+suffice, but remains open. If a pairing is allowed to match arbitrary
+negative collision mass to arbitrary direct credit, its total-capacity
+condition is exactly B>=0. Existence of such a transport supplies no new
+reason for the condition; this is the same normalization-versus-budget
+issue recorded in F9. It is not a new positive theorem.
+
+A new decomposition of WC's existing exact case illustrates the need for
+history exchange. All negative collision coefficient is at site 1, with
+sleeping background {1}, and that background contributes ZERO direct target
+credit. The positive direct credit lies in backgrounds empty, {0}, {3}
+and the uniform constant. These facts follow directly from the saved exact
+weights w_B and the kernel; no old response reconstruction was rerun.
+F10 already says backgrounds must be exchangeable, so this is an example
+of that restriction, not a newly discovered failure.
+
+2. AVOIDANCE NORMALIZATION REMOVES THE CREDIT HISTORY SPACE
+
+Let t=1-h and rho(c)=product_i t(x_i), ignoring activity labels and counting
+particle multiplicity. WC's transform K^t(x,y)=K(x,y)t(y)/t(x), where
+t(x)>0, retains sleep probabilities and satisfies
+
+ P^t(history)=P(history) rho(final)/rho(initial)
+
+for target-avoiding finite histories. In particular K^t(x,v)=0. Every
+history that first visits the target has probability ZERO under P^t.
+
+Thus direct target-credit histories cannot themselves form a positive
+donor submeasure of this avoidance-transformed law. An argument can retain
+their original boundary flux separately, but then it uses two measures or
+additional marked data. It cannot obtain that flux merely by revealing
+more of an ordinary K^t-ARW history. This identifies a missing element in
+the preceding proposed pairing; it does not refute pairings with separately
+tracked boundary credit.
+
+3. THE COMPLEMENTARY SUCCESS TRANSFORM (GENERAL PROOF)
+
+Put F(c)=1-rho(c). Before a target visit, F is harmonic for every legal
+instruction: sleep preserves positions and F; a jump is harmonic in the
+chosen particle's coordinate. Sink loss is included by t(sink)=1.
+Consequently, at configurations with F(c)>0, the complementary Doob kernel
+on configurations is
+
+ P^+(c,c')=P(c,c') F(c')/F(c).                    (1)
+
+Stop at the first target visit, giving that boundary F=1, and freeze stable
+states if reached first. Rows in (1) sum to one. Sleep probabilities remain
+unchanged, including ineffective sleeps at collisions. A finite history
+has the likelihood ratio F(final)/F(initial). Summing stopped target-hit
+histories yields
+
+ H_v(c)=F(c) P^+_c(target hit before stabilization). (2)
+
+For a collision at y, F(2 delta_y)=u_y. Thus the exact collision term is
+d_y u_y times a genuine probability under P^+. This represents the target
+credit in a positive probability space; it does not prove any inequality
+among its signed coefficients.
+
+Unlike the avoidance transform, P^+ is generally NOT ordinary ARW with a
+single altered site jump kernel. The factor F(c')/F(c) depends on the other
+particles. Assuming closure in ordinary ARW would lose precisely this
+dependence.
+
+4. MINIMAL EXACT OBSTRUCTION TO A FIXED SUCCESS KERNEL
+
+Vertices are 0 and target v=1, plus sink. Let 0 jump to v or sink with equal
+probability and v jump to sink. Take p_0=2/3, p_v=1/2; all assumptions hold.
+Then h(0)=1/2, F(delta_0)=1/2 and F(2 delta_0)=3/4.
+
+Under (1), CONDITIONAL ON A JUMP:
+
+ - with one particle at 0, target probability is 1 and sink probability 0;
+ - with two particles at 0, target probability is 2/3 and sink probability 1/3.
+
+Both jumps originate at the same site, so no site-only jump kernel can
+represent both. The two-active original target-hit probability is 7/12;
+under P^+ it is 7/9, and (3/4)(7/9)=7/12, verifying (2).
+
+This is F14, scoped to a SINGLE ordinary-ARW normalization for success
+credit. It is not an occupation counterexample or a failure of the
+configuration-dependent transform (1).
+
+5. EXACT COLOURED-PATH REPRESENTATION
+
+Use labelled particles and independent infinite jump chains for their
+unread jump trajectories, stopped at the sink. Sleep instructions remain
+independent with the original probabilities. For each particle i, mark
+whether its entire extended jump chain will visit v. Given positions x_i,
+the marks are independent Bernoulli(h(x_i)) before conditioning. Condition
+on at least one success mark. A nonempty successful set J has probability
+
+ [product_(i in J) h(x_i) product_(i notin J)t(x_i)] / F(c). (3)
+
+Given these colours, use K^h(x,y)=K(x,y)h(y)/h(x) for a successful particle
+until its first target visit, and K^t for an avoiding particle. Keep the
+same sleep probabilities. In particular a success-coloured particle may
+fall asleep forever before using the part of its extended path that would
+visit v. This is NOT conditioning on an actual ARW target visit.
+
+Run any fixed causal COLOUR-BLIND legal scheduler. Before the first target
+visit, the posterior colour law, conditional on the full revealed history,
+is exactly (3) evaluated at CURRENT particle positions. To prove this,
+multiply its initial weight by the colour-specific path likelihood ratios.
+For each particle the factors telescope from its initial h or t to its
+current h or t; sleep instructions and colour-blind scheduling factors
+cancel. Normalization is F(current). This retains the full creation history
+and imposes no independence assumption on the positions produced by ARW.
+
+Mixing the next jump over this posterior gives exactly (1). Thus the
+coloured construction realizes the required configuration-dependent law
+using fixed kernels for individual colours. Particles lost to the sink
+have h=0 and can only carry the avoiding colour. Zero-probability colour
+choices are never assigned; no division at such choices is required.
+
+6. CONTACT EXCHANGE LEMMA, AND ITS LIMIT
+
+At a colour-blind stopping time before a target visit, suppose two labelled
+particles occupy the same vertex y. Their posterior colour law in (3) is
+symmetric under exchanging their labels. Given the colours and revealed
+history, their unused jump chains are independent chains of the appropriate
+colours, both starting at y. Therefore the joint conditional law of
+
+ (colour of particle i, unused chain i;
+  colour of particle j, unused chain j)
+
+is invariant under exchanging the two pairs. The same holds when one was
+sleeping immediately before contact: both are awake after the arrival, and
+the prior creation history remains part of the conditioning. Future sleep
+instructions remain untouched and independent. This is an exact conditional
+probability-preserving exchange of auxiliary colours and unused chains.
+
+It is only a local conditional-law lemma. It does not by itself change the
+unlabelled configuration, supply extra credit, or construct a bijection
+between different already-consumed histories. In particular it does not
+resolve F3's inventory obstruction or F1's arbitrary-sleeper comparison.
+Nor should a colour-dependent choice of revelation time or scheduler be
+inserted while retaining the colour-blind posterior formula.
+
+In the two-particle example, the possible success-colour pairs are
+(success,avoid), (avoid,success), (success,success), each with probability
+1/3. Moving the first label gives target probability 2/3, as required.
+verify_success.py checks these fractions, the prefix likelihood ratio and
+the target-hitting identity exactly, without any graph search.
+
+7. NEXT CONCRETE QUESTION
+
+Try a creator/explorer role switch at their first contact, using the
+conditional colour exchange of Section 6 AND moving a sleep instruction
+across that contact. The latter is essential: exchanging unused paths
+alone changes no consumed history. Write down the inverse map and the
+sleep-odds likelihood ratio before claiming it preserves measure. Keep
+the creator law, not an arbitrary sleeping configuration.
+
+Check BS Section 5's unmatched-inventory history against this proposed
+used/unread change. The new ingredient is complementary success colouring;
+its value must be demonstrated by repairing that actual obstruction, not
+by a new finite unrestricted transport. Stop at an invertible local-history
+lemma or a concrete failed pattern. No further weighted-budget screens.
+
+The occupation conjecture, the sign of B, arbitrary multi-particle coupling,
+and general signed-renewal invertibility all remain open.
+
+Reproduce: python3 verify_success.py (standard library only).

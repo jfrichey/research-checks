@@ -1,0 +1,1616 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,urlcolor=MidnightBlue]{hyperref}
+\hypersetup{pdftitle={A conservative random-release sandpile: technical companion},pdfauthor={AI-generated working proofs prepared for Jacob Richey},pdfsubject={Model, proofs and verification scope}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Random-release sandpile: technical companion}
+\fancyhead[R]{\small 8 October 2026}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{2em}
+\setlist{nosep,leftmargin=*}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\Stab}{\operatorname{Stab}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Law}{\operatorname{Law}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\KL}{\operatorname{D}}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\status}[1]{\textsf{\textbf{#1}}}
+\title{A conservative random-release sandpile\\\large Technical companion: models and proofs}
+\author{AI-generated working proofs prepared for Jacob Richey}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The original aim is a sandpile whose sites accumulate energy, topple at random rates increasing with energy, and conserve mass during transport. We study an abelian modification: each toppling releases an independent amount in $[1/2,1]$, with threshold $1$ and slow driving. Positive finite rates change the clock but not the spatial avalanche law. Finite-volume stationary sampling and infinite-mean bulk avalanches are established; undirected spatial extinction remains open. On the directed lattice, area has tail order $a^{-1/2}$ and depletion produces a two-sided area cutoff at scale $\varepsilon^{-2}$. A bounded-noise heat equation and a Laplace comparison prove logarithmic depth and total-size tail exponents $3/4$ and $3/7$, and the finite-layer moment spectrum $\max\{0,(7q-3)/4\}$. Under depletion, all depth and size moment exponents are identified, and the cutoff exponents $4/3$ and $7/3$ are located to arbitrary polynomial precision. Conditioning on a long avalanche also identifies joint area, size, flux, and transverse-spread exponents. The size-tail exponent corresponds to the SOC prediction $\tau_s=10/7$. These proofs allow logarithmic corrections and do not identify a pointwise mass function or a limiting scaling function. The specified exponents persist for a class of continuous release laws. On the one-way chain, the mean depleted size is asymptotic to $(37/1944)\varepsilon^{-2}$.
+\end{abstract}
+\noindent\textbf{Provenance and use.} This is an AI-written research record developed from the October 6--8 discussion at Jacob's request. It is not Jacob's verbatim writing, an independently refereed manuscript, or a claim of novelty. Statements marked proved have the arguments given here; named renewal, Palm, and probability inputs remain explicit dependencies. Numerical observations are evidence only. 
+
+\section{Problem, status, and target theorems}\label{sec:frontier}
+
+The original proposal allows a site to send a proportion of its accumulated energy, possibly emptying completely, with a toppling rate increasing in its energy. The main design requirement is that the qualitative avalanche behavior should not depend on the particular rate function. The present model changes the release rule to obtain an abelian structure. It does not prove rate robustness for arbitrary proportional-release or reset models.
+
+We use the following minimal operational SOC target. For finite boxes, slow driving selects a stationary law without adjustment of a density parameter. In a bulk limit, a fixed positive addition should produce an avalanche with
+\begin{equation}\label{eq:soc-target}
+ S<\infty\quad\hbox{almost surely},\qquad \E S=\infty.
+\end{equation}
+This is an initial checkpoint, not the full SOC target. The research program also asks for selection of a critical background, avalanche power laws, growing finite-size cutoffs, scaling relations, and robustness of the exponents. Section~\ref{sec:scaling} records these stronger targets and their present status. A divergence of finite-box means alone does not establish \eqref{eq:soc-target}; that criterion alone does not establish finite-size scaling.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.21\textwidth}>{\raggedright\arraybackslash}p{.57\textwidth}>{\raggedright\arraybackslash}p{.15\textwidth}@{}}
+\toprule
+Status & Result & Location\\\midrule\endhead
+PROVED & Finite stabilization, least action, order independence, and spatial rate invariance & \S\ref{sec:finite}\\
+PROVED MODULO RENEWAL INPUT & Unique finite-volume stationary law and exact sampler & \S\ref{sec:sampler}\\
+PROVED & Stationary Green identity and a polynomial radius lower bound & \S\ref{sec:green}\\
+PROVED USING PALM FORMULA & Backward-stack density, dissipation comparison, and determinant bounds & \S\ref{sec:backward}\\
+PROVED & Stable atomless averaged bulk limits; infinite expected total size & \S\ref{sec:limits}\\
+PROVED & Local fixation after finite input in $d\ge3$ & \S\ref{sec:transient}\\
+OPEN & Almost-sure spatial extinction on the undirected lattice; uniqueness of the bulk limit & \S\ref{sec:open}\\
+PROVED & Directed two-dimensional lattice: finite avalanches, infinite mean, coarse tail bounds & \S\ref{sec:directed}\\
+PROVED & Directed area tail exponent $1/2$; depleted area cutoff scale $\varepsilon^{-2}$ and all area-moment orders & \S\ref{sec:area}--\ref{sec:area-cutoff}\\
+PROVED & Spatial confinement; improved depth lower tail, size-moment bounds, and depleted mean-size lower bound & \S\ref{sec:spatial-bounds}\\
+PROVED & Directed logarithmic depth and size-tail exponents $3/4,3/7$; all finite-layer moment exponents; depleted size exponent $4/3$ & \S\ref{sec:heat-noise}--\ref{sec:lattice-susceptibility}\\
+PROVED & Depleted depth/size cutoff exponents $4/3,7/3$ to polynomial precision; all positive near-critical moment exponents & \S\ref{sec:near-critical-spectrum}\\
+PROVED & Joint geometric exponents conditional on large depth; all conditional finite-layer moment exponents & \S\ref{sec:conditional-geometry}\\
+PROVED & Binary tree calculation and sharper one-way-chain bounds & \S\ref{sec:solvable}\\
+PROVED & One-way-chain size susceptibility: $\varepsilon^2\E S_\varepsilon\to37/1944$ & \S\ref{sec:chain-response}\\
+PROVED / CONDITIONAL & Fixed-energy bounds; loading instability under an invariant ergodic law & \S\ref{sec:loading}\\
+CONDITIONAL / OPEN & Full scaling functions, constant-factor conditional geometry, and exact logarithmic corrections & \S\ref{sec:scaling}\\
+NUMERICAL EVIDENCE & Slow endpoint-reaching decay on finite line segments & \S\ref{sec:numerics}\\
+FAILED & One-toppling backward test and frozen-strength mixture shortcut & \S\ref{sec:failures}\\
+\bottomrule
+\end{longtable}
+
+\section{Precise model and finite-volume foundations}\label{sec:finite}
+
+Let $V\subset\Z^d$ be finite and connected, with the complement identified with a sink. Energies are nonnegative. A site is stable when $E_x<1$ and active when $E_x\ge1$. Presample mutually independent stacks
+\[
+ Q_{x,j}\sim\mathrm{Unif}[1/2,1],\quad j\ge1,\qquad
+ C_x(k)=\sum_{j=1}^k Q_{x,j},\quad C_x(0)=0.
+\]
+At its $j$th toppling, $x$ loses $Q_{x,j}$ and sends $Q_{x,j}/(2d)$ to every nearest neighbor. Mass sent outside $V$ disappears. Because $Q\le1$, a legal toppling leaves the firing site nonnegative. Driving adds $\delta=1/4$ at a prescribed site only after complete stabilization. Other deterministic finite nonnegative additions will also be considered.
+
+Let $P_V(x,y)=1/(2d)$ for neighbors $x,y\in V$, and zero otherwise. Put
+\[
+ B_V=I-P_V,\quad G_V=B_V^{-1},\quad m=\E Q=3/4.
+\]
+For toppling-count vector $n$, the energy vector is
+\begin{equation}\label{eq:stack-balance}
+ E^{(n)}=E^{(0)}-B_V C(n).
+\end{equation}
+For nonsymmetric routing, $P(x,y)$ denotes the fraction sent from $x$ to $y$ and the balance matrix is $B=I-P^{\mathsf T}$. Assume the routing is transient to the sink. The undirected notation suppresses this transpose because $P_V$ is symmetric.
+
+\begin{proposition}[Finite stabilization]\label{prop:finite}
+Every legal toppling sequence has finite length. Complete legal stabilizations have the same count vector and final energies for fixed stacks.
+\end{proposition}
+\begin{proof}
+For general routing let $h=(B^{\mathsf T})^{-1}\ind>0$. The nonnegative potential $W(E)=h\cdot E$ decreases by exactly $Q_{x,j}\ge1/2$ at a toppling. Thus the total number of topplings is at most $2W(E^{(0)})$.
+
+For least action, let $n$ be any count vector for which \eqref{eq:stack-balance} is stable. Consider a legal sequence just before its first attempt to exceed $n$ at a site $x$. Its count at $x$ is $n_x$ and all other counts are at most the corresponding entries of $n$. The site has emitted the same amount as under $n$ and received no more. Its energy is therefore at most $E^{(n)}_x<1$, contradicting legality. Apply this in both directions to two complete stabilizations.
+\end{proof}
+
+The same comparison gives monotonicity of the odometer under an increase of initial energies or enlargement of the dissipative domain, using the same stacks. Final energies themselves need not be monotone. Stabilized addition kernels commute: stabilizing after input $a$ and then $b$ has the same law as stabilizing after $a+b$.
+
+\begin{corollary}[Rate robustness, with its scope]\label{cor:rates}
+Give each active site a finite positive rate $r_x(E_x)$, and give stable sites rate zero. Rates may be increasing and need not be identical. If the clocks use only the revealed state and are independent of unused release instructions, the finite-volume avalanche odometer and final-state law do not depend on the rates.
+\end{corollary}
+\begin{proof}
+The clocks choose a legal order. There are only finitely many topplings, and the waiting time in every nonstable state is almost surely finite. Proposition~\ref{prop:finite} identifies the outcome of every complete order.
+\end{proof}
+This concerns spatial avalanche observables and the chain sampled after avalanches. Physical durations and time-weighted stationary laws can depend on the rates. A finite driving rate during relaxation would define a different model.
+
+\section{Renewal sampler and the stationary law}\label{sec:sampler}
+
+Define the stationary forward-renewal residual density
+\begin{equation}\label{eq:residual}
+ g(u)=\frac{\Prob(Q>u)}m
+ =\begin{cases}4/3,&0<u<1/2,\\(8/3)(1-u),&1/2\le u<1.\end{cases}
+\end{equation}
+Let $D_x$ be independent with density $g$, independent of fresh forward toppling stacks.
+
+\begin{theorem}[Exact finite-volume sampler]\label{thm:sampler}
+The unique stationary law for repeated positive driving at a site that reaches every vertex is
+\begin{equation}\label{eq:sampler}
+ \pi_V=\Law\bigl(\Stab(\ind-B_VD)\bigr).
+\end{equation}
+It is invariant under every deterministic finite nonnegative addition followed by stabilization. The input in \eqref{eq:sampler} is nonnegative.
+\end{theorem}
+\begin{proof}
+Write a sufficiently large initial input as $E=\ind+Ba$, with all $a_x>0$. During a preliminary legal procedure put $z=a-C(n)$ and let $v=B^{-1}\ind>0$. If some $z_x>0$, choose a site maximizing $z_x/v_x$. Writing that maximum as $t>0$ gives
+\[
+ (Bz)_x=z_x-\sum_yP(y,x)z_y
+ \ge t\bigl(v_x-\sum_yP(y,x)v_y\bigr)=t>0.
+\]
+Thus $E_x=1+(Bz)_x>1$ and the next toppling is legal. Stop this preliminary procedure when every $z_x<0$; equality has probability zero. Each coordinate has used its stack exactly until its cumulative release first exceeds $a_x$. The remaining energy is $\ind-BD^{(a)}$, where $D_x^{(a)}$ are independent renewal overshoots over $a_x$. The unused stack tails are independent fresh stacks.
+
+For the bounded continuous release law here, $D_x^{(a)}$ converges in total variation to \eqref{eq:residual} as $a_x\to\infty$. This is the renewal input; a coupling theorem giving a stronger conclusion is \cite{BCF}. One may also use convergence of the renewal density and Scheffe's lemma on the explicit overshoot densities. Subsequent stabilization is a Markov kernel, so it cannot increase total variation distance.
+
+Starting from any stable $\eta$ and adding $n\delta$ at a root $o$ gives
+\[
+ a=B^{-1}(\eta-\ind+n\delta e_o).
+\]
+Every coordinate tends to infinity, uniformly over stable $\eta$, because $B^{-1}e_o$ is strictly positive. Hence repeated root driving converges uniformly in total variation to \eqref{eq:sampler}. This implies uniqueness. If $T_b$ is any other stabilized-addition kernel, commutation gives
+\[
+ \pi_VT_b=\lim_{n\to\infty}\Law(\eta)T_{n\delta e_o}T_b
+ =\lim_{n\to\infty}\Law(\eta)T_bT_{n\delta e_o}=\pi_V.
+\]
+Finally $\ind-BD=\ind-D+P^{\mathsf T}D\ge0$ since $D<1$.
+\end{proof}
+The sampler and invariance also apply when no single site reaches every vertex: use repeated additions at every vertex in the convergence proof. Uniqueness is then asserted for that fully supported driving, not for a drive that leaves some components unreachable. For disconnected induced subgraphs below, $\pi$ denotes the product of these canonical component laws.
+
+For simulation, sample a size-biased release $Q^*$ with density $q\,p_Q(q)/m$, and put $D=UQ^*$ for an independent uniform $U$. In the present case
+\[
+ Q^*=\sqrt{\tfrac14+\tfrac34 U_1},\qquad D=U_2Q^*.
+\]
+Stabilization in \eqref{eq:sampler} must use fresh releases at every toppling. Reusing $Q^*$ forever is an incorrect shortcut; see \S\ref{sec:failures}.
+
+\section{Green identity and a radius lower bound}\label{sec:green}
+
+Start with $\eta\sim\pi_V$, add $\delta e_o$, and let $N_x$ and $M_x=C_x(N_x)$ be the number of topplings and emitted energy. For fixed $V$ the potential bound is deterministic and uniform over stable inputs. Each new release has conditional mean $m$ when it is revealed at a legal toppling, so the reveal-at-toppling martingale gives $\E M_x=m\E N_x$. This is a stopping argument, not conditioning on a prescribed final value of $N_x$.
+
+\begin{proposition}[Exact first moments]\label{prop:green}
+\begin{equation}\label{eq:green}
+ B_V\E M=\delta e_o,\qquad
+ \E N_x=\frac\delta mG_V(x,o),\qquad
+ \E S=\frac\delta m\E_o\tau_{V^c}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Take expectations in $\eta'=\eta+\delta e_o-B_VM$ and use stationarity, then invert $B_V$. Summing the Green function gives the mean exit time.
+\end{proof}
+For $V=[-L,L]^d\cap\Z^d$ and $o=0$, optional stopping of $|X_n|^2-n$ gives
+\[
+ (L+1)^2\le\E_0\tau_{V^c}\le d(L+1)^2.
+\]
+Thus $\E S\asymp L^2$ for every dimension. On the line it is exactly $(L+1)^2/3$.
+
+Let $R$ be the maximum $\ell^\infty$ distance from $o$ of a toppled site, with $R=-1$ for an empty avalanche. Let $B_r(o)\subset V$. On $\{R<r\}$ all transport remains in $B_r(o)$, so its total energy increases by exactly $\delta$. On the complementary event its energy change is at least $-|B_r|$. Stationarity therefore yields
+\begin{equation}\label{eq:radius-lower}
+ \Prob_{\pi_V}(R\ge r)\ge\frac{\delta}{|B_r|+\delta}.
+\end{equation}
+This is a genuine polynomial lower bound, but supplies no upper bound or extinction theorem.
+
+\section{Backward stacks and comparison under dissipation}\label{sec:backward}
+
+For each $x$, let $Q^-_{x,j}$ be independent backward releases with the same law as $Q$, and put $C^-_x(k)=\sum_{j\le k}Q^-_{x,j}$. For $\eta\in(0,1)^V$ define
+\begin{equation}\label{eq:backward-event}
+ \mathcal A_B(\eta,Q^-)=
+ \left\{\nexists k\in\N_0^V\setminus\{0\}:
+ BC^-(k)<\ind-\eta\ \hbox{coordinatewise}\right\},
+ \qquad \Psi_B(\eta)=\Prob(\mathcal A_B(\eta,Q^-)).
+\end{equation}
+This is a simultaneous inverse-toppling test. It does not require the inverse topplings to be legal one at a time.
+
+\begin{theorem}[Stationary density]\label{thm:density}
+The stationary law has Lebesgue density
+\begin{equation}\label{eq:density}
+ p_B(\eta)=\frac{\Psi_B(\eta)}{m^{|V|}\det B},\qquad \eta\in(0,1)^V.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Take independent stationary two-sided renewal point processes $\mathcal R_x$ on $\R$, each of intensity $1/m$. Their first positive points $D_x$ have density $g$, and their subsequent increments are independent copies of $Q$. Applying the sampler amounts to increasing a product-grid point $H\in\prod_x\mathcal R_x$, starting at $D$, until $\eta=\ind-BH$ is stable. Least action says that the selected point is the coordinatewise least positive product-grid point with $BH>0$.
+
+Consider a candidate grid point $H$ with $\eta=\ind-BH\in(0,1)^V$. If it is not selected, the least point is a strictly smaller point $H'=H-C^-(k)$ for some nonzero $k$. Its stability is equivalent to $BC^-(k)<\ind-\eta$. Conversely any such vector gives $BH'>0$, and hence $H'>0$ because $B^{-1}\ge0$; it contradicts selection of $H$. Thus selection is exactly \eqref{eq:backward-event}.
+
+The product Campbell--Palm formula has intensity $m^{-|V|}\,dH$. At a Palm grid point the successive backward gaps are independent with law $Q$. Changing variables from $H$ to $\eta=\ind-BH$ has Jacobian $(\det B)^{-1}$. There is exactly one selected point, so integrating its location gives \eqref{eq:density}. This uses the ordinary Campbell formula for independent stationary renewal processes; no spanning-tree representation is being assumed.
+\end{proof}
+
+The test is finite for every fixed $\eta$: an admissible vector satisfies
+\[
+ C^-(k)<B^{-1}(\ind-\eta),\qquad
+ k_x<2[B^{-1}(\ind-\eta)]_x.
+\]
+The strict inequalities and threshold equalities are harmless on null sets, but should be retained in implementations.
+
+\subsection{Dissipation comparison}
+If $B'\ge B$ entrywise is obtained by reducing transport, then $\mathcal A_B\subset\mathcal A_{B'}$. On the enlarged space of energies and backward stacks, let the reference measure be Lebesgue measure on $(0,1)^V$ times the independent stack law. Formula~\eqref{eq:density} says that conditioning on $\mathcal A_B$ gives an extension of $\pi_B$, with normalization $m^{|V|}\det B$. Consequently
+\begin{equation}\label{eq:conditioning}
+ \widehat\pi_B=\widehat\pi_{B'}(\,\cdot\mid\mathcal A_B),\qquad
+ \widehat\pi_{B'}(\mathcal A_B)=\frac{\det B}{\det B'},\qquad
+ \pi_B\le\frac{\det B'}{\det B}\pi_{B'}.
+\end{equation}
+The total variation distance of the extended measures is exactly $1-\det B/\det B'$. For their energy projections this only supplies an upper bound; equality must not be claimed.
+
+Write
+\begin{equation}\label{eq:f}
+ f(e)=g(1-e)=\begin{cases}(8/3)e,&0<e<1/2,\\4/3,&1/2\le e<1.\end{cases}
+\end{equation}
+Cut all outgoing transport from $A\subset V$. In block form the cut matrix is
+\[
+ B'=\begin{pmatrix}I&-P_{V\setminus A\to A}\\0&B_{V\setminus A}\end{pmatrix}.
+\]
+Its backward condition factors into $Q^-_{x,1}\ge1-\eta_x$ for $x\in A$ and the backward condition on $V\setminus A$. Hence $\pi_{B'}=f^{\otimes A}\otimes\pi_{V\setminus A}$. Jacobi's determinant identity gives
+\begin{equation}\label{eq:local-cut}
+ \pi_V(d\eta)\le\det G_V[A,A]\,
+ f^{\otimes A}(d\eta_A)\,\pi_{V\setminus A}(d\eta_{V\setminus A}).
+\end{equation}
+In particular
+\begin{equation}\label{eq:global-density-bound}
+ p_V(\eta)\le\frac{\prod_{x\in V}f(\eta_x)}{\det B_V},\qquad
+ p_{V,x}(e)\le G_V(x,x)f(e).
+\end{equation}
+The first inequality also follows by excluding inverse topplings supported at a single site. These are density comparisons, not assertions of stochastic domination or positive association.
+
+\subsection{Determinants and an older, weaker bound}
+Put
+\begin{equation}\label{eq:cd}
+ c_d=\sum_{k\ge1}\frac{\Prob_0(X_k=0)}k,\qquad \gamma_d=e^{-c_d}>0.
+\end{equation}
+The return probability is $O(k^{-d/2})$, so $c_d<\infty$ even for $d=1,2$. Expansion of the logarithmic determinant yields
+\begin{equation}\label{eq:det-bound}
+ -\log\det B_V=\sum_{k\ge1}\frac{\operatorname{tr}P_V^k}k
+ \le |V|c_d,\qquad \det B_V\ge\gamma_d^{|V|}.
+\end{equation}
+Here $\gamma_1=1/2$ and $\gamma_2=e^{4\mathrm{Catalan}/\pi}/4\simeq0.8024780752$.
+The elementary bound $\Psi\le1$ already gives
+\[
+ \Prob_{\pi_V}\left(\frac1{|V|}\sum_x\eta_x\ge1-\varepsilon\right)
+ \le\frac{(\varepsilon|V|)^{|V|}}{|V|!\,m^{|V|}\det B_V}
+ \le\left(\frac{e\varepsilon}{m\gamma_d}\right)^{|V|}.
+\]
+The comparison with $f^{\otimes V}$ is stronger and is the one to use below. The monotonicity of $\Psi$ in each energy does imply stochastic domination of independent uniform $[0,1]$ energies, by sequential conditional distributions, but does not imply association.
+
+\section{Averaged bulk limits and infinite susceptibility}\label{sec:limits}
+
+Let $V_L=[-L,L]^d\cap\Z^d$. Independently of $\eta\sim\pi_{V_L}$ choose $U_L$ uniformly in $V_L$, extend $\eta$ by zero outside $V_L$, and view $\eta$ from $U_L$. Denote this rooted law by $\bar\pi_L$. Compactness of $[0,1]^{\Z^d}$ gives subsequential limits. The boundary-to-volume ratio shows that every such limit is translation invariant. This construction averages the root; it does not establish convergence of the laws viewed from the exact center in recurrent dimensions.
+
+\begin{theorem}[Entropy and absolute continuity]\label{thm:entropy}
+Every subsequential limit $\nu$ of $\bar\pi_L$ satisfies, for every finite $A\subset\Z^d$,
+\begin{equation}\label{eq:local-entropy}
+ \KL(\nu_A\Vert f^{\otimes A})\le |A|c_d.
+\end{equation}
+In particular all finite-dimensional marginals are absolutely continuous, and $\eta_x<1$ almost surely at every site.
+\end{theorem}
+\begin{proof}
+Equation~\eqref{eq:global-density-bound} gives
+\[
+ \KL(\pi_{V_L}\Vert f^{\otimes V_L})\le-\log\det B_{V_L}\le|V_L|c_d.
+\]
+Let $I_L=\{u:u+A\subset V_L\}$. The relative-entropy chain rule gives the packing inequality
+\[
+ \sum_{u\in I_L}\KL((\pi_{V_L})_{u+A}\Vert f^{\otimes(u+A)})
+ \le |A|\KL(\pi_{V_L}\Vert f^{\otimes V_L}).
+\]
+For completeness, order the coordinates of $V_L$. A conditional relative-entropy contribution for one coordinate can only increase when more preceding coordinates are conditioned on, by nonnegativity of conditional mutual information. Bound each marginal chain-rule contribution by the corresponding full one. Each coordinate occurs in at most $|A|$ translated sets, proving the displayed inequality.
+
+By convexity, the entropy of the average of these marginals is at most $|A|c_d|V_L|/|I_L|$. The omitted boundary roots have vanishing proportion, and $|I_L|/|V_L|\to1$. Lower semicontinuity of relative entropy under weak convergence proves \eqref{eq:local-entropy}. Absolute continuity follows because the entropy is finite.
+\end{proof}
+
+For $0<\varepsilon\le1/2$, the reference probability of $[1-\varepsilon,1]$ is $q=4\varepsilon/3$. Binary relative entropy implies
+\begin{equation}\label{eq:threshold-bound}
+ \nu(\eta_0\ge1-\varepsilon)
+ \le \min\left\{1,\frac{c_d+\log2}{\log(3/(4\varepsilon))}\right\}.
+\end{equation}
+This is a uniform estimate at a typical bulk site; it is too weak by itself to imply avalanche extinction.
+
+The moment-generating function of $f$ is
+\[
+ M_f(t)=\int_0^1e^{te}f(e)\,de
+ =\frac{te^t-2e^{t/2}+2}{(3/4)t^2},\quad t\ne0.
+\]
+The entropy variational inequality gives
+\begin{equation}\label{eq:mean-bound}
+ \E_\nu\eta_0\le\inf_{t>0}\frac{c_d+\log M_f(t)}t.
+\end{equation}
+In $d=2$, taking $t=3$ gives an upper bound $0.762106$; numerical minimization gives approximately $0.7619875$. In $d=1$ numerical minimization gives approximately $0.8609214$. These are upper bounds, not computed stationary densities. In finite volume the same comparison gives the explicit Chernoff estimate
+\[
+ \Prob_{\pi_V}\left(|V|^{-1}\sum_x\eta_x\ge u\right)
+ \le\exp\{-|V|[tu-\log M_f(t)-c_d]\},\quad t>0.
+\]
+
+\subsection{Finite exploration and passage to the limit}\label{sec:continuity}
+Fix a finite box $W$, a finite input supported in $W$, and toppling stacks. For stable initial energies the potential bound gives a deterministic upper bound on the number of legal topplings inside $W$. Choose a fixed deterministic legal scheduling rule. Changes in its finite trajectory can occur only when one of finitely many affine threshold comparisons is an equality. Under a law with absolutely continuous finite marginals and independent fresh stacks, these equalities have probability zero. Finite-volume odometers and the stabilized energies are therefore almost surely continuous functions of the initial configuration and the finitely many stack entries used.
+
+For a single addition at the root, the event $\{R\ge r\}$ is exactly the event that the avalanche restricted to $B_r$ topples a boundary site. Before the first such toppling, the initially stable exterior cannot have toppled or sent energy back. Hence the event is a finite exploration. Along any sequence defining $\nu$,
+\begin{equation}\label{eq:radius-local-limit}
+ \Prob_\nu(R\ge r)
+ =\lim_{L\to\infty}\frac1{|V_L|}
+ \sum_{o\in V_L}\Prob_{\pi_{V_L}}(R_{L,o}\ge r)
+\end{equation}
+for each fixed $r$, with negligible boundary-root corrections. Infinite-volume odometers are defined by increasing finite-domain stabilization; $S$ and $R$ may be infinite. If $R<\infty$, finite-volume stabilization implies $S<\infty$ as well. Equation~\eqref{eq:radius-lower} passes to these limits.
+
+\begin{lemma}[Invariance if avalanches are finite]\label{lem:conditional-invariance}
+If the avalanche after a fixed finite input under $\nu$ has finite support almost surely, its stabilized output has law $\nu$.
+\end{lemma}
+\begin{proof}
+Approximate stabilization by stabilization in $B_r$. Finite exploration convergence applies for each fixed $r$. On $\{R<r\}$ this agrees with full stabilization. Equation~\eqref{eq:radius-local-limit}, and its finite-input version, make the error probabilities converge to the corresponding limiting tail. Let $r\to\infty$. In every finite box the final configuration has the original stationary law, even conditional on the chosen drive site. Thus all bounded continuous cylinder tests of the limiting output equal their expectations under $\nu$.
+\end{proof}
+
+\begin{theorem}[Infinite mean without an extinction assumption]\label{thm:infinite-mean}
+For every averaged bulk limit $\nu$ and every fixed $\delta>0$ added at the origin,
+\begin{equation}\label{eq:infinite-mean}
+ \E_\nu S=\infty.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Suppose $\E S<\infty$. Then the avalanche is finite almost surely, so Lemma~\ref{lem:conditional-invariance} implies $\eta'\sim\nu$. Let $M_x$ be its emitted mass. Since $Q\le1$, $\sum_xM_x\le S$. The conservative infinite-lattice balance is
+\[
+ \eta'-\eta=\delta e_0-(I-P)M.
+\]
+Moreover $\sum_x|\eta'_x-\eta_x|\le\delta+2\sum_xM_x$ is integrable. Fubini and stationarity give zero for the expected sum of changes, whereas pathwise conservation gives $\delta$. This contradiction proves the claim.
+\end{proof}
+This excludes a finite-mean bulk avalanche law. It permits both finite avalanches with infinite mean and a positive probability of infinite avalanches. The latter possibility is not excluded by calling the first moment a susceptibility.
+
+\section{Local fixation in transient dimensions}\label{sec:transient}
+
+\begin{theorem}\label{thm:local-fixation}
+Let $d\ge3$ and let $\nu$ be an averaged bulk limit. For a fixed finite nonnegative input $a$, its infinite-volume odometer satisfies
+\begin{equation}\label{eq:local-fixation}
+ \E_\nu N(x)\le\frac1m\sum_z a_zG_{\Z^d}(x,z)<\infty.
+\end{equation}
+In particular each site topples finitely many times almost surely.
+\end{theorem}
+\begin{proof}
+Stabilize only in a fixed finite domain $W$. Least action bounds this odometer by the full finite-box odometer whenever the translated $W$ is inside $V_L$. The Green identity gives the expectation bound with $G_{V_L}\le G_{\Z^d}$. Finite-exploration continuity and the deterministic finite-domain bound permit passage to $\nu$. Finally increase $W$ to $\Z^d$ and use monotone convergence of the odometers. Transience makes the right-hand side finite. Once the counts at a site and its neighbors have reached their finite limits, their energy balance is the same as in a sufficiently large finite stabilization, so the limiting configuration is stable.
+\end{proof}
+For $d\ge3$, \eqref{eq:local-cut} also bounds every fixed marginal by a finite constant times $f^{\otimes A}$, uniformly in the box. Hence arbitrary centered local subsequential limits are stable and absolutely continuous; the same proof applies to them without root averaging.
+
+Local fixation does not bound the number of visited sites. The theorem does not establish that the minimal infinite-volume stabilization preserves $\nu$ when its support is infinite. In particular, an interchange of terminal time and volume cannot be justified just from bounded first moments of $N(x)$.
+
+\section{The precise undirected gap}\label{sec:open}
+
+The main open estimate is
+\begin{equation}\label{eq:Ubar}
+ \lim_{r\to\infty}\limsup_{L\to\infty}
+ \frac1{|V_L|}\sum_{o\in V_L}
+ \Prob_{\pi_{V_L}}(R_{L,o}(\delta)\ge r)=0.
+ \tag{$\overline{\mathrm U}$}
+\end{equation}
+Together with \S\ref{sec:limits}, it implies \eqref{eq:soc-target} in every averaged bulk limit and invariance under the specified addition. Translation invariance gives the same conclusion at every site. Any finite input is bounded above by finitely many $\delta$-additions at finitely many sites. Perform those additions successively; each starts with law $\nu$, so their combined avalanche is finite almost surely. Odometer monotonicity handles the smaller prescribed input, and Lemma~\ref{lem:conditional-invariance} then proves invariance for that input as well.
+
+An earlier, stronger target was
+\[
+ F(r)=\sup_{L\ge4r}\ \sup_{o\in B_{\lfloor L/2\rfloor}}
+ \Prob_{\pi_{V_L}}(R_{L,o}(\delta)\ge r)\longrightarrow0.
+ \tag{U}
+\]
+It handles centered bulk subsequences. Under (U), adding an independent uniform amount $u\in[0,\delta]$ at $x$ yields another useful regularity estimate. On the event that the $\delta$-avalanche stays inside $B_r(x)$, all smaller-input odometers do also. There are at most $K_r+1$ successive count vectors as $u$ increases, where the potential bound gives $K_r\le C_dr^{d+2}$. For each count vector, final energy at $x$ is $u$ plus a constant. Stationarity therefore gives, for an interval $I$,
+\[
+ \pi_{V_L}(\eta_x\in I)\le (K_r+1)|I|/\delta+F(r).
+\]
+In particular $F(r)\le Cr^{-\kappa}$ would give a modulus of order $|I|^{\kappa/(d+2+\kappa)}$. This remains useful conditionally, but is no longer needed to construct atomless averaged limits.
+
+Neither (U) nor \eqref{eq:Ubar} has been proved. A unique bulk limit, translation invariance of a centered limit in recurrent dimensions, sharp avalanche exponents, and equality with an independently defined fixed-energy critical density also remain open. The density conjecture cannot be imported from another sandpile model; even classical sandpiles can violate such identifications \cite{FLW}.
+
+\section{A directed lattice with merging}\label{sec:directed}
+
+This is a different geometry, retained as a successful tractable model. On $\Z^2$, a toppling at $x$ sends $Q/2$ to $x+e_1$ and $x+e_2$. Layers are indexed by $x_1+x_2$. Distinct branches can merge. Start with independent energies of density $f$ in \eqref{eq:f} and add $\delta=1/4$ at the origin.
+
+\subsection{Single-site renewal response and product stationarity}
+Let $M(A)$ be the emitted mass from one site with initial energy $\eta\sim f$ after deterministic input $A\ge0$, using a fresh release stack. If $\eta'$ is its final energy, stationary renewal residuals give
+\begin{equation}\label{eq:single-response}
+ \eta'\sim f,\qquad M(A)=A+\eta-\eta',\qquad
+ \E M(A)=A,\qquad |M(A)-A|\le1.
+\end{equation}
+Indeed $1-\eta$ is the forward residual of a stationary renewal process. Moving its observation point by $A$ leaves the residual law unchanged. The initial and final energies are not asserted independent.
+
+On any finite directed acyclic graph, process vertices in topological order. Conditional on all upstream energies, releases, and emitted masses, a site's total input is determined but its own initial energy and stack remain fresh. Equation~\eqref{eq:single-response} makes its final energy have law $f$ independently of everything upstream. Induction proves product stationarity. On a forward cone reachable from the drive root, Theorem~\ref{thm:sampler} also gives uniqueness and convergence from empty input.
+
+The mean and variance of this one-site law are
+\[
+ \E_f\eta=\frac{11}{18},\qquad \Var_f(\eta)=\frac{37}{648}.
+\]
+Let $v(A)=\Var M(A)$. Then $v$ is continuous, positive for $A>0$, bounded above by $1$, and
+\begin{equation}\label{eq:variance-floor}
+ v(A)\longrightarrow2\Var_f(\eta)=\frac{37}{324}\quad(A\to\infty),
+ \qquad v_*:=\inf_{A\ge1/4}v(A)>0.
+\end{equation}
+Here continuity follows by almost-sure continuity away from renewal points and bounded centered increments. Positivity follows because, on the event of at least one toppling, the emitted sum has a nondegenerate continuous distribution. Renewal mixing makes the residual at a distant observation point asymptotically independent of the initial residual, proving the limit and then the positive infimum. For $A\le1/2$, at most one toppling occurs and
+\[
+ v(A)=\frac79 A-A^2,\qquad v(1/4)=\frac{19}{144}.
+\]
+
+\subsection{The layer martingale}
+Let $Z_0=\delta$, and let $Z_{n+1}$ be the total mass emitted by layer $n$. If $J_n$ sites receive positive input in that layer, each positive input is at least $1/4$, so $J_n\le4Z_n$. Conditional on the previous layers, the single-site responses are independent. Equations~\eqref{eq:single-response}--\eqref{eq:variance-floor} imply
+\begin{align}
+ \E(Z_{n+1}\mid\mathcal F_n)&=Z_n,\label{eq:layer-martingale}\\
+ v_*\ind_{\{Z_n>0\}}\le\Var(Z_{n+1}\mid\mathcal F_n)&\le J_n\le4Z_n,\label{eq:layer-variance}\\
+ Z_{n+1}&\le Z_n+J_n\le5Z_n.\label{eq:layer-overshoot}
+\end{align}
+Let $D$ be the number of nonempty toppling layers. For $n\ge1$, $\{D\ge n\}=\{Z_n>0\}$. This is a spatial depth, not an elapsed-time duration.
+
+\begin{theorem}[Directed SOC and coarse tails]\label{thm:directed}
+There are positive constants $c,C$ such that
+\begin{equation}\label{eq:directed-tails}
+ \frac cn\le\Prob(D\ge n)\le\frac C{\sqrt n},\qquad
+ \frac c{\sqrt s}\le\Prob(S\ge s)\le\frac C{s^{1/3}}.
+\end{equation}
+In particular $S<\infty$ almost surely and $\E S=\infty$. A cone containing $L$ toppling layers has $\E S_L=L\delta/m=L/3$.
+\end{theorem}
+\begin{proof}
+Fix $H>\delta$ and stop at $\tau_H=\inf\{n:Z_n=0\text{ or }Z_n\ge H\}$. The stopped process is bounded by $5H$. Its second-moment identity and \eqref{eq:layer-variance} give
+\[
+ v_*\E(\tau_H\wedge n)
+ \le\E Z_{\tau_H\wedge n}^2-\delta^2\le5H\delta.
+\]
+Thus $\E\tau_H\le5H\delta/v_*$. Bounded optional stopping and the overshoot bound show
+\begin{equation}\label{eq:hitH}
+ \frac\delta{5H}\le\Prob(Z_{\tau_H}\ge H)\le\frac\delta H.
+\end{equation}
+It follows that
+\[
+ \Prob(D\ge n)\le\frac\delta H+\frac{5H\delta}{v_*n}.
+\]
+Take $H$ of order $\sqrt n$ for the upper tail and extinction. Conversely, $\E Z_n=\delta$ and $\E Z_n^2\le\delta^2+4\delta n$, so Cauchy--Schwarz gives
+\[
+ \Prob(Z_n>0)\ge\frac{\delta^2}{\delta^2+4\delta n}.
+\]
+
+The expected number of topplings in each layer is $\delta/m$, by the same reveal martingale as in \S\ref{sec:green}. Thus $\E S_L=L\delta/m$ and $\E S=\infty$. If $S_n$ counts only the first $n$ layers,
+\[
+ \Prob(S>s)\le\Prob(D>n)+\Prob(S_n>s)
+ \le Cn^{-1/2}+\frac{n\delta}{ms}.
+\]
+Taking $n$ of order $s^{2/3}$ proves the size upper bound.
+
+For the lower bound, on hitting $H$ the flux is some $z\in[H,5H]$. For the next $k$ layers, the martingale variance is at most $4zk$. Doob's inequality bounds the probability of a deviation of at least $z/2$ by $16k/z$. Choose $k=\lfloor H/64\rfloor$. With conditional probability at least $3/4$, flux stays above $H/2$ for those layers. Since a toppling emits at most one unit, the avalanche then has at least $H^2/256$ topplings for $H\ge128$. Combine this with \eqref{eq:hitH} and take $H$ of order $\sqrt s$.
+\end{proof}
+These coarse bounds are inputs, not the final exponents. Sections~\ref{sec:spatial-bounds}--\ref{sec:heat-noise} sharpen them to matching logarithmic exponents using the present model's bounded-noise structure. The layer-flux approach has a clear precedent in \cite{KMT}; no equivalence with that paper's different toppling rule is assumed.
+
+\subsection{An exploration by receiving sites: the area exponent}\label{sec:area}
+Let $\mathcal A$ be the number of distinct sites that topple, and let $I$ count all sites that receive positive input, including the root even when it does not topple. Since every other receiving site is a child of a toppled site,
+\begin{equation}\label{eq:area-comparison}
+ \mathcal A\le I\le1+2\mathcal A.
+\end{equation}
+Neither variable counts repeated topplings at a site.
+
+Explore in layer order, and in a deterministic order within each layer. Process a receiving site only after its complete input $A$ has arrived. Reveal its independent initial energy and release stack, stabilize it, and place its emitted mass at the children. Unprocessed inputs in the current and next layer form a frontier. Write $W_k$ for their total mass after $k$ receiving sites have been processed, with $W_0=\delta$. Stop when the frontier is empty; its stopping index is exactly $I$.
+
+At each step before $I$, the selected site's input $A_k$ is known, satisfies $A_k\ge1/4$, and is independent of that site's unrevealed energy and stack. Thus
+\begin{equation}\label{eq:frontier-martingale}
+ W_{k+1}-W_k=M(A_k)-A_k,\qquad
+ |W_{k+1}-W_k|\le1,
+\end{equation}
+and, for the exploration filtration $\mathcal G_k$,
+\begin{equation}\label{eq:frontier-variance}
+ \E(\Delta W_k\mid\mathcal G_k)=0,\qquad
+ v_*\le\E((\Delta W_k)^2\mid\mathcal G_k)\le1
+ \quad(k<I).
+\end{equation}
+The frontier stays nonnegative: the step replaces one pending input by a nonnegative output. Extend it by zero after $I$. Processing a receiving site with no toppling still counts as one step. This is essential to the variance bound. Freshness follows from the directed acyclic geometry; this construction does not apply to returns on the undirected lattice.
+
+\begin{theorem}[Sharp directed area tail]\label{thm:area-tail}
+There are $0<c<C<\infty$ such that for all sufficiently large $a$,
+\begin{equation}\label{eq:area-tail}
+ c a^{-1/2}\le\Prob(I\ge a)\le C a^{-1/2},\qquad
+ c a^{-1/2}\le\Prob(\mathcal A\ge a)\le C a^{-1/2}.
+\end{equation}
+Consequently $\lim_{a\to\infty}\log\Prob(\mathcal A\ge a)/\log a=-1/2$ and, for $p>0$, $\E\mathcal A^p<\infty$ exactly when $p<1/2$.
+\end{theorem}
+\begin{proof}
+For $H>\delta$ stop at $\sigma_H=\inf\{k:W_k=0\text{ or }W_k\ge H\}$. The stopped process is bounded by $H+1$. The second-moment identity gives
+\[
+ v_*\E(\sigma_H\wedge n)
+ \le\E W_{\sigma_H\wedge n}^2-\delta^2
+ \le(H+1)\delta.
+\]
+Hence $\sigma_H$ is integrable. Bounded optional stopping yields
+\[
+ \frac\delta{H+1}\le\Prob(W_{\sigma_H}\ge H)\le\frac\delta H,
+ \qquad \E\sigma_H\le\frac{(H+1)\delta}{v_*}.
+\]
+If $I>n$, either the process hits $H$ or $\sigma_H>n$. Taking $H\asymp\sqrt n$ proves the upper bound and, in particular, $I<\infty$ almost surely.
+
+Conditional on hitting $H$, the current mass $z$ lies in $[H,H+1]$. For the next $k=\lfloor H^2/4\rfloor$ exploration steps, the martingale stopped at extinction has expected quadratic variation at most $k$. Doob's inequality makes the probability of a downward displacement of size $z$ at most $k/z^2\le1/4$. Thus, with conditional probability at least $3/4$, at least $k$ further sites are processed. Combining this with the lower hitting probability gives $\Prob(I\ge k)\ge3\delta/[4(H+1)]$. Choose $H$ of order $\sqrt a$ and use \eqref{eq:area-comparison}.
+\end{proof}
+This identifies a tail exponent, not a pointwise mass-function asymptotic or regular variation. If a smooth mass-function power law exists, its area exponent is $\tau_{\mathcal A}=3/2$. Theorem~\ref{thm:size-exponent} identifies the distinct total-toppling tail exponent below.
+
+\subsection{Depleting the directed background}\label{sec:depletion}
+Replace every initial energy by $(\eta_x-\varepsilon)_+$, keeping the same independent $\eta_x\sim f$.
+
+\begin{lemma}[Uniform loss per receiving site]\label{lem:depletion-response}
+For $0<\varepsilon\le1/4$ and $A\ge1/4$, define
+\[
+ b_\varepsilon(A)=A-\E M_\varepsilon(A),\qquad
+ d_\varepsilon=\varepsilon-4\varepsilon^2/3.
+\]
+Then $d_\varepsilon\le b_\varepsilon(A)\le\varepsilon$ and $|M_\varepsilon(A)-A|\le1$. Uniformly over $A\ge1/4$ as $\varepsilon\downarrow0$,
+\begin{equation}\label{eq:depleted-variance}
+ v_\varepsilon(A):=\Var M_\varepsilon(A)
+ =v(A-\varepsilon)+O(\varepsilon^2).
+\end{equation}
+In particular $v_\varepsilon(A)\ge c_0>0$ for every sufficiently small $\varepsilon$, uniformly in $A\ge1/4$.
+\end{lemma}
+\begin{proof}
+First omit clipping. Starting at $\eta-\varepsilon$ with input $A$ is equivalent to starting at $\eta$ with nonnegative input $A-\varepsilon$; its mean emission is $A-\varepsilon$. Clipping changes the total input only when $\eta<\varepsilon$, an event of probability $4\varepsilon^2/3$. It increases input by less than $\varepsilon<1/2$ (the endpoint causes no problem), so it changes the number of topplings by at most one and the emitted mass by at most one. This proves the two drift bounds. Initial and final energies are in $[0,1)$, so conservation gives the increment bound. The same coupling changes the centered first and second moments by $O(\varepsilon^2)$, proving \eqref{eq:depleted-variance}. For $\varepsilon\le1/8$, the arguments $A-\varepsilon$ are at least $1/8$; continuity, positivity, and the positive limit of $v$ give the final assertion.
+\end{proof}
+
+\begin{proposition}\label{prop:depletion}
+For $0<\varepsilon\le1/4$, set $d_\varepsilon=\varepsilon-4\varepsilon^2/3\ge2\varepsilon/3$. The depleted directed model satisfies
+\begin{equation}\label{eq:depleted-mean}
+ \E S_\varepsilon\le\frac{2\delta^2}{d_\varepsilon}
+ +\frac{2\delta}{d_\varepsilon^2}=O(\varepsilon^{-2}).
+\end{equation}
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{lem:depletion-response}, for a layer with incoming flux $z$ and $b=z-\E(Z'\mid\mathcal F)$ we have $b\ge d_\varepsilon J$, $0\le b\le z$, and $\Var(Z'\mid\mathcal F)\le J$. For $V(z)=z^2+z/d_\varepsilon$,
+\[
+ \E[V(Z')-V(z)\mid\mathcal F]
+ \le-2zb+b^2+J-b/d_\varepsilon
+ \le-zb\le-d_\varepsilon z\ind_{\{z>0\}}.
+\]
+Summing gives $\E\sum_nZ_n\le V(\delta)/d_\varepsilon$. Every toppling emits at least $1/2$, so $S_\varepsilon\le2\sum_nZ_{n+1}$, which proves the claim. For larger $\varepsilon$, use monotonicity against $\varepsilon=1/4$.
+\end{proof}
+
+\begin{theorem}[Area susceptibilities]\label{thm:area-susceptibility}
+Let $I_\varepsilon$ and $\mathcal A_\varepsilon$ be the receiving-site count and toppled-site count in the depleted directed model. Then
+\begin{equation}\label{eq:area-susceptibility}
+ \frac\delta\varepsilon\le\E I_\varepsilon\le\frac\delta{d_\varepsilon},
+ \qquad \varepsilon\E I_\varepsilon\longrightarrow\delta,
+ \qquad \E\mathcal A_\varepsilon\asymp\varepsilon^{-1}.
+\end{equation}
+Moreover, as $\varepsilon\downarrow0$,
+\begin{equation}\label{eq:area-second-moment}
+ \E I_\varepsilon^2\asymp\varepsilon^{-3},\qquad
+ \E\mathcal A_\varepsilon^2\asymp\varepsilon^{-3},\qquad
+ \frac{\E\mathcal A_\varepsilon^2}{\E\mathcal A_\varepsilon}
+ \asymp\varepsilon^{-2}.
+\end{equation}
+These are proved moment laws; the last ratio does not by itself establish a full cutoff scaling function.
+\end{theorem}
+\begin{proof}
+Use the same frontier exploration and put $\tau=I_\varepsilon$. Before $\tau$, its increments have mean $-b_k$, with $d_\varepsilon\le b_k\le\varepsilon$, absolute value at most one, and conditional variance $v_k\in[c_0,1]$ for small $\varepsilon$.
+For finite $n$, the first-moment identity gives
+\[
+ d_\varepsilon\E(\tau\wedge n)\le\delta-\E W_n\le\varepsilon\E(\tau\wedge n).
+\]
+Hence $\E\tau\le\delta/d_\varepsilon$. Since $W_n\le\delta+\tau$ and $W_n\to0$ almost surely, dominated convergence gives
+\begin{equation}\label{eq:frontier-loss-budget}
+ \delta=\E\sum_{k<\tau}b_k,
+\end{equation}
+which proves \eqref{eq:area-susceptibility} using \eqref{eq:area-comparison}.
+
+Set $H_\varepsilon=\E\sum_{k<\tau}W_k$. The stopped square identity and $W_n^2\ge0$ give
+\[
+ 2d_\varepsilon\E\sum_{k<n\wedge\tau}W_k
+ \le\delta^2+(1+\varepsilon^2)\E\tau.
+\]
+Thus $H_\varepsilon=O(\varepsilon^{-2})$. From any revealed frontier, the same loss-budget argument bounds the conditional mean remaining lifetime between $W_k/\varepsilon$ and $W_k/d_\varepsilon$. Tonelli's theorem and the identity
+$\tau^2=\sum_{k<\tau}\{2(\tau-k)-1\}$ therefore imply
+\begin{equation}\label{eq:lifetime-second}
+ \frac{2H_\varepsilon}{\varepsilon}-\E\tau
+ \le\E\tau^2\le\frac{2H_\varepsilon}{d_\varepsilon}-\E\tau<\infty.
+\end{equation}
+Now $W_n^2\le(\delta+\tau)^2$ permits dominated convergence in the square identity, giving
+\begin{equation}\label{eq:frontier-square-budget}
+ 2\E\sum_{k<\tau}W_kb_k
+ =\delta^2+\E\sum_{k<\tau}(v_k+b_k^2).
+\end{equation}
+Its right side is at least $c_0\E\tau$, so $H_\varepsilon\ge c_0\E\tau/(2\varepsilon)\asymp\varepsilon^{-2}$. Equation~\eqref{eq:lifetime-second} proves $\E\tau^2\asymp\varepsilon^{-3}$. The pathwise area comparison transfers both moment orders to $\mathcal A_\varepsilon$.
+\end{proof}
+
+\subsection{A two-sided depleted area cutoff}\label{sec:area-cutoff}
+The moment ratio in Theorem~\ref{thm:area-susceptibility} can now be upgraded to a distributional bound. Constants in this subsection are independent of $n$ and of sufficiently small positive $\varepsilon$.
+
+\begin{theorem}[Area cutoff and moment spectrum]\label{thm:area-cutoff}
+There are $c,C,\varepsilon_0>0$ such that, for $0<\varepsilon\le\varepsilon_0$ and integers $n\ge1$,
+\begin{equation}\label{eq:area-cutoff}
+ c n^{-1/2}e^{-C\varepsilon^2 n}
+ \le\Prob(I_\varepsilon\ge n)
+ \le C n^{-1/2}e^{-c\varepsilon^2 n}.
+\end{equation}
+The same bounds, with possibly different constants, hold for $\mathcal A_\varepsilon$. Consequently, for each fixed $q>0$,
+\begin{equation}\label{eq:area-moment-spectrum}
+ \E\mathcal A_\varepsilon^q\asymp
+ \begin{cases}
+ \varepsilon^{-(2q-1)},&q>1/2,\\
+ \log(1/\varepsilon),&q=1/2.
+ \end{cases}
+\end{equation}
+For $0<q<1/2$, $\E\mathcal A_\varepsilon^q\to\E\mathcal A^q<\infty$. All these statements also hold with $I$ in place of $\mathcal A$.
+\end{theorem}
+\begin{proof}
+Write $\tau=I_\varepsilon$, $d=d_\varepsilon$, and use the depleted frontier $W$. Its increments before extinction satisfy
+\[
+ |\Delta W_k|\le1,\qquad
+ \E(\Delta W_k\mid\mathcal G_k)=-b_k,\qquad
+ d\le b_k\le\varepsilon,\qquad
+ c_0\le\Var(\Delta W_k\mid\mathcal G_k)\le1.
+\]
+Extend $b_k$ and the increments by zero after extinction. These bounds apply after any revealed exploration history; no Markov property for $W$ alone is assumed. Coupling the depleted and critical backgrounds with the same energies and stacks gives $\tau\le I$ by odometer monotonicity. Thus
+\begin{equation}\label{eq:depleted-area-polynomial-upper}
+ \Prob(\tau>n)\le C(n+1)^{-1/2}.
+\end{equation}
+
+\emph{Upper bound.} Put $\lambda=d/2$, decreasing $\varepsilon_0$ so that $\lambda\le1/8$. Taylor's inequality for $|\Delta W|\le1$ gives, while alive,
+\[
+ \E(e^{\lambda\Delta W}\mid\mathcal G)
+ \le1-\lambda d+\lambda^2\le1-d^2/4.
+\]
+Hence $e^{\lambda W_k}-1$ is a nonnegative supermartingale. Stopping at the first visit to $[h,\infty)$ gives
+\begin{equation}\label{eq:exponential-frontier-hit}
+ \Prob\bigl(\sup_k W_k\ge h\bigr)
+ \le\frac{e^{\lambda\delta}-1}{e^{\lambda h}-1}.
+\end{equation}
+This uses bounded stopping followed by Fatou's lemma, so no exponential integrability at extinction is needed.
+
+Consider $n$ with $\varepsilon^2n\ge1$, put $m=\lfloor n/2\rfloor$, $t=n-m$, and $h=dt/2$. Conditional on $\mathcal G_m$ with $0<W_m\le h$, survival for $t$ further steps requires
+\[
+ W_{m+t}-W_m+\sum_{k=m}^{m+t-1}b_k\ge dt-h=dt/2.
+\]
+The left side is a martingale increment with individual absolute increments at most $2$. The bounded-increment exponential inequality therefore bounds this conditional survival probability by $e^{-c d^2t}$. If $W_m>h$, use \eqref{eq:exponential-frontier-hit}. Since $d\asymp\varepsilon$, $\lambda h\ge c\varepsilon^2n$, and $e^{\lambda\delta}-1\le C\varepsilon$, these two alternatives give
+\[
+ \Prob(\tau>n)
+ \le C\bigl(n^{-1/2}+\varepsilon\bigr)e^{-c\varepsilon^2n}
+ \le C n^{-1/2}e^{-c'\varepsilon^2n}.
+\]
+The last step absorbs $\sqrt{\varepsilon^2n}$ into a weaker exponential. When $\varepsilon^2n<1$, use \eqref{eq:depleted-area-polynomial-upper}. Replacing $n$ by $n-1$ adjusts constants and proves the stated upper bound.
+
+\emph{A uniform hitting estimate for the lower bound.} Start after any history with mass $0<w<h$ and let $\sigma$ be the first visit to $0$ or $[h,\infty)$. Suppose
+\begin{equation}\label{eq:small-drift-level}
+ \varepsilon(h+1)\le c_0/4.
+\end{equation}
+Before $\sigma$, the conditional square increment is
+\[
+ \E(W_{k+1}^2-W_k^2\mid\mathcal G_k)
+ =v_k+b_k^2-2W_kb_k\ge c_0/2.
+\]
+For finite stops, $W_{\sigma\wedge N}\le h+1$ and $\E W_{\sigma\wedge N}\le w$. It follows that
+\[
+ \E\sigma\le\frac{2(h+1)w}{c_0}.
+\]
+Bounded convergence and the drift budget now give
+\[
+ \E W_\sigma\ge w-\varepsilon\E\sigma\ge w/2,
+ \qquad
+ \Prob(W_\sigma\ge h\mid\hbox{initial history})
+ \ge\frac{w}{2(h+1)}.
+\]
+
+\emph{Survival blocks.} Starting from any mass $w\ge h$, the compensated martingale has conditional quadratic variation at most $t$ over $t$ steps. For $t=\lfloor h^2/64\rfloor$, Doob's inequality gives probability at least $3/4$ that its maximum absolute displacement is at most $h/4$. Under \eqref{eq:small-drift-level}, the drift loss over this block is at most $\varepsilon t\le h/4$. On that event extinction has not occurred and the mass at the end is at least $h/2$. The statement is uniform in the starting history.
+
+Fix a small $h_0>0$ depending on $c_0$, set $H=h_0/\varepsilon$, and $T=\lfloor H^2/64\rfloor$. Choose $\varepsilon_0$ so that $H\ge16$ and \eqref{eq:small-drift-level} holds for every $h\le H$. For $1\le n\le T$, take $h=8\sqrt n$. The probability to reach $h$ from $\delta$ is at least $c/\sqrt n$, and a subsequent block of $n$ steps survives with probability at least $3/4$. Thus $\Prob(\tau\ge n)\ge c n^{-1/2}$ on this range.
+
+For $n>T$, first reach $H$, an event of probability at least $c\varepsilon$. After a successful block of $T$ steps the mass is at least $H/2$. If it is below $H$, the hitting estimate makes the conditional probability of returning to $H$ before extinction at least
+\[
+ \frac{H}{4(H+1)}\ge1/8;
+\]
+if it already exceeds $H$, no return is needed. Thus $k$ successful blocks, separated by these return periods, have probability at least $c\varepsilon p^k$ for some fixed $p>0$. Return periods only add steps. With $k=\lceil n/T\rceil$ and $T\asymp\varepsilon^{-2}$, this yields
+\[
+ \Prob(\tau\ge n)\ge c\varepsilon e^{-C\varepsilon^2n}
+ \ge c' n^{-1/2}e^{-C\varepsilon^2n},\qquad n>T.
+\]
+This proves the lower bound.
+
+The comparison $\mathcal A_\varepsilon\le I_\varepsilon\le1+2\mathcal A_\varepsilon$ transfers the tail bounds. Summing or integrating $q u^{q-1}\Prob(I_\varepsilon>u)$ proves the moment orders. Finally, the critical avalanche explores finitely many sites and consumes finitely many instructions almost surely. Almost surely none of its finitely many threshold comparisons is an equality, by the fresh continuous site energies. For all sufficiently small $\varepsilon$ its counts are therefore unchanged: induct along the explored layers, using the same release sums. Monotonicity prevents new sites outside that finite exploration. Thus $I_\varepsilon\uparrow I$ and $\mathcal A_\varepsilon\uparrow\mathcal A$ as $\varepsilon\downarrow0$. Monotone convergence proves the assertion for $q<1/2$.
+\end{proof}
+The theorem proves a cutoff \emph{scale} and a full moment spectrum. It does not assert convergence to a single scaling function, regular variation at criticality, or an asymptotic prefactor: the two exponential constants in \eqref{eq:area-cutoff} may differ.
+
+\subsection{Spatial confinement and improved size bounds}\label{sec:spatial-bounds}
+Use layer coordinate $n=x_1+x_2$ and transverse coordinate $j=x_1-x_2$. Let $A_n(j)$ be the input at $(n,j)$, let $p_n(j)$ be the probability kernel of a simple symmetric walk on $\Z$ started at zero, and define
+\[
+ I_L=\sum_{n=0}^{L-1}J_n,\qquad \ell(L)=\log(L+2).
+\]
+Here $I_L$ counts receiving sites in the first $L$ layers of the infinite critical avalanche; $S_L$ counts topplings in those same layers. The following statements concern this specified boundary/drive convention.
+
+\begin{theorem}[Spatial and finite-layer moment bounds]\label{thm:spatial-bounds}
+There are positive constants $c,C$ such that for $L\ge2$,
+\begin{align}
+ c L^{1/2}&\le\E I_L\le C L^{3/4}\ell(L)^{1/4},\label{eq:receiving-layer-moment}\\
+ \Prob(D\ge L)&\ge c L^{-3/4}\ell(L)^{-1/4},\label{eq:improved-depth-tail}\\
+ c L^{5/2}&\le\E S_L^2\le C L^{11/4}\ell(L)^{1/4}.\label{eq:size-second-spatial}
+\end{align}
+These are the spatial inputs for the sharper two-sided exponent bounds below.
+\end{theorem}
+\begin{proof}
+The exact mean response and equal splitting imply
+\begin{equation}\label{eq:mean-heat-kernel}
+ \E A_n(j)=\delta p_n(j).
+\end{equation}
+Every positive input is at least $1/4$. If $B_{L,r}$ denotes the event that some receiving site in layers $0,\ldots,L-1$ has $|j|\ge r$, the union bound gives
+\begin{equation}\label{eq:spatial-confinement}
+ \Prob(B_{L,r})\le4\delta\sum_{n<L}\Prob(|X_n|\ge r)
+ \le8\delta L e^{-r^2/(2L)},\qquad r>0.
+\end{equation}
+The last estimate follows from $\E e^{\theta X_n}=(\cosh\theta)^n\le e^{n\theta^2/2}$ and the exponential Markov inequality for each sign.
+
+Take $r_L=\lceil\sqrt{8L\ell(L)}\rceil$. On $B_{L,r_L}^c$ there are at most $K_L=C L r_L$ possible receiving sites. Always $I_L\le I$ and $I_L\le L(L+1)/2\le L^2$, so
+\[
+ I_L\le\min(I,K_L)+L^2\ind_{B_{L,r_L}}.
+\]
+Theorem~\ref{thm:area-tail} gives $\E\min(I,K)\asymp\sqrt K$ for large $K$. Also $\Prob(B_{L,r_L})\le C L^{-3}$. These prove the upper bound in \eqref{eq:receiving-layer-moment}. For the lower bound, note pathwise that $I_L\ge\min(I,L)$: either all receiving sites lie in the first $L$ layers, or each of these layers has a receiving site. Apply the lower area-tail bound.
+
+The exact conditional variance, sharper than the first inequality of \eqref{eq:layer-variance}, is
+\[
+ \Var(Z_{n+1}\mid\mathcal F_n)
+ =\sum_{j:A_n(j)>0}v(A_n(j)).
+\]
+Consequently
+\begin{equation}\label{eq:flux-area-second}
+ \delta^2+v_*\E I_L\le\E Z_L^2\le\delta^2+\E I_L.
+\end{equation}
+The finite-layer variables are square integrable by \eqref{eq:layer-overshoot}. Since $\E Z_L=\delta$, Cauchy--Schwarz and the upper bound on $\E I_L$ prove \eqref{eq:improved-depth-tail}.
+
+Put $Y_L=\sum_{i=1}^L Z_i$, the emitted mass from the first $L$ layers. Pathwise $Y_L\le S_L\le2Y_L$. Martingale covariance gives $\E Z_iZ_j=\E Z_{\min(i,j)}^2$, hence
+\[
+ \E Y_L^2=\sum_{i=1}^L\{2(L-i)+1\}\E Z_i^2.
+\]
+Equations~\eqref{eq:receiving-layer-moment}--\eqref{eq:flux-area-second} and summation prove \eqref{eq:size-second-spatial}.
+\end{proof}
+
+\begin{corollary}[Depleted size susceptibility lower bound]\label{cor:depleted-size-lower}
+For sufficiently small $\varepsilon>0$,
+\begin{equation}\label{eq:improved-depleted-size}
+ c\varepsilon^{-4/3}[\log(1/\varepsilon)]^{-1/3}
+ \le\E S_\varepsilon.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Couple the depleted and critical backgrounds with the same site energies and stacks. Input and odometer monotonicity give $I_{\varepsilon,n}\le I_n$, where both counts are truncated to the first $n$ layers. The exact layer loss budget and $b_\varepsilon(A)\le\varepsilon$ yield
+\[
+ \E Z_n^\varepsilon
+ =\delta-\E\sum_{\substack{\text{receiving sites}\\\text{in layers }0,\ldots,n-1}}
+ b_\varepsilon(A)
+ \ge\delta-\varepsilon\E I_n
+ \ge\delta-C\varepsilon n^{3/4}\ell(n)^{1/4}.
+\]
+For $L_\varepsilon=\lfloor c_1\varepsilon^{-4/3}[\log(1/\varepsilon)]^{-1/3}\rfloor$ with a sufficiently small fixed $c_1>0$, the right side is at least $\delta/2$ for $1\le n\le L_\varepsilon$. Since every toppling emits at most one unit,
+\[
+ \E S_\varepsilon\ge\sum_{n=1}^{L_\varepsilon}\E Z_n^\varepsilon
+ \ge\delta L_\varepsilon/2.
+\]
+The corresponding upper exponent is established in Theorem~\ref{thm:lattice-susceptibility}.
+\end{proof}
+The mean heat kernel supplies upper spatial confinement, but no matching lower occupied width conditional on survival. The next argument uses fluctuations around that mean and bypasses the missing lower-width estimate.
+
+\subsection{Bounded noise and the depth and size exponents}\label{sec:heat-noise}
+Write $P h(j)=\{h(j-1)+h(j+1)\}/2$ for transverse averaging. At criticality let
+\[
+ \xi_n(j)=M(A_n(j))-A_n(j).
+\]
+Conditional on $\mathcal F_n$, these variables are independent over $j$, centered, and bounded in absolute value by one. They vanish when $A_n(j)=0$. The incoming field satisfies the discrete stochastic heat equation
+\begin{equation}\label{eq:stochastic-heat}
+ A_{n+1}=P A_n+P\xi_n,\qquad
+ A_n(j)=\delta p_n(j)+\sum_{k=0}^{n-1}\sum_x p_{n-k}(j-x)\xi_k(x).
+\end{equation}
+This is a pathwise identity, not a Gaussian approximation.
+
+\begin{lemma}[A bound on the largest site input]\label{lem:site-input-cap}
+Let $U_n=\max_j A_n(j)$. For $n\ge1$ and $u>0$,
+\begin{equation}\label{eq:site-input-tail}
+ \Prob\bigl(A_n(j)>\delta+u\bigr)
+ \le \exp\{-c u^2/\sqrt{n+1}\}.
+\end{equation}
+For every fixed $K>0$, there is $C_K$ such that, for $N\ge2$,
+\begin{equation}\label{eq:site-input-cap}
+ \Prob\left(\max_{0\le n\le N}U_n>
+ B_N\right)\le C_K N^{-K},\qquad
+ B_N=\delta+C_K(N+1)^{1/4}\sqrt{\ell(N)}.
+\end{equation}
+The same estimates hold uniformly for the depleted field when $0<\varepsilon\le1/4$. For every fixed $K>0$, one can also choose an increasing sequence (with constants depending on $K$)
+\begin{equation}\label{eq:input-cap-error}
+ B_n\asymp(n+1)^{1/4}\sqrt{\ell(n)},\qquad B_n\ge1,
+ \qquad \E[Z_n^\varepsilon\ind_{\{U_n^\varepsilon>B_n\}}]
+ \le C_K(n+1)^{-K},
+\end{equation}
+uniformly for $0\le\varepsilon\le1/4$.
+\end{lemma}
+\begin{proof}
+The walk kernel satisfies
+\[
+ \sum_xp_r(x)^2=p_{2r}(0)=2^{-2r}\binom{2r}{r}
+ \le C(r+1)^{-1/2}.
+\]
+For fixed $(n,j)$ the coefficients in \eqref{eq:stochastic-heat} are deterministic. Conditional Hoeffding bounds within each layer, followed by conditioning successively on earlier layers, imply
+\[
+ \E\exp\left(\theta\sum_{k<n,x}p_{n-k}(j-x)\xi_k(x)\right)
+ \le\exp\left(C\theta^2\sum_{r=1}^n\sum_xp_r(x)^2\right)
+ \le\exp\{C\theta^2\sqrt{n+1}\}.
+\]
+Optimizing in $\theta>0$ proves \eqref{eq:site-input-tail}. There are at most $(N+1)(N+2)/2$ reachable sites through layer $N$, giving \eqref{eq:site-input-cap} by a union bound.
+
+For depletion define $b_n(j)=b_\varepsilon(A_n^\varepsilon(j))$ at receiving sites and zero otherwise, and put
+\[
+ \xi_n^\varepsilon(j)=M_\varepsilon(A_n^\varepsilon(j))
+ -\E(M_\varepsilon(A_n^\varepsilon(j))\mid\mathcal F_n).
+\]
+These noises remain conditionally independent and centered, with absolute value at most $2$. The field recursion is
+\[
+ A_{n+1}^\varepsilon=P A_n^\varepsilon-P b_n+P\xi_n^\varepsilon.
+\]
+All convolution weights are nonnegative and $b_n\ge0$. Dropping the accumulated negative terms gives the same upper-tail proof with a different absolute constant.
+
+Finally $Z_n^\varepsilon\le(n+1)U_n^\varepsilon$. The site bound and union bound give
+\[
+ \Prob(U_n^\varepsilon>\delta+u)
+ \le(n+1)e^{-c u^2/\sqrt{n+1}}.
+\]
+Integrate this tail above $B_n$, including the term $B_n\Prob(U_n^\varepsilon>B_n)$. For each fixed $K$, taking a sufficiently large coefficient in $B_n$ makes $(n+1)\E[U_n^\varepsilon\ind_{\{U_n^\varepsilon>B_n\}}]\le C_K(n+1)^{-K}$. The finitely many small $n$ are absorbed into $C_K$.
+\end{proof}
+
+\begin{theorem}[Logarithmic depth exponent]\label{thm:depth-exponent}
+For $n\ge2$,
+\begin{equation}\label{eq:sharp-depth-logs}
+ c n^{-3/4}\ell(n)^{-1/4}
+ \le\Prob(D\ge n)\le C n^{-3/4}\ell(n)^{1/2}.
+\end{equation}
+In particular $\lim_{n\to\infty}\log\Prob(D\ge n)/\log n=-3/4$.
+\end{theorem}
+\begin{proof}
+Fix $N$ and take $B=B_N\ge1$ from Lemma~\ref{lem:site-input-cap} with $K=3$, enlarging its coefficient if needed. Set
+\[
+ C_n=\{U_k\le B\text{ for all }0\le k\le n\},\qquad
+ X_n=Z_n\ind_{C_n}.
+\]
+Thus $X$ is killed permanently when the cap first fails. We do not condition on future cap survival, which would bias the fresh noise.
+
+For $0\le\theta\le1$, Taylor's remainder, $|\xi_n(j)|\le1$, and its zero conditional mean give, at every receiving site,
+\[
+ \E(e^{-\theta\xi_n(j)}\mid\mathcal F_n)
+ \ge1+\tfrac12 e^{-1}\theta^2v(A_n(j))
+ \ge1+c_0\theta^2.
+\]
+Conditional independence within the layer and $J_n\ge Z_n/B$ on $C_n$ imply, for a fixed $0<c<1/2$,
+\[
+ \E(e^{-\theta Z_{n+1}}\mid\mathcal F_n)
+ \ge e^{-\theta Z_n}(1+c_0\theta^2)^{J_n}
+ \ge e^{-(\theta-c\theta^2/B)Z_n}\quad\hbox{on }C_n.
+\]
+Killing at the next step only increases the exponential. On $C_n^c$ both killed variables are zero. Consequently
+\begin{equation}\label{eq:laplace-flux-comparison}
+ \E(e^{-\theta X_{n+1}}\mid\mathcal F_n)
+ \ge e^{-f_B(\theta)X_n},\qquad
+ f_B(\theta)=\theta-c\theta^2/B.
+\end{equation}
+Let $\theta_0=1$ and $\theta_{k+1}=f_B(\theta_k)$. These numbers stay in $(0,1]$, and
+\[
+ \frac1{\theta_{k+1}}\ge\frac1{\theta_k}+\frac cB,
+ \qquad \theta_N\le(1+cN/B)^{-1}.
+\]
+Iterating \eqref{eq:laplace-flux-comparison} backward through $N$ layers gives $\E e^{-X_N}\ge e^{-\delta\theta_N}$. Every positive flux is at least $1/4$, so
+\[
+ \Prob(X_N>0)\le\frac{1-\E e^{-X_N}}{1-e^{-1/4}}
+ \le C\delta\theta_N\le CB/N.
+\]
+Adding the cap-failure probability $C N^{-3}$ proves the upper bound. Theorem~\ref{thm:spatial-bounds} supplies the lower bound. All transforms are bounded; no unbounded optional-stopping argument is needed.
+\end{proof}
+
+\begin{theorem}[Logarithmic total-size exponent and exact moment threshold]\label{thm:size-exponent}
+For all sufficiently large $s$,
+\begin{equation}\label{eq:sharp-size-logs}
+ c s^{-3/7}\ell(s)^{-13/28}
+ \le\Prob(S\ge s)\le C s^{-3/7}\ell(s)^{2/7}.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:size-exponent}
+ \lim_{s\to\infty}\frac{\log\Prob(S\ge s)}{\log s}=-\frac37,
+ \qquad \E S^q<\infty\ \Longleftrightarrow\ 0<q<\frac37
+ \quad(q>0).
+\end{equation}
+This proves the tail exponent corresponding to $\tau_s=10/7$. It does not prove a pointwise asymptotic for $\Prob(S=s)$ or rule out logarithmic corrections.
+\end{theorem}
+\begin{proof}
+Depth truncation and the exact mean give
+\[
+ \Prob(S>s)\le\Prob(D>L)+\Prob(S_L>s)
+ \le C L^{-3/4}\ell(L)^{1/2}+C L/s.
+\]
+Take $L\asymp s^{4/7}\ell(s)^{2/7}$ for the upper bound.
+
+For the lower bound use the mass emitted during a late block of layers,
+\[
+ V_L=\sum_{i=L+1}^{2L}Z_i\le S_{2L}\le S.
+\]
+We have $\E V_L=\delta L$, $\E V_L^2\le C L^{11/4}\ell(L)^{1/4}$ by Theorem~\ref{thm:spatial-bounds}, and
+\[
+ \Prob(V_L>0)\le\Prob(Z_L>0)\le C L^{-3/4}\ell(L)^{1/2}.
+\]
+Choose $a_L=c_1L^{7/4}\ell(L)^{-1/2}$ with $c_1>0$ small. Then
+\[
+ \E[V_L\ind_{\{V_L<a_L\}}]\le a_L\Prob(V_L>0)\le\delta L/2.
+\]
+Cauchy--Schwarz applied to the remaining expectation gives
+\[
+ \Prob(S\ge a_L)\ge\Prob(V_L\ge a_L)
+ \ge\frac{(\delta L/2)^2}{\E V_L^2}
+ \ge c L^{-3/4}\ell(L)^{-1/4}.
+\]
+Given large $s$, choose $L$ of order $s^{4/7}\ell(s)^{2/7}$ with a sufficiently large coefficient so that $a_L\ge s$. The logarithmic exponent in this lower bound is
+\[
+ -\frac34\frac27-\frac14=-\frac{13}{28},
+\]
+proving \eqref{eq:sharp-size-logs}. Tail integration gives finiteness for $q<3/7$ and divergence for $q>3/7$. At $q=3/7$ the lower integral is a positive multiple of
+\[
+ \int^\infty\frac{ds}{s[\log s]^{13/28}}=\infty,
+\]
+which settles the endpoint too.
+\end{proof}
+The displayed logarithmic powers are bounds, not predicted correction exponents. No lower bound on occupied width was used: concentration of the site inputs, a conditional Laplace comparison, and a late-layer mass budget replace that step.
+
+\subsection{The finite-size moment exponents}\label{sec:size-moment-spectrum}
+The exponent relation can now be proved directly at the level of all positive moments, without assuming a distributional scaling function.
+
+\begin{theorem}[Finite-layer moment spectrum]\label{thm:size-moment-spectrum}
+For the cone with $L$ toppling layers and every fixed $q>0$,
+\begin{equation}\label{eq:size-moment-spectrum}
+ \lim_{L\to\infty}\frac{\log\E S_L^q}{\log L}
+ =\max\left\{0,\frac{7q-3}{4}\right\}.
+\end{equation}
+For $q>1$, the more explicit bounds are
+\begin{equation}\label{eq:high-size-moments}
+ c_q L^{(7q-3)/4}\ell(L)^{-(q-1)/2}
+ \le\E S_L^q
+ \le C_q L^{(7q-3)/4}\ell(L)^{(q-1)/4}.
+\end{equation}
+In particular the logarithmic second-moment exponent is $11/4$, and the logarithmic exponent of $\E S_L^2/\E S_L$ is $7/4$. These are moment statements, not a proof of full finite-size scaling.
+\end{theorem}
+\begin{proof}
+We first record the needed terminal martingale estimate. For a bounded stopping time $T$ and a martingale $M$ started at zero with $|\Delta M|\le1$, Taylor's inequality for $|x|^q$, $q\ge2$, gives
+\[
+ X:=\E|M_T|^q
+ \le C_q\E[(M_T^*)^{q-2}T]+C_q\E T,
+ \qquad M_T^*=\max_{k\le T}|M_k|.
+\]
+Indeed the linear Taylor terms have zero expectation, and both $\sum_{k<T}(\Delta M_k)^2$ and $\sum_{k<T}|\Delta M_k|^q$ are at most $T$. H\"older's and Doob's inequalities imply, with $Y=\E T^{q/2}$,
+\[
+ X\le C_qX^{(q-2)/q}Y^{2/q}+C_qY,
+ \qquad\hbox{hence }X\le C_qY.
+\]
+For $q=2$ this is simply the square identity. All variables are integrable since the stop is bounded.
+
+In the receiving-site exploration, $I_L\le L^2$ is a stopping time and $W_{I_L}=Z_L$: all sites in the first $L$ layers have been processed, leaving precisely the input to layer $L$. Apply the preceding estimate to $W-\delta$ stopped at $I_L$. For any fixed $r>1/2$, the area tail and spatial confinement give
+\begin{equation}\label{eq:truncated-area-higher-moments}
+ \E I_L^r\le C_r L^{3r/2-3/4}\ell(L)^{r/2-1/4}.
+\end{equation}
+To see this, use a strip of width $C_r\sqrt{L\ell(L)}$ and take its failure probability to be at most $L^{-M}$ with $M>2r$. In the strip $I_L\le K_L=C_r L^{3/2}\ell(L)^{1/2}$. Thus
+\[
+ \E I_L^r\le\E\min(I,K_L)^r+L^{2r-M}
+ \le C_rK_L^{r-1/2}+1.
+\]
+It follows for $q\ge2$ that
+\[
+ \E Z_L^q\le C_q\{1+\E I_L^{q/2}\}
+ \le C_q L^{3(q-1)/4}\ell(L)^{(q-1)/4}.
+\]
+Since $S_L\le2\sum_{i=1}^LZ_i$, convexity and summation prove the upper bound in \eqref{eq:high-size-moments} for $q\ge2$. For $1<q<2$, interpolate between $\E S_L=L\delta/m$ and the second-moment upper bound.
+
+For the lower bound, the late-block variable $V_L$ used above satisfies $\E V_L=\delta L$ and $\Prob(V_L>0)\le C L^{-3/4}\ell(L)^{1/2}$. H\"older gives
+\[
+ \E S_{2L}^q\ge\E V_L^q
+ \ge\frac{(\E V_L)^q}{\Prob(V_L>0)^{q-1}},\qquad q>1.
+\]
+This proves the lower bound after adjusting $L$ by a factor of two. The case $q=1$ is exact.
+
+For $3/7<q<1$, H\"older interpolation gives the lower bound
+\[
+ \E S_L^q\ge\frac{(\E S_L)^{2-q}}{(\E S_L^2)^{1-q}}
+ \ge c_q L^{(7q-3)/4}\ell(L)^{-(1-q)/4}.
+\]
+For an upper bound, integrate the tail up to $K=L^{7/4}$ using Theorem~\ref{thm:size-exponent}, and above $K$ use $\Prob(S_L>s)\le\E S_L^2/s^2$. This gives
+\[
+ \E S_L^q\le C_q L^{(7q-3)/4}\ell(L)^{2/7}.
+\]
+At $q=3/7$ the same split gives $\E S_L^{3/7}\le C\ell(L)^{9/7}$; monotone convergence and Theorem~\ref{thm:size-exponent} show that these moments nevertheless tend to infinity. For $0<q<3/7$ they converge to the positive finite critical moment. These facts prove \eqref{eq:size-moment-spectrum} for all $q>0$.
+\end{proof}
+
+\subsection{The depleted mean-size exponent}\label{sec:lattice-susceptibility}
+The upper input bound also strengthens the negative drift into the matching susceptibility exponent.
+
+\begin{theorem}[Directed size susceptibility exponent]\label{thm:lattice-susceptibility}
+As $\varepsilon\downarrow0$,
+\begin{equation}\label{eq:lattice-susceptibility-logs}
+ c\varepsilon^{-4/3}[\log(1/\varepsilon)]^{-1/3}
+ \le\E S_\varepsilon
+ \le C\varepsilon^{-4/3}[\log(1/\varepsilon)]^{2/3}.
+\end{equation}
+In particular
+\begin{equation}\label{eq:lattice-susceptibility-exponent}
+ \lim_{\varepsilon\downarrow0}
+ \frac{\log\E S_\varepsilon}{\log(1/\varepsilon)}=\frac43.
+\end{equation}
+An asymptotic prefactor and the removal or identification of logarithmic corrections remain open.
+\end{theorem}
+\begin{proof}
+The lower bound is Corollary~\ref{cor:depleted-size-lower}. For the upper bound take the increasing caps $B_n$ from \eqref{eq:input-cap-error} with $K=3$ and put
+\[
+ y_n=\E Z_n^\varepsilon,\quad
+ e_n=\E[Z_n^\varepsilon\ind_{\{U_n^\varepsilon>B_n\}}]
+ \le C(n+1)^{-3},\quad
+ a_n=d_\varepsilon/B_n\in(0,1).
+\]
+On the event $U_n^\varepsilon\le B_n$ we have $J_n^\varepsilon\ge Z_n^\varepsilon/B_n$. The exact mean loss per receiving site therefore implies
+\begin{equation}\label{eq:depleted-flux-recursion}
+ y_{n+1}\le y_n-d_\varepsilon\E J_n^\varepsilon
+ \le(1-a_n)y_n+a_ne_n.
+\end{equation}
+Define the scalar survival sum
+\[
+ T_\varepsilon(k)=\sum_{n=k}^\infty
+ \prod_{j=k}^{n-1}(1-a_j),
+\]
+with an empty product equal to one. For $n\ge2(k+1)$, monotonicity of $B_j$ and $d_\varepsilon\asymp\varepsilon$ give
+\[
+ \prod_{j=k}^{n-1}(1-a_j)
+ \le\exp\left\{-c\varepsilon\frac{n^{3/4}}{\sqrt{\ell(n)}}\right\}.
+\]
+Set $R_\varepsilon=\varepsilon^{-4/3}[\log(1/\varepsilon)]^{2/3}$ for sufficiently small $\varepsilon$. The elementary sum estimate
+\begin{equation}\label{eq:depleted-survival-sum}
+ \sum_{n\ge1}\exp\left\{-c\varepsilon\frac{n^{3/4}}{\sqrt{\ell(n)}}\right\}
+ \le C R_\varepsilon
+\end{equation}
+follows by splitting at $R_\varepsilon$. For $n=tR_\varepsilon\ge R_\varepsilon$, use $\ell(tR_\varepsilon)\le C\ell(R_\varepsilon)t^{1/2}$ and $\varepsilon R_\varepsilon^{3/4}/\sqrt{\ell(R_\varepsilon)}\asymp1$ to bound the summand by $e^{-c'\sqrt t}$. Integral comparison completes the estimate. Hence
+\[
+ T_\varepsilon(k)\le2(k+1)+C R_\varepsilon.
+\]
+Iterating \eqref{eq:depleted-flux-recursion} and summing its nonnegative terms yields
+\[
+ \sum_{n\ge0}y_n
+ \le\delta T_\varepsilon(0)
+ +\sum_{k\ge0}a_ke_kT_\varepsilon(k+1)
+ \le C R_\varepsilon.
+\]
+In the last step, $a_k\le C\varepsilon(k+1)^{-1/4}/\sqrt{\ell(k)}$ and $e_k\le C(k+1)^{-3}$ make both the constant and $(k+1)$ weighted sums finite uniformly in $\varepsilon$. Finally $S_\varepsilon\le2\sum_{n\ge1}Z_n^\varepsilon$, proving the upper bound. All sums can first be truncated; nonnegativity permits passage to the limit by Tonelli's theorem.
+\end{proof}
+
+\subsection{Near-critical cutoffs and all moment exponents}\label{sec:near-critical-spectrum}
+The scalar loss recursion controls the whole far-depth tail, not just its sum. Together with the critical finite-layer bounds, it determines the depth and size cutoff exponents without a joint shape assumption. Write $h_\varepsilon=\log(1/\varepsilon)$ and restrict to sufficiently small positive $\varepsilon$ throughout this subsection.
+
+\begin{lemma}[Pointwise depleted flux and far-depth tail]\label{lem:depleted-depth-tail}
+For every fixed $K\ge2$ there are positive constants $c_K,C_K$ such that, uniformly for $n\ge2$,
+\begin{equation}\label{eq:depleted-pointwise-flux}
+ \E Z_n^\varepsilon\le C_K\left[
+ \exp\left\{-\frac{c_K\varepsilon n^{3/4}}{\sqrt{\ell(n)}}\right\}
+ +(n+1)^{-K}\right].
+\end{equation}
+The same bound, with a changed constant, holds for $\Prob(D_\varepsilon\ge n)$. In particular, for every $\eta>0$ and $K>0$, all sufficiently small $\varepsilon$ satisfy
+\begin{equation}\label{eq:depleted-depth-polynomial}
+ \Prob(D_\varepsilon\ge n)\le C_{\eta,K}n^{-K}
+ \quad\hbox{for all }n\ge\varepsilon^{-4/3-\eta}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Choose the caps in \eqref{eq:input-cap-error} so that $e_n\le C_K(n+1)^{-K}$ and retain $a_n=d_\varepsilon/B_n$. Iterating \eqref{eq:depleted-flux-recursion} gives
+\[
+ y_n\le\delta\prod_{j=0}^{n-1}(1-a_j)
+ +\sum_{k=0}^{n-1}a_ke_k\prod_{j=k+1}^{n-1}(1-a_j),
+ \qquad y_n=\E Z_n^\varepsilon.
+\]
+For $n\ge4$, split this sum at $k=\lfloor n/2\rfloor$. Every earlier term contains attenuation over at least a fixed fraction of the last $n$ layers, bounded above by $\exp\{-c_K\varepsilon n^{3/4}/\sqrt{\ell(n)}\}$. Their coefficients have uniformly bounded sum since $\delta+\sum_k a_ke_k\le C_K$. In the later terms, $e_k\le C_K(n+1)^{-K}$, and the exact telescoping identity gives
+\[
+ \sum_{k=m}^{n-1}a_k\prod_{j=k+1}^{n-1}(1-a_j)
+ =1-\prod_{j=m}^{n-1}(1-a_j)\le1.
+\]
+This proves \eqref{eq:depleted-pointwise-flux}; finitely many small $n$ are harmless. Since positive flux is at least $1/4$,
+$\Prob(D_\varepsilon\ge n)=\Prob(Z_n^\varepsilon>0)\le4y_n$.
+
+For the final assertion choose the error exponent at least $\max(K,2)$. Uniformly for $n\ge\varepsilon^{-4/3-\eta}$,
+\[
+ \frac{\varepsilon n^{3/4}}{\ell(n)^{3/2}}\longrightarrow\infty
+ \qquad(\varepsilon\downarrow0).
+\]
+Indeed $n^{3/4}/\ell(n)^{3/2}$ is eventually increasing, and substitution at the lower endpoint leaves a positive power $\varepsilon^{-3\eta/4}$ divided by a logarithm. The exponential term is therefore at most $n^{-K}$ for all such $n$ and all sufficiently small $\varepsilon$.
+\end{proof}
+
+\begin{theorem}[A joint lower witness for the cutoff scales]\label{thm:joint-cutoff-lower}
+There is $c>0$ such that
+\begin{equation}\label{eq:joint-cutoff-lower}
+ \Prob\left(
+ D_\varepsilon\ge c\varepsilon^{-4/3}h_\varepsilon^{-1/3},\quad
+ S_\varepsilon\ge c\varepsilon^{-7/3}h_\varepsilon^{-13/12}
+ \right)\ge c\varepsilon.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Take $L=\lfloor c_1\varepsilon^{-4/3}h_\varepsilon^{-1/3}\rfloor$, with $c_1>0$ sufficiently small that the loss-budget estimate in Corollary~\ref{cor:depleted-size-lower} gives $\E Z_n^\varepsilon\ge\delta/2$ through layer $2L$. For
+\[
+ V_L^\varepsilon=\sum_{i=L+1}^{2L}Z_i^\varepsilon
+\]
+we have $\E V_L^\varepsilon\ge\delta L/2$. The monotone critical coupling and Theorems~\ref{thm:spatial-bounds} and \ref{thm:depth-exponent} give
+\[
+ \E(V_L^\varepsilon)^2\le C L^{11/4}\ell(L)^{1/4},\qquad
+ \Prob(V_L^\varepsilon>0)\le C L^{-3/4}\ell(L)^{1/2}.
+\]
+Set $a_L=c_2L^{7/4}\ell(L)^{-1/2}$ with $c_2$ small. Then $\E[V_L^\varepsilon\ind_{\{V_L^\varepsilon<a_L\}}]\le\delta L/4$, and Cauchy--Schwarz yields
+\[
+ \Prob(V_L^\varepsilon\ge a_L)
+ \ge c L^{-3/4}\ell(L)^{-1/4}.
+\]
+On this event $D_\varepsilon\ge L$ and $S_\varepsilon\ge a_L$. Since $\ell(L)\asymp h_\varepsilon$, the probability lower bound is at least $c\varepsilon$, while $a_L\ge c\varepsilon^{-7/3}h_\varepsilon^{-13/12}$. Integer rounding only changes constants.
+\end{proof}
+
+\begin{theorem}[Near-critical moment spectra and cutoff exponents]\label{thm:near-critical-spectrum}
+For every fixed $q>0$, all the following moments are finite for positive $\varepsilon$, and
+\begin{align}
+ \lim_{\varepsilon\downarrow0}
+ \frac{\log\E S_\varepsilon^q}{\log(1/\varepsilon)}
+ &=\max\{0,7q/3-1\},\label{eq:depleted-size-spectrum}\\
+ \lim_{\varepsilon\downarrow0}
+ \frac{\log\E D_\varepsilon^q}{\log(1/\varepsilon)}
+ &=\max\{0,4q/3-1\}.\label{eq:depleted-depth-spectrum}
+\end{align}
+Below $q=3/7$ for size, and below $q=3/4$ for depth, the moments converge to their positive finite critical values. At these endpoints they diverge, with logarithmic exponent zero. For every fixed $\eta,M>0$,
+\begin{equation}\label{eq:depleted-cutoff-upper}
+ \Prob(D_\varepsilon\ge\varepsilon^{-4/3-\eta})
+ +\Prob(S_\varepsilon\ge\varepsilon^{-7/3-\eta})
+ =O_{\eta,M}(\varepsilon^M).
+\end{equation}
+Together with \eqref{eq:joint-cutoff-lower}, this locates both cutoff exponents to arbitrary polynomial precision. It does not establish a limiting cutoff function, an exponential size-tail shape, or the exact logarithmic corrections.
+\end{theorem}
+\begin{proof}
+First note the deterministic cone bound
+\begin{equation}\label{eq:deterministic-cone-size}
+ S_L\le2\left\{\frac{L(L+1)(L+2)}6+\delta L\right\}\le C L^3,
+\end{equation}
+valid also under depletion. Give a vertex in layer $n<L$ weight $L-n$. The initial weighted energy is at most $\sum_{n<L}(n+1)(L-n)+\delta L$. Every toppling reduces it by exactly $Q\ge1/2$, including at the last layer where all emitted mass goes to the sink. Weighted energy stays nonnegative. The directed geometry makes this truncated stabilization identical to the first $L$ layers of the infinite avalanche.
+
+Fix $\eta>0$ and $R_\varepsilon=\lceil\varepsilon^{-4/3-\eta}\rceil$. By monotone coupling, on $D_\varepsilon\le R_\varepsilon$,
+$S_\varepsilon=S_{\varepsilon,R_\varepsilon}\le S_{R_\varepsilon}$.
+On the depth band $2^kR_\varepsilon<D_\varepsilon\le2^{k+1}R_\varepsilon$, \eqref{eq:deterministic-cone-size} bounds $S_\varepsilon$ by $C(2^{k+1}R_\varepsilon)^3$. Choose $K>3q$ in Lemma~\ref{lem:depleted-depth-tail}. Summing the bands gives
+\begin{align*}
+ \E[S_\varepsilon^q\ind_{\{D_\varepsilon>R_\varepsilon\}}]
+ &\le C_{q,\eta,K}\sum_{k\ge0}
+ (2^kR_\varepsilon)^{3q-K}\le C_{q,\eta,K},\\
+ \E S_\varepsilon^q&\le\E S_{R_\varepsilon}^q+C_{q,\eta,K}.
+\end{align*}
+Theorem~\ref{thm:size-moment-spectrum} and then $\eta\downarrow0$ give
+\[
+ \limsup_{\varepsilon\downarrow0}
+ \frac{\log\E S_\varepsilon^q}{\log(1/\varepsilon)}
+ \le\frac43\max\{0,(7q-3)/4\}.
+\]
+For depth, the identical split with $K>q$ gives
+$\E D_\varepsilon^q\le\E(D\wedge R_\varepsilon)^q+C_{q,\eta,K}$.
+Tail integration of \eqref{eq:sharp-depth-logs} shows that the critical truncated moment has exponent $\max\{0,q-3/4\}$ in $R_\varepsilon$, proving the corresponding upper bound. The same estimates show finiteness at each sufficiently small fixed $\varepsilon>0$; monotone domination extends it to every larger depletion.
+
+The joint witness gives
+\[
+ \E S_\varepsilon^q\ge c_q\varepsilon^{1-7q/3}h_\varepsilon^{-13q/12},
+ \qquad
+ \E D_\varepsilon^q\ge c_q\varepsilon^{1-4q/3}h_\varepsilon^{-q/3}.
+\]
+These prove the matching lower exponents above the respective critical moment thresholds. Under the monotone coupling the finite critical avalanche is eventually unchanged as $\varepsilon\downarrow0$, almost surely: it uses finitely many sites and stack entries and has no exact threshold equality. Thus $S_\varepsilon\uparrow S$ and $D_\varepsilon\uparrow D$. Monotone convergence proves the statements below the thresholds and at the endpoints. At $q=3/4$ the critical depth moment diverges by the lower tail $c n^{-3/4}\ell(n)^{-1/4}$; the size endpoint was settled in Theorem~\ref{thm:size-exponent}. Positive limiting moments and the upper bounds establish exponent zero throughout the remaining range.
+
+Finally \eqref{eq:depleted-depth-polynomial} proves the depth part of \eqref{eq:depleted-cutoff-upper}. For the size part choose a fixed $q>3/7$ with $1+q\eta>M$. Equation~\eqref{eq:depleted-size-spectrum} and Markov's inequality give
+\[
+ \Prob(S_\varepsilon\ge\varepsilon^{-7/3-\eta})
+ \le\varepsilon^{q(7/3+\eta)}\E S_\varepsilon^q
+ =\varepsilon^{1+q\eta+o(1)}=O(\varepsilon^M).
+\]
+\end{proof}
+For example, $\E D_\varepsilon=\varepsilon^{-1/3+o(1)}$, $\E D_\varepsilon^2=\varepsilon^{-5/3+o(1)}$, and $\E S_\varepsilon^2=\varepsilon^{-11/3+o(1)}$. The ratios $\E S_\varepsilon^{q+1}/\E S_\varepsilon^q$ have exponent $7/3$ for $q>3/7$; the analogous depth ratios have exponent $4/3$ for $q>3/4$. These follow from the proved spectra, with no claim that the normalized ratios converge.
+
+\subsection{The geometry of a long critical avalanche}\label{sec:conditional-geometry}
+The marginal exponents do not by themselves establish joint scaling. The conditional Laplace comparison supplies the missing extra argument at logarithmic-exponent precision. Throughout this subsection the background is critical, and
+\[
+ \mathbb Q_N(\,\cdot\,)=\Prob(\,\cdot\mid D\ge N).
+\]
+Write $X_N=N^{\gamma+o_{\mathbb Q_N}(1)}$ when, for every $\eta>0$, $\mathbb Q_N(N^{\gamma-\eta}\le X_N\le N^{\gamma+\eta})\to1$. This notation asserts convergence of $\log X_N/\log N$ in conditional probability, not convergence after division by $N^\gamma$.
+
+\begin{lemma}[Small intermediate flux rarely survives]\label{lem:conditional-flux}
+Fix $0<a<b<1$ and $K>0$. Uniformly for integers $aN\le k\le bN$, sufficiently large $N$, and $u>0$,
+\begin{align}
+ \mathbb Q_N(Z_k\le u)
+ &\le C_{a,b,K}\frac{u}{N^{3/4}}\ell(N)^{5/4}
+       +C_{a,b,K}N^{-K},\label{eq:conditional-small-flux}\\
+ \mathbb Q_N(Z_k\ge u)
+ &\le C\frac{N^{3/4}\ell(N)^{1/4}}u.\label{eq:conditional-large-flux}
+\end{align}
+\end{lemma}
+\begin{proof}
+Take the fixed-horizon cap $B=C_KN^{1/4}\sqrt{\ell(N)}$ and killed flux $X$ from the proof of Theorem~\ref{thm:depth-exponent}, with cap-failure probability at most $C_KN^{-K-2}$. Starting the bounded-transform iteration at layer $k$ gives
+\[
+ \E(e^{-X_N}\mid\mathcal F_k)\ge e^{-\theta_{N-k}X_k},
+ \qquad \theta_{N-k}\le(1+c(N-k)/B)^{-1}.
+\]
+Therefore, for any $E\in\mathcal F_k$,
+\begin{equation}\label{eq:conditional-survival-budget}
+ \Prob(X_N>0,E)\le C\theta_{N-k}\E[X_k\ind_E].
+\end{equation}
+This uses the original filtration and kills at cap failure; it does not condition the noise on future survival. Set $E=\{Z_k\le u\}$. Since $X_k\le Z_k$, the expectation on the right is at most $u\Prob(D\ge k)$. Add the cap-failure probability and divide by $\Prob(D\ge N)$. The depth bounds and $k\in[aN,bN]$ give
+\[
+ \frac{B}{N-k}\frac{\Prob(D\ge k)}{\Prob(D\ge N)}
+ \le C_{a,b,K}N^{-3/4}\ell(N)^{5/4}.
+\]
+The divided error is at most $C_KN^{-K}$. This proves \eqref{eq:conditional-small-flux}. Markov's inequality, $\E Z_k=\delta$, and the depth lower bound prove \eqref{eq:conditional-large-flux}.
+\end{proof}
+
+Let $\mathcal A_N$ count distinct toppled sites in the first $N$ layers. Define the transverse radius $R_\perp$ as the largest $|j|$ of any receiving site in the entire avalanche. It measures sideways spread, not distance along the directed coordinate.
+
+\begin{theorem}[Joint conditional geometric exponents]\label{thm:conditional-geometry}
+For every fixed $t\in(0,1)$, under $\mathbb Q_N$,
+\begin{align}
+ Z_{\lfloor tN\rfloor}&=N^{3/4+o_{\mathbb Q_N}(1)},&
+ J_{\lfloor tN\rfloor}&=N^{1/2+o_{\mathbb Q_N}(1)},&
+ U_{\lfloor tN\rfloor}&=N^{1/4+o_{\mathbb Q_N}(1)}.\label{eq:conditional-layer-geometry}
+\end{align}
+These estimates also hold on all but $o_{\mathbb Q_N}(N)$ layers in any fixed interval $[aN,bN]$, $0<a<b<1$: for every fixed exponent tolerance, the fraction of exceptions tends to zero in conditional probability. For the first $N$ layers and for the whole avalanche,
+\begin{align}
+ S_N&=N^{7/4+o_{\mathbb Q_N}(1)},&
+ I_N&=N^{3/2+o_{\mathbb Q_N}(1)},&
+ \mathcal A_N&=N^{3/2+o_{\mathbb Q_N}(1)},\label{eq:conditional-prefix-geometry}\\
+ S&=N^{7/4+o_{\mathbb Q_N}(1)},&
+ I,\mathcal A&=N^{3/2+o_{\mathbb Q_N}(1)},&
+ R_\perp&=N^{1/2+o_{\mathbb Q_N}(1)}.\label{eq:conditional-full-geometry}
+\end{align}
+Also $D=N^{1+o_{\mathbb Q_N}(1)}$. In particular, jointly in conditional probability,
+\begin{equation}\label{eq:conditional-joint-ratios}
+ \frac{\log S}{\log D}\longrightarrow\frac74,\qquad
+ \frac{\log\mathcal A}{\log D}\longrightarrow\frac32,\qquad
+ \frac{\log R_\perp}{\log D}\longrightarrow\frac12.
+\end{equation}
+No positive limiting occupied fraction, tight constant-factor normalization, or limiting avalanche shape is asserted.
+\end{theorem}
+\begin{proof}
+Lemma~\ref{lem:conditional-flux} with $u=N^{3/4\pm\eta}$ gives the flux assertion uniformly on bulk layers. With conditional probability tending to one, the first $N$ layers lie in a strip of width $C\sqrt{N\ell(N)}$ and every input is at most $C N^{1/4}\sqrt{\ell(N)}$. Indeed choose arbitrarily large polynomial error powers in \eqref{eq:spatial-confinement} and Lemma~\ref{lem:site-input-cap}, then divide by the depth lower bound. On this event,
+\[
+ J_k\le C\sqrt{N\ell(N)},\qquad
+ J_k\ge Z_k/U_k,\qquad U_k\ge Z_k/J_k.
+\]
+The two remaining layer exponents follow by using the flux lower bound with a smaller tolerance and absorbing logarithms into $N^\eta$. Uniformity in $k$ bounds the conditional expected fraction of exceptional bulk layers by a quantity tending to zero. Markov's inequality proves the assertion about that fraction. Summing $Z_k$ over, for example, $N/3\le k\le2N/3$ then gives the lower bound $S_N\ge N^{7/4-\eta}$ with conditional probability tending to one.
+
+For the area lower bound, put $m=\lfloor N/2\rfloor$, $H=N^{3/4-\eta/4}$, and $A=N^{3/2-\eta}$, initially with $0<\eta<1$. In the receiving-site exploration $W_{I_m}=Z_m$. Hence, on $I_N\le A$ and $Z_m\ge H$, the bounded-increment martingale $W$ reaches $H$ within at most $\lfloor A\rfloor$ steps. Its exponential supermartingale gives
+\[
+ \Prob(I_N\le A,\ Z_m\ge H)
+ \le\Prob\left(\max_{r\le\lfloor A\rfloor}(W_r-\delta)\ge H-\delta\right)
+ \le\exp\left\{-\frac{(H-\delta)^2}{2A}\right\}.
+\]
+For completeness, $\exp\{\lambda(W_r-\delta)-\lambda^2r/2\}$ is a nonnegative supermartingale by the conditional Hoeffding bound; stop at the first crossing before $\lfloor A\rfloor$ and optimize $\lambda$. The last probability is at most $e^{-cN^{\eta/2}}$. After division by $\Prob(D\ge N)$ it still tends to zero. Lemma~\ref{lem:conditional-flux} handles $Z_m<H$. This proves the lower receiving-count exponent. The truncated comparison $\mathcal A_N\le I_N\le1+2\mathcal A_N$ transfers it to toppled area.
+
+Upper bounds for the whole avalanche follow from the critical marginal tails:
+\[
+ \mathbb Q_N(S>N^{7/4+\eta})\longrightarrow0,\qquad
+ \mathbb Q_N(I>N^{3/2+\eta})\longrightarrow0,
+\]
+by dividing respectively $\Prob(S>N^{7/4+\eta})$ and $\Prob(I>N^{3/2+\eta})$ by the depth lower bound. They imply the prefix upper bounds as well, and the prefix lower bounds apply to the full avalanche. The same calculation shows $\mathbb Q_N(D>N^{1+\eta})\to0$, while $D\ge N$ under $\mathbb Q_N$.
+
+The lower transverse-radius exponent follows from the receiving count at layer $m$: $J_m$ distinct integer transverse positions require $R_\perp\ge(J_m-1)/2$. For its upper bound, take $L=\lceil N^{1+\eta}\rceil$ and $r=N^{1/2+\eta}$. On $D\le L$ all receiving sites lie in the first $L+1$ layers. Thus
+\[
+ \mathbb Q_N(R_\perp\ge r)
+ \le\mathbb Q_N(D>L)+
+ \frac{C(L+1)e^{-r^2/(2(L+1))}}{\Prob(D\ge N)}\longrightarrow0.
+\]
+All tolerances may be reduced before applying these estimates. Finitely many union bounds give joint convergence, and dividing by $\log D/\log N\to1$ proves \eqref{eq:conditional-joint-ratios}.
+\end{proof}
+
+\begin{corollary}[Moments inside a long avalanche]\label{cor:conditional-moments}
+For every fixed $q>0$ and $t\in(0,1)$,
+\begin{align}
+ \lim_{N\to\infty}\frac{\log\E[S_N^q\mid D\ge N]}{\log N}&=\frac{7q}4,\label{eq:conditional-size-moments}\\
+ \lim_{N\to\infty}\frac{\log\E[I_N^q\mid D\ge N]}{\log N}
+ =\lim_{N\to\infty}\frac{\log\E[\mathcal A_N^q\mid D\ge N]}{\log N}&=\frac{3q}2,\label{eq:conditional-area-moments}\\
+ \lim_{N\to\infty}\frac{\log\E[Z_{\lfloor tN\rfloor}^q\mid D\ge N]}{\log N}&=\frac{3q}4.\label{eq:conditional-flux-moments}
+\end{align}
+The total untruncated size still satisfies $\E[S^q\mid D\ge N]=\infty$ for $q\ge3/7$.
+\end{corollary}
+\begin{proof}
+The lower exponents follow from Theorem~\ref{thm:conditional-geometry}. For $r\ge2$, divide the upper bounds in \eqref{eq:high-size-moments}, \eqref{eq:truncated-area-higher-moments}, and the terminal-flux estimate in the proof of Theorem~\ref{thm:size-moment-spectrum} by $\Prob(D\ge N)$. They yield, respectively,
+\[
+ \E[S_N^r\mid D\ge N]\le C_rN^{7r/4}\ell(N)^{r/4},\quad
+ \E[I_N^r\mid D\ge N]\le C_rN^{3r/2}\ell(N)^{r/2},
+\]
+and $\E[Z_{\lfloor tN\rfloor}^r\mid D\ge N]\le C_{r,t}N^{3r/4}\ell(N)^{r/4}$. For an arbitrary $q>0$, choose $r\ge\max(q,2)$ and apply the conditional power-mean inequality. Since $\mathcal A_N\le I_N$, this proves every upper exponent. Finally, on $D<N$ the deterministic cone bound gives $S\le CN^3$. Removing this bounded-size event cannot make the infinite critical moment finite, proving the last assertion.
+\end{proof}
+
+\begin{corollary}[Uniform extension through the controlled depletion range]\label{cor:depleted-conditional-geometry}
+There is $c_0>0$ with the following property. Let $N\to\infty$ and $\varepsilon=\varepsilon_N>0$ satisfy
+\begin{equation}\label{eq:conditional-depletion-window}
+ \varepsilon N^{3/4}\ell(N)^{1/4}\le c_0.
+\end{equation}
+Every geometric conclusion of Theorem~\ref{thm:conditional-geometry} and every finite-layer moment exponent of Corollary~\ref{cor:conditional-moments} hold for the depleted observables under $\Prob(\,\cdot\mid D_\varepsilon\ge N)$, uniformly over these choices. The untruncated infinite-moment assertion does not extend to positive depletion. The window includes $N\le c\varepsilon^{-4/3}[\log(1/\varepsilon)]^{-1/3}$ for a sufficiently small fixed $c$.
+\end{corollary}
+\begin{proof}
+The loss-budget estimate gives $\E Z_N^\varepsilon\ge\delta/2$ if $c_0$ is small. Critical domination and \eqref{eq:flux-area-second} give $\E(Z_N^\varepsilon)^2\le C N^{3/4}\ell(N)^{1/4}$. Thus
+\[
+ \Prob(D_\varepsilon\ge N)
+ \ge\frac{(\E Z_N^\varepsilon)^2}{\E(Z_N^\varepsilon)^2}
+ \ge c N^{-3/4}\ell(N)^{-1/4}.
+\]
+All upper input, spatial, marginal-tail, and prefix-moment bounds are uniform by the existing depleted estimates or critical domination. For the restarted Laplace bound, the fresh-site increment $\xi=M_\varepsilon(A)-A$ has $|\xi|\le1$, nonpositive conditional mean, and a uniformly positive conditional variance. Taylor's inequality therefore still gives $\E(e^{-\theta\xi}\mid\mathcal F_k)\ge1+c\theta^2$ for $0\le\theta\le1$. The rest of Lemma~\ref{lem:conditional-flux} is unchanged, with $\E Z_k^\varepsilon\le\delta$. Finally the depleted frontier is a supermartingale with increments in $[-1,1]$. For positive $\lambda$, its conditional Hoeffding bound remains at most $e^{\lambda^2/2}$, so the maximal estimate forcing the area lower bound remains valid. These facts reproduce all the claimed estimates with uniform constants. They give no statement beyond the specified window.
+\end{proof}
+
+\section{Two additional solvable geometries}\label{sec:solvable}
+
+\subsection{Binary tree}
+On a rooted binary tree, each site sends half its release to each child. Use the product background $f$. For $\delta\le1/2$, every site topples at most once. Conditional on a parent release $Q=q$, each child activates with probability $q/(2m)=2q/3$, independently of its sibling. Thus the offspring variable is a mixed binomial:
+\[
+ K\mid Q=q\sim\operatorname{Bin}(2,2q/3),\qquad
+ \Prob(K=0,1,2)=\frac1{27}(7,13,7),
+ \quad \E K=1,\quad\Var K=\frac{14}{27}.
+\]
+The root activates with probability $\delta/m$. Conditional on activation, $S$ is critical Galton--Watson total progeny. The standard total-progeny identity and lattice local central limit theorem give
+\[
+ \Prob(S=n\mid\hbox{root activates})
+ \sim\sqrt{\frac{27}{28\pi}}\,n^{-3/2}.
+\]
+With unit exponential clocks, conditional survival to time $t$ is exactly
+\[
+ \Prob(T>t\mid\hbox{root activates})=\frac1{1+7t/27},
+\]
+because the generating function is $s+(7/27)(1-s)^2$. Rates bounded between fixed $0<c<C<\infty$ on the possible active-energy range $[1,3/2]$ preserve duration-tail order $t^{-1}$ by coupling lifetimes. The spatial law needs only finite positive rates.
+
+\subsection{One-way chain}
+On a chain sending the entire release to the next site, at most one site receives input in each layer. Hence the layer variance is bounded above by $1$, below by a positive constant when alive, and the upward jump is at most $1$. The hitting argument gives $\Prob(\text{hit }H)\asymp H^{-1}$. After reaching $H$, Doob's inequality gives a fixed positive probability to stay above $H/2$ for order $H^2$ layers. Therefore
+\[
+ \Prob(D\ge n)\asymp n^{-1/2},\qquad
+ \Prob(S\ge s)\asymp s^{-1/3}.
+\]
+For the lower size bound, the high-flux episode contributes order $H^3$ topplings. The upper size bound is the same depth truncation as in Theorem~\ref{thm:directed}. This also illustrates why total topplings, number of distinct sites, spatial depth, and physical duration must not be conflated.
+
+\subsection{The exact chain susceptibility}\label{sec:chain-response}
+Deplete the product background by $(\eta-\varepsilon)_+$ as above. On the one-way chain, the frontier contains exactly one pending input, so $A_k=W_k$ before extinction. In particular $I_\varepsilon=\mathcal A_\varepsilon+1$.
+
+\begin{theorem}[Size susceptibility on the chain]\label{thm:chain-susceptibility}
+For the canonical release law and drive $\delta=1/4$,
+\begin{equation}\label{eq:chain-susceptibility}
+ \lim_{\varepsilon\downarrow0}\varepsilon^2\E S_\varepsilon
+ =\frac{\delta\Var_f(\eta)}m=\frac{37}{1944}.
+\end{equation}
+Thus the total-toppling susceptibility exponent on the chain is exactly $2$, with the stated prefactor.
+\end{theorem}
+\begin{proof}
+Write $\tau=I_\varepsilon$, $H_\varepsilon=\E\sum_{k<\tau}W_k$, and $\sigma^2=2\Var_f(\eta)=37/324$. Theorem~\ref{thm:area-susceptibility} and its proof apply unchanged to a one-child chain; in particular
+$\varepsilon\E\tau\to\delta$ and $H_\varepsilon=O(\varepsilon^{-2})$.
+
+We first control occupation at bounded frontier masses. For $K>1+\delta$, let
+\[
+ F_K(w)=K^2-(K-w)_+^2,\qquad w\ge0.
+\]
+This function is bounded, nondecreasing, and concave. If $0<W_k\le K-1$, the next mass is at most $K$, and its exact quadratic increment has conditional expectation
+\[
+ -2(K-W_k)b_\varepsilon(W_k)
+ -\{v_\varepsilon(W_k)+b_\varepsilon(W_k)^2\}\le-c_0.
+\]
+At other masses its expected increment is nonpositive by concavity and the negative drift of $W$. Telescoping therefore gives, uniformly for all sufficiently small $\varepsilon$,
+\begin{equation}\label{eq:bounded-mass-occupation}
+ \E\sum_{k<\tau}\ind_{\{W_k\le K-1\}}
+ \le F_K(\delta)/c_0.
+\end{equation}
+
+Equation~\eqref{eq:depleted-variance} and renewal mixing imply
+\[
+ \lim_{K\to\infty}\limsup_{\varepsilon\downarrow0}
+ \sup_{w>K}|v_\varepsilon(w)-\sigma^2|=0.
+\]
+Split the variance sum at $K$, use \eqref{eq:bounded-mass-occupation} for the bounded part, and use $\varepsilon\E\tau\to\delta$ for the rest. It follows that
+\begin{equation}\label{eq:variance-budget-limit}
+ \varepsilon\E\sum_{k<\tau}v_\varepsilon(W_k)
+ \longrightarrow\delta\sigma^2.
+\end{equation}
+The square budget \eqref{eq:frontier-square-budget} now yields
+\[
+ 2\varepsilon^2H_\varepsilon
+ =\varepsilon\delta^2
+ +\varepsilon\E\sum_{k<\tau}\{v_\varepsilon(W_k)+b_\varepsilon(W_k)^2\}
+ +2\varepsilon\E\sum_{k<\tau}W_k\{\varepsilon-b_\varepsilon(W_k)\}.
+\]
+The $b^2$ term is $O(\varepsilon^2)$, and the last term is $O(\varepsilon^3H_\varepsilon)=O(\varepsilon)$. Consequently $\varepsilon^2H_\varepsilon\to\delta\sigma^2/2$.
+
+On the chain the total emitted mass is $\sum_{k<\tau}W_{k+1}$, whose expectation is $H_\varepsilon-\delta$. Revealing each release only when its toppling is legal gives the stopped-sum identity $m\E S_\varepsilon=H_\varepsilon-\delta$. Integrability follows from the bound on $H_\varepsilon$; alternatively use finite truncations and monotone convergence. This proves \eqref{eq:chain-susceptibility}.
+\end{proof}
+
+\subsection{A proved release-law comparison}\label{sec:release-comparison}
+The area cutoff, depth and size-tail exponents, moment spectra, and susceptibility exponents extend beyond the uniform law, under explicit hypotheses. Take $Q$ with a continuous strictly positive density on $[a,1]$, where $0<a<1$, retaining threshold one, equal forward routing, and fixed positive drive. Use the corresponding renewal product background
+\[
+ f(e)=\frac{\Prob(Q>1-e)}m,\qquad m=\E Q.
+\]
+Renewal mixing gives $v(A)\to2\Var_f(\eta)>0$ and a positive variance lower bound for inputs bounded away from zero. Every positive input is at least $\min(\delta,a/2)$ on the two-child lattice. Also $\Prob_f(\eta<\varepsilon)=O(\varepsilon^2)$ because the density of $Q$ is bounded near one. For $\varepsilon<a$, clipping can again add at most one toppling. Hence
+$b_\varepsilon(A)=\varepsilon+O(\varepsilon^2)$ uniformly on the allowed inputs, with $b_\varepsilon(A)\le\varepsilon$.
+
+The proofs above therefore give, for each fixed such release law, the critical area tail $\Prob(\mathcal A\ge a_0)\asymp a_0^{-1/2}$, the two-sided cutoff \eqref{eq:area-cutoff}, and the full moment spectrum \eqref{eq:area-moment-spectrum}. The same walk kernel applies under equal routing; the minimum positive input replaces $1/4$, and $Y_L\le S_L\le Y_L/a$ replaces the uniform-law comparison. The response noise remains bounded by one, and the layer overshoot factor is at most $1+1/\min(\delta,a/2)$. Thus concentration and the Laplace comparison give the logarithmic depth exponent $3/4$, total-size tail exponent $3/7$, finite-layer spectrum \eqref{eq:size-moment-spectrum}, and depleted size exponent $4/3$, with the same displayed logarithmic powers and law-dependent constants. The scalar flux bound and deterministic cone estimate extend as well, proving the near-critical spectra \eqref{eq:depleted-size-spectrum}--\eqref{eq:depleted-depth-spectrum} and cutoff statements of \S\ref{sec:near-critical-spectrum}. The intermediate-layer Laplace bound, bounded-increment frontier estimate, and resulting conditional geometric and moment exponents in \S\ref{sec:conditional-geometry} also extend. On the chain,
+\begin{equation}\label{eq:general-chain-susceptibility}
+ \varepsilon^2\E S_\varepsilon\longrightarrow
+ \frac\delta m\left\{\frac{\E Q^3}{3m}
+ -\left(\frac{\E Q^2}{2m}\right)^2\right\}.
+\end{equation}
+This is robustness of specified exponents, with a law-dependent chain prefactor. Constants are not asserted uniform as the release law degenerates. A proportional-release rule, reset rule, or arbitrary atomic release law is outside this statement. Spatial observables retain the earlier exact clock invariance; physical durations require separate assumptions.
+
+\section{Loading, conservation, and fixed-energy questions}\label{sec:loading}
+
+\begin{lemma}[Stationary-field truncation]\label{lem:truncation}
+Let $M\ge0$ be a translation-stationary field, finite almost surely, for a translation-invariant conservative routing kernel. If $BM(0)$ is integrable, then $\E BM(0)\le0$, without assuming $\E M(0)<\infty$.
+\end{lemma}
+\begin{proof}
+Coordinatewise truncation satisfies
+\[
+ B(M\wedge K)(0)\ge\ind_{\{M(0)\le K\}}BM(0).
+\]
+If $M(0)>K$, the left side is nonnegative. Otherwise truncation can only reduce the subtracted neighbor values. The expected left side is zero by translation stationarity and conservativity. Dominated convergence on the right proves the assertion.
+\end{proof}
+
+\begin{proposition}[Conditional loading instability]\label{prop:loading}
+Suppose $\nu$ is translation invariant and ergodic, supported on stable energies, and invariant under every finite nonnegative addition followed by a finite avalanche. Then $\eta+\varepsilon\ind$ does not fixate almost surely for every $\varepsilon>0$.
+\end{proposition}
+\begin{proof}
+If this uniformly loaded configuration fixed almost surely, stabilize the additions $\varepsilon\ind_A$ for increasing finite sets $A$. Their odometers increase to a finite odometer by least action, and their final energies converge coordinatewise to the stabilization of the uniformly loaded field. Every finite-addition output has law $\nu$, so the limit $\eta^*$ has law $\nu$. The total emitted mass field $M$ is finite and translation stationary, and
+\[
+ BM=\eta+\varepsilon\ind-\eta^*,\qquad \E BM(0)=\varepsilon>0,
+\]
+contradicting Lemma~\ref{lem:truncation}. Ergodicity of the background together with the independent stack field makes fixation a zero-one event. Without ergodicity, the proof as stated excludes almost-sure fixation but does not automatically give almost-sure nonfixation.
+\end{proof}
+This applies unconditionally to the directed product law, by Theorem~\ref{thm:directed} and finite-addition iteration. For undirected averaged limits it requires the remaining extinction/invariance input and an ergodicity justification.
+
+\subsection{A separate fixed-energy phase boundary}
+For an independent initial field coupled monotonically in its mean density $\rho$ (for example exponential energies of mean $\rho$), the infinite undriven model has a monotone fixation event. With unit active-site rates it is well defined by bounded local jump rates and increments. Translation ergodicity gives a zero-one event. The resulting critical parameter satisfies
+\begin{equation}\label{eq:fixed-energy-window}
+ \frac12\le\rho_c\le1,
+\end{equation}
+with nonfixation at $\rho\ge1$. These bounds do not identify $\rho_c$ with the driven stationary density.
+
+Here are the arguments. Finite-time mean energy is conserved by translation invariance and bounded rates. If fixation occurs, $M$ is finite sitewise and $BM=\eta-\eta^*$ is integrable. Fatou gives $\E\eta^*(0)\le\rho$, while Lemma~\ref{lem:truncation} gives the reverse inequality. Thus the density is preserved by fixation. A stable field has mean strictly less than one, so $\rho\ge1$ cannot fixate.
+
+For the lower bound, nonfixation propagates to every site because releases to each neighbor are bounded below. At a time by which every site of a finite set $A$ has toppled, let $q_x\le1$ be its last release and let $k_x$ be the number of its neighbors in $A$ whose last toppling occurred earlier. Site $x$ retains at least $1-q_x$ immediately after its last toppling; releases across edges from later last topplings are retained afterward. Summing gives
+\[
+ \sum_{x\in A}E_x(t)
+ \ge\sum_{x\in A}\left(1-q_x+\frac{k_xq_x}{2d}\right)
+ \ge\frac{|\mathcal E(A)|}{2d},
+\]
+since $k_x\le2d$ and $\sum_xk_x=|\mathcal E(A)|$, the number of internal undirected edges. On almost-sure nonfixation the event in question eventually occurs for each $A$. Take expectations, then time to infinity and a box $A$ to infinity, obtaining $\rho\ge1/2$.
+
+An immediate obstruction concerns the exact sampler. The infinite stationary field
+\[
+ \xi=\ind-D+PD
+\]
+is nonnegative, ergodic, and has mean one. It cannot fixate by the preceding argument. Thus applying the finite renewal sampler directly to the whole infinite lattice does not construct the bulk law; the finite-volume sampler relaxation grows with the domain.
+
+\section{The stronger SOC program: selection, scaling, and universality}\label{sec:scaling}
+
+The statements below distinguish the usual SOC predictions from the minimal criterion \eqref{eq:soc-target}. A threshold rule, conservation, and an infinite mean do not by themselves imply a scaling function or an identified universality class.
+
+\subsection{What is self-organized here?}
+Finite-volume slow driving converges from every stable initial state to the canonical stationary law, without setting its density. In the directed geometry this selects the explicit renewal product law, of mean $11/18$ for the uniform releases. Around that law, a fixed local addition has finite mean total size after any positive depletion, has finite size almost surely and infinite mean at zero depletion, and every positive uniform loading gives almost-sure nonfixation by Proposition~\ref{prop:loading}. The positive-loading statement concerns the entire loaded configuration, not the survival probability of a single avalanche.
+
+This is a proved response transition around a dynamically selected background. Slow driving, however, is imposed: input occurs only after relaxation. We have not proved that a finite simultaneous driving rate generates its own separation of timescales. Nor have we identified the driven density with the critical density of another prescribed iid fixed-energy family. The latter identification needs its own argument and can fail in other sandpiles \cite{FLW}.
+
+\subsection{Finite-size scaling and exact constraints}
+Write $S_L$ for total topplings from a bulk root in an undirected box of linear scale $L$. A standard single-cutoff target is
+\begin{equation}\label{eq:fss-target}
+ \Prob(S_L=s)\approx s^{-\tau_s}\mathcal F(s/L^{\mathcal D}),
+ \qquad 1<\tau_s<2.
+\end{equation}
+Here $\mathcal D$ is a cutoff exponent; the letter $D$ elsewhere still denotes directed depth. A precise theorem must specify convergence, the drive convention, corrections to scaling, and moment control. In particular, a visual collapse is not a proof.
+
+\begin{proposition}[Conditional scaling relation]\label{prop:conditional-scaling}
+Assume a single-cutoff scaling law with enough moment control that
+\begin{equation}\label{eq:moment-scaling}
+ \E S_L^q\asymp L^{\sigma(q)},\qquad
+ \sigma(q)=\mathcal D(q+1-\tau_s)
+\end{equation}
+for a range of $q>\tau_s-1$ including $q=1$. Then
+\begin{equation}\label{eq:conservation-scaling}
+ \mathcal D(2-\tau_s)=2
+\end{equation}
+on the undirected lattice. For a directed cone with $L$ layers, the corresponding relation is
+$\mathcal D_\parallel(2-\tau_s)=1$.
+\end{proposition}
+\begin{proof}
+The first relation follows by comparing \eqref{eq:moment-scaling} at $q=1$ with Proposition~\ref{prop:green}. The directed identity follows from $\E S_L=L\delta/m$. The stated constant-factor moment ansatz and a distributional scaling function are not proved here. Theorem~\ref{thm:size-moment-spectrum} does prove its logarithmic exponent version on the directed lattice.
+\end{proof}
+Affineness of $\sigma(q)$, a common cutoff scale across moments, and stable moment ratios are concrete numerical tests of this hypothesis. If joint single-scale relations $S\sim R^{\mathcal D}$ and $T\sim R^z$ also hold, with radius tail $\Prob(R\ge r)\approx r^{-\kappa_R}$ and duration density exponent $\alpha$, they predict
+\[
+ \mathcal D(\tau_s-1)=\kappa_R=z(\alpha-1).
+\]
+These are additional conditional relations. Physical duration $T$ requires a specified clock convention; directed depth is not physical time.
+
+\subsection{A proved exponent ledger}
+The notation $\asymp$ below means matching positive constant bounds. An $o(1)$ in an exponent records a logarithmic exponent limit, not a pure power law or a prefactor. All depleted backgrounds use $(\eta-\varepsilon)_+$.
+\begin{center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{.31\textwidth}>{\raggedright\arraybackslash}p{.32\textwidth}>{\raggedright\arraybackslash}p{.30\textwidth}@{}}
+\toprule
+Geometry and observable & Critical tail & Depleted mean\\\midrule
+Directed lattice, area $\mathcal A$ & $\asymp a^{-1/2}$ & $\asymp\varepsilon^{-1}$\\
+Directed lattice, total size $S$ & $s^{-3/7+o(1)}$ & $\varepsilon^{-4/3+o(1)}$\\
+Directed lattice, depth $D$ & $n^{-3/4+o(1)}$ & $\varepsilon^{-1/3+o(1)}$\\
+One-way chain, total size $S$ & $\asymp s^{-1/3}$ & $\sim(37/1944)\varepsilon^{-2}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Theorem~\ref{thm:area-cutoff} proves the two-sided depleted area cutoff
+\[
+ c a^{-1/2}e^{-C\varepsilon^2a}\le\Prob(\mathcal A_\varepsilon\ge a)
+ \le C a^{-1/2}e^{-c\varepsilon^2a}.
+\]
+Its moment exponents are $2q-1$ for $q>1/2$, with logarithmic divergence at $q=1/2$. This does not identify a limiting scaling function. For total size, the susceptibility bounds are now
+\[
+ c\varepsilon^{-4/3}[\log(1/\varepsilon)]^{-1/3}
+ \le\E S_\varepsilon\le C\varepsilon^{-4/3}[\log(1/\varepsilon)]^{2/3}.
+\]
+Also $\E S^q<\infty$ exactly for $0<q<3/7$, including divergence at the endpoint. The depth tail is $n^{-3/4+o(1)}$. Theorem~\ref{thm:size-moment-spectrum} proves, without a scaling ansatz,
+\[
+ \lim_{L\to\infty}\frac{\log\E S_L^q}{\log L}
+ =\max\{0,(7q-3)/4\}.
+\]
+Thus the high-moment exponents lie on the line with slope $\mathcal D_\parallel=7/4$ and intercept $-3/4$. Its implied size exponent is $\tau_s=10/7$, and $\mathcal D_\parallel(2-\tau_s)=1$ agrees with the exact mean. Section~\ref{sec:release-comparison} proves these specified exponents for the stated continuous release-law class. Duration exponents and full scaling functions are still not identified.
+
+\subsection{What the directed 10/7 result establishes, and what remains open}
+\status{PROVED, logarithmic exponents.} For the two-dimensional directed lattice,
+\begin{equation}\label{eq:directed-prediction}
+ \Prob(D\ge n)=n^{-3/4+o(1)},\qquad
+ \Prob(S\ge s)=s^{-3/7+o(1)},\qquad
+ \mathcal D_\parallel=7/4\quad\hbox{in the moment sense}.
+\end{equation}
+These are proved for the present rule and agree with the exponent values of the different model in \cite{KMT}. They do not identify the models or establish a common scaling function. In particular, writing $\Prob(S=s)\sim c s^{-10/7}$ would be stronger than our result: a pointwise mass-function asymptotic requires additional regularity.
+
+The key new mechanism in the proof is that each site's response differs from its input by bounded centered noise. The discrete heat equation makes the largest input through layer $L$ at most $C L^{1/4}\sqrt{\log L}$ outside an arbitrarily small polynomial-probability event. Killing the flux at cap failure and iterating a conditional Laplace inequality converts this cap into the depth upper bound, without a further logarithmic loss. A late-layer mass budget then proves the size-tail lower bound. Thus lower occupied-width estimates were bypassed for these exponent results.
+
+\status{PROVED, conditional geometric exponents.} Theorem~\ref{thm:conditional-geometry} now proves, conditional on $D\ge N$,
+\[
+ \frac{\log S}{\log D}\to\frac74,\qquad
+ \frac{\log\mathcal A}{\log D}\to\frac32,\qquad
+ \frac{\log R_\perp}{\log D}\to\frac12
+\]
+in probability. At any fixed intermediate fraction of the target depth, flux, receiving count, and largest site input have exponents $3/4$, $1/2$, and $1/4$. The proof restarts the Laplace comparison before the future survival event is imposed: too little current flux cannot often sustain the remaining depth. A bounded-increment frontier estimate then forces enough receiving sites. This is additional conditional information, not an inference from marginal exponents alone.
+
+\status{OPEN, shape and constant-factor precision.} Tightness after normalization by the exact powers, a positive limiting occupied fraction, limiting rescaled avalanche shapes, and exact logarithmic corrections remain unproved. Thus the conditional exponent statement must not be replaced by $S\sim cD^{7/4}$ or by a limiting distribution for $S/D^{7/4}$.
+
+\status{PROVED, near-critical exponents.} In addition to the stronger two-sided area cutoff, Section~\ref{sec:near-critical-spectrum} proves
+\[
+ \frac{\log\E S_\varepsilon^q}{\log(1/\varepsilon)}\longrightarrow
+ \max\{0,7q/3-1\},\qquad
+ \frac{\log\E D_\varepsilon^q}{\log(1/\varepsilon)}\longrightarrow
+ \max\{0,4q/3-1\}.
+\]
+Avalanches simultaneously reaching depth $c\varepsilon^{-4/3}h_\varepsilon^{-1/3}$ and size $c\varepsilon^{-7/3}h_\varepsilon^{-13/12}$ occur with probability at least $c\varepsilon$. Beyond $\varepsilon^{-4/3-\eta}$ in depth or $\varepsilon^{-7/3-\eta}$ in size, probabilities are smaller than every fixed power of $\varepsilon$, for every fixed $\eta>0$. Thus the depletion cutoff exponents $4/3$ and $7/3$ are proved to polynomial precision. In particular the relation
+\[
+ \nu_S=\nu_D\mathcal D_\parallel=\frac43\frac74=\frac73
+\]
+holds for these proved cutoff exponents. The mean-size exponent is
+\begin{equation}\label{eq:lattice-susceptibility-prediction}
+ \E S_\varepsilon=\varepsilon^{-4/3+o(1)}.
+\end{equation}
+The complete cutoff profiles, constant-factor scales, logarithmic corrections, and limiting scaling functions remain open. The depleted lower witness is not a theorem about a typical near-critical conditional shape. For comparison, the chain's critical size tail and exact susceptibility suggest a size cutoff $\varepsilon^{-3}$, but its complete near-critical scaling function remains unproved too.
+
+
+\section{Scope of supplementary checks}\label{sec:failures}\label{sec:numerics}
+The companion's exact three-site backward calculation supports the obstruction
+in Section~\ref{sec:backward}. The directed depletion results use the analytic
+arguments in Section~\ref{sec:directed}, including their stated renewal inputs.
+Historical simulations retain their original evidential status and are separate
+from those working proofs. Independent human review remains outstanding.
+\section{Literature boundary and provenance}\label{sec:literature}
+
+Kim and Wang's SSP \cite{KW} is the closest source considered for random total releases with fixed routing proportions: it develops abelian and stationary-state theory in a discrete model and reports numerical avalanche behavior. The continuous sampler and backward-stack statements here should be compared carefully with its stationary construction before any novelty claim. Its numerical avalanche size is the number of distinct toppled sites, so those figures cannot be compared directly with our total-toppling variable $S$.
+
+Kloster, Maslov, and Tang \cite{KMT} provide the relevant directed layer-flux precedent, for a different stochastic toppling rule. Campailla and Forien \cite{CF} give an exact stationary sampler for the integer stochastic sandpile with random routing and analyze the complete graph; those results are not automatically statements about the random-total-release model here. Bardet, Christen, and Fontbona \cite{BCF} supply a quantitative renewal coupling input. Fey, Levine, and Wilson \cite{FLW} explain why equality of driven stationary and fixed-energy threshold densities needs its own proof.
+
+The mathematical arguments in this checkpoint were synthesized from the research conversation and checked during preparation at the level recorded here. The source/PDF pair was compiled and visually inspected; the exact backward obstruction and the seeded line diagnostic were rerun for the initial checkpoint. The October 7 update derives the receiving-site martingale, area tail, area susceptibilities, and exact chain susceptibility. The October 8 work adds the area cutoff, spatial confinement, and then the bounded-noise heat-equation proof of logarithmic depth and size exponents, the finite-layer moment spectrum, and the lattice size susceptibility exponent. The continuation replaces the entropy stopping bound by a sharper Laplace comparison, strengthens the logarithmic tail bounds, and proves the near-critical depth/size cutoff exponents and all corresponding moment exponents. Conditional transforms, killing versus conditioning, exceptional-event contributions, endpoint tail integration, deterministic cone control, and the scalar loss recursion were checked during preparation. The subsequent conditional-geometry argument restarts the same bounded transforms at an intermediate layer, proves a small-flux survival bound, and uses a maximal frontier bound to force the area exponent. Its conditional errors, most-layer quantifiers, whole-avalanche radius truncation, conditional prefix moments, and the uniform extension through the controlled depletion window were checked. The higher-moment argument includes its elementary Taylor/Doob estimate. The directed exponent comparison with \cite{KMT} was rechecked against the paper's abstract; these remain different models. No new Monte Carlo evidence, independent human verification, or exhaustive literature review is asserted. 
+
+\begin{thebibliography}{9}
+\bibitem{KW}
+S. Kim and Y. Wang, \emph{A stochastic variant of the abelian sandpile model}, 2019.
+\href{https://arxiv.org/abs/1906.01107}{arXiv:1906.01107};
+\href{https://doi.org/10.1007/s10955-019-02453-7}{doi:10.1007/s10955-019-02453-7}.
+
+\bibitem{BCF}
+J.-B. Bardet, A. Christen, and J. Fontbona,
+\emph{Quantitative exponential bounds for the renewal theorem with spread-out distributions},
+\href{https://arxiv.org/abs/1504.06184}{arXiv:1504.06184}, version 3 (2016).
+
+\bibitem{KMT}
+M. Kloster, S. Maslov, and C. Tang,
+\emph{Exact solution of stochastic directed sandpile model},
+Phys. Rev. E \textbf{63}, 026111 (2001).
+\href{https://arxiv.org/abs/cond-mat/0005528}{arXiv:cond-mat/0005528};
+\href{https://doi.org/10.1103/PhysRevE.63.026111}{doi:10.1103/PhysRevE.63.026111}.
+
+\bibitem{CF}
+C. Campailla and N. Forien,
+\emph{Stochastic Sandpile Model: exact sampling and complete graph},
+\href{https://arxiv.org/abs/2507.01572}{arXiv:2507.01572}, version 2 (2026).
+
+\bibitem{FLW}
+A. Fey, L. Levine, and D. B. Wilson,
+\emph{Driving sandpiles to criticality and beyond},
+Phys. Rev. Lett. \textbf{104}, 145703 (2010).
+\href{https://doi.org/10.1103/PhysRevLett.104.145703}{doi:10.1103/PhysRevLett.104.145703}.
+\end{thebibliography}
+\end{document}

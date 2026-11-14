@@ -1,0 +1,191 @@
+ARW: FIRST-COLLISION OBSTRUCTION AND A TWO-PARTICLE REPAIR
+2026-10-07; continuation of N2_defect_factorization_2026-10-07.zip (DF)
+
+STATUS
+
+The general all-active add-one occupation conjecture remains open. This
+chunk disproves the specific no-contact coefficient invariant proposed in
+DF, then repairs that example by carrying a block through a wake-up and a
+two-particle move. Both the obstruction and repair are exact. They identify
+a necessary extension of this block scheme, not a counterexample to ARW
+occupation monotonicity or an impossibility theorem for all couplings.
+
+Question: after DF's creation-history factorization of the FULL response,
+are the weights w_B=kappa_B(I-Q_B)^(-1) always nonnegative? Q_B follows the
+one active particle with sleeping background B until collision, sleep,
+target hit or sink exit. Stopping criterion: a verified obstruction or a
+useful general identity. The obstruction appeared in a short deterministic
+rate sweep; no long-running job remains.
+
+1. SOURCES, ASSUMPTIONS, AND WHAT CHANGED
+
+Keep exactly the canonical assumptions: a finite graph, a K-accessible
+absorbing sink from every vertex, 0<p_z<1, and all-active original inputs.
+Only occupation of a specified target is compared.
+
+DF Section 1 proves the general creation-history identity
+
+ e(A,z)=a(A)-(J_z a)(A)
+       =p_z/(1-p_z) sum_B nu_{A\{z}}^{v,z}(B) H_v(B,z).
+
+Here a is target avoidance, J_z is forced jump plus surplus IDLA, nu is the
+UNNORMALIZED law of creating sleeping B without visiting z or target v,
+and H_v(B,z) is target hitting from active z and sleeping B.
+
+Apply it to the full signed uniform-routing response from AF/CR:
+
+ Delta=c0+sum_A U(A)sum_{z in A}e(A,z)
+      =c0+sum_{B,z}kappa(B,z)H_v(B,z).
+
+DF resums Q_B(z,y)=(1-p_z)K(z,y) on V\(B union {v}), obtaining
+
+ Delta=c0+sum_B w_B g_B,       w_B=kappa_B(I-Q_B)^(-1).
+
+g_B records target entry and the eventual target-hit credits of collision
+states. It is nonnegative. The inverse is always well-defined because the
+Q_B row sums are at most max_z(1-p_z)<1. The proposed sign of w_B is the
+extra claim tested here. This is not AF's still-unproved general signed
+renewal invertibility. All finite renewal systems used here are invertible.
+
+F1-F9 were checked. This works on complete response rows, so it does not
+repeat the generationwise positivity assertion in F5. It retains actual
+creation laws and mixed ARW dynamics, rather than the unrestricted sleeping
+attractiveness of F1 or the IDLA substitutions of F6. No new conditional
+contact transport is fitted.
+
+2. SCREENING AND THE EXACT EXAMPLE
+
+The second saved four-site uniform-routing failure passes the new w_B test:
+its negative kappa coefficient disappears after the no-contact resummation.
+The saved six-site odds-routing failure also passes for uniform routing,
+but uniform U is already nonnegative there. This latter test supplies no
+new cancellation evidence. These are floating-point screens, not proofs.
+
+Next use the CR graph and vary all four p-coordinates on the ordered grid
+{1/64,1/4,3/4,63/64}. Stop at the first w_B entry below -1e-9. The first
+failure occurs at index 64 (65th rate vector), with inverse residual below
+3e-16. Five subsequent simple rate vectors were checked only to seek a
+smaller denominator witness; none replaced this example.
+
+Graph:
+ 0 -> 2;
+ 1 -> 0 or sink, each 1/2;
+ 2 -> 3 or sink, each 1/2;
+ 3 -> 0 or 1, each 1/2.
+
+Set p=(1/4,1/64,1/64,1/64), target v=1, common active input {1,3},
+extra particle at 0. The extra site differs from DF's example, which used
+extra 2. The full response closes on at most two common particles.
+
+Exact rational reconstruction gives
+
+ w_{B={2}}(0)
+ = -104168898960045801188926412016217514305121748463719353476917 /
+     668236829031329534643312004750300291168020769396740398364802355200
+ < 0, approximately -1.558861985e-7.
+
+This is the only negative w entry. For this B, W_B={0,3}, and
+Q_B(3,0)=63/128, so the unpaid weight is exactly
+
+ kappa({2},0)+(63/128)kappa({2},3)<0.
+
+The conjectured target increment itself is strictly positive:
+
+ Delta=118513272962005822258953388697173913950579524 /
+       515113353405368617322916508478973693271235183825.
+
+The program independently calculates final occupation from the original
+two all-active inputs and verifies equality with the complete-response
+formula. The exact failure is therefore a failure of a sufficient invariant.
+
+3. NEGATIVE MASS SURVIVES FIRST COLLISION
+
+Collect target-entry credits into C and collision credits by the actual
+resulting configuration. Because |B|<=1 here, every collision state has two
+active particles at one site and no sleepers. Let G_i be its target-hit
+probability. Then exactly
+
+ Delta=C+d_0 G_0+d_2 G_2+d_3 G_3,
+ C>0, d_0>0, d_3>0, d_2<0.
+
+The negative coefficient is d_2=(3/4)w_{ {2} }(0). Thus simply grouping the
+first-collision outcomes also fails. Exact values and all original response,
+creation, kappa, w and collision coefficients are in exact_failure.json.
+
+4. A BLOCK CONTINUING THROUGH THE WAKE-UP PAYS THE DEBT
+
+Start with two actives at 0. Ignore ineffective sleep instructions until
+the mandatory jump 0->2. The state is then one active at 0 and one at 2.
+Hold the particle at 2 and process the particle at 0 once. It sleeps with
+probability p_0=1/4, leaving sleeping 0 and active 2; otherwise it jumps
+to 2, leaving two actives there. Fresh suffixes and a legal schedule give
+
+ G_0=(1/4)H_1({0},2)+(3/4)G_2.                              (1)
+
+Put b=-d_2>0 and alpha=b/(3/4). Then
+
+ d_0 G_0-b G_2
+   =(d_0-alpha)G_0+(alpha/4)H_1({0},2).                     (2)
+
+The exact capacity check is
+
+ (3/4)d_0+d_2
+ =506030510093147230092338021523366553593081246900684678334762521 /
+  684274512928081443474751492864307498156053267862262167925557611724800
+ >0.
+
+Consequently (2), together with C and d_3G_3, is a nonnegative complete
+response certificate. All its coefficients and its equality with the raw
+occupation increment are checked rationally. This is a local transition
+identity with an explicit capacity check, not a fit using the desired
+target inequality.
+
+The mechanism changes the sleeping background: the debt arose from a
+sleeper at 2, while the donor's alternative outcome has a sleeper at 0.
+Keeping each background separate through the first collision misses this
+exchange. A collision need not be a valid block boundary for coefficient
+positivity; the woken particle must sometimes travel jointly with the
+particle that woke it. Equation (1) makes that requirement concrete here.
+
+More generally, for distinct z,y and a fixed sleeping background disjoint
+from z,y,v, two actives at z can both move along z->y before any other particle
+is toppled. This event has probability (1-p_z)K(z,y)^2, giving a legitimate
+stopped-history lower bound by that weight times the two-active-at-y hit
+probability. Other outcomes retain their nonnegative complete-history
+credits. This elementary transition bound provides no general capacity
+theorem: paying all debts is still the missing step.
+
+5. NEXT CONCRETE QUESTION
+
+Retire universal no-contact w_B positivity (new failure F10). The next
+specific candidate is to resum the ENTIRE two-active phase at common
+particle bound two: from the signed collision source d, use the raw ARW
+kernel Q^(2) on configurations with exactly two active particles, choosing
+the least-index active site as scheduler. Stop on the first
+effective sleep, sink loss or target hit. Test whether the entrance/visit
+weights d(I-Q^(2))^(-1) are nonnegative on saved heterogeneous cases and
+the recorded rate grid. This allows the pair motion in (1).
+
+A surviving negative weight is a scoped obstruction and should end that
+test. If it survives, inspect the boundary creation laws before inventing
+another arbitrary positivity cone. If it passes, seek a coefficient-balance
+identity; finite success alone is not proof. At larger particle counts,
+additional wakes introduce further active particles, so a two-active block
+is only a diagnostic step toward full avalanche grouping. AF's general
+renewal invertibility and total budget construction remain open.
+
+6. REPRODUCTION
+
+OPENBLAS_NUM_THREADS=1 python3 screen.py
+OPENBLAS_NUM_THREADS=1 python3 sweep.py
+OPENBLAS_NUM_THREADS=1 python3 exact_failure.py
+
+Python 3, numpy and scipy are needed. screen.py and sweep.py use floating
+point only to choose cases. exact_failure.py uses Fraction arithmetic for
+the complete reconstruction, counterexample and repair, with an independent
+raw stabilization check (63 transient states). It writes exact_failure.json.
+
+The other modules and the saved routing input JSON files are copied from
+the v9 source archive named in MONOTONICITY.md. They are supporting code,
+not new results. No earlier unchanged audit was rerun. The exact renewal
+reconstruction was necessary for this new rate vector and response row.

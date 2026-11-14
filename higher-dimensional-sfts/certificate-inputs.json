@@ -1,0 +1,18 @@
+{
+  "alphabet-sweep-evidence.json": {
+    "sha256": "a52a6aee9a1cab30da235cc5ff17743900832df925cc2792d4af4e31ff759af4",
+    "bytes": 12028326
+  },
+  "line-sweep-evidence.json": {
+    "sha256": "7da0c484d51a2c4fb9fe163b53162a8101a269305e872ec53f38ee708a0d0bf4",
+    "bytes": 11611503
+  },
+  "switching-evidence.json": {
+    "sha256": "67a2610722b7a11fa68cb3f743b013988d2171e1e32160bd3707865ebbe58910",
+    "bytes": 9179090
+  },
+  "ternary-layer-evidence.json": {
+    "sha256": "cb49239641854a93e1c96163a1653b9bb4d9488d76464e18c13f510ac63b2973",
+    "bytes": 5922387
+  }
+}

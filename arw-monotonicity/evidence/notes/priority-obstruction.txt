@@ -1,0 +1,184 @@
+ARW: A PRIORITY-SITE OBSTRUCTION TO TWO-ACTIVE BLOCK POSITIVITY
+2026-10-08 UTC; continuation of NC, N2_first_collision_obstruction_2026-10-07.zip
+
+STATUS AND RESEARCH STANDARD
+
+The general single-target add-one occupation conjecture remains open.
+There is no new general positive balance law in this chunk. There is a
+general obstruction to a proposed fixed-priority construction, supported
+by an exact example obtained by relabelling NC's existing graph. Both visit
+weights and complete first-sleep/loss boundary weights can be negative.
+This retires that sufficient invariant; it does not refute monotonicity.
+
+Question: from the signed collision source in NC, does following the whole
+two-active phase give nonnegative weights before the first effective sleep,
+sink loss or target visit? Proposed rule: always topple the least-index
+active site. Stopping criterion: a verified obstruction or a useful general
+balance identity. A structural obstruction was predicted before calculation
+and verified, so the planned rate sweep was unnecessary and was not run.
+
+The user's requested distinction is retained: another finite repair is
+diagnostic evidence, not evidence that a general proof is close. DF records
+the creation LAW, not every detail of the generating trajectory. Its
+nonnegative local defects still occur with signed global coefficients.
+
+1. SOURCE AND BLOCK DEFINITIONS
+
+Preserve the checkpoint assumptions: finite graph, accessible absorbing
+sink from every vertex, 0<p_z<1, original inputs all active. Let v be target.
+At common-particle bound two, NC supplies an exact full-response identity
+
+ Delta=C+sum_c d(c)G(c),                                    (1)
+
+where G(c) is probability of ever visiting v from two-active configuration
+c, C is a constant collecting earlier target hits, and d is supported on
+collision configurations C_z=2 delta_z. It may have negative entries.
+The occupation increment Delta itself is not a visitation probability.
+
+For a site-priority order pi, run raw ARW on two-active configurations,
+stopping on an effective sleep, a particle's exit to the sink, or visiting
+v. Q_pi is the kernel between states before stopping; R_pi is its kernel
+to stopping states. Ineffective sleep instructions at a collision are
+self-loops. The signed visit and boundary vectors are
+
+ t_pi=d(I-Q_pi)^(-1),       beta_pi=t_pi R_pi.               (2)
+
+The inverse exists: this is a finite stopped ARW phase under the original
+assumptions. Removing ineffective sleep self-loops rescales corresponding
+visit weights by positive factors and leaves beta unchanged.
+
+By the Markov property, (1) also equals
+
+ Delta=C+sum_b beta_pi(b)H_v(b),                            (3)
+
+where H_v(b)=1 for a boundary state already visiting v, and otherwise is
+its probability of a future visit. This identity is valid for either sign
+of the coefficients. Abelian final-law invariance does not assert that
+intermediate block coefficient vectors have a schedule-independent sign.
+
+2. GENERAL PRIORITY-SITE OBSTRUCTION (PROOF)
+
+Suppose z!=v has highest priority, and write C_z=2 delta_z. No distinct
+two-active configuration can transition to C_z:
+
+* From two particles together elsewhere, one jump leaves their old site
+  occupied, so it cannot put both at z.
+* From particles at two different sites, producing C_z requires moving the
+  OTHER particle while one is already at z. The priority rule moves z first.
+
+Thus the only entry to C_z in the phase comes from its initial signed
+source d(C_z) and its own self-loops. Those self-loops have probability
+p_z+(1-p_z)K(z,z). The balance equation gives
+
+ t_pi(C_z)=d(C_z)/[(1-p_z)(1-K(z,z))].                      (4)
+
+Sink accessibility ensures K(z,z)<1. In particular, a negative d(C_z)
+cannot be repaired by any amount of positive source at other states under
+this priority rule.
+
+The same obstruction reaches a complete stopping outcome. Let e_z denote
+one active particle at z and nothing else. The only transition exiting
+this phase at e_z is a sink jump from C_z. In a split state containing z,
+priority makes z move, so a sink jump leaves the OTHER site occupied.
+Therefore
+
+ beta_pi(e_z)=d(C_z)K(z,sink)/(1-K(z,z)).                   (5)
+
+If d(C_z)<0 and K(z,sink)>0, both (4) and (5) are negative. Consequently
+replacing visit-weight positivity by positivity only of complete stopping
+outcomes does not rescue the proposed rule. This is a general structural
+statement about this signed-source representation and scheduler.
+
+3. EXACT REALIZATION WITH ALL-ACTIVE ORIGINAL INPUTS
+
+Use NC's source without repeating its unchanged audit:
+
+ 0 -> 2;
+ 1 -> 0 or sink, each 1/2;
+ 2 -> 3 or sink, each 1/2;
+ 3 -> 0 or 1, each 1/2.
+
+p=(1/4,1/64,1/64,1/64), target 1, common active {1,3}, extra at 0.
+Its collision source has d(C_0)>0, d(C_3)>0, d(C_2)<0 and C>0.
+
+The ordinary order (0,1,2,3) produces no negative visit or boundary weights.
+The order (2,1,0,3) has exactly one negative visit weight, at C_2, and
+exactly one negative boundary coefficient, at e_2. By (5), the latter is
+
+ d(C_2)/2
+ =-312506696880137403566779236048652542915365245391158060430751 /
+   5345894632250636277146496038002402329344166155173923186918418841600
+ approximately -5.845732443e-8.
+
+The script forms both raw Q and R matrices with Fraction arithmetic and
+verifies the general formulas and the complete-response identity (3).
+Both schedules give the same positive occupation increment
+
+ Delta=118513272962005822258953388697173913950579524 /
+       515113353405368617322916508478973693271235183825.
+
+To make the bad order the literal least-index rule, rename vertices with
+new-to-old map (2,1,0,3). The resulting graph is
+
+ new 0 -> 3 or sink, halves;
+ new 1 -> 2 or sink, halves;
+ new 2 -> 0;
+ new 3 -> 1 or 2, halves.
+
+Its p=(1/64,1/64,1/4,1/64), target 1, common {1,3}, extra 2. The script
+rebuilds the signed renewal response on this relabelled graph and checks
+exact agreement with the permuted saved response row. Forced-jump and
+creation laws commute with relabelling, so the permuted d is the same
+uniform-response construction. The obstruction is not merely testing an
+unrelated scheduler against coefficients specific to a different graph.
+
+4. CONSEQUENCE FOR THE PROOF ARCHITECTURE
+
+This is new F11. F10 was an obstruction to stopping at first collision;
+F11 shows that a longer block with an arbitrary fixed priority can still
+fail, even at its complete stopping outcomes. NC's successful transfer
+held the receiving particle still so another particle could join it.
+Giving the receiving vertex highest priority prevents exactly that move.
+
+This does not rule out source-dependent scheduling, randomized scheduling,
+or cancellations involving later phases. It provides no theorem that such
+schemes have enough capacity. The observed success for the original order
+is not promoted to a general rule. Automatic block enlargement and further
+fixed-order sweeps are parked until there is an additional balance argument.
+
+5. A SPECIFIC NEXT BALANCE QUESTION (UNPROVED)
+
+For a source with one negative collision coefficient d(C_z)=-b, define a
+debt-directed policy: once one particle reaches z, hold it and move the
+other. Before reaching z use a fixed legal order. Stop at C_z or at the
+first effective sleep, sink loss or target visit. Let h_z(c) be the
+probability of reaching C_z first from a positive-source state c.
+
+First-step/strong Markov conditioning gives the exact general identity
+
+ sum_c d(c)G(c)
+  = [sum_{d(c)>0} d(c)h_z(c)-b] G(C_z)
+    + sum_{d(c)>0} d(c) E_c[H_v(X_tau); X_tau!=C_z].          (6)
+
+The second term is nonnegative. Hence the concrete sufficient capacity
+inequality is
+
+ sum_{d(c)>0} d(c)h_z(c) >= b.                              (7)
+
+Next chunk: derive h_z from the held-particle walk and test/prove or refute
+(7) for the actual all-active creation coefficients, first at common bound
+two with one negative collision source. This capacity question is stronger
+than the occupation inequality: it must cancel at C_z before phase exit.
+It does not assume the desired target increment inside a transport fit.
+No universal validity is claimed. Multiple negative collision sources,
+larger avalanches, and general signed-renewal invertibility remain open.
+
+6. REPRODUCTION AND FILES
+
+Run python3 priority_obstruction.py; only Python's standard library is used.
+The output is priority_obstruction.json. collision_source.json is copied
+unchanged from NC's exact_failure.json. verify_avoidance_exact.py is the
+unchanged rational solver from v9, included for reproducibility. New work
+is the two-active block calculation, formulas (4)-(5), and the relabelled
+response check. Earlier unchanged stabilization audits were not rerun.
+No computation remains running.

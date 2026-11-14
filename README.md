@@ -6,15 +6,15 @@ The code was developed with ChatGPT; source attribution is retained.
 
 | Package | What the download supports |
 | --- | --- |
-| [ARW monotonicity](arw-monotonicity/) | Theorem 8.1: six exact polynomial identities and 2,232 nonnegative Bernstein coefficients |
+| [ARW monotonicity](arw-monotonicity/) | Selected technical proofs and exact verifiers, with explicit result-to-file mapping |
 | [ARW negative association](arw-negative-association/) | Selected technical proofs, exact saved laws, and reproducible finite checks |
 | [Word potentials](word-potentials/) | Symbolic identities and floating-point diagnostics, distinguished in the code |
-| [Higher-dimensional SFTs](higher-dimensional-sfts/) | Explicit swap rules and finite agreement-class calculations |
+| [Higher-dimensional SFTs](higher-dimensional-sfts/) | Technical entropy/overlap arguments, saved certificates and exact swap checks |
 | [Counting clusters](counting-clusters/) | Exact small-strip checks and a separate program for the width-17 enclosure |
 | [Combinatorial processes](combinatorial-processes/) | Selected exact, symbolic and numerical calculations in the illustrated notes |
 | [Independent coupons](independent-coupons/) | Truncated numerical sums for the stretched-exponential example |
-| [Sandpile](sandpile/) | An auxiliary three-site rational obstruction |
-| [Balloons](balloons/) | Exact interval computations and a [Lean package](balloons/lean/) for the finite process |
+| [Sandpile](sandpile/) | Full selected proof supplement and a separate three-site rational obstruction |
+| [Balloons](balloons/) | Full selected proof supplement, interval computations and a [Lean package](balloons/lean/) for the finite process |
 
 Each package is limited to the stated results. Passing a numerical or symbolic
 check does not formally verify the surrounding analytic paper. The balloon
@@ -54,3 +54,9 @@ This repository is a selected public release. It contains no private repository
 history, correspondence, agent instructions, continuation notes or build caches.
 Readers can browse and download it. Changes to the maintained repository require
 write permission from its owner. No additional license grant is included.
+
+## Citation convention
+
+Keep the model, hypotheses, conclusion and proof mechanism in the reader. Cite a specific companion section, theorem, certificate or program when deferring a long argument. Each package's `CLAIMS.md` maps results to those artifacts and states what is proved, checked exactly, or explored numerically. The paper and companion are paired by a fixed release tag and PDF hash in `checks.json`. Ordinary proofs remain ordinary proofs even when hosted beside Lean code.
+
+This release adds selected mathematical records and their required inputs. Existing working-proof qualifications remain effective; publication is not a new mathematical or priority audit. Private workspaces, historical chat bundles and unpublished joint papers remain excluded.

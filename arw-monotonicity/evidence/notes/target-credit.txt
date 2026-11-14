@@ -1,0 +1,181 @@
+ARW: TARGET CREDIT, MULTIPLE DEBTS, AND HITTING-PROBABILITY CEILINGS
+2026-10-08 UTC. Continuation of MC (meeting-capacity obstruction).
+
+STATUS AND CHUNK QUESTION
+
+The general occupation conjecture is OPEN under the unchanged finite-graph,
+accessible-sink, 0<p_z<1, all-active-input assumptions. No general budget
+inequality was proved in this chunk. The single-debt proposal survives the
+recorded finite tests; this is not proof or evidence of proximity to proof.
+A stronger, multiple-debt shortcut is now exactly refuted, including on
+graphs where every vertex can reach the target by a continuity argument.
+A general random-walk upper bound identifies information the budget loses.
+
+Question: can target-success credit pay the signed collision debt produced
+by the actual creation law? Start with MC's sufficient condition, and stop
+at an exact obstruction, useful identity, or the roughly ten-minute limit.
+Research ran approximately 15:50-16:01 UTC; writing/saving followed. No job
+is running. F1-F12 were checked. F12 is legitimately revisited because the
+new budget includes the target-success credits that its rule excluded.
+
+1. EXACT REPRESENTATION AND SINGLE-DEBT CONDITION
+
+For the signed-renewal response at common-particle bound two, DF's identity
+and first-collision resummation give
+
+ Delta = C + sum_y d_y G_y,
+
+where G_y is target-hit probability from two active particles at y. C is
+direct target credit before the first collision, including the uniform
+defect representation's constant. C and d retain the creation law through
+nu; they are not fitted using G. General signed-renewal invertibility is
+still unproved. The failed case's matrix identities are checked exactly.
+
+For one negative coefficient d_z=-b and C>=0, stop each positive-source
+trajectory at collision C_z, target hit, or first sleep/sink loss. Write m
+for weighted meeting probability and a for weighted successful target hits.
+Then
+
+ Delta = C+a+(m-b)G_z + nonnegative continuation credits.
+
+Thus C+a+m>=b suffices, as MC established. total_credit.py computes C,d
+directly from one-particle killed Green functions, without computing G,
+and uses policy iteration to maximize P(C_z or target before sleep/loss).
+Every causal policy is proper: an effective jump from a collision either
+leaves that collision or is a self-loop; accessibility eventually permits
+separation/loss, and at distinct sites the positive minimum sleep rate
+bounds survival. Standard finite-state reachability policy optimization
+therefore applies. Bellman residuals are numerical diagnostics only.
+
+2. NUMERICAL EVIDENCE, PRECISE SCOPE
+
+The initial screen used the 256 CR rate vectors and 300 seeded sparse
+four-site kernels, 556 cases total. There were 71 response rows with one
+negative collision coefficient above tolerance 1e-10. All passed MC's
+condition. In fact each had C>=b, so the policy choice was unnecessary.
+The new expression for C,d was checked against the existing exact MC
+certificate (validation_mc.json); no unchanged full MC audit was repeated.
+
+A stronger test checked C>=sum_y max(-d_y,0), covering several debts while
+ignoring positive sources. It failed at case 1862: the 556 earlier cases,
+1200 new four-site cases and 106 new five-site cases. The failing example
+is reconstructed exactly in Section 3. A separate seeded screen of 800
+five-site kernels, with directed-ring edges and direct sink leakage, found
+no violation of this stronger condition. Fifteen four-site collapses of
+the failed graph did not refute the original single-debt condition.
+
+These are finite floating-point screens, not an exhaustive search. No
+generality is inferred from passing them. In particular the five-site
+failure has TWO debts and does not refute MC's single-debt condition.
+
+3. EXACT OBSTRUCTION TO UNIT-COST MULTIPLE-DEBT PAYMENT
+
+Kernel rows have columns 0,1,2,3,4,sink and denominator 1024:
+
+ [945,  0, 63,  0,  0,16]
+ [  0,756,  0,  0,252,16]
+ [  0,945,  0, 63,  0,16]
+ [  0, 63,945,  0,  0,16]
+ [  0,  0,  0,  0,945,79].
+
+p=(1/64,15/16,63/64,1/16,63/64), target v=3, original common actives
+{0,3}, added particle at 2. Exact creation/resolvent reconstruction gives
+
+ C = 8439097499552218287600/7218671828724558665843633
+   approximately 0.00116906512718,
+ d_1 approximately -0.000983797150147,
+ d_4 approximately -0.000316036245708,
+ d_2 = 239764640374141747200/7218671828724558665843633 > 0,
+ d_0=0.
+
+The exact failed budget is
+
+ C+d_1+d_4 =
+ -211328164812563010305056614659446831672632754800 /
+ 1616050797045894038100181425786044862386753905997591 < 0.
+
+Both negative-source sites cannot reach target 3, hence G_1=G_4=0.
+G_2=4189311/67108864. The increment is POSITIVE:
+
+ Delta = 7664610109453516800/6544580080439309760511.
+
+It equals C+d_2 G_2. Independent exact raw stabilization on 78 states agrees
+with the signed-renewal and creation-law expressions. All exact fractions,
+creation weights and raw occupations are in direct_source.json.
+
+The obstruction is not confined to inaccessible target sites. Transfer
+epsilon>0 of K(4,4) to K(4,3). Now every vertex can reach 3; accessibility
+of the sink and all sleep probabilities are preserved. At epsilon=0 the
+exact renewal and defect inverses exist, hence their determinants remain
+nonzero in a neighborhood. C,d are continuous rational functions there,
+and C-sum max(-d,0) is continuous and strictly negative at zero. Therefore
+it remains negative for all sufficiently small positive epsilon. This is
+an existence proof of a target-reachable obstruction, not a numerical
+certificate for a specified positive epsilon. Unit-cost debt payment is
+false even after removing target-inaccessible vertices. It overcharges
+small hitting probabilities as well as zero ones.
+
+This is F13, scoped to this MULTIPLE-debt shortcut. It is not a failure of
+monotonicity, the single-debt success budget, or all target-aware budgets.
+
+4. GENERAL HITTING CEILING (PROOF; NO NOVELTY CLAIM)
+
+Let h(x) be ordinary jump-chain probability of hitting target v before the
+sink, with h(v)=1, h(sink)=0 and h=Kh elsewhere. For particle positions
+x_1,...,x_m, including sleepers, define
+
+ F(x_1,...,x_m)=1-product_i(1-h(x_i)).
+
+A sink particle can equivalently remain with factor 1. Sleep instructions
+do not change F. At a jump of a chosen particle away from v, harmonicity
+in that one coordinate preserves expected F; waking changes only activity
+labels. Thus F stopped at the first target hit is a bounded martingale for
+every causal legal schedule. On a hit it equals 1 and is always nonnegative.
+Finite-time optional stopping and a limit give P(ever hit v)<=F(initial).
+This proof does not assume independence of stopped particle trajectories.
+
+For two particles at y,
+
+ 0 <= G_y <= u_y := 2h(y)-h(y)^2 <= 1.
+
+The resulting sufficient MULTIPLE-debt condition is
+
+ C >= sum_y max(-d_y,0) u_y.                    (A)
+
+It discards positive sources, so it remains stronger than occupation
+monotonicity. The exact Section 3 example satisfies (A) because the two
+debt ceilings vanish. By continuity it also holds for all sufficiently
+small positive epsilon in that example. No general validity is claimed.
+
+For ONE debt, the stopping decomposition also gives the sharper sufficient
+condition C>=0 and
+
+ C+a+m u_z >= b u_z.                           (B)
+
+If m>=b, positivity is immediate. Otherwise use G_z<=u_z. When u_z=1,
+(B) is MC's original condition. This shows exactly where a target-aware
+ceiling enters, without using previously computed G values.
+
+5. NEXT STEP AND HONEST PROGRESS ASSESSMENT
+
+No progress on proving MC's unweighted single-debt budget. The tangible
+result is a certified obstruction to the stronger multiple-debt shortcut,
+and a graph-independent ceiling that removes that obstruction. This does
+not show we are close to a proof. Next derive or refute (A) directly from
+the creation-weighted coefficients at common bound two, on arbitrary
+finite graphs. If it fails, retain the quantitative obstruction and change
+the accounting mechanism; do not repeat unweighted scheduling searches.
+Larger avalanches and signed-renewal invertibility remain open.
+
+6. REPRODUCTION
+
+OPENBLAS_NUM_THREADS=1 python3 total_credit.py
+OPENBLAS_NUM_THREADS=1 python3 direct_budget.py
+OPENBLAS_NUM_THREADS=1 python3 reachable_budget.py
+OPENBLAS_NUM_THREADS=1 python3 collapse_screen.py
+OPENBLAS_NUM_THREADS=1 python3 derive_direct.py
+
+Python 3, numpy, scipy. Exact reconstruction uses fractions.Fraction;
+binary rational input is converted exactly, without denominator rounding.
+Source solver copies from the earlier evidence are unchanged. The code
+tests the proposed mechanisms, not arbitrary target counterexamples.

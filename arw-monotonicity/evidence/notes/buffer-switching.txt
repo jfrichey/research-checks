@@ -1,0 +1,335 @@
+GENERAL ARW COUPLING: INITIAL SLEEP INSERTION AND BUFFER-RECORD SWITCHING
+2026-10-06, Shanghai time (2026-10-05 UTC)
+
+Status: the main single-site add-one conjecture remains unproved. This pass
+focuses on general identities and local rules for a possible backward
+coupling. It does not promote the preceding finite-reservoir certificates
+to a general theorem. The useful new organization is: reduce the extra active
+particle to an extra initial sleeper; encode histories by local buffer resets;
+exchange a stored bit against an outgoing jump; permit consumed records to
+move into unused continuations during global reconstruction.
+
+The standard Abelian property and fresh-suffix resampling underpin the
+reductions. They are not claimed as new results. What is new in this research
+checkpoint is their use to formulate and test the particular repair rules.
+
+1. AN EXACT FIRST-SLEEP MIXTURE ON AN ARBITRARY FINITE GRAPH
+
+Let K be the jump kernel on finite V with an absorbing sink dagger reachable
+from every vertex. Let 0<=p_y<1 be the sleep probability at y. Initial eta is
+arbitrary, finite and all active. Set A=supp(eta). Write mu_eta for its final
+sleeping-set law, and nu_eta,y for the final law from eta plus one INITIAL
+SLEEPER at y, where y is outside A.
+
+Define kappa_y=p_y for y outside A and kappa_y=0 for y in A. On V define
+
+    Q_eta(y,z) = (1-kappa_y) K(y,z),
+    H_eta = (I-Q_eta)^(-1) diag(kappa),
+    r_eta(x) = 1 - sum_y H_eta(x,y).
+
+Here H_eta(x,y) is the probability that a K-walk from x falls asleep at y
+before reaching the sink, with sleep allowed only outside A. In particular
+H_eta is nonnegative and substochastic. Its columns in A vanish.
+
+There is an exact identity of FULL final-configuration laws:
+
+    mu_(eta+delta_x)
+      = r_eta(x) mu_eta + sum_(y outside A) H_eta(x,y) nu_eta,y.       (1)
+
+Proof. Freeze the original eta particles in place while moving just the
+additional particle. At a vertex of A there are at least two active particles,
+so skip ineffective sleeps and jump one particle, leaving eta unchanged. At
+a vertex outside A, the additional particle is alone; either it sleeps there
+or jumps. Stop upon its first effective sleep or its exit to the sink. This
+is a legal partial stabilization. The resulting configuration is either eta
+or eta plus a sleeper outside A. The unused stack suffixes are independent
+with their original laws, even conditional on the explored prefix. Finish
+stabilizing and apply the Abelian property. This gives (1).
+
+Consequently, for any target v, put
+
+    D_eta(x;v) = P(v in Stab(eta+delta_x)) - P(v in Stab(eta)),
+    B_eta(y;v) = P(v in Stab(eta+rho_y)) - P(v in Stab(eta)).
+
+Then
+
+    D_eta(x;v) = sum_(y outside A) H_eta(x,y) B_eta(y;v).             (2)
+
+One sufficient auxiliary conjecture is B_eta(y;v)>=0 for every all-active
+eta, every y outside its support, and every v. This compares an empty initial
+sleeping background with a single extra sleeper; it does NOT assert
+attractiveness between arbitrary sleeping backgrounds. The latter is false.
+The auxiliary assertion remains unproved here and may be stronger than needed:
+the original conjecture only requires the H_eta-weighted averages in (2)
+to be nonnegative. Do not impose positivity on every conditioned history.
+
+The same relation can be written as a maximum-principle equation:
+
+    D_eta(x;v) = sum_z K(x,z) D_eta(z;v),                  x in A,
+    D_eta(x;v) = p_x B_eta(x;v)
+                 + (1-p_x) sum_z K(x,z) D_eta(z;v),      x outside A,
+
+with the sink value zero. The mixture proof explains the nonnegative Green
+kernel without assuming the desired conclusion.
+
+Why this helps the backward architecture: all common active inputs remain
+identical, and the only extra boundary datum is now a stored particle at one
+initially vacant site. A proposed switching procedure can aim to connect the
+target's terminal occupancy discrepancy to that single initial stored bit.
+This is a change of boundary data, not a proof of the necessary switch.
+
+2. LOCAL BUFFER RESETS AS A COMPLETE-HISTORY ENCODING
+
+Process one incoming particle at a site whose local relaxed occupancy is
+b in {0,1}. Excluding incoming particles not yet processed at that site,
+relax it and regard outgoing jumps as pending deliveries. Its new local
+occupancy c is a fresh Bernoulli(p_y) variable, independent of b. It emits
+
+    1+b-c                                                        (3)
+
+particles, each with an independent K(y,.) destination.
+
+For b=0 this is the usual sleep-or-jump choice for one active particle. For
+b=1 the arrival wakes the resident: first one particle must jump, then the
+remaining single particle sleeps or jumps. Ineffective sleep instructions
+during the forced jump have been integrated out. Delaying packet deliveries,
+including self-loops, is handled through the Abelian local-input formulation;
+it is not an assertion that a physically present particle may be ignored
+when deciding whether a raw sleep instruction is effective.
+
+One exact realization gives each site independent books
+
+    B_y(1),B_y(2),... iid Bernoulli(p_y),
+    J_y(1),J_y(2),... iid with law K(y,.).
+
+Set B_y(0)=b_y, the initial buffer occupancy. After m inputs at y, the
+cumulative number of emitted jumps is
+
+    C_y(m) = m+b_y-B_y(m).                                       (4)
+
+Its increment is 1+B_y(m-1)-B_y(m), which is always 0,1,or 2. Hence C_y
+is nondecreasing. The site sends the first C_y(m) destinations from J_y.
+Fixed books therefore define a deterministic unary Abelian processor: total
+outputs depend only on total inputs, and any legal complete execution agrees.
+
+Starting from all-active eta corresponds to empty buffers b=0 and pending
+input counts eta. An initially sleeping extra particle sets one b_y=1.
+If N_z,y(u) counts jumps to y among the first u entries of J_z, then total
+inputs M_y and outputs U_y obey
+
+    M_y = eta_y + sum_z N_z,y(U_z),
+    U_y = M_y+b_y-B_y(M_y).                                      (5)
+
+The legal execution selects the least solution. The final sleeping indicator
+is B_y(M_y). These equations describe complete fields; they do not prescribe
+a synchronized time evolution for the two coupled systems.
+
+The same-book comparison increases input and output counts under an active
+addition, but does not order the final buffer bits. buffer_stack_results.json
+contains an explicit same-book failure. Thus the encoding does not silently
+assume the original monotonicity conjecture or bypass the known obstruction.
+
+3. AN EXACT LOCAL SWITCH: A SLEEPER FOR A JUMP
+
+Take one specified reset record from each of two histories at the SAME site.
+Suppose their old occupancies are b,c and their new occupancies are 1,0.
+Their output words have lengths b and 1+c. Write them as L and R y, where
+|L|=b, |R|=c, and y is the last destination of the second output word.
+
+The following local transformation is an involution:
+
+    first record:  b -> 1, outputs L
+    second record: c -> 0, outputs R y
+
+becomes
+
+    first record:  b -> 0, outputs L y
+    second record: c -> 1, outputs R.                            (6)
+
+The old occupancies and incoming particles have not changed. Equation (3)
+holds in both records. A stored particle moves from the first history to the
+second, and one emitted particle moves in the opposite direction, with the
+SAME destination y. To invert, take the final output y from the first record
+and swap the new occupancy bits back.
+
+Both sides have probability weight
+
+    p_site (1-p_site) product_(a in L) K(site,a)
+                          product_(a in R) K(site,a) K(site,y).  (7)
+
+This requires no reversibility of K, no homogeneous sleep parameter, and no
+comparison of conditional return hazards. It is an exact identity for the
+specified local records. Their emitted particle is a finite-history port
+whose recipient must be accounted for during a GLOBAL reconstruction.
+
+Two cautions are essential. The new records may not yet fit into two legal
+complete histories, because the transferred jump changes later arrivals.
+Also, a history-adaptive choice of the records is not automatically an
+invertible or measure-preserving selection rule. Equation (6) solves only
+the local record and weight calculation. These are the outstanding global
+issues, not details that can be omitted.
+
+4. WHY TWO INDEPENDENT HISTORIES ARE A USEFUL ACCOUNTING SPACE
+
+For the initially sleeping insertion problem, let q_minus and q_plus be the
+two target occupation probabilities. Under independent complete histories,
+
+    P(type 01) - P(type 10)
+       = (1-q_minus)q_plus - q_minus(1-q_plus)
+       = q_plus-q_minus.                                       (8)
+
+Thus an inverse-recognizable injection of bad history pairs into good history
+pairs, preserving their joint probability mass, would prove B_eta(y;v)>=0.
+A suitable fractional transport would suffice too. Record exchanges need
+preserve the JOINT product weight, so records can move between copies. The
+separate record inventories of the two copies need not stay fixed.
+
+For a complete buffer-history cylinder the weight is a product of reset coin
+probabilities and jump probabilities. Preserving combined per-site counts of
+reset outcomes and destination cards therefore preserves its weight. The
+local switch (6) does exactly this. This two-copy formulation is not, by itself,
+a solution to the supply/injectivity problem found in the earlier work.
+
+5. USED RECORDS MUST BE ALLOWED TO BECOME UNUSED
+
+A tempting further restriction is false: one cannot always repair bad pairs
+using only their consumed records while preserving the combined consumed
+inventory. There is already an exact two-site obstruction.
+
+Take K(0,1)=K(0,dagger)=K(1,0)=K(1,dagger)=1/2. Start one active particle at
+0, insert an initial sleeper at 1 in the upper copy, and target v=0.
+Consider these independent complete histories:
+
+  lower: the particle at 0 sleeps immediately;
+  upper: the particle at 0 jumps to 1, wakes the extra sleeper, and both
+         particles jump to the sink.
+
+This is a bad pair. Its combined buffer inventory is:
+
+  resets at 0: one 1 and one 0;
+  resets at 1: one 0;
+  jumps: one 0->1 and two 1->dagger.
+
+No good pair has exactly this CONSUMED inventory. A good upper history must
+leave its particle at 0 asleep. Because there is no return card 1->0, that
+particle must sleep on its initial reset, leaving the upper initial sleeper
+at 1 untouched. The lower particle then uses 0->1 and one 1->dagger card.
+It cannot consume the second 1->dagger card: there is no second lower particle.
+
+The natural repair is nevertheless clear. Swap the target resets; move the
+0->1 jump and the zero reset at 1 to the lower history. The repaired upper
+history keeps both initial particles asleep, while the lower particle exits.
+One formerly used jump at 1 has become UNUSED. Retaining that card in the
+unused continuation restores the exact enlarged-cylinder weight.
+
+For arbitrary admissible parameters, the bad cylinder above has weight
+
+    p_0 (1-p_0)(1-p_1) K(0,1) K(1,dagger)^2.
+
+The unpadded good cylinder has weight
+
+    p_0 (1-p_0)(1-p_1) K(0,1) K(1,dagger).
+
+Specify one otherwise-unused good-side jump as dagger to recover the bad
+weight exactly. The remaining possible values of that unused card leave
+additional good mass. Algebraically, the permissible operation is the
+normalization sum_z K(1,z)=1, not a claim of coefficientwise positivity
+at every consumed-inventory monomial.
+
+The same consumed-record obstruction appears for an initially ACTIVE extra
+particle at 1: the upper history first sleeps that particle, then wakes it
+with the arrival from 0. The extra effective sleep record is also retained
+under the analogous good reconstruction.
+
+paired_record_pools.py counts all complete histories with at most nine
+combined reset records and compares the exact integer counts in each joint
+inventory. The smallest sleeping-insertion obstruction has only three total
+resets, and the active-addition obstruction has four. Hence these particular
+obstructions are exhaustive finite counts, not truncation artifacts. The
+conclusion is about a restrictive reconstruction rule, not the main ARW
+conjecture.
+
+6. THE PROPOSED GENERAL RECONSTRUCTION TARGET
+
+The first-sleep mixture leaves one exceptional initial stored bit, with all
+common active inputs paired. Start from a bad pair of completed histories,
+mark the lower terminal target sleeper, and attempt the following offline
+construction:
+
+  - Use (6), or transfer a whole record if one copy never visited the site,
+    to move the marked occupancy into the upper history.
+  - Treat the compensating emitted particle as an unmatched incoming/outgoing
+    port in the records. Follow the records responsible for the affected
+    arrivals and residents, retaining their creation histories.
+  - Exchange further records to match the ports. Intermediate configurations
+    need not preserve the original marked success.
+  - When a record ceases to be used, keep it in a marked unused continuation.
+    Exposing one unused coin or jump partitions a cylinder with total weight
+    one: p+(1-p)=1 or sum_z K(site,z)=1.
+  - Require a decoding rule or an exact fractional ledger. A record search
+    without one can again spend the same good mass multiple times.
+
+The missing general lemma is that this process can close all its open ports
+with a recognizable inverse (or a globally balanced fractional flow), with
+almost-sure termination and no negative boundary contribution. The intended
+favorable boundary is the single extra initial sleeper. Matched common
+inputs should cancel in pairs; visits to the sink and loops must be handled
+explicitly. None of these closure assertions is proved here.
+
+This target is more concrete than demanding weighted expansion without an
+ARW mechanism: the two local probability-preserving operations are now
+specified, namely record switching (6) and revealing/unreading independent
+continuation cards. Their composition still requires the global proof.
+The finite pair example explains why a rule that forbids unreading is
+incorrect even before questions of efficiency arise.
+
+7. COMPUTATIONAL CHECKS AND THEIR SCOPE
+
+general_balance.py compares initially sleeping insertion with the all-active
+baseline on 36 path/directed-kernel cases with 2--5 sites, including unequal
+sleep probabilities. No negative single-site difference exceeded roundoff.
+It also probes increasing sleeping backgrounds around a single active target;
+that diagnostic is not used as a theorem. bottom_background_results.json
+checks arbitrary additional disjoint sleeping sets in the same cases, again
+finding no beyond-roundoff negative difference. These are finite numerical
+checks of stronger candidate inequalities, not proofs or exhaustive searches
+over parameters.
+
+buffer_stack.py checks schedule independence and increasing input/output
+counts on 500 fixed-book samples, and saves a final-bit order obstruction.
+
+verify_general_balance.py independently solves the original raw-instruction
+absorbing chain and the buffer/pending-input chain, comparing the FULL final
+configuration distributions on all 0/active/sleeping starts for three small
+kernels, including a directed kernel with self-loops and unequal rates. The
+maximum discrepancy is 2.23e-16. It also checks the full-law identity (1),
+with maximum discrepancy 3.34e-16. The general proofs are the arguments above;
+these checks audit the implementations and the self-loop/delay conventions.
+
+paired_record_pools.py uses integer counting, not floating-point flow, for
+the consumed-inventory obstruction in Section 5.
+
+Run (Python 3, NumPy and SciPy):
+
+    python general_balance.py
+    python buffer_stack.py
+    python verify_general_balance.py
+    python paired_record_pools.py
+
+Primary outputs: general_balance_verification.json,
+paired_record_pool_results.json, general_balance_results.json,
+buffer_stack_results.json, bottom_background_results.json.
+
+8. SOURCES FOR STANDARD INPUTS
+
+Levine--Liang, Exact sampling and fast mixing of activated random walk,
+arXiv:2110.14008v3, Section 1.3, Lemmas 1--3: stack-prefix stopping lines,
+fresh unused suffixes, and the Abelian stabilization/addition property.
+https://arxiv.org/pdf/2110.14008
+
+Bond--Levine, Abelian networks I. Foundations and examples, Section 3.9 and
+Section 4: stochastic Abelian processors and the least-action framework.
+https://lionellevine.github.io/abelian-networks-I-foundations.pdf
+
+These references support the standard framework. They are not cited as
+proving the sleeping-insertion conjecture or the proposed global switch.

@@ -1,0 +1,211 @@
+N1 THIRD CHUNK: AN EXPLICIT COUPLING OF COMPLETE CONTACT CLASSES
+2026-10-06. General ARW single-site add-one monotonicity remains OPEN.
+
+Scope
+-----
+Continue from FC's positive first-contact disintegration at the LD state:
+S={1,3}, lower C={0,1,2}, upper D={0,1,2,3}, target 0, pending vertices 0,2.
+The jump kernel is
+  0 -> 1,2,sink with probabilities 1/4,1/4,1/2;
+  1 -> 2,3 with probabilities 1/2,1/2;
+  2 -> 2,3 with probabilities 1/2,1/2;
+  3 -> 0,3 with probabilities 1/2,1/2.
+Sleep probabilities are (1/2,3/5,1/2,1/2).
+These are intermediate states from the all-active problem, not a claim of
+monotonicity for arbitrary initially sleeping backgrounds.
+
+Question: can complete contact/no-contact histories be recombined with
+correct global normalization? First test an explicit bad/good rectangle
+repair. If it fails, retain the exact capacity obstruction. The resulting
+class table also identifies a different, successful coarse coupling below.
+No terminal max-flow or LP was used. Previous audits were not rerun.
+
+1. Complete histories and their four classes
+-------------------------------------------
+Use seed 2 in the first-contact sampler. J=1 means its avalanche reaches
+pending vertex 0; J=0 means it dies without reaching 0, after which vertex
+0 is activated to complete the history. Let I be final occupation of 0.
+Write mu and nu for the lower and upper laws of the COMPLETE history,
+including any second activation. The finite statistics (J,I) have masses
+m_bi=mu(J=b,I=i), n_bi=nu(J=b,I=i). These retain the discovery-event weights;
+FC's invalid replacement by a conditional fixed-block W is not made.
+
+The exact joint tables are saved in contact_envelope.json. Their rounded
+values, shown here only for orientation, are
+
+                lower                  upper
+  J=0,I=0       .3672700373            .2303144151
+  J=0,I=1       .5216188516            .4363522515
+  J=1,I=0       .0492214238            .1361587469
+  J=1,I=1       .0618896873            .1971745865
+
+2. A precisely scoped repair fails (PROOF + exact arithmetic)
+-------------------------------------------------------------
+Start from the independent product law mu x nu. A bad pair has target bits
+(1,0); a good donor has bits (0,1). Exchanging the upper histories between
+equal masses of these two pairs gives bits (1,1) and (0,0), preserving every
+lower and upper marginal. This is a valid rectangle move on full histories.
+
+Restrict the donor to a DIFFERENT joint contact pattern than the bad pair;
+requiring opposite contact flags in both copies is even more restrictive.
+Also require each move to consume a currently bad pair and a currently good
+donor, with no preliminary rearrangement of the donor pool. Such moves
+never create new bad pairs or good donors.
+
+The initial bad demand with joint contact pattern (0,0) is m_01*n_00. Its
+entire allowed donor capacity is sum_(b,c)!=(0,0) m_b0*n_c1. Demand exceeds
+this capacity by
+
+  614223302726662053931077841 / 37142523050367752227611355500
+  (approximately .01653693).
+
+Thus the proposed direct repair cannot fix all bad mass, even when donors
+may come from ANY different joint contact pattern. This is a collective
+capacity obstruction, not a claim about all possible multi-stage swaps.
+Allowing same-pattern donors, reorganizing the pool, or changing the initial
+coupling is outside this failed restriction. It illustrates F4's issue.
+
+3. A general coarse-label coupling criterion (PROOF)
+----------------------------------------------------
+For any two complete-history laws define
+
+  c_minus=mu(J=1), c_plus=nu(J=1),
+  h_minus(b)=mu(I=1 | J=b), h_plus(b)=nu(I=1 | J=b).
+
+Suppose 0<c_minus<=c_plus<1 and
+
+  h_minus(0)<=h_plus(0),
+  h_minus(0)<=h_plus(1),
+  h_minus(1)<=h_plus(1).                                  (C)
+
+There is an explicit coupling preserving BOTH COMPLETE HISTORY LAWS and
+ordering the final target indicators:
+
+(a) Couple contact flags using
+    P(J_minus=0,J_plus=0)=1-c_plus,
+    P(J_minus=0,J_plus=1)=c_plus-c_minus,
+    P(J_minus=1,J_plus=1)=c_minus.
+
+(b) Given flags (a,b), take one uniform U, and set
+    I_minus=1{U<=h_minus(a)}, I_plus=1{U<=h_plus(b)}.
+    Conditions (C) give I_minus<=I_plus for every permitted flag pair.
+
+(c) Sample each complete history from its original law conditioned on its
+    own (J,I), independently of the other history once these tags are set.
+    Equivalently, reject independent complete histories until the requested
+    tags occur. Every used tag has positive probability in this example.
+
+Normalization proof: the flag marginal is the original c on each side;
+conditional on a copy's own flag, its target bit has exactly its original
+h, regardless of the partner's flag. Thus each copy's (J,I) marginal is
+its original four-class table. Conditional sampling in (c) reconstructs
+its full path law by disintegration. Any unread stack suffixes can retain
+their correct conditional laws as well. No pointwise stack bijection is
+claimed or needed.
+
+This is a sufficient criterion for arbitrary history laws, not an ARW
+monotonicity theorem. Its use in ARW requires proving (C). The finite
+calculation below supplies (C) only for the stated example.
+
+What changed relative to F2/F8: we never reveal the intermediate sleeping
+support and then demand an unchanged conditional continuation law given
+both copies' histories. We couple a coarse label of the COMPLETE history,
+then fill in the history with explicitly normalized conditional laws. This
+is a noncausal coupling within the complete {0,2} block. The individual
+complete-history marginals are exact; the intermediate joint filtration is
+different. There is no conflict with the previous posterior obstructions.
+
+4. The criterion succeeds on the obstruction example (COMPUTATION)
+------------------------------------------------------------------
+The contact probabilities and conditional target probabilities are
+
+  c_minus=1/9, c_plus=1/3;
+
+  h_minus(0)=5848368550799/9966184710300,
+  h_minus(1)=277561824802/498309235515,
+  h_plus(0)=722765098279333/1104253265901240,
+  h_plus(1)=48989403239830/82818994942593.
+
+The three flag-pair weights in (a) are 2/3, 2/9, 1/9. The corresponding
+conditional target gaps are
+
+  (0,0): 28756101096463/424712794577400,
+  (0,1): 38946058269031/8281899494259300,
+  (1,1): 14293139788688/414094974712965.
+
+All are strictly positive. Their weighted sum is the whole-block increment
+1242739580199331/24845698482777900. The smallest gap is the cross-class
+comparison (0,1), approximately .0047026.
+
+The script implements (a)-(c) at the level of complete terminal supports.
+It preserves each full JOINT law of (contact flag, final support), not just
+the target or total particle count. It verifies 552 nonzero rational
+coupling entries, unit mass, both joint marginals, and zero bad target mass.
+The full-history lifting is justified analytically by part (c). There is
+no claim that a general ARW history exchange has been found.
+
+5. Why the simple contact weights appear (PROOF)
+-------------------------------------------------
+Until first contact with 0, only vertices 2 and 3 move. A lone active
+particle at either vertex leaves toward its next vertex (2->3 or 3->0)
+before sleeping with probability
+
+  [(1/2)(1/2)] / [1-(1/2)(1/2)] = 1/3.
+
+Below, site 3 starts empty, so hitting 0 requires both such departures:
+c_minus=1/9. Above, site 3 initially has the extra sleeper. Once the seed
+reaches 3, two particles there must eventually send a surplus particle to
+0; self-loops only delay this. Thus c_plus=1/3. These probabilities do not
+involve p_1 or the behavior after reaching 0.
+
+This also gives an explicit interpretation of the conditional target
+inequalities. Write g(c_0,c_1,c_2,c_3) for the eventual occupation
+probability of 0 at the final parameters; -1 denotes a sleeper, 0 an empty
+site, and positive integers active particles.
+
+  h_minus(0) = (3/4) g(1,-1,-1,0) + (1/4) g(1,-1,0,-1),
+  h_plus(0)  = g(1,-1,-1,-1),
+  h_minus(1) = g(2,-1,0,0),
+  h_plus(1)  = g(2,-1,0,1).
+
+On the lower no-contact event, the seed either slept at 2 (unconditional
+mass 2/3), or moved to 3 and slept there (mass 2/9); dividing by 8/9 gives
+weights 3/4 and 1/4. On the upper no-contact event it must have slept at 2.
+At first contact, the lower has two active particles at 0; the upper also
+has one active particle remaining at 3. Site 1 has not yet been visited.
+Independent exact absorption from these five displayed configurations
+checks the conditional-probability formulas in the certificate.
+
+6. Progress and next concrete question
+---------------------------------------
+We have an explicit, normalized whole-history coupling for the difficult
+state, using a coarser contact label than the failed first-avalanche state.
+The repair of the independent baseline fails, so that route should not be
+repeated without changing its reservoir. Choosing the coarse coupling from
+the outset succeeds.
+
+The weakest inequality is
+
+  (3/4) g(1,-1,-1,0) + (1/4) g(1,-1,0,-1)
+      <= g(2,-1,0,1).                                    (X)
+
+Next try a direct first-contact/stack argument for (X), then determine what
+conditions on the receiving region and the common sleeper's generating
+history make that argument valid. The coefficients come from the explicit
+2->3->0 exploration; do not replace its resulting mixture by an arbitrary
+sleeping configuration. Conditions (C) are NOT established generally, and
+F1 warns against asserting them for arbitrary sleeping backgrounds. If a
+structural extension fails, save the exact failure and required missing
+condition rather than claiming that the coarse coupling proves the target.
+
+Reproduction
+------------
+From n1_exchange/ in this artifact:
+
+  PYTHONPATH=source OPENBLAS_NUM_THREADS=1 python3 contact_envelope.py
+
+Python 3 and numpy are required. first_contact_input.json is the preceding
+FC exact joint-kernel certificate; no old audit is rerun. The source folder
+contains the two unchanged absorption modules from archive version 9.
+contact_envelope.json records every class mass, all coupling entries, the
+capacity deficit, and the five raw configuration probabilities.

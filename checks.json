@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
-  "release": "research-2026-11-14",
+  "release": "companions-2026-11-14",
   "python": "3.12",
   "projects": {
     "arw-monotonicity": {
-      "title": "Directed three-cycle killed-return order",
+      "title": "Finite ARW comparisons: technical arguments and exact certificates",
       "paper": {
         "url": "https://jfrichey.github.io/pagedocs/ai/arw-monotonicity.pdf",
-        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/arw-monotonicity.pdf",
-        "sha256": "96ce27cc1a10ecfe9785c3a956a0f6a6a65d515b718b4c5a825fe09668ed36a3",
-        "pages": 92,
-        "result": "Theorem 8.1, pages 68\u201369"
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/ai/arw-monotonicity.pdf",
+        "sha256": "7e34763a70b77eb14aa752b60fd20e898157e6785f8ba32a2cb537102092815c",
+        "pages": 90,
+        "result": "Theorem 8.1 and the explicitly mapped proof families; default checks certify the three-cycle result only."
       },
       "kind": "Exact symbolic and rational certificate",
       "scope": "Six polynomial identities reconstructed from 2,232 Bernstein coefficients for the directed three-cycle killed-return kernel, plus an independent rational kernel calculation and cylinder obstruction.",
@@ -20,14 +20,15 @@
           "arw-monotonicity/verify_cycle_return.py"
         ]
       ],
-      "timeout_seconds_per_command": 900
+      "timeout_seconds_per_command": 900,
+      "claim_map": "arw-monotonicity/CLAIMS.md"
     },
     "combinatorial-processes": {
       "title": "Some combinatorial processes",
       "paper": {
         "url": "https://jfrichey.github.io/pagedocs/combinatorial_processes.pdf",
-        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/combinatorial_processes.pdf",
-        "sha256": "0c11bc357e3d665da5ee38bde1462cac38bf462d6ff267e194baf3ff047ba15e",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/combinatorial_processes.pdf",
+        "sha256": "10080d4e229bfc7119dc64aa5f074bc99c4c9e95964cb457d41a5dddcef28160",
         "pages": 49,
         "result": "The illustrated November 8, 2026 revision"
       },
@@ -45,7 +46,8 @@
           "combinatorial-processes/code/check_extensions.py"
         ]
       ],
-      "timeout_seconds_per_command": 900
+      "timeout_seconds_per_command": 900,
+      "claim_map": "combinatorial-processes/CLAIMS.md"
     },
     "word-potentials": {
       "kind": "Mixed symbolic identities and floating-point validation",
@@ -59,10 +61,11 @@
       "timeout_seconds_per_command": 1200,
       "paper": {
         "url": "https://jfrichey.github.io/pagedocs/ai/word-potentials.pdf",
-        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/word-potentials.pdf",
-        "sha256": "7ca00c2cb0f25b4019263a0f348da0173f48aea4aa09e13d70ce4fdcbbda6118",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/ai/word-potentials.pdf",
+        "sha256": "e0593792d703e52de6b6dce5e5bb683e7b783670b707a36208a8826069846a95",
         "pages": 18
-      }
+      },
+      "claim_map": "word-potentials/CLAIMS.md"
     },
     "higher-dimensional-sfts": {
       "kind": "Exact finite conjugacy checks",
@@ -76,10 +79,11 @@
       "timeout_seconds_per_command": 1200,
       "paper": {
         "url": "https://jfrichey.github.io/pagedocs/ai/higher-dimensional-sfts.pdf",
-        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/higher-dimensional-sfts.pdf",
-        "sha256": "2e71b8f4316c089ca681a309709306311f5ee1510ee324381c8145ac8d38e4e9",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/ai/higher-dimensional-sfts.pdf",
+        "sha256": "a2221e698c621ca4be2c603aeea56442539a0329a9ae7563384be9726f949fba",
         "pages": 6
-      }
+      },
+      "claim_map": "higher-dimensional-sfts/CLAIMS.md"
     },
     "arw-negative-association": {
       "kind": "Exact symbolic and rational checks",
@@ -97,10 +101,11 @@
       "timeout_seconds_per_command": 1200,
       "paper": {
         "url": "https://jfrichey.github.io/pagedocs/ai/arw-negative-association.pdf",
-        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/arw-negative-association.pdf",
-        "sha256": "321893cc27e79466f7d80b94e5261d513c99465d417fb590f8fab969f654d8e2",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/ai/arw-negative-association.pdf",
+        "sha256": "2e542a39c51bf2e32e0924a4e5c59029aeb1621f4e3214678bc6e11adb2a5137",
         "pages": 20
-      }
+      },
+      "claim_map": "arw-negative-association/CLAIMS.md"
     },
     "counting-clusters": {
       "kind": "Exact finite enumeration and polynomial identities",
@@ -125,10 +130,11 @@
       "timeout_seconds_per_command": 1200,
       "paper": {
         "url": "https://jfrichey.github.io/pagedocs/ai/counting-clusters.pdf",
-        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/counting-clusters.pdf",
-        "sha256": "7885da3a0e967e44488692780bc462f99c472f0952eb74f2083061ad013d565c",
-        "pages": 25
-      }
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/ai/counting-clusters.pdf",
+        "sha256": "d4394df8835fd13dd9062409e76e96cbdc21f3edd09937f0259a2622640bf94b",
+        "pages": 24
+      },
+      "claim_map": "counting-clusters/CLAIMS.md"
     },
     "independent-coupons": {
       "kind": "Floating-point numerical diagnostics",
@@ -142,10 +148,11 @@
       "timeout_seconds_per_command": 1200,
       "paper": {
         "url": "https://jfrichey.github.io/pagedocs/ai/independent-coupons.pdf",
-        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/independent-coupons.pdf",
-        "sha256": "7badd2111fb73bf028d7f186f0e8521ec1530075e14f59ac0a287275b5fb60e7",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/ai/independent-coupons.pdf",
+        "sha256": "e521131233b046f0b4005fdf31b058fc04bd8d5c37d1207213b64ba4cd1a2801",
         "pages": 11
-      }
+      },
+      "claim_map": "independent-coupons/CLAIMS.md"
     },
     "sandpile": {
       "kind": "Auxiliary exact rational obstruction",
@@ -159,10 +166,12 @@
       "timeout_seconds_per_command": 1200,
       "paper": {
         "url": "https://jfrichey.github.io/pagedocs/ai/soc-sandpile-reader.pdf",
-        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/soc-sandpile-reader.pdf",
-        "sha256": "26df302b713c31b5acf88a5c416158ff1bf47928c5df014825dbb01e4118aac2",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/ai/soc-sandpile-reader.pdf",
+        "sha256": "ad76561c3515aa29e21fff485c13ef8c2b9a4e0da404789dc4146f03dac24a9f",
         "pages": 7
-      }
+      },
+      "claim_map": "sandpile/CLAIMS.md",
+      "technical_proof_pdf": "sandpile/technical-details.pdf"
     },
     "balloons": {
       "kind": "Exact rational cutoff bound",
@@ -176,10 +185,12 @@
       "timeout_seconds_per_command": 1200,
       "paper": {
         "url": "https://jfrichey.github.io/pagedocs/ai/balloons-sketch.pdf",
-        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/balloons-sketch.pdf",
-        "sha256": "1df58a74cb6624036ab8a9325e43547ea667c2830c34c99b28a9bdab412dec04",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/ai/balloons-sketch.pdf",
+        "sha256": "312a95daace9e035bf2b9c78d339f30c6402a3dbc6403ab2b71ded836d142574",
         "pages": 18
-      }
+      },
+      "claim_map": "balloons/CLAIMS.md",
+      "technical_proof_pdf": "balloons/technical-details.pdf"
     }
   },
   "lean_projects": [
@@ -189,5 +200,13 @@
       "command": "python3 bootstrap.py && ./cache.sh && python3 check.py",
       "expected_public_theorems": 193
     }
-  ]
+  ],
+  "editorial_review": {
+    "date": "2026-11-14",
+    "scope": "Citation and reproducibility packaging; no new general proof verification claim",
+    "extra_checks": [
+      "Response-renewal audit rerun after replacing its private-archive loader",
+      "Four compressed SFT inputs restored with exact byte lengths and SHA-256 identities verified"
+    ]
+  }
 }

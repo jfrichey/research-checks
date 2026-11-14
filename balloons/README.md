@@ -1,5 +1,7 @@
 # Balloon-process companions
 
+[Proof and verification map](CLAIMS.md).
+
 The default suite runs `certify_cutoff_budget.py`, an exact rational evaluation
 of the early-label error bound. It does not estimate the limiting noise probability.
 

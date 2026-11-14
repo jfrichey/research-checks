@@ -1936,7 +1936,7 @@ comparison already gives product exponential-moment bounds for both signs of
 the parameter, occupied and vacant cylinder bounds, and Hoeffding concentration
 for nonnegative weighted counts. This needs no full NA assumption. The precise
 statements and induction are in Corollary 8.2 of the
-[TeX reader](negative-association-progress.tex), following Proposition 8.1;
+[reader](https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/ai/arw-negative-association.pdf), following Proposition 8.1;
 the Bernoulli means there are the actual stationary occupation probabilities.
 
 **Every occupied-block threshold lies below its trace (proved,
@@ -3680,7 +3680,7 @@ Thus `mu=M^(-1)e_V` has last entry `1/D_V`, proving (22).
 
 **Reader consequence (proved).** Full occupation is strictly increasing in each
 sleep rate and nondecreasing under entrywise increase of a killed kernel.
-Corollary 2.4 of the [TeX reader](negative-association-progress.tex) proves this
+Corollary 2.4 of the [reader](https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/companions-2026-11-14/pagedocs/ai/arw-negative-association.pdf) proves this
 from (22) and the positive closed-walk expansion of log principal Green minors.
 This is a full-occupation comparison, not configuration stochastic domination.
 

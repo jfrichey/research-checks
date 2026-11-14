@@ -1,0 +1,267 @@
+ARW MONOTONICITY: COMPLETE SLEEP BLOCKS AND A FINITE INVERSE
+Continuation of CONTROLLED_ROUTING.txt, 2026-10-06 UTC
+
+STATUS / WHAT CHANGED
+
+The add-one occupation conjecture and the arbitrary-graph positive-flow
+lemma remain open. This pass makes two concrete changes to the proof search.
+
+1. Balancing each renewal generation separately is false, even with a
+   homogeneous sleep probability on four vertices. Balancing every finite
+   prefix of generations is also false under the proposed avoidance cone.
+   An exact certificate below shows that later generations are essential.
+   This is NOT a counterexample to the actual ARW occupation conjecture,
+   nor to the full-resolvent positive-flow lemma.
+
+2. There is a finite, graph-general replacement for unreading successive
+   mixed boundaries: unread every sleeper in a completed configuration
+   together. This gives an explicit signed inverse of the entire all-active
+   stabilization matrix, built using only simultaneous initial jumps and
+   IDLA. The derivation is given below, with independent rational audits.
+   It avoids a renewal-series convergence assumption. Positivity of the
+   marked comparison is still missing; this is an algebraic framework for
+   whole-history cancellation, not the desired coupling already constructed.
+
+The useful next object is a whole marked sleep block, with every initial
+factor retained until its joint IDLA routing is resolved. Do not go back to
+requiring positive weights at each individual first-contact renewal.
+
+1. WHY RENEWAL GENERATIONS CANNOT BE BALANCED IN ISOLATION
+
+Keep D=M D+G_v a_v from the preceding notes. A tempting sufficient lemma
+would say that every row of M^k G_v is nonnegative on the cone
+
+    f>=0,  J_z f(B)<=f(B),  z in B,
+
+of functions on target-free common supports. If true, and with suitable
+convergence, one could sum independently balanced generations. It is false.
+Even the same assertion for sum_{j=0}^k M^j G_v is false.
+
+Here is an exact four-vertex example. The sink is dagger and v=0:
+
+    0 -> 1,2,dagger with probabilities 1/4,1/4,1/2;
+    1 -> 2,3 with probabilities 1/2,1/2;
+    2 -> 2,3 with probabilities 1/2,1/2;
+    3 -> 0,3 with probabilities 1/2,1/2.
+
+Every sleep probability is 1/2. Take common A={1,2}, extra x=3, and
+construct the renewal on states with at most two common particles.
+Define the artificial test function
+
+    f({1})=1, f({2})=2,
+    f(B)=0 for every other target-free support B.
+
+This f is nonnegative and satisfies ALL the forced-jump inequalities.
+For singleton supports the inequalities are the one-particle inequalities
+u>=K u, with u(0)=u(3)=u(dagger)=0, u(1)=1, u(2)=2.
+For supports of size at least two, a forced walk cannot reach the original
+sink before hitting target 0. Killing on the target therefore leaves no
+transition to a smaller nonempty support. Both sides of these inequalities
+are zero. This explains the witness without relying on an LP tolerance.
+
+For the specified response row, exact rational arithmetic gives
+
+    (G_v f)_(A,x) = (M G_v f)_(A,x) = 0,
+
+    (M^2 G_v f)_(A,x)
+      = -83116240114 / 15938335654558317
+      = -0.000005214863202496868...,
+
+    (M^3 G_v f)_(A,x)
+      = 17213694231404477 / 66941009749144931400 > 0.
+
+Thus both generation two and the prefix through generation two are negative.
+The fully solved response on the same test function is positive:
+
+    ((I-M)^(-1) G_v f)_(A,x)
+      = 201928285976789061 / 652530389578693808000
+      = 0.0003094542249705244... .
+
+The test function is NOT asserted to be an actual ARW avoidance function;
+in particular f(empty)=0, whereas actual avoidance has a_v(empty)=1.
+It legitimately refutes the proposed generationwise cone lemma, which was
+required to hold on all nonnegative forced-jump-superharmonic vectors.
+No conclusion about the sign of M^2 G_v at actual avoidance values follows.
+
+This strengthens the architectural reason to retain complete histories:
+some of the positive payment is in a later renewal, not merely elsewhere
+within the current renewal. Truncating at a deterministic number of renewals
+can discard exactly the compensating histories.
+
+2. A FINITE INVERSE BUILT FROM COMPLETE SLEEP BLOCKS
+
+Work on any finite vertex set V with an accessible sink, jump kernel K,
+and 0<p_z<1. Write q_z=1-p_z. Let
+
+    P(A,B) = P(final sleeping support is B | initial active support is A)
+
+for all subsets A,B of V. These are binary ALL-ACTIVE inputs. P includes
+the empty support and is a square stochastic matrix of size 2^|V|.
+
+For S subset A define a stochastic kernel R_S(A,.) as follows:
+
+  * Keep one active particle at each z in A\S.
+  * For each z in S independently sample one destination with law K(z,.),
+    and place that particle there, deleting it at the original sink.
+  * From the resulting all-active configuration, move only surplus
+    particles until every site has at most one particle (IDLA).
+
+The selected initial particles all take their prescribed initial step
+BEFORE any IDLA reduction. A selected site can be reoccupied by another
+selected particle. Sink accessibility gives almost-sure finite reduction.
+R_empty(A,.)=delta_A; R_{z}(A,.) is the old forced-jump kernel J_z.
+
+Define the signed matrix
+
+    E(A,.) = [prod_{z in A} p_z]^(-1)
+             sum_{S subset A} (-1)^|S| [prod_{z in S} q_z] R_S(A,.).    (1)
+
+Then, on every such finite graph,
+
+    E P = P E = I.                                                    (2)
+
+Thus the all-active stabilization matrix is always invertible and its
+inverse has the finite formula (1). The formula is a consequence of the
+Abelian property and first-instruction identities; no claim of literature
+novelty is made here. It is useful for this research because it packages
+unreading all sleeps in a single finite block.
+
+3. PROOF OF THE INVERSE IDENTITY
+
+Let a_z be the stochastic operator that adds one active particle at z to
+a stable configuration and stabilizes. Set a_dagger=I. These operators
+commute by the Abelian property. Let j_z=sum_y K(z,y)a_y.
+
+Adding two active particles at z forces a jump before a sleep can be
+effective, irrespective of whether the initial stable configuration has a
+sleeper at z. Consequently
+
+    a_z^2 = a_z j_z.                                                 (3)
+
+Define the generally SIGNED operator
+
+    b_z = (a_z-q_z j_z)/p_z.                                        (4)
+
+If z is empty in the starting sleeping support B, conditioning the first
+instruction of the newly added particle gives
+
+    delta_B a_z = p_z delta_(B union {z}) + q_z delta_B j_z,
+
+so delta_B b_z=delta_(B union {z}). Since the b_z commute, starting empty
+and applying each b_z for z in A produces exactly delta_A:
+
+    delta_empty prod_{z in A} b_z = delta_A.                         (5)
+
+Expand the product in (5). The term indexed by S replaces the factors
+a_z for z in S by j_z and has coefficient
+(-1)^|S| prod_{z in S}q_z / prod_{z in A}p_z.
+The positive polynomial prod_{z in A\S}a_z prod_{z in S}j_z describes
+the simultaneous initial steps defining R_S. By (3), or directly by
+legal surplus topplings, its full stabilization law is R_S(A,.) P.
+Therefore (5) says E P=I, row by row. A square matrix with a left inverse
+is invertible, proving P E=I as well.
+
+No assumption about invertibility or spectral radius of the OLD signed
+edge matrix I-M enters this argument. Conversely, this argument does NOT
+prove that I-M itself is invertible on all of its formal edge coordinates.
+E is a different matrix, on full support laws rather than response edges.
+
+4. WHY THE SIMULTANEOUS BLOCK MATTERS
+
+It would be incorrect to replace R_S by a product of ordinary successive
+J_z moves. During a simultaneous selection, all selected particles' old
+positions are released together; a sequential move keeps the other initial
+particles in place. The two routing geometries differ.
+
+For example, take the two-vertex path dagger-0-1-dagger with p=1/2.
+From A={0,1}, R_{0,1} is uniform on empty,{0},{1},{0,1}. Formula (1) gives
+
+    E(A,.) = (13/4)delta_{0,1} - (5/4)delta_0
+             - (5/4)delta_1 + (1/4)delta_empty.                      (6)
+
+In contrast, J_0 followed by J_1 gives masses 1/16 at {0,1}, 9/16 at
+{0}, and 3/8 at empty. Simply multiplying attractive single-particle
+updates therefore does not implement this inverse block.
+
+Equation (6) also shows why E itself is not just an ordinary killed
+Markov generator: there are positive off-diagonal entries. Its inverse
+is stochastic because it is the actual stabilization matrix P, not because
+of an unjustified M-matrix sign argument.
+
+There is an exact collision identity, directly from (3)-(4):
+
+    a_z b_z = a_z j_z.                                              (7)
+
+On a valid empty-site sleep-creation history, the left side adds a sleeper
+and then an active particle; the right side describes the forced jump
+after they meet. This is a candidate bookkeeping rule for moving a mark
+through a whole sleep block. It is an equality of laws, not yet an
+inverse-recognizable map on sampled instruction fields. In particular b_z
+must NOT be used as a stochastic transition on arbitrary stable inputs.
+
+5. CONCRETE NEXT GENERAL PROOF TARGET
+
+For v fixed, let h_v(B)=1{v in B}. The desired binary increment is
+
+    (delta_(A union {x})-delta_A) P h_v,
+    P=E^(-1), x outside A.                                         (8)
+
+The preceding controlled-flow framework remains a sufficient way to prove
+(8) nonnegative. The complete-block formula is a new way to organize the
+history cancellation needed to CONSTRUCT that flow, or possibly to avoid
+the stronger avoidance-cone lemma entirely.
+
+Suggested architecture:
+
+  (a) Keep a complete selected sleep/jump block and its marked extra input.
+  (b) Resolve joint IDLA routes before treating a signed term as a debt.
+  (c) At a collision use (7) to transfer the marked role, retaining the
+      selected-site labels and all jump records required for reversal.
+  (d) Pair opposite signed blocks, or construct a disjoint fractional
+      balance, only after all returns belonging to the block are included.
+
+The missing invariant is still substantive: prove the unmatched marked
+mass at the target has nonnegative sign and preserves the intended
+marginals. Formula (1) does not establish this automatically; (7) alone
+does not establish it either. This is the next construction to attempt,
+not an assertion that the general coupling now exists.
+
+Binary support is sufficient for the original all-active problem once
+the binary response inequalities are proved. First perform legal IDLA on
+an arbitrary all-active input, holding one active particle per occupied
+site. IDLA from one extra particle can be coupled so the binary supports
+are equal or differ by one site, and unused stack suffixes are fresh.
+Then apply the binary inequalities conditionally. This does not extend
+the claim to arbitrary initially sleeping configurations.
+
+6. VERIFICATION AND FILES
+
+verify_activation_blocks_exact.py
+  Independently builds E using only rational polynomial expansion and
+  IDLA absorption, and P from rational raw ARW transitions. Checks both
+  E P=I and P E=I exactly. Cases: one vertex with a self-loop, two- and
+  three-vertex paths, a heterogeneous directed three-vertex graph with
+  self-loops, and the four-vertex graph from Section 1. Also rebuilds M
+  from raw trapped laws to check the stage and full-resolvent fractions.
+
+activation_blocks_exact_verification.json
+  Stores all five exact E and P matrices and the four-site obstruction.
+
+renewal_stage_probe.py / renewal_stage_probe_results.json
+  Exploratory checks through power 16, stopping at the first significant
+  failure. Generates G directly, rather than reconstructing it by
+  cancellation as (I-M)L. Objectives are normalized but rows below an
+  absolute numerical floor are skipped. The exact audit, not normalized
+  floating-point noise, is the evidence for Section 1.
+
+renewal_stage_small_search.py / renewal_stage_small_obstruction.json
+  Reproducible reduction to four vertices; seed 610061, 240 trials, with
+  every original-sink edge behind target 0. Search output is a diagnostic;
+  the independent Fraction calculation is the decisive verification.
+
+Reproduce the principal result from this directory:
+
+    python3 verify_activation_blocks_exact.py
+
+The earlier checkpoints and certificates are retained without alteration.
+

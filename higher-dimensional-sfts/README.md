@@ -1,5 +1,7 @@
 # Higher-dimensional swap checks
 
+[Proof and verification map](CLAIMS.md).
+
 Run `python -B run_checks.py higher-dimensional-sfts` from the repository root.
 The check reconstructs the saved finite evidence without writing files.
 It supports the explicit example accompanying Theorem 5.1 and the finite

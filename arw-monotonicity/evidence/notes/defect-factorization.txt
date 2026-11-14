@@ -1,0 +1,188 @@
+ARW: CREATION-HISTORY FACTORIZATION AND PRE-COLLISION CANCELLATION
+2026-10-07; N2, one bounded research chunk
+
+STATUS AND QUESTION
+
+The general all-active add-one occupation conjecture remains open. This
+chunk proves a general identity for a known nonnegative forced-jump defect,
+then gives a new positive full-response certificate for CR's four-site
+uniform-routing obstruction. The certificate is exact and finite. No
+general coefficient-positivity theorem or coupling is claimed.
+
+Question: can negative uniform-routing weights be paid after disintegrating
+defects by the history creating their final sleeping backgrounds? Stopping
+criterion: a useful cancellation or an explicit unpaid coefficient. Grouping
+identical creation outcomes alone fails; an ordinary avalanche first-step
+equation then pays the sole negative coefficient.
+
+Sources checked: VA Section 2's first-contact cancellation, AF's complete
+response and forced-jump formulation, and CR's routing formulation and
+uniform-routing example, in the v9 source archive named in MONOTONICITY.md.
+Earlier renewal/routing audits were reused, not repeated. New calculations
+verify the disintegration and both positive representations exactly.
+
+1. DEFINITIONS AND GENERAL FACTORIZATION (PROOF)
+
+Keep the checkpoint assumptions: finite graph, K with an absorbing sink
+accessible from every vertex, 0<p_z<1, and all-active original inputs.
+Let v be the target, A a target-free binary support, z in A, and
+
+ a(A) = P[ARW from active A never visits v].
+
+J_z forces the particle at z to take a K-jump, then performs sleep-free
+surplus IDLA to restore a binary active support. Outcomes visiting v are
+discarded. Sink exit removes a particle and is included, not discarded.
+The known defect is e(A,z)=a(A)-sum_C J_z(A,C)a(C).
+
+Let nu_{A\{z}}^{v,z}(B) be the SUBPROBABILITY of stabilizing active A\{z}
+at sleeping B without ever visiting v or z. Do not condition and renormalize
+this measure. B avoids {v,z} and |B|<=|A|-1. Define
+
+ H_v(B,z) = P[one active at z plus sleepers at B ever visit v].
+
+Then generally
+
+ e(A,z) = p_z/(1-p_z) sum_B nu_{A\{z}}^{v,z}(B) H_v(B,z).       (1)
+
+Proof. Let S(A,z) be avoidance with z initially sleeping and all other
+A-particles active. Schedule z's first instruction first in the all-active
+system. The sleep branch gives S; the jump branch can be legally reduced
+by surplus IDLA, leaving fresh suffixes. Therefore
+
+ a(A) = p_z S(A,z) + (1-p_z)(J_z a)(A).                       (2)
+
+To compare S and a, hold the mark at z and explore the common particles
+from A\{z}. Stop at the first visit to v or z, or stabilization. Before
+that stop the exploration is identical for an active or sleeping mark.
+Visiting v makes both avoidance indicators zero. Visiting z makes the two
+configurations identical (two active particles there), so continuations
+cancel. On stabilization avoiding both, the sleeper version is stable;
+the active version releases one active z into sleeping B, losing avoidance
+with probability H_v(B,z). Thus S-a=sum_B nu(B)H_v(B,z). Rearranging (2)
+proves (1), hence e>=0. Finite stabilization makes the stopped exploration
+exhaustive; fresh suffixes and the abelian/Markov property justify holding
+z. No monotonicity for arbitrary sleeping inputs is used.
+
+This specializes VA's recorded first-contact cancellation to visitation.
+The new use retains creation weights while paying signed complete-response
+coefficients. No originality claim is made.
+
+2. COMPLETE RESPONSE AND A SCOPED FAILURE
+
+Suppose the fully solved response has the signed uniform representation
+
+ Delta = c0 + sum_{A nonempty} U(A) sum_{z in A} e(A,z).
+
+Delta is the target OCCUPATION increment. AF/CR certify this representation
+in the example below. General invertibility of AF's renewal I-M remains
+open. Identity (1) gives
+
+ Delta = c0 + sum_{B,z} kappa(B,z)H_v(B,z),                    (3)
+ kappa(B,z) = sum_{A containing z} U(A) p_z/(1-p_z)
+                                      nu_{A\{z}}^{v,z}(B).
+
+This uses the FULL response, not a renewal generation or prefix (F5).
+Actual mixed-ARW first-step equations give more information than arbitrary
+avoidance-superharmonic functions or the IDLA substitutions obstructed in
+F6. Thus the premise of those failed restrictions has changed explicitly.
+
+Use CR's four-site example:
+ 0 -> 2;
+ 1 -> 0 or sink, each 1/2;
+ 2 -> 3 or sink, each 1/2;
+ 3 -> 0 or 1, each 1/2.
+p=(1/16,1/2,1/2,1/16), target 1, original common active {1,3}, extra 2.
+This is NOT the VA/LD four-site graph. Relevant target-free supports have
+at most two particles. All nine defect identities (1) check exactly.
+
+There is exactly one negative creation coefficient:
+
+ kappa({2},0)=-b=U({0,2})/30,
+ b=135974388774022778696350080510848 /
+   4001752243759232371311490880878110855 > 0.                 (4)
+
+Only A={0,2} contributes: its remaining particle sleeps at 2 immediately
+with probability 1/2, and p_0/(1-p_0)=1/15. A={0} cannot create sleeper 2;
+from A={0,3}, particle 3 hits 0 or target 1 before it can create sleeper 2.
+So grouping identical creation outcomes alone cannot repair (4). This
+does not refute the conjecture or support-dependent routing.
+
+3. EXACT FIRST-STEP REPAIR
+
+The same expansion has positive coefficient
+
+ t=kappa({2},3)=217297456309432354941048450918812 /
+               444639138195470263479054542319790095.
+
+With active 3 and sleeper 2, immediate sleep fails; jumping to target 1
+succeeds; jumping to 0 produces active 0 and sleeper 2. Each jump branch
+has probability k=15/32. Therefore
+
+ H_1({2},3)=k[1+H_1({2},0)],                                 (5)
+ t H_1({2},3)-b H_1({2},0)=(t-b/k)H_1({2},3)+b.               (6)
+
+Capacity is strictly sufficient:
+
+ t-b/k=24983976161004638998758338297692484 /
+       60026283656388485569672363213171662825 > 0.
+
+All other coefficients and c0 are positive. This expresses the complete
+response as a positive constant plus nonnegative hitting-event credits.
+The script checks exact equality with the archived increment
+
+ Delta=1645717574015648910897472/209037447855381517790848911.
+
+Equation (5) uses no transport fitting or assumed sign of Delta. Capacity
+matters: an earlier tested path from active 2 with sleeper 0 to active 0
+with sleeper 2 has probability 15/256 but insufficient coefficient credit.
+That attempted donor was rejected, not counted as a successful repair.
+
+4. GENERAL BLOCK RULE; UNPROVED SIGN QUESTION
+
+Fix B and put W_B=V\(B union {v}). Before its first collision, target hit,
+sink exit or sleep, a single active has substochastic walk kernel
+
+ Q_B(z,y)=(1-p_z)K(z,y), z,y in W_B.
+
+Sleep and sink exit contribute zero; target entry contributes one; entry
+to y in B leads to two actives at y with the other B-particles sleeping.
+Let g_B(z)>=0 be target-entry probability plus collision-entry probabilities
+times their eventual target-hit probabilities. First-step conditioning gives
+
+ H_B=(I-Q_B)^(-1)g_B,
+ sum_z kappa(B,z)H_B(z)=w_B g_B,
+ w_B=kappa_B(I-Q_B)^(-1).                                    (7)
+
+This inverse always exists and is nonnegative: Q_B's row sums are at most
+max_z(1-p_z)<1. This is separate from AF's signed-renewal invertibility.
+
+Every w_B is nonnegative in the example. Only B={2} is nontrivial, since
+all other kappa_B are already nonnegative. Here W_B={0,3}, Q_B(3,0)=15/32,
+and w_B(0)=-b+(15/32)t>0, w_B(3)=t>0. The script also forms every (7),
+computes collision credits from raw ARW, and verifies their sum plus c0
+equals Delta. Exact values are in defect_factorization.json.
+
+Candidate sufficient invariant: c0>=0 and every w_B>=0 for the full
+all-active response, retaining its creation law. This is UNPROVED, stronger
+than the target inequality, and could fail while the conjecture holds.
+Termination of Q_B does not establish positivity of signed entrance w_B.
+
+Next chunk: test this specific invariant on saved heterogeneous uniform-
+routing failures before seeking a coefficient-balance proof. A negative
+w_B is a decisive scoped obstruction; identify which collision-state
+histories could then carry the missing credit. General c0 positivity and
+renewal well-posedness remain separate obligations if this route survives.
+
+5. REPRODUCTION AND EVIDENCE BOUNDARY
+
+Run python3 defect_factorization.py (Python 3 plus numpy, imported by the
+copied source module). Arithmetic is Fraction throughout.
+
+controlled_routing_input.json is an unchanged copy of v9's
+controlled_routing_exact_verification.json, providing the already certified
+response row, signed uniform row, and actual increment. vertex_activation.py
+and verify_avoidance_exact.py are unchanged supporting source modules.
+defect_factorization.py and its output are new. The script checks nine new
+defect identities and two positive complete-response certificates. It does
+not repeat the old renewal audit or prove a general theorem about w_B.
+No background computation remains running.

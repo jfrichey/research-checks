@@ -1,0 +1,186 @@
+N1 SECOND CHUNK: FIRST-CONTACT DISINTEGRATION AND ITS COUPLING LIMIT
+2026-10-06. The general all-active add-one conjecture remains OPEN.
+
+Question and stopping criterion
+-------------------------------
+Construct the first-contact stopping-set rule requested by MONOTONICITY.md.
+Check whether its endpoint law conditional on the discovered block B is the
+fixed-block kernel W_(S,B). If not, identify the exact correction. Then test
+whether its properly normalized random-block version repairs the specific
+heterogeneous obstruction from the preceding chunk. Stop at this decision.
+
+Only VA Sections 2-4 and the preceding LD certificate are needed. No old
+finite audits were rerun. The positive construction below is a disintegration
+of VA's existing deferred-mark sampler, not a new monotonicity theorem.
+
+1. A precise first-contact rule
+-------------------------------
+Write U=V\S and R for the final odds, r^S for odds R on S and zero on U.
+Let C be the present sleeping support. The law of completing all remaining
+activations is T_(r^S,R)(C,.): wake every current sleeper on U, leave the
+sleepers on S asleep, and stabilize at the final parameters.
+
+Keep a dormant mark at each sleeper on U. Select any x in U before revealing
+a new avalanche. Start B={x}; erase the mark at x and wake its sleeper if
+present. Run the avalanche at FINAL sleep probabilities. Whenever a jump
+first reaches y in U\B, put y in B before toppling there; erase its mark if
+present. An arrival at its sleeper has already made two active particles.
+Also include visited sites that were initially empty. End when this seed
+avalanche has no active particles. Let D be the resulting sleeping support.
+
+The sites outside S union B have never been touched; their sleepers are
+exactly the original dormant marked particles from C. Return (S union B,D).
+Repeat with another unprocessed seed if desired. Empty seeds simply add a
+vertex to B and do nothing else. Thus there are at most |V| seed avalanches.
+
+Why this is legal: in the mixed initial configuration defining T, regard
+unexamined marks as active particles that are deliberately not toppled yet.
+Run only the seed and particles released by contact. On arrival at a mark,
+an initially active held particle and a sleeper produce the same two-active
+state. At visited empty sites, use the final sleep probability immediately;
+this is an essential difference from the old singleton parameter update.
+Once an avalanche ends, the remaining held particles are precisely the
+unvisited marks. All particles are eventually released, so the Abelian
+property gives the intended completed law. Conditional unused instructions
+retain their laws, because this is a legal stopped exploration.
+
+This proof works for every partial state (S,C); it does not assert that
+arbitrary pairs of such sleeping supports have monotone completion laws.
+
+2. Correct positive kernels and normalization (PROOF)
+----------------------------------------------------
+Define the subprobability kernel
+
+  L_(S,x)^B(C,D) = P(first-contact rule returns block B and support D).
+
+Each B is a subset of U containing x. These kernels satisfy
+
+  sum_(B,D) L_(S,x)^B(C,D) = 1,
+
+  sum_B L_(S,x)^B T_(r^(S union B),R) = T_(r^S,R).       (FC)
+
+The second formula is an identity of complete endpoint laws. Continue each
+stopped exploration by releasing the remaining marks; the preceding legal
+schedule proves it. It also proves that H(S,C)=T_(r^S,R)h(C) is a martingale
+for this random-block chain. Seeds may be chosen using both copies' past
+provided the conditional marginal law of (B,D) is the complete joint L law.
+
+There is a useful event-level interpretation of each L term. For a FIXED B,
+sample W_(S,B) using a legal schedule that initially holds all activated
+particles in B other than x. Run the seed until it dies, releasing held
+particles only when contacted. Let E_B be the event that this exploration
+visits every vertex of B\{x} and never reaches U\B. On E_B every held particle
+has been released and the system has already stabilized. On the complement,
+finish the ordinary fixed-block stabilization with any legal schedule.
+The paths contributing to E_B agree exactly with the adaptive discovery
+of B. Therefore
+
+  L_(S,x)^B(C,D) = P_W(E_B and endpoint D)
+                = W_(S,B)(C,D) P_W(E_B | endpoint D).
+
+The equality uses the chosen legal schedule to define E_B. It is not an
+assumption that E_B is independent of the endpoint. In particular, L<=W
+entrywise, but L is usually substochastic. Dividing by P(E_B) generally
+produces a biased version of W. The selection event and its mass must be
+retained. This supplies an exact positive mass ledger without unreading
+sleep instructions or making F3/F6's unsupported positivity assumptions.
+
+3. Minimal conditioning obstruction (PROOF; also checked exactly)
+----------------------------------------------------------------
+Take 0->1->sink, p_0=p_1=1/2, S empty, C={0,1}, seed 0.
+The first-contact joint law is
+
+  B={0},   D={0,1}: probability 1/2;
+  B={0,1}, D={1}:   probability 1/4;
+  B={0,1}, D=empty: probability 1/4.
+
+Indeed, the seed either sleeps immediately or jumps to 1. In the latter
+case two active particles at 1 send one to the sink; the last particle
+sleeps or exits with equal probabilities.
+
+Conditioning on B={0} gives D={0,1} with probability one. In contrast, the
+fixed kernel W_(empty,{0}) leaves site 1 at infinite sleep rate, giving
+D={0,1} and D={1} with probability 1/2 each. Thus conditioning on discovered
+B does NOT recover the prescribed W law, already on two sites with a
+legitimate binary all-active starting input.
+
+The correction (FC) is exact: the no-contact branch subsequently activates
+site 1, yielding {0,1} and {0}, each with total weight 1/4. Together with the
+contact branch, all four final supports have probability 1/4, as direct
+ordinary all-active stabilization also gives.
+
+4. The valid random-block rule still fails the coupling test (COMPUTATION)
+------------------------------------------------------------------------
+Use LD's new heterogeneous example:
+
+  0 -> 1,2,sink with probabilities 1/4,1/4,1/2;
+  1 -> 2,3 with probabilities 1/2,1/2;
+  2 -> 2,3 with probabilities 1/2,1/2;
+  3 -> 0,3 with probabilities 1/2,1/2;
+  p=(1/2,3/5,1/2,1/2).
+
+At S={1,3}, C={0,1,2}, D={0,1,2,3}, target 0, let each copy choose seed
+0 or 2 and reveal its complete first-contact avalanche, including its
+random discovered block. Blocks can differ between the copies.
+
+For each resulting (B,E), compute the conditional final target probability
+H(S union B,E). An almost-surely target-monotone continuation requires the
+lower H distribution to be stochastically dominated by the upper one.
+The following exact upper-tail deficits rule out every seed pair:
+
+ seeds -,+  threshold                              lower tail minus upper tail
+ 0,0        47792702/50444667                       225580280341078685/505637570456177796
+ 0,2        26577026/31205655                       486399902439214/1242284924138895
+ 2,0        1447965911579/2491546177575             588843449291431/1987655878622232
+ 2,2        1447965911579/2491546177575             108000925746314/1242284924138895
+
+All deficits are strictly positive. This includes arbitrary couplings of
+the two complete first-contact outputs, different seeds, and arbitrary
+valid conditional completions afterwards. Randomizing seed choices cannot
+restore probability-one success. The proof is the conditional-expectation
+argument from LD, now applied to the joint random-block kernels L.
+
+This does NOT contradict the positive simultaneous {0,2} target gap.
+The simultaneous block permits coupling complete continuations across the
+first-contact outcomes; it does not require the two first-contact outputs
+to be revealed as a step whose subsequent conditional marginal completions
+remain unchanged. Nor does this rule out avoiding this state with another
+initial policy. No general counterexample is claimed.
+
+The exact script solves absorption for states (active/sleeping counts,B),
+using final p at every active site and recording every newly visited site.
+It checks unit mass and nonnegativity, and verifies (FC) as an identity of
+full terminal distributions in all five cases: two seeds times two supports
+on the four-site witness, plus the two-site example. The JSON retains all
+joint output masses and posterior values, so every tail is reproducible.
+
+5. What changed and one next task
+---------------------------------
+The selection-law question is now resolved for this particular rule:
+conditioning on B fails, but keeping its positive subprobability law gives
+a valid endpoint sampler. The coupling test decisively rejects closing a
+step at the end of one contact-discovered avalanche in the saved state.
+
+Next: use the two-seed decomposition
+
+  T_(r^S,R) = L_(S,x)^{ {x,y} }
+             + L_(S,x)^{ {x} } W_(S union {x},{y})
+
+when U={x,y}. Expand the TARGET increment for the LD witness into contact
+and no-contact complete histories. Seek one explicit probability-preserving
+exchange between these two classes that repairs the posterior deficit while
+retaining both full endpoint laws. Its normalization must use the L masses;
+a terminal max-flow alone is not the deliverable. If only a quantitative
+mass obstruction is found, record that. This moves the search to whole
+continuations across contact histories before committing their outcomes.
+
+Reproduction
+------------
+From the n1_contact directory in this artifact:
+
+  PYTHONPATH=source OPENBLAS_NUM_THREADS=1 python3 first_contact.py
+
+Python 3 and numpy are required. The two source modules are unmodified
+vertex_activation.py and verify_avoidance_exact.py from source archive v9,
+SHA256 38e400ad6d8e19cd1ee19c3d0f3cd52e598e3018fa572b7a388caeb94661fed5.
+New files: first_contact.py, first_contact.json, this NOTE.txt.

@@ -1,0 +1,200 @@
+N1: LATENT RETURN DEPENDENCIES, NOT ONLY RECORDED COLLISIONS
+2026-10-06. One bounded research chunk. General conjecture remains OPEN.
+
+Scope and question
+------------------
+Finite graph, accessible absorbing sink, 0<p_z<1, finite all-active input.
+Only single-target Bernoulli monotonicity is sought. Sleeping configurations
+below are intermediate states of the proved vertex-activation sampler, not
+an enlargement of the conjecture's input class.
+
+Read: MONOTONICITY.md and VERTEX_ACTIVATION Sections 1-7, together with the
+exact activation/absorption routines and the saved posterior-tail witness.
+Did not rerun the previous audits or retrieve the historical conversation.
+
+Question: can whole blocks be selected as feedback components through
+processed vertices, refined using the collisions actually observed so far?
+Stopping criterion: a useful separation lemma or an exact obstruction to
+this refinement. F2 is reopened only by allowing simultaneous whole blocks;
+F1 attractiveness and F3-F6 signed/local repair arguments are not assumed.
+
+Result: the proposed structural rule is caught between two problems.
+Potential reachability alone is vacuous on irreducible graphs; recorded
+collisions alone do not see a necessary dependence at an attainable state.
+A new heterogeneous exact example makes that state unavoidable after a
+specified two-step prefix, even along a history with no jumps. This is a
+scoped coupling obstruction, NOT a counterexample to ARW monotonicity and
+NOT a proof that every adaptive initial order must encounter this state.
+
+1. Why the saved {0,2} block matters
+-----------------------------------
+Use the checkpoint's four-site kernel, with the last column the sink:
+
+  K = [[0,1/4,1/4,0,1/2],
+       [0,0,1/2,1/2,0],
+       [0,0,1/2,1/2,0],
+       [1/2,0,0,1/2,0]].
+
+At S={1,3}, C={0,1,2}, D={0,1,2,3}, target 0, the remaining sites are 0,2.
+They can interact in both directions: 0->2 and 2->3->0. The latter path
+runs through the processed site 3, which carries the extra sleeper in D.
+A component rule on the induced graph of unprocessed sites misses this.
+
+The exact reason singleton revelation fails is a posterior-law obstruction,
+not merely the existence of a cycle. For any partial state define
+
+  H(S,C) = probability of eventual occupation of 0 when completing all
+           remaining activations from C.
+
+If a valid conditional-block coupling guarantees I_minus <= I_plus at the
+end, then at every joint stopping history F,
+
+  H(S_minus,C_minus) = E[I_minus | F]
+                    <= E[I_plus | F] = H(S_plus,C_plus).
+
+The identities hold under adapted choices by the martingale argument in
+VA Section 4. Thus, after a proposed next action, the lower distribution of
+H must be stochastically dominated by the upper one. The saved p=1/2
+witness violates this for all four singleton action pairs. A two-site
+block integrates the intermediate outcomes before choosing their coupling;
+its two terminal Bernoulli probabilities are ordered. It need not admit a
+coupling with the singleton conditional laws at the hidden intermediate
+stage. This is why cocycle equality of endpoint laws does not imply that
+singleton couplings suffice.
+
+2. Two general elementary deductions (PROOFS)
+---------------------------------------------
+(A) Additional past records cannot rescue an already losing state while
+preserving the same permitted actions and each action's prescribed
+conditional marginal laws. They can help a strategy avoid such a state.
+
+Proof: induct on the number of remaining activations. At a fixed joint
+history and chosen action, the next supports have the specified marginal
+laws W. An almost-surely successful continuation must put all their joint
+mass on states admitting a successful continuation. This is exactly the
+finite transport condition over the inductively defined winning states.
+If every action fails that condition, extra past information cannot create
+a new transport. A randomized action cannot help: conditional on each
+positive-probability choice, success must still have probability one.
+The same proof allows different processed sets and different next batches
+in the two copies. It does not cover noncausal couplings constrained only
+by their final marginal laws, or an altered partial-revelation architecture.
+
+(B) Static return components are too coarse on an irreducible graph.
+
+For U=V\S consider the random-walk trace matrix
+
+  L_U = K_UU + K_US (I-K_SS)^(-1) K_SU.
+
+Sink accessibility ensures the inverse exists. Only positivity/reachability
+is used here: L_U is NOT the avalanche transition kernel. At the displayed
+state, with U ordered as (0,2),
+
+  L_U = [[1/8,3/8],[1/2,1/2]].
+
+This correctly puts {0,2} together. But if the non-sink jump graph is
+strongly connected, every nonempty U has strongly connected trace graph:
+break any directed path between two vertices of U at each intermediate
+visit to U. Each resulting segment is a positive trace edge. Therefore a
+rule that always groups full trace strongly connected components makes all
+remaining vertices one block on every such graph. It just returns to the
+original conjecture. A useful refinement must use more than potential
+reachability, without discarding latent dependence simply because it has
+not yet caused a collision.
+
+3. New heterogeneous exact certificate (COMPUTATION)
+---------------------------------------------------
+Keep K and change only p_1 from 1/2 to 3/5:
+
+  p=(1/2,3/5,1/2,1/2).
+
+At the same S,C,D,target, compute each singleton's full terminal support
+law, then each resulting support's exact remaining occupation probability.
+For each pair of next vertices, the following rational threshold t has
+P(H_minus>=t) - P(H_plus>=t) > 0:
+
+  next minus,plus    threshold t                       tail deficit
+  0,0                4264035708922/4484783119635        73215/143752
+  0,2                26577026/31205655                  164520/290071
+  2,0                20/39                              11126355/32487952
+  2,2                76788/143717                       963638/678755943
+
+Hence all four singleton continuations fail. For the last row the two
+tails are 3121/3123 and 677357623/678755943.
+
+Activating {0,2} simultaneously gives
+
+  lower = 111833728424/191657398275,
+  upper = 3148083359634599/4969139696555580,
+  gap   = 1242739580199331/24845698482777900 > 0 (about 0.0500183).
+
+The endpoint laws therefore admit a target-monotone coupling: first couple
+the Bernoulli target indicators, then sample each full configuration from
+its correct conditional law given its indicator. This is only a completed
+block coupling at this state, not a construction for arbitrary graphs.
+
+The script uses rational absorption equations from raw effective ARW
+steps. It checks nonnegativity and unit mass of every computed row, and
+checks four full-law compositions (both singleton orders, both inputs)
+against independently initialized simultaneous two-site stabilization.
+It stores complete posterior distributions, not only decimal inequalities.
+No LP or floating-point threshold is used.
+
+4. The new state is forced after a specified prefix (PROOF + certificate)
+------------------------------------------------------------------------
+Start at the legitimate binary all-active inputs A={0,1,2}, A+{3}, represented
+initially asleep with S empty. Commit both copies to singleton activation
+3 and then singleton activation 1, respecting the conditional block laws.
+
+At the first step the lower configuration is unchanged deterministically.
+The upper remains D with probability at least p_3=1/2, because immediate
+sleep is one way to do so. Conditional on this joint state, at step 1 both
+copies retain their respective supports with individual probabilities at
+least p_1=3/5. For EVERY coupling, their joint unchanged-support probability
+is at least 3/5+3/5-1=1/5. Thus the displayed losing-for-singletons state is
+reached with probability at least 1/10 under this specified prefix.
+
+If the retained records are complete avalanche histories with their correct
+conditional marginal laws, the same argument applies to the more specific
+events 'sleep immediately, making no jump': upper at 3 has probability
+1/2; then each copy at 1 has probability 3/5, with intersection at least
+1/5. So this branch can be forced with no realized jump or collision.
+The unchanged-support argument itself requires only the endpoint W laws.
+
+Consequence: after this prefix, a rule that permits grouping only vertices
+connected by already realized collisions supplies no useful block on the
+collision-free branch, although a joint treatment is necessary within the
+one-vertex-per-copy-per-round framework. Another initial order, an earlier
+larger block, or a justified different revelation scheme is NOT excluded.
+In particular, this does not establish failure of every conceivable
+collision-based adaptive policy from the root.
+
+5. Narrowed next question (OPEN; no proposed theorem claimed)
+-------------------------------------------------------------
+Try to construct a first-contact stopping-set rule with dormant activation
+labels kept unexposed. Begin on this heterogeneous example. Discover a
+partner when a seed avalanche first reaches a marked sleeper, and ask
+whether the discovered set B can be declared a block with the correct law.
+The first obligation is explicit normalization: compute the joint law of
+(B, endpoint), and determine whether conditioning on selected B gives
+W_(S,B). A favorable endpoint or a visited set is not sufficient. If this
+conditional identity fails, identify the correction before proposing an
+invariant. Use VA Sections 2-3's first-contact cancellation rather than
+assuming that unreading a sleep instruction has positive coefficients.
+
+This is deliberately an information/conditional-law question before another
+transport search. The present result says where extra history cannot help
+and what latent return dependence a useful grouping rule must retain.
+
+Reproduction
+------------
+Unzip this artifact and run, from its n1_chunk directory:
+
+  PYTHONPATH=source OPENBLAS_NUM_THREADS=1 python3 latent_dependencies.py
+
+Requires Python 3 and numpy (imported by the archived activation module).
+The source subdirectory contains exactly the two unmodified routines used
+from arw_backward_search.zip version 9: vertex_activation.py and
+verify_avoidance_exact.py. The parent archive SHA256 is
+38e400ad6d8e19cd1ee19c3d0f3cd52e598e3018fa572b7a388caeb94661fed5.
+The new script and latent_dependencies.json are the reproducible certificate.

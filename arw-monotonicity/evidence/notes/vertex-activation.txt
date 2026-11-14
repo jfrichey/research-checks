@@ -1,0 +1,354 @@
+ARW MONOTONICITY: POSITIVE BLOCKS, ADAPTIVE VERTEX ACTIVATION,
+AND AN EXACT COUPLING WITH TWO-VERTEX BLOCKS
+Continuation of COMPLETE_BLOCKS.txt, 2026-10-06 UTC
+
+STATUS / PRINCIPAL DEVELOPMENT
+
+The main add-one conjecture remains open. The complete-block inverse now
+gives a positive probabilistic construction on every finite graph:
+
+  Start with the binary input particles asleep. Turn on vertices, in any
+  adapted order, from infinite sleep rate to their desired sleep rates.
+  When turning on a vertex, wake its current sleeper, if present, and finish
+  the resulting avalanche. After every vertex has been turned on, the FULL
+  terminal law is ordinary ARW from the original all-active input.
+
+Several vertices may be turned on in one block. Their current sleepers are
+then activated together. There are at most |V| nonempty activation blocks.
+The order and blocks may depend on the already revealed joint history of
+two copies, provided each selected block has its stated conditional law.
+
+This settles marginal laws and termination for a new coupling architecture
+based on complete avalanches. It does not settle how to couple the blocks
+so that the final target indicators are ordered on an arbitrary graph.
+
+On the four-vertex diagnostic graph, an exact finite-horizon search cannot
+always couple one vertex activation per copy per round, even when the two
+orders can differ. Allowing common blocks of up to two vertices succeeds
+for all 32 binary add-one edges and all four targets. A saved coupling is
+replayed to verify BOTH full original terminal marginals and zero bad mass.
+There is no assertion that blocks of size two suffice on general graphs.
+
+1. A POSITIVE INTERPRETATION OF INVERSE TIMES FORWARD STABILIZATION
+
+Use sleep odds r_z=(1-p_z)/p_z, and write P_r for the all-active binary
+stabilization matrix and E_r=P_r^{-1} from COMPLETE_BLOCKS.txt. Let
+0<=r_z<=s_z. Define
+
+    T_(r,s) = E_r P_s.                                         (1)
+
+This is a STOCHASTIC matrix. Its row from sleeping support C has the
+following law:
+
+    independently activate the sleeper at z in C with probability
+        alpha_z = 1-r_z/s_z;
+    then stabilize at sleep probability p_z=1/(1+s_z).          (2)
+
+When r_z=s_z=0, take alpha_z=0. Zero odds are interpreted by the local
+buffer limit: a lone active particle sleeps immediately, whereas surplus
+particles still make their mandatory K-jumps. This is the well-defined
+infinite-sleep-rate limit, rather than a literal iid stack consisting only
+of sleep instructions.
+
+Proof: work in the commuting addition algebra at parameters s. Let a_z
+add an active particle, j_z=sum_y K(z,y)a_y, and
+
+    b_z(u)=(1+u_z)a_z-u_z j_z.
+
+For s_z>0 there is the POSITIVE identity
+
+    b_z(r) = (r_z/s_z)b_z(s) + (1-r_z/s_z)a_z.                 (3)
+
+Applying prod_{z in C} b_z(r) to the empty state yields row C of E_r P_s.
+Expand (3). For a selected subset of active sites, apply all the b_z(s)
+factors first: they create precisely the other initial sleepers. Then add
+the selected active particles. Commutation identifies this with the mixed
+initial state in (2), and the product coefficients are its independent
+activation probabilities. The argument also works at zero odds using the
+buffer-limit definition; no division by zero is required at unchanged sites.
+
+Consequently, for r<=s<=t,
+
+    P_r T_(r,s)=P_s,
+    T_(r,s) T_(s,t)=T_(r,t).                                  (4)
+
+All rows in these identities are complete probability distributions. The
+signed terms from E_r have already been cancelled, not optimized by an LP.
+This does not make E_r itself nonnegative.
+
+2. A SIGN-REVERSING FIRST-CONTACT CANCELLATION
+
+Set e_z=a_z-b_z at fixed final parameters. The collision relation gives
+
+    a_z e_z=0.                                                (5)
+
+There is a direct complete-history implementation. Let S be a nonempty set
+of marked initial sites, disjoint from the common initial configuration eta.
+Consider the signed activation contrast
+
+    C(eta,S) = sum_{T subset S} (-1)^(|S|-|T|)
+       Law[Stab(eta + active particles on T + sleepers on S\T)]. (6)
+
+Hold all marked particles in place. Run the common particles until they
+first reach S or stabilize without visiting S. This common exploration does
+not depend on the marked activation choices.
+
+If the first hit is at z in S, toggle just the initial active/sleeping label
+at z. Immediately after that arrival, both versions have two active
+particles there. Their other states coincide. Complete them with identical
+remaining stacks. The common prefix and the canonical first hit are unchanged
+by the toggle, so toggling again is the inverse. The two signed histories
+have equal probability weights and opposite signs. Every hit history cancels.
+
+Only no-hit histories remain. Let nu_eta^S(B) be the subprobability law of
+the common terminal sleeping support B together with avoidance of S. Then
+the exact identity of signed FULL terminal laws is
+
+    C(eta,S) = sum_B nu_eta^S(B) C(B sleeping,S).               (7)
+
+This is a genuine disjoint sign-reversing cancellation within expansion
+(6). It is not yet the global injection from bad add-one pairs to good pairs.
+In particular, the right side of (7) is still signed. The distribution that
+created B must remain attached; one cannot replace it by an arbitrary
+sleeping background and assert an order there.
+
+3. AN EXECUTABLE DEFERRED-ACTIVATION BLOCK
+
+Formula (2) can be sampled without first revealing all activation coins.
+
+  * Keep a mark at every original sleeper whose activation is unexamined.
+  * Select a remaining mark z and toss its activation coin.
+  * If inactive, erase this mark and keep the sleeper.
+  * If active, wake the sleeper and complete that avalanche. Erase all
+    remaining marks visited during the avalanche, without tossing their coins.
+  * Repeat until no marks remain.
+
+At a visited mark, an initially active particle held there and an initially
+sleeping particle are identical after the arrival. Its unexamined coin has
+total weight alpha_z+(1-alpha_z)=1 and can be left unused. This is the
+specific normalization that allows used/unused boundary data to change
+without inventing extra mass. All marks left unvisited still correspond to
+their original sleepers. Their coins remain independent and unrevealed.
+
+At most |C| coins are examined and at most |C| seed avalanches run. A Fraction
+calculation of this recursive sampler agrees with (2) and (1), for every
+input support in a directed three-vertex heterogeneous example and three
+different parameter blocks. This validates the complete output distribution.
+
+4. ADAPTIVE VERTEX ACTIVATION: A GENERAL ENDPOINT SAMPLER
+
+Fix the final odds R. For a processed set S define r^S_z=R_z on S and zero
+elsewhere. Write P_S=P_(r^S). For a nonempty batch B outside S define
+
+    W_(S,B)=T_(r^S,r^(S union B)).                             (8)
+
+The activation probabilities in (2) are one on B and zero elsewhere. Hence
+W_(S,B) wakes every current sleeper in B and then stabilizes at the new
+partial parameters. In particular, a vertex initially empty may now contain
+a sleeper when its turn arrives; wake that CURRENT sleeper.
+
+The fundamental identity is
+
+    P_S W_(S,B)=P_(S union B),   P_empty=I.                    (9)
+
+Start at the sleeping support A, with S empty. Choose any nonempty batch
+B of unprocessed vertices, apply W_(S,B), and set S:=S union B. Stop when
+S=V. The terminal law is P_V(A,.), the desired original all-active law.
+
+Why history-dependent choices are allowed: fix a terminal test function h
+and set
+
+    H(S,C) = (T_(r^S,R) h)(C).
+
+For EVERY permitted batch B, equation (4) gives
+
+    W_(S,B) H(S union B,.) = H(S,.).                          (10)
+
+Thus H(S,current support) is a bounded martingale under any adapted choice
+of batches. After at most |V| steps, H=h at the terminal support. Its initial
+expectation is P_V h(A), proving the entire marginal law. The batch choice
+may depend on the already revealed histories of BOTH copies: (10) holds
+pointwise for each selected action. The conditional law of each marginal
+block, given that joint history and action, must still be W_(S,B).
+
+Choosing a block AFTER inspecting several candidate block outcomes and
+keeping a favorable one is not justified by this theorem. Either commit
+using the current revealed history, or supply a separate exact conditional
+resampling argument.
+
+For arbitrary all-active multiplicities, first perform legal surplus IDLA
+to obtain a binary support, retaining fresh stack suffixes. The same endpoint
+sampler then applies. For add-one comparisons, the initial IDLA supports can
+be coupled by inclusion, so binary add-one inputs remain the central case.
+
+5. A FINITE WHOLE-BLOCK COUPLING FRAMEWORK
+
+The common-parameter version has state (S,C_minus,C_plus). At each stage:
+
+  choose a batch B subset V\S;
+  couple W_(S,B)(C_minus,.) and W_(S,B)(C_plus,.);
+  retain their two complete outcomes and set S:=S union B.
+
+Neither intermediate support inclusion nor intermediate target order is
+required. Only the terminal target indicators must be ordered. A finite
+backward recursion can identify winning states: an action works if there is
+a transport of its two exact marginal laws supported on winning next states.
+This is an exact bipartite max-flow problem, with rational capacities in the
+saved examples. Randomizing among losing actions cannot give success one.
+
+The marginals and finite number of blocks are now justified independently
+of the desired monotonicity. What is missing is an ARW-specific invariant
+and a block/transport selection rule that works from every
+
+    (empty, A, A union {x}).                                  (11)
+
+Allowing the entire remaining vertex set as one batch always makes this
+formulation as hard as the original terminal inequality. Therefore merely
+restating the max-flow feasibility problem is not a proof. The next useful
+step is to identify which creation histories or collision components require
+joint treatment and prove that their transports leave a suitable invariant.
+
+6. EXACT COUPLING AND AN EXPLICIT NEED TO GROUP VERTICES
+
+Use the four-vertex graph from COMPLETE_BLOCKS.txt, with p=1/2 everywhere:
+
+    0 -> 1,2,dagger with probabilities 1/4,1/4,1/2;
+    1 -> 2,3 with probabilities 1/2,1/2;
+    2 -> 2,3 with probabilities 1/2,1/2;
+    3 -> 0,3 with probabilities 1/2,1/2.
+
+Consider common input A={0,1,2}, extra x=3, target v=0. The saved coupling
+first activates vertex 3. In certain later branches S={1,3} has been
+processed, with lower support C={0,1,2} and upper D=V. The remaining vertices
+are 0 and 2. Revealing either one separately can create incompatible
+conditional occupation probabilities, even though completing both together
+has the correct order.
+
+For example, if both copies activate 2 next, let Z_minus,Z_plus be their
+conditional probabilities of final target occupation after this revelation,
+with vertex 0 still to be processed. At threshold t=32922/61243,
+
+    P(Z_minus >= t)=7321/7327,
+    P(Z_plus  >= t)=14615/14654.
+
+The lower tail exceeds the upper by 27/14654>0. Any coupling that subsequently
+guarantees target order must have Z_minus<=Z_plus almost surely, which these
+tails rule out. The saved witness checks all FOUR choices of the next lower
+and upper vertex (0 or 2); every choice has an exact positive tail deficit.
+
+Activating {0,2} together instead gives target probabilities
+
+    lower: 37534390931/63854401520,
+    upper: 1106034765547/1744023341515,
+
+whose difference is 258805482381/5580874692848>0. A coupling of that completed
+block can therefore order the target. This is a precise instance in which
+conditioning halfway through the needed cancellation is the obstruction.
+
+The full saved adaptive coupling has 41 nonterminal policy rows and 145
+reachable states. A separate replay checks every row's two marginal laws,
+propagates all mass to the terminal states, and compares with independently
+computed ordinary ARW terminal laws from the original inputs. It finds
+
+    P(lower target=1, upper target=0)=0,
+    P(lower target=0, upper target=1)
+       =302240830349/13952186732120.
+
+The expected number of two-vertex blocks in this particular coupling is
+110/273. All computations here use exact Fractions, not LP tolerances.
+
+The search with common batches of size at most two succeeds on ALL 128
+binary add-one/target comparisons on this four-vertex graph. One-vertex
+blocks already work for all comparisons in the separate two- and
+three-vertex diagnostics. No general bound on block size is claimed.
+
+The failed search class is specifically one vertex per copy per round,
+with arbitrary adapted choices of vertex order and complete-avalanche
+couplings. It includes different orders in the two copies. It does not
+exhaust every asynchronous scheme or a coupling that uses unrevealed future
+blocks in a separately justified noncausal construction.
+
+7. AN IMPORTANT LIMITATION OF THE POSITIVE BLOCK KERNEL
+
+T_(r,s) need not preserve occupancy order on arbitrary sleeping supports.
+On 1 -> 0 -> dagger, use final p=1/2 and activation probability 1/2 at
+each initial sleeper. Starting from {0}, the terminal occupation of 0 is
+3/4. Starting from {0,1}, it is 11/16, smaller by 1/16.
+
+Thus the parameter-change kernel is not an attractive update by itself.
+The larger proof must retain the law that produced the current supports,
+the processed parameter set, and sufficient information for block selection.
+The endpoint sampler and the first-contact cancellation supply this framework;
+they do not imply the missing general invariant automatically.
+
+8. CONTINUOUS PARAMETER FORM (OPTIONAL, NOT NEEDED FOR THE COUPLING SEARCH)
+
+Along r_z(t)=t R_z, P(t) solves P'(t)=P(t)Q(t), where
+
+    Q(t)(C,.) = sum_{z in C} [W_z(t)(C,.)-delta_C]/t
+              = sum_{z in C} R_z/(1+t R_z)
+                    [F_z(t)(C,.)-delta_C].                   (12)
+
+Here W_z(t) wakes one current sleeper and stabilizes at parameters tR;
+F_z(t) instead forces its first jump and then stabilizes. The second form
+is nonsingular at t=0 by the infinite-sleep limit. It is a genuine Markov
+generator. The expected number of proposed forced-avalanche events up to
+T is at most sum_z log(1+T R_z), using site clocks irrespective of occupancy.
+
+This gives another positive complete-avalanche representation. Its individual
+updates are not attractive, as Section 7 already warns. The alternative
+left derivative -P E' can even have negative off-diagonal entries; exploratory
+values are retained in block_parameter_flow_results.json. Neither derivative
+supplies a shortcut to the main monotonicity proof.
+
+9. FILES / REPRODUCTION
+
+verify_marked_blocks_exact.py
+  Checks E_r P_s against independent random-activation/raw-ARW laws, the
+  parameter composition identity, and the deferred sampler. Checks full-law
+  first-contact cancellation for one, two, and three marks, including common
+  particle multiplicities. Also verifies the two-site limitation in Section 7.
+  Output: marked_blocks_exact_verification.json.
+
+deferred_block_sampler.py
+  An executable sampler with iid buffer records and unexamined activation
+  coins. Also supplies the independent exact recursive audit.
+
+vertex_activation.py
+  Computes effective raw transition laws at partial parameters, including
+  infinite-sleep vertices. Verifies 48 full-matrix identities across the
+  two-, three-, and four-vertex cases, and five deterministic/adaptive
+  vertex-order policies per case.
+  Output: vertex_activation_exact_verification.json.
+
+activation_coupling_search.py
+  Exact Fraction max-flow recursion for one vertex per copy per round.
+  Output: activation_coupling_search_results.json.
+  Additional different-order results: activation_separate_orders_results.json.
+
+activation_batch_coupling.py
+  Exact search allowing common activation batches of size at most two.
+  Outputs: activation_batch_coupling_results.json and
+  activation_batch_coupling_certificate.json.
+
+verify_activation_coupling_certificate.py
+  Independently rebuilds block laws, replays the saved complete coupling,
+  checks original full terminal marginals and terminal target order, and
+  audits all four conditional-posterior tail obstructions.
+  Outputs: activation_coupling_certificate_verification.json.
+  Tail witnesses: activation_block_posterior_obstruction.json.
+
+block_parameter_flow.py / block_parameter_flow_results.json
+  Numerical algebra/derivative exploration that led to the positive block
+  identity. The principal claims above use the proofs and rational audits.
+
+Run the three main audits from this directory:
+
+    python3 verify_marked_blocks_exact.py
+    OPENBLAS_NUM_THREADS=1 python3 vertex_activation.py
+    OPENBLAS_NUM_THREADS=1 python3 verify_activation_coupling_certificate.py
+
+Restart with Sections 4-6. The next mathematical target is a general
+history-sensitive block selection/transport invariant. Preserve the
+already established endpoint-law and stopping-line arguments rather than
+reopening an instruction-by-instruction coupling.

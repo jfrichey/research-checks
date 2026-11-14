@@ -1,5 +1,7 @@
 # Word potentials
 
+[Proof and verification map](CLAIMS.md).
+
 Run `python -B run_checks.py word-potentials` from the repository root.
 The default program mixes exact symbolic identities with floating-point validation;
 its output and docstrings identify the checks. The `--scan` option adds larger

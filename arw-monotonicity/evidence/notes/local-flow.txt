@@ -1,0 +1,286 @@
+LOCAL WEIGHTED TRANSPORT OF COMPLETED ARW HISTORIES
+2026-10-05, second continuation
+
+Status: the general single-site add-one conjecture is still unproved here.
+This continuation advances the repair architecture beyond arbitrary pairing
+of bad and good atoms. It gives an exact coupling whose paired geometries are
+connected by short, explicitly restricted stack rewrites; proves a general
+parameter-extension lemma; and identifies two genuine obstructions to more
+rigid repair rules. All computational conclusions below concern the specified
+720-geometry reservoir, not arbitrary graphs or unrestricted couplings.
+
+1. WHAT IS BEING COUPLED
+
+Keep the previous notation: Xi is the strong geometry (ordinary outside
+stacks and target jump directions, with target sleep gaps removed), L_minus
+and L_plus are its chance counts, and G is an independent geometric rank with
+
+    P(G=j) = p*z^(j-1),   z=1-p.
+
+For marked cell (Xi,j), set f=1{j<=L_minus} and g=1{j<=L_plus}.
+A bad cell has type 10; a good cell has type 01. Completed fields of types
+00 and 11 may be useful intermediate search states. They are not sources or
+destinations of bad-to-good mass in the final fractional pairing.
+
+Use the same path sink-0-1-2-sink, eta=(1,0,1), plus=(1,1,1), target 0.
+Independently permute prefix words
+
+    target jump list: 1,1,1,sink
+    site 1 raw stack: S,S,0,0,0,2
+    site 2 raw stack: S,1,1
+
+and append the same finite leftward jump continuations to bounds (6,8,3).
+There are 720 equal-weight geometry cylinders. All necessary stabilizations
+fit within the finite bounds; later stack instructions are unrestricted.
+There are 404 bad marked cells and 379 good marked cells, with ranks 2,3,4.
+Geometry equality here is conditional on this finite inventory class. Its
+probability under the unconditional stack law can depend on parameters.
+
+The conditional occupation difference remains
+
+    q_plus - q_minus = p*z*(11-22*z-14*z^2)/720.
+
+Thus the nontrivial feasible interval is p in [p_*,1), where
+
+    p_* = (25-5*sqrt(11))/14, approximately 0.6012,
+    z_* = (-11+5*sqrt(11))/14.
+
+The degenerate endpoints p=0 and p=1 are trivial separately. A negative
+conditional difference below p_* is not an unconditional counterexample.
+
+2. THE RESTRICTED STACK REWRITES
+
+The main search uses mode='causal' in local_weighted_search.py. A step is:
+
+  (a) transpose two distinct cards in the four-card target jump prefix; or
+  (b) transpose an outside jump card belonging to the backward ancestor set
+      of a lower target terminal sleep, with another distinct card in the
+      same outside prefix. The partner may be a sleep card.
+
+After each step rebuild and restabilize the field, then compute new allowed
+moves. The backward dependencies come from the actual legal stabilization
+events in search.py, including arrivals and the preceding event at each site.
+
+During exploration from source mark j, j remains the recorded obligation.
+When j<=L_minus of the current geometry, use the lower terminal sleep at
+chance j as the root. When j>L_minus, use its LAST available lower chance
+min(j,L_minus) only to choose the exploration root. This does not change j,
+and does not assert that the marked success currently exists. In this ensemble
+L_minus is always at least one. Target transpositions need not have a causal
+anchor. Card inventories and the common finite continuation stay fixed.
+
+A final good partner can have rank k<=j. Intermediate types are evaluated
+at the original j; the final mark k is selected at the endpoint. Every path
+is a search witness between completed fields, not a chronological sequence
+of physical particle operations. Individual adaptive swaps are not claimed
+to preserve the iid law. The final fractional interval ledger, together with
+the full-stack lift in the previous continuation, supplies exact marginals.
+The inverse endpoint exchange also need not follow this directed search rule.
+
+3. SINGLE-INPUT REPAIR DOES NOT CONTROL COLLECTIVE CAPACITY
+
+For radius one, allow ANY final good rank, making the test less restrictive
+than the eventual earlier-rank construction. At p=3/4, capacities proportional
+to marked-cell masses are 16,4,1 for ranks 2,3,4. Total bad demand is 4217.
+The exact maximum flow is 3926, leaving deficit 291.
+
+The residual cut identifies 194 bad cells whose complete one-step good
+neighborhood has 155 cells. Their demand is 2192 and supply is 1901.
+More strongly, the same family's demand minus supply is
+
+    (p*z/720) * (13+19*z+7*z^2),
+
+strictly positive for every 0<p<1. Hence no fractional bad-to-good pairing
+using these one-step edges can repair the entire reservoir at any such p.
+
+Yet EVERY bad cell has a one-step good neighbor of rank no later than its
+own. Each bad cell can therefore be repaired individually, for every p,
+using at most the mass of that one good neighbor. At p=3/4 the smallest
+singleton neighbor-capacity/source-capacity ratio is exactly one. The failure
+is competition for shared good capacity, not the absence of a repair path
+for a particular input.
+
+This is the concrete reason the proof must follow families or an explicit
+mass ledger. Finding a successful rewrite separately for each input is too
+weak, even when its individual weight comparison is favorable.
+
+Files: one_exchange_hall_certificate.json records the cut and full flow;
+one_exchange_individual_checks.json records the singleton check.
+At p=3/4, two steps with final k<=j suffice even if lower marked success is
+protected at every internal state: two_exchange_protected_certificate.json.
+
+4. EXACT THREE-STEP COUPLING AT THE CRITICAL PARAMETER
+
+At z=z_*, use capacities 196*z_*^(j-2), j=2,3,4. In the exact basis
+a+b*sqrt(11), these are
+
+    rank 2: 196
+    rank 3: -154+70*sqrt(11)
+    rank 4: 396-110*sqrt(11).
+
+quadratic_flow.py uses exact integer-pair arithmetic and sign comparisons
+by squaring; no floating-point capacity decisions enter the certificate.
+It restricts partners to those reachable in at most three steps under the
+above rules, with k<=j and unrestricted intermediate types.
+
+There are 39,139 allowed source/destination edges. The exact maximum flow
+equals all bad demand and all good supply:
+
+    34684+6590*sqrt(11).
+
+The certificate has 605 positive fractional transfers. Independently replaying
+their stack edits gives 32 paths of length one, 117 of length two, and 456
+of length three, for 1,634 exchanges in total. The verifier checks endpoint
+types, card values, allowed causal anchors, earlier final ranks, and every
+incoming and outgoing exact mass budget. The preexisting independent raw
+stack lift verification supplies the marginal-to-physical-stack connection.
+
+This establishes a complete coupling conditional on this reservoir at p_*.
+Extending it by identity outside the reservoir is a marginal-preserving
+partial repair globally; it leaves other bad fields unresolved. Three steps
+is a sufficiency statement, not a claim that every alternative two-step rule
+must fail.
+
+Primary files: quadratic_flow_certificate.json, verify_local_weighted.py,
+and local_weighted_verification.json.
+
+5. A GENERAL EARLIER-RANK PARAMETER-EXTENSION LEMMA
+
+Let geometry cells a have fixed weights mu_a, independent of the target sleep
+parameter. The marked-cell mass at source rank j is
+
+    w_a(p) = mu_a * p*z^(j-1).
+
+Suppose at p_0 in (0,1) a fractional coupling transports every bad source
+a=(Xi_a,j_a) into good cells b=(Xi_b,k_b), always with k_b<=j_a.
+Let theta_ab be the FRACTION of source a sent to b. Thus sum_b theta_ab=1.
+Keep these source fractions at any p>=p_0, and send theta_ab*w_a(p).
+The load on destination b, divided by its available marked-cell mass, is
+
+    Load_b(p) = sum_a theta_ab * (mu_a/mu_b) * z^(j_a-k_b).
+
+All coefficients are nonnegative and all powers are nonnegative integers.
+For z<=z_0, Load_b(p)<=Load_b(p_0)<=1. Every source is fully sent and every
+destination respects its capacity. The same paths remain available because
+the geometry/rank rewrite graph does not depend on p. This proves extension
+to all p>=p_0 (with degenerate endpoints interpreted separately if needed).
+
+To realize the coupling explicitly, reserve disjoint source intervals of
+length theta_ab in an auxiliary uniform variable. Reserve destination
+intervals of length theta_ab*w_a(p)/w_b(p). Swap each interval pair by the
+affine map preserving its probability mass, with the inverse on the partner.
+Fix unused good intervals and cells of types 00 and 11. This is a
+measure-preserving involution, so f(a)<=g(T(a)) and both marginals are exact.
+The earlier continuation explains how to lift the augmented representation
+to full iid stack fields for each of the two stabilizations.
+
+Applying the lemma to the exact critical certificate proves the three-step
+repair throughout p in [p_*,1), not merely at a numerical grid of rates.
+In the reservoir the conditional geometry weights are all equal for every
+allowed rate. The lemma itself is a general transport fact; it is not a proof
+that ARW supplies the required earlier-rank transport on arbitrary graphs.
+
+6. THE MARK NEED NOT SURVIVE AS A REALIZED SLEEP DURING SEARCH
+
+At the critical rate, exhaust the finite reachable graph (radius 720, which
+includes every simple path on the 720 geometries). Keep the final k<=j rule.
+If lower success at rank j must hold at every internal field, mode='causal'
+still has a Hall-deficient family, with demand minus supply proportional to
+
+    -11+36*z+20*z^2.
+
+Even allowing EITHER copy to succeed at rank j at every internal field leaves
+a deficient family, with polynomial
+
+    -11+23*z+20*z^2.
+
+At z_*, use 11=22*z_*+14*z_*^2 to obtain shortage z_*+6*z_*^2>0.
+Enriching the move set to anchor in both target histories and all terminal
+outside sleepers, and allowing sleep-card anchors (mode='sleep_roots'),
+does not fix this protected-search obstruction. Its deficient polynomial is
+
+    -11+22*z+18*z^2,
+
+which equals 4*z_*^2>0 at the critical rate. The exact scaled deficits for
+these three tests are respectively
+
+    220+320*sqrt(11),
+    2222-590*sqrt(11),
+    1584-440*sqrt(11).
+
+The unprotected three-step flow does succeed. Of its 605 paths, 191 have an
+internal type-00 field at the original source rank. For example, one positive
+transfer uses mark 3 throughout and has completed-field types
+
+    10 -> 00 -> 00 -> 01.
+
+Its geometry words (S=-1, sink=3) are:
+
+    start:  [1,1,1,3]; [-1,-1,0,2,0,0]; [1,-1,1]
+    step 1: [1,1,1,3]; [-1,-1,0,0,0,2]; [1,-1,1]
+    step 2: [1,1,1,3]; [0,-1,0,0,-1,2]; [1,-1,1]
+    step 3: [3,1,1,1]; [0,-1,0,0,-1,2]; [1,-1,1].
+
+The first two swaps have the required outside causal anchors; the last swaps
+two target directions. Its exact positive transferred mass in the scaled
+units is 36-10*sqrt(11). The trace is saved in the verification summary.
+
+Scope matters: this rules out the stated success-protection invariant for
+these finite-reservoir rules with a fixed source rank during exploration.
+It does NOT show that every conceivable coupling must visit a 00 field.
+Changing ranks during exploration, changing the reservoir, or using other
+moves could avoid this obstruction. Within this architecture the useful
+object is a weighted obligation to produce a successful endpoint, not a
+specific sleep event required to survive every intermediate rewrite.
+
+File: protected_components_results.json. These are exact finite max-flow
+calculations, not a conclusion from a search timeout.
+
+7. THE NEXT GENERAL STEP
+
+The useful architecture is now a family-based exploration with an exact
+fractional ledger. Begin with a family of unmatched marked histories; expose
+its backward rewrite neighborhood; allow paths through neutral fields; and
+use a residual cut to identify the whole family whose demand exceeds available
+good mass. Enlarge that family's move neighborhood or stack reservoir. Avoid
+spending the same good interval twice. Earlier endpoint ranks are particularly
+useful because the parameter-extension lemma makes their capacity robust.
+
+What remains is an ARW-specific supply argument. A finite max-flow certificate
+computes the desired transport, but cannot explain why a general graph has
+enough good mass. Weighted Hall inequalities, if merely assumed for all
+families, restate the essential difficulty. A promising concrete target is a
+nonnegative current generated by Abelian outside-excursion commutations, with
+bad mass as source, good mass as sink, and controlled reservoir-boundary terms.
+An identity of this kind could prove the required family inequalities without
+assuming the desired occupation comparison. Intermediate search fields can
+carry paths without consuming endpoint capacity; those paths are not claimed
+to preserve marginal laws at each internal step.
+
+The unproved pieces are a uniform local current or expansion rule, control
+of infinite exploration and boundary terms, and a limiting construction
+that preserves the exact marginal laws. The present finite coupling resolves
+none of those by itself. Its contribution is to distinguish invariants that
+actually help (exact mass, earlier endpoint ranks) from invariants that can
+block a feasible repair (one-step repairs and protected realized sleeps).
+
+8. REPRODUCTION AND FILE GUIDE
+
+Run in this directory with Python 3, NumPy and SciPy installed:
+
+    python verify_local_weighted.py
+
+This replays the saved critical certificate and rewrites its verification
+summary. To recompute the exact critical max flow:
+
+    python quadratic_flow.py
+
+local_weighted_search.py defines the allowed moves, breadth-first exploration,
+and integer max-flow tests. Its default main is exploratory and writes
+local_weighted_results.json and local_weighted_certificate.json; these are
+not the primary critical certificate. Historical parameter sweeps are in
+local_weighted_parameter_results.json, three_exchange_results.json,
+protected_sleep_results.json, and outside_roots_results.json. Weight scales
+in older result files can differ by a common factor; compare normalized
+masses, or use each file's recorded weights. The earlier continuation and
+its scripts remain intact.

@@ -1,5 +1,7 @@
 # Cluster-counting calculations
 
+[Proof and verification map](CLAIMS.md).
+
 The default suite checks the small-strip and all-length formula certificates,
 finite Euler identities, and a width-four C++ residual calculation.
 

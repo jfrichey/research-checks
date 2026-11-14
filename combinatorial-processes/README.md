@@ -1,5 +1,7 @@
 # Some combinatorial processes
 
+[Proof and verification map](CLAIMS.md).
+
 Run `python -B run_checks.py combinatorial-processes` from the repository root.
 The three suites mix exact finite enumeration, symbolic identities, numerical
 integration and asymptotic diagnostics. Saved data and figure/source hashes are

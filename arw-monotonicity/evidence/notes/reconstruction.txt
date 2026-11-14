@@ -1,0 +1,387 @@
+ARW BACKWARD COUPLING: DELAYED RELEASE AND FIRST-CONTACT RENEWAL
+2026-10-06, Shanghai time
+
+Status: the general single-site add-one conjecture is still open here.
+This continuation follows BUFFER_SWITCHING.txt. It constructs an exact,
+legal comparison coupling using input records and one delayed packet. That
+coupling is not monotone: its remaining bad outcomes still require a
+history-aware cancellation. A renewal decomposition identifies where that
+cancellation must occur. It closes rigorously with one common particle.
+
+The most useful conclusions for the next pass are:
+
+  * One potential arrow per arrival makes used/unread changes canonical.
+    The extra initial sleeper can be released AFTER the entire common
+    history, as one fresh avalanche. Both marginal laws are exact.
+  * The general response is D = T D + g + r. T is nonnegative, strictly
+    substochastic; g is nonnegative; r consists of reachable mixed-state
+    first contacts, retaining the histories that created their sleepers.
+  * Individual mixed contacts really can have negative response. The
+    surrounding renewal terms can compensate them exactly.
+  * Algebraically removing sleepers, then applying IDLA and source
+    harmonicity, does NOT always yield a nonnegative transition kernel.
+    An exact surviving coefficient is -8/2025 on a homogeneous four-site
+    path. Mere monotonicity of avoidance probabilities is also insufficient
+    for the resulting state-only linear system.
+
+These are statements about particular reconstruction mechanisms. None of
+the negative coefficients or conditional inventories is a counterexample
+to the main ARW conjecture. No historical novelty claim is being made for
+the standard Abelian/strong-Markov facts used below.
+
+1. A UNIFORM INPUT RECORD WITH AN UNREAD POTENTIAL ARROW
+
+At site z, preassign independent records
+
+    (B_z(m), D_z(m)), m=1,2,...,
+
+where B_z(m) is Bernoulli(p_z), and D_z(m) has jump law K(z,.).
+An initial sleeper, if present, has one further independent arrow D_z(0).
+Its initial occupancy is fixed, not an additional Bernoulli trial.
+
+When input m arrives:
+
+  - If the previous resident exists, emit its waiting arrow D_z(m-1).
+    For a never-visited initial sleeper this means D_z(0).
+  - Read B_z(m). If it is 0, emit D_z(m) immediately. If it is 1,
+    retain the incoming particle and leave D_z(m) waiting.
+
+For initial buffer b=0, the emitted arrow word after m inputs is
+D_z(1),...,D_z(m-B_z(m)). For b=1 it is
+D_z(0),...,D_z(m-B_z(m)), when m>=1. With m=0 there are no outputs.
+The lengths are m+b-B_z(m), as in the previous buffer construction.
+Output words grow by prefixes, and the processor is Abelian.
+
+All visited input records have the same product form, even if the final
+record's arrow is unread. This is an augmentation by independent variables,
+not an assumption that an adaptively selected jump has its original law.
+
+Fixed terminal-arrow padding is still insufficient for a general repair.
+On the path dagger-0-1-2-dagger, take common eta=delta_0, extra initial
+sleeper at 1, target 0. A bad pair can be:
+
+  lower: sleep at 0; its unused arrow is 0->dagger.
+  upper: jump 0->1; reset 1 to occupied, releasing the initial resident
+         along 1->2; reset 2 to empty and jump 2->dagger. The terminal
+         resident at 1 has unused arrow 1->2.
+
+The combined reset outcomes are (1,0) at 0, (1) at 1, and (0) at 2.
+The combined potential arrows are 0->1, 0->dagger, two 1->2 arrows,
+and 2->dagger. No good pair has this padded inventory: the good upper
+must sleep at 0 and never wake its initial resident at 1; the lower must
+go 0->1 and sleep. Neither copy then processes an input at 2.
+
+Thus a complete reset-and-arrow record at 2 becomes unused. A longer
+downstream path, or a sequence of self-loops, makes the discarded block
+arbitrarily long. The natural reconstruction needs whole unused blocks,
+not just the terminal arrow. padded_record_pools.py exhaustively confirms
+the first obstruction: four combined resets, one bad pair, zero good pairs
+in that fixed padded inventory. This is not a truncation artifact.
+
+2. A PATHWISE DELAYED-RELEASE COMPARISON COUPLING
+
+Start the lower system from all-active eta, with empty buffers. In the
+upper system add an initial sleeper at y outside supp(eta). Give both
+systems the same input records (B_z(m),D_z(m)), m>=1. Give the upper's
+initial sleeper its independent D_y(0). Each copy individually has the
+correct independent book law.
+
+Process the common inputs as in the lower system. When the upper initial
+sleeper is first awakened, emit its extra packet but hold its delivery.
+Every subsequent common input record is identical in both copies. After
+the common inputs finish, there are precisely two possibilities:
+
+  (a) y was never visited. The upper has the lower final configuration
+      plus the untouched sleeper at y.
+  (b) y was visited. Both buffer configurations now equal the lower final
+      configuration sigma. The upper additionally has the held packet,
+      whose destination is D_y(0), independent with law K(y,.).
+
+In (b), deliver that packet and stabilize using the fresh suffixes of the
+input records. If its destination is the sink, there is nothing to do.
+
+For fixed records this delayed schedule has the same final configuration,
+input counts, and output counts as ordinary delivery in the upper system.
+Legality is in the Abelian pending-input network: an emitted packet may
+wait before delivery. It is not a claim that a physically present active
+particle can be ignored in a raw sleep decision. The equivalent raw-stack
+proof follows in Section 3.
+
+This solves a legal reconstruction and marginal-law problem for the
+comparison coupling. It does NOT repair all bad target outcomes. The saved
+sampler includes a bad outcome to make that limitation explicit.
+
+Let V_eta be the visited set of the common history and sigma its final
+stable configuration. Write f_v(sigma)=1{sigma_v is occupied}. For a stable
+configuration let A_z be addition of one active particle at z followed by
+stabilization, and A_dagger the identity. Define P_y=sum_z K(y,z) A_z.
+Then the exact sleeper-insertion response is
+
+  B_eta(y;v)
+    = 1{y=v} P_eta(y notin V_eta)
+      + E_eta[1{y in V_eta} (P_y f_v(sigma)-f_v(sigma))].       (1)
+
+There is also an exact FULL-LAW version: on the no-visit branch add the
+untouched sleeper; on the visit branch apply P_y to the visited-history
+terminal subprobability measure. Thus a potentially large deleted or added
+history is represented by one normalized fresh-avalanche kernel.
+
+Equation (1) also holds with other common initial sleepers, provided y is
+initially vacant. The all-active hypothesis becomes important for positivity,
+not for this identity.
+
+3. FIRST-CONTACT STOPPING LINES AND THE GENERAL RENEWAL EQUATION
+
+The previous first-sleep reduction gives a substochastic kernel H_eta(x,y):
+an extra walker from x sleeps with probability p_z only outside supp(eta),
+and stops on that sleep or at the sink. Its untouched common particles stay
+all active. For a selected sleep site y, now run the common ARW from eta
+until its first arrival at y, stopping BEFORE a toppling at y. If there is
+no such arrival, run it to stabilization. This is an ordinary raw-stack
+stopping line.
+
+On a first arrival, call the common configuration C_y. It has one active
+particle at y. The upper configuration is exactly C_y+delta_y, with two
+active particles at y. The unused stacks are fresh. Let
+
+    Delta_v(C,y)=F_v(C+delta_y)-F_v(C),
+
+where C is now allowed to contain sleepers away from its active site y.
+The complete response identity is
+
+  D_eta(x;v) = sum_y H_eta(x,y) [
+      1{y=v} P_eta(no arrival at y)
+      + E_eta[1{arrival at y} Delta_v(C_y,y)] ].                (2)
+
+This supplies another proof of (1). At the first-contact configuration C,
+the extra particle is at an already active site y. Its first forced jump
+leaves C intact and adds one active particle at a K(y,.) destination.
+By Abelianity, that addition can be postponed until after stabilizing C.
+
+For a fixed bound N on the number of common particles, index the all-active
+states s=(eta,x) with 1<=|eta|<=N. Split first contacts into all-active C_y
+and mixed C_y. Put their respective contributions into T and r, and put
+the no-contact positive contribution into g. Simultaneously for all targets,
+
+    D = T D + g + r,                                         (3)
+    D = (I-T)^(-1)(g+r) = sum_(k>=0) T^k(g+r).                (4)
+
+T is nonnegative. Its row sum is at most the probability that the extra
+walker sleeps before exiting. This is strictly less than one, since the
+sink is accessible and every p_z<1. There are finitely many indexed states,
+so the maximum row sum is <1. The renewal expansion converges absolutely.
+The vector g is nonnegative. The vector r need not be nonnegative.
+
+A useful equivalent stopping line freezes every common arrival at y and
+fully stabilizes V\{y}. Then C_y consists of k active particles at y and
+sleepers elsewhere. This changes T and r while preserving their total
+response. It does not make mixed-state signs disappear.
+
+4. THE RENEWAL CLOSES WITH ONE COMMON PARTICLE
+
+This is a rigorous arbitrary-finite-graph result, not just a graph enumeration.
+With one common particle there can be no other sleeper at its first contact
+with y. Thus C_y=delta_y and r=0.
+
+Let h_a(y) be the probability that one ARW particle started at a visits y
+before sleeping or exiting. Let H_a(a,y) mean H_(delta_a)(a,y). Set
+
+    d_a(v)=F_v(2 delta_a)-F_v(delta_a),
+    T(a,y)=H_a(a,y) h_a(y),
+    g_a(v)=H_a(a,v) [1-h_a(v)].
+
+The diagonal column H_a(a,a) is zero. Then
+
+    d(v)=T d(v)+g(v),
+    d(v)=sum_(k>=0) T^k g(v) >= 0.                           (5)
+
+For a general added active source x, the response from delta_a is
+
+  D_(delta_a)(x;v)
+   = sum_y H_a(x,y) [h_a(y)d_y(v)+1{y=v}(1-h_a(y))] >= 0.    (6)
+
+An initially sleeping extra at y has the bracketed response directly.
+For computation, with Q(z,w)=(1-p_z)K(z,w) and G=(I-Q)^(-1),
+one has h_a(y)=G(a,y)/G(y,y).
+
+There is also a coupling proving FULL occupied-set inclusion in this
+one-common-particle case. When both upper particles are active at a,
+freeze the common particle and move the extra to its first sleep outside
+{a} or to the sink. If it exits, couple the remaining common walk exactly.
+If it sleeps at y, move the common walk until it sleeps, exits, or hits y.
+On sleep/exit before hitting y, the extra sleeper remains and the terminal
+sets are ordered. On hitting y, the systems are again one versus two active
+particles at the same site y, with fresh suffixes. Repeat. The substochastic
+kernel T gives almost-sure termination. The same first stage handles an
+extra active particle initially at any x.
+
+The all-active condition matters in extending this argument: with several
+common particles, one may have fallen asleep before another reaches y.
+
+5. A REACHABLE NEGATIVE MIXED BOUNDARY, WITH EXACT COMPENSATION
+
+Use the three-site path dagger-0-1-2-dagger and p=1/2. Let common
+eta=(1,0,1), added active source x=0, and target v=0. Use the lowest-active
+site schedule for the first-contact common history.
+
+The extra's first sleep is at 1 with probability 1/3. The common first
+contact at 1 has C=(-1,1,0) with probability 1/8: the particle at 0 sleeps,
+and the particle at 2 jumps to 1. Consequently this mixed branch has
+unconditional weight 1/24. Exact absorbing-chain calculation gives
+
+    Delta_0((-1,1,0),1) = -305/1722.
+
+Its contribution is -305/41328. The all-active renewal branches contribute
+1061/41328. Their sum is
+
+    D_(1,0,1)(0;0) = 3/164 > 0.                              (7)
+
+The common all-active contact states and weights are (0,1,1) with weight
+1/12, and (0,1,0) with weight 1/48. This shows concretely why a reconstruction
+cannot demand nonnegative response at each contact. Compensation can occur
+across the renewal history. verify_reconstruction_exact.py checks (7) with
+Fraction arithmetic independently of the sparse floating-point solver.
+
+6. UNREADING A SLEEP: AN EXACT ALGEBRAIC RULE AND ITS LIMIT
+
+Suppose C_z is sleeping, C_y is active, and z!=y. Let C^0 remove the
+sleeper at z. For p_z>0, conditioning the first instruction of an active
+particle placed at z gives
+
+  Delta_v(C,y)
+    = (1/p_z) Delta_v(C^0+delta_z,y)
+      - ((1-p_z)/p_z) sum_w K(z,w) Delta_v(C^0+delta_w,y).     (8)
+
+An active addition at another sleeping site wakes it in this formula; a
+sink destination adds nothing. Recursively applying (8) removes all initial
+sleepers. The factor p_z in the history that created a sleeper can cancel
+the denominator 1/p_z. The negative jump alternatives must still be paired
+with other histories; they cannot be discarded.
+
+This gives r=R D for an explicit signed matrix R, so
+
+    D=(T+R)D+g.                                             (9)
+
+On the three-site example, T+R has a coefficient -1/48 from ((1,0,1),0)
+to ((0,2,0),1). It is not itself a nonnegative transition matrix.
+
+Some negatives cancel after a legitimate extra reduction. First move all
+surplus common particles by IDLA, keeping one active particle at every
+occupied site. This expresses each D_eta(x) as a nonnegative mixture of
+responses with binary common support. Then use source harmonicity
+
+    D_A(x)=sum_z K(x,z)D_A(z), x in A,
+
+to express occupied-source responses through sources outside A.
+These operations preserve the real response and reduce the unknowns to
+Boolean-lattice edges (A,x), x notin A.
+
+For example, D_(0,2,0)(1) is one half each of D_(1,1,0)(1) and
+D_(0,1,1)(1). In the three-site row above this turns the apparent negative
+term into the positive identity
+
+  D_(1,0,1)(0;v)
+    = (7/96)[D_(1,1,0)(1;v)+D_(0,1,1)(1;v)]
+      + (3/16)1{v=1}.                                      (10)
+
+However, the same reductions fail to make all coefficients nonnegative
+in general, even on a homogeneous path. On dagger-0-1-2-3-dagger, p=1/2,
+the reduced equation from common A={0,3}, extra x=1 has coefficient
+
+    -8/2025                                                (11)
+
+on the edge response with common A'={1,2}, extra x'=0.
+
+An exact small certificate for (11): the first-sleep weights at 1 and 2
+are 28/45 and 8/45. Freeze common arrivals at the selected site. After (8),
+IDLA reduction, and source harmonicity, the corresponding coefficients
+are -1/180 and -1/360. Their weighted sum is -8/2025. For frozen site 1,
+the particle from 3 hits 1, sleeps at 2, sleeps at 3, or exits with
+probabilities 1/15, 2/15, 8/15, 4/15. The site-2 calculation is reflected.
+All these numbers are checked with rational arithmetic in the exact audit.
+
+This rules out the PARTICULAR shortcut of interpreting this fully reduced
+state matrix as a Markov renewal kernel. It does not rule out additional
+history switches, different normal forms, or cancellations between edges.
+
+7. AVOIDANCE MONOTONICITY ALONE DOES NOT REPAIR THAT SHORTCUT
+
+For binary common support A, the direct reward at target v is
+
+    g_(A,x)(v)=H_A(x,v) a_A(v),
+    a_A(v)=P_A(no particle ever visits v).
+
+Same-stack odometer monotonicity implies a_A(v) decreases as A grows.
+Could this restriction, without retaining more history, force the reduced
+signed system to have a nonnegative answer? The saved cone test says no.
+It substitutes all 0/1 decreasing functions on subsets of V\{v}, the
+extreme layer sets of the cone of nonnegative decreasing functions.
+Some produce a negative response in the reduced system, including on the
+homogeneous four-site path. These artificial avoidance functions are NOT
+claimed to be realizable by ARW. The conclusion is only that monotonicity
+of a_A(v), by itself, is too weak. Actual creation and avoidance histories
+carry additional constraints that the state-only reduction has discarded.
+
+8. THE NEXT GENERAL COUPLING TARGET
+
+The new useful object is a common completed history, its visited set, and
+one delayed extra avalanche. All consumed-to-unused changes can be stored
+as complete input-record blocks; their unconditioned continuation has total
+mass one. First-contact renewal supplies finite stopping-line boundaries
+and a summable expansion on every finite graph.
+
+The remaining target is a weight-preserving cancellation of BAD mixed
+boundary blocks with GOOD blocks across this renewal expansion, retaining
+the earlier records that created the common sleepers. Equation (8) supplies
+the exact local alternative: reinstate the active predecessor, and account
+for its possible jump histories. The example (10) shows that reinserting
+and legally moving a surplus particle can provide real compensation.
+Equation (11) shows that this cannot be reduced to independently positive
+coefficients on final configurations or simple support edges.
+
+A successful backward rule still needs a recognizable inverse or an exact
+disjoint fractional ledger, and a termination/zero-residual argument. Merely
+putting discarded records in an unused continuation does not establish those
+claims. In particular, the delayed-release coupling itself has bad target
+outcomes, and is not the desired final monotone coupling.
+
+9. IMPLEMENTATIONS AND CHECKS
+
+delayed_release_sampler.py
+  Input-record books and the explicit delayed-packet reconstruction.
+  600 fixed-field comparisons against ordinary FIFO and LIFO upper execution
+  agree in final bits, arrival counts, departure counts, and conservation.
+  357 histories awaken the extra sleeper; 243 leave it untouched.
+  One nonmonotone sample is retained as an explicit limitation.
+
+marked_reconstruction.py
+  Raw-instruction first-contact laws, full-law delayed-release identity,
+  the one-common-particle renewal, and general signed renewal reductions.
+  31 full-law checks include directed self-loops, unequal sleep probabilities,
+  repeated common particles, and mixed common initial backgrounds.
+  Maximum delayed-law error: 2.23e-16.
+  Maximum one-common-particle response error: 1.77e-16.
+  The numerical checks corroborate the derivations; they are not proofs of
+  the general conjecture.
+
+verify_reconstruction_exact.py
+  Independent Fraction elimination for (7), plus the rational coefficient
+  certificate (11). Results: reconstruction_exact_verification.json.
+
+padded_record_pools.py
+  Complete finite history enumeration with terminal arrows included.
+  Results: padded_record_pool_results.json and
+  padded_record_pool_varied_results.json. The three-site four-reset
+  obstruction excludes all good histories of that fixed padded inventory.
+
+reconstruction_probes.py
+  Reproduces the state-matrix and avoidance-cone failures on three- and
+  four-site paths and a directed kernel. Results retain the matrices and
+  parameters in reconstruction_probe_results.json. First-contact and fully
+  trapped versions give the same closed matrix in these checked examples;
+  no general schedule-invariance theorem for that matrix is asserted here.
+
+Run each Python script from this research directory. The principal solvers
+use NumPy and SciPy; the delayed sampler and exact audit use the standard
+library. The previous continuation files and their certificates remain
+unchanged.

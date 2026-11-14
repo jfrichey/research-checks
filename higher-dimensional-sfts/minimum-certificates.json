@@ -1,0 +1,2737 @@
+{
+  "status": "Exact rational certificates; all-volume consequence uses the maximal-overlap/local-lemma/Shearer proof in entropy-ordering.md. No floating spectral input.",
+  "small_shape_uniform_displacements": 200,
+  "small_shape_certified_displacements": 17,
+  "rectangle_large_area_bases": [
+    16,
+    17
+  ],
+  "arbitrary_support_large_size_bases": [
+    19,
+    20,
+    21,
+    22
+  ],
+  "certificates": [
+    {
+      "shape": [
+        2,
+        4
+      ],
+      "displacement": [
+        1,
+        0
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 7,
+      "explicitly_checked_sites": 32,
+      "worst_anchor": [
+        3,
+        0
+      ],
+      "minimum_neighbor_product": "13431775276647299886729608335611267225/21267647932558653966460912964485513216",
+      "displayed_decimal": 0.6315590383685348,
+      "conditional_avoidance_factor": "6007379175/8589934592",
+      "pair_probability": "1/4096",
+      "defect_lower_bound": "6007379175/35184372088832",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        2,
+        4
+      ],
+      "displacement": [
+        1,
+        1
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 9,
+      "explicitly_checked_sites": 40,
+      "worst_anchor": [
+        3,
+        1
+      ],
+      "minimum_neighbor_product": "13431775276647299886729608335611267225/21267647932558653966460912964485513216",
+      "displayed_decimal": 0.6315590383685348,
+      "conditional_avoidance_factor": "11732411528775/17592186044416",
+      "pair_probability": "1/8192",
+      "defect_lower_bound": "11732411528775/144115188075855872",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        2,
+        4
+      ],
+      "displacement": [
+        0,
+        2
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 6,
+      "explicitly_checked_sites": 31,
+      "worst_anchor": [
+        0,
+        7
+      ],
+      "minimum_neighbor_product": "235026218951824087351353191188006929177/340282366920938463463374607431768211456",
+      "displayed_decimal": 0.6906799816824781,
+      "conditional_avoidance_factor": "827683353/1073741824",
+      "pair_probability": "1/4096",
+      "defect_lower_bound": "827683353/4398046511104",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        2,
+        5
+      ],
+      "displacement": [
+        0,
+        3
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 9,
+      "explicitly_checked_sites": 43,
+      "worst_anchor": [
+        0,
+        9
+      ],
+      "minimum_neighbor_product": "1267032219605479834174667646345064738038337049680729691165547225/1645504557321206042154969182557350504982735865633579863348609024",
+      "displayed_decimal": 0.7699961777487514,
+      "conditional_avoidance_factor": "114718208575623975/144115188075855872",
+      "pair_probability": "1/65536",
+      "defect_lower_bound": "114718208575623975/9444732965739290427392",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        2,
+        5
+      ],
+      "displacement": [
+        1,
+        1
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 11,
+      "explicitly_checked_sites": 52,
+      "worst_anchor": [
+        3,
+        1
+      ],
+      "minimum_neighbor_product": "662733388207590689416445956749668282550986195839751750722136625/822752278660603021077484591278675252491367932816789931674304512",
+      "displayed_decimal": 0.8055078124930695,
+      "conditional_avoidance_factor": "1943244511693516119375/2361183241434822606848",
+      "pair_probability": "1/65536",
+      "defect_lower_bound": "1943244511693516119375/154742504910672534362390528",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        2,
+        5
+      ],
+      "displacement": [
+        1,
+        0
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 9,
+      "explicitly_checked_sites": 42,
+      "worst_anchor": [
+        3,
+        0
+      ],
+      "minimum_neighbor_product": "662733388207590689416445956749668282550986195839751750722136625/822752278660603021077484591278675252491367932816789931674304512",
+      "displayed_decimal": 0.8055078124930695,
+      "conditional_avoidance_factor": "60004462303335375/72057594037927936",
+      "pair_probability": "1/32768",
+      "defect_lower_bound": "60004462303335375/2361183241434822606848",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        2,
+        5
+      ],
+      "displacement": [
+        0,
+        2
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 6,
+      "explicitly_checked_sites": 38,
+      "worst_anchor": [
+        0,
+        9
+      ],
+      "minimum_neighbor_product": "6085149049064999366063292392323679619721725482168499040347502281825/6739986666787659948666753771754907668409286105635143120275902562304",
+      "displayed_decimal": 0.9028428912256644,
+      "conditional_avoidance_factor": "4129079241825/4398046511104",
+      "pair_probability": "1/16384",
+      "defect_lower_bound": "4129079241825/72057594037927936",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        2,
+        6
+      ],
+      "displacement": [
+        0,
+        3
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 9,
+      "explicitly_checked_sites": 50,
+      "worst_anchor": [
+        0,
+        11
+      ],
+      "minimum_neighbor_product": "511646637970901864480681183728449634519443966717666916668902272311905873186414860385226989630736225/546812681195752981093125556779405341338292357723303109106442651602488249799843980805878294255763456",
+      "displayed_decimal": 0.9356890495883323,
+      "conditional_avoidance_factor": "35748658033106982076575/37778931862957161709568",
+      "pair_probability": "1/262144",
+      "defect_lower_bound": "35748658033106982076575/9903520314283042199192993792",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        2,
+        6
+      ],
+      "displacement": [
+        1,
+        0
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 11,
+      "explicitly_checked_sites": 52,
+      "worst_anchor": [
+        3,
+        0
+      ],
+      "minimum_neighbor_product": "120447657775303215608686139976670826381510242578878121616730889801949591909493525153714127177825/133499189745056880149688856635597007162669032647290798121690100488888732861290034376435130433536",
+      "displayed_decimal": 0.9022351222155119,
+      "conditional_avoidance_factor": "35263357757616447566466975/38685626227668133590597632",
+      "pair_probability": "1/262144",
+      "defect_lower_bound": "35263357757616447566466975/10141204801825835211973625643008",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        3,
+        4
+      ],
+      "displacement": [
+        0,
+        2
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 10,
+      "explicitly_checked_sites": 57,
+      "worst_anchor": [
+        0,
+        7
+      ],
+      "minimum_neighbor_product": "266546146378125194739090445488354415967030991789146870537268250268486750629842871972462335143517154356705/286687326998758938951352611912760867599570623646035140467198604923365359511060601008752319138765710819328",
+      "displayed_decimal": 0.929745130935903,
+      "conditional_avoidance_factor": "9097963374017818885582305/9671406556917033397649408",
+      "pair_probability": "1/262144",
+      "defect_lower_bound": "9097963374017818885582305/2535301200456458802993406410752",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        3,
+        4
+      ],
+      "displacement": [
+        1,
+        1
+      ],
+      "q": 2,
+      "multiplier": 2,
+      "changed_probability_sites": 11,
+      "explicitly_checked_sites": 70,
+      "worst_anchor": [
+        5,
+        1
+      ],
+      "minimum_neighbor_product": "567099026032754372398190772468561018640749242730134001774920523878993963467508018924288047686222298959780225/587135645693458306972370149197334256843920637227079967676822742883052256278652110865924749596192175757983744",
+      "displayed_decimal": 0.965873951262082,
+      "conditional_avoidance_factor": "153721553205132174883107477375/158456325028528675187087900672",
+      "pair_probability": "1/262144",
+      "defect_lower_bound": "153721553205132174883107477375/41538374868278621028243970633760768",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "displacement": [
+        0,
+        1
+      ],
+      "q": 3,
+      "multiplier": 2,
+      "changed_probability_sites": 3,
+      "explicitly_checked_sites": 12,
+      "worst_anchor": [
+        0,
+        3
+      ],
+      "minimum_neighbor_product": "13462121745625/22876792454961",
+      "displayed_decimal": 0.5884619433484278,
+      "conditional_avoidance_factor": "4375/6561",
+      "pair_probability": "1/729",
+      "defect_lower_bound": "4375/4782969",
+      "exact_test_passed": true
+    },
+    {
+      "shape": [
+        2,
+        3
+      ],
+      "displacement": [
+        1,
+        0
+      ],
+      "q": 3,
+      "multiplier": 2,
+      "changed_probability_sites": 5,
+      "explicitly_checked_sites": 22,
+      "worst_anchor": [
+        3,
+        0
+      ],
+      "minimum_neighbor_product": "514088600843265237820000925655138175/608266787713357709119683992618861307",
+      "displayed_decimal": 0.8451696052251444,
+      "conditional_avoidance_factor": "9062088025/10460353203",
+      "pair_probability": "1/19683",
+      "defect_lower_bound": "9062088025/205891132094649",
+      "exact_test_passed": true
+    }
+  ],
+  "exceptional_binary_square": {
+    "status": "Exact rational constants for the working proof of strict binary 3x3 minimality at every negative coupling and at the hard endpoint.",
+    "kp_parameter": "1/16",
+    "kp_sum_bound": "3000/57121",
+    "single_corner_upper_bound": "1/115198",
+    "defect_bounds": {
+      "maximal_overlap_2": "785678140807218961624989385416233772020578757601/65536000000000000000000000000000000000000000000000000",
+      "two_corner_agreement_pairs": "2960239915104903418727706140285074216509642581378388004999/219902325555200000000000000000000000000000000000000000000000000",
+      "maximal_overlap_3": "5316613704251325/295147905179352825856",
+      "maximal_overlap_4": "31009641709092543/590295810358705651712",
+      "maximal_overlap_6": "1984496031/8796093022208"
+    },
+    "pressure_gap_coefficients": {
+      "maximal_overlap_2": "24971764786569202722313902231793881835454611139362397/7549706636550464710009941275527221179298069226631718119998",
+      "two_corner_agreement_pairs": "121108431945139559127175564242419694519261296447046163011869803/25332649113025669854664030594291948559979593477806089627541399874802",
+      "maximal_overlap_3": "317310043709287060169/34001060844116589177096838",
+      "maximal_overlap_4": "2981921885603628024259/68004469010407777708687490",
+      "maximal_overlap_6": "219811896260899/1013520933946096322"
+    },
+    "minimum_displayed_gap": 3.307647036995208e-06,
+    "additional_local_certificates": [
+      {
+        "shape": [
+          3,
+          3
+        ],
+        "displacement": [
+          0,
+          2
+        ],
+        "q": 2,
+        "multiplier": 2,
+        "changed_probability_sites": 10,
+        "explicitly_checked_sites": 44,
+        "worst_anchor": [
+          0,
+          5
+        ],
+        "minimum_neighbor_product": "26133503296109486676590630400611421913604736328125/46768052394588893382517914646921056628989841375232",
+        "displayed_decimal": 0.5587896428873561,
+        "conditional_avoidance_factor": "5316613704251325/9007199254740992",
+        "pair_probability": "1/32768",
+        "defect_lower_bound": "5316613704251325/295147905179352825856",
+        "exact_test_passed": true
+      },
+      {
+        "shape": [
+          3,
+          3
+        ],
+        "displacement": [
+          1,
+          1
+        ],
+        "q": 2,
+        "multiplier": 2,
+        "changed_probability_sites": 9,
+        "explicitly_checked_sites": 49,
+        "worst_anchor": [
+          3,
+          3
+        ],
+        "minimum_neighbor_product": "1219122575462786203174294177685761871337890625/1427247692705959881058285969449495136382746624",
+        "displayed_decimal": 0.8541772964098591,
+        "conditional_avoidance_factor": "31009641709092543/36028797018963968",
+        "pair_probability": "1/16384",
+        "defect_lower_bound": "31009641709092543/590295810358705651712",
+        "exact_test_passed": true
+      },
+      {
+        "shape": [
+          3,
+          3
+        ],
+        "displacement": [
+          0,
+          1
+        ],
+        "q": 2,
+        "multiplier": 2,
+        "changed_probability_sites": 5,
+        "explicitly_checked_sites": 35,
+        "worst_anchor": [
+          0,
+          5
+        ],
+        "minimum_neighbor_product": "10517527661424072399139439543288245942172641754150390625/12259964326927110866866776217202473468949912977468817408",
+        "displayed_decimal": 0.8578758780173572,
+        "conditional_avoidance_factor": "1984496031/2147483648",
+        "pair_probability": "1/4096",
+        "defect_lower_bound": "1984496031/8796093022208",
+        "exact_test_passed": true
+      }
+    ]
+  },
+  "exceptional_binary_two_by_three": {
+    "status": "Exact complete binary 2x3 pattern-class certificate. The analytic reduction in the note gives strict planar pressure minimality for every beta<0 and strict entropy minimality.",
+    "minimizing_agreement_masks": [
+      4,
+      64
+    ],
+    "kp_parameter": "1/40",
+    "kp_sum_bound": "474987998969914175523924213760000000000000000000000/19289761231338109103351586500329609508324565901686199",
+    "single_corner_upper_bound": "6726074531276177014784/7548302266465802449150383",
+    "minimum_displayed_gap": 4.430818253660547e-05,
+    "records": [
+      {
+        "word": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "agreement_mask": 2,
+        "conditional_rate_lower_bound": "841/65536",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "3/2",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                0,
+                -2
+              ],
+              "x": "3/32"
+            },
+            {
+              "anchor": [
+                0,
+                2
+              ],
+              "x": "3/32"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "422005541622638702392578125/618970019642690137449562112",
+          "conditional_avoidance_factor": "841/1024",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            0,
+            2
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "3/2",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  4
+                ],
+                "x": "3/32"
+              }
+            ],
+            "explicitly_checked_sites": 14,
+            "minimum_neighbor_product": "422005541622638702392578125/618970019642690137449562112",
+            "conditional_avoidance_factor": "29/32",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "4595233425827331580425549119488/4743457572409704815162110545234375"
+          }
+        ],
+        "total_uniform_defect": "4595233425827331580425549119488/4743457572409704815162110545234375",
+        "pressure_gap_coefficient": "2750453832627096880438430470753876532759165938669453312/35839737755587659952226068509868919404798065263487703979529"
+      },
+      {
+        "word": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "agreement_mask": 3,
+        "conditional_rate_lower_bound": "0",
+        "single_copy_certificate": null,
+        "ordered_neighbors": [
+          [
+            0,
+            1
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "3/2",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  3
+                ],
+                "x": "3/32"
+              }
+            ],
+            "explicitly_checked_sites": 11,
+            "minimum_neighbor_product": "422005541622638702392578125/618970019642690137449562112",
+            "conditional_avoidance_factor": "29/32",
+            "exact_test_passed": true,
+            "pair_probability": "1/256",
+            "uniform_defect": "29/8192"
+          }
+        ],
+        "total_uniform_defect": "29/8192",
+        "pressure_gap_coefficient": "163605707005886819786821843/62054592932615361934465298643"
+      },
+      {
+        "word": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "agreement_mask": 8,
+        "conditional_rate_lower_bound": "841/65536",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "3/2",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                -1,
+                1
+              ],
+              "x": "3/32"
+            },
+            {
+              "anchor": [
+                1,
+                -1
+              ],
+              "x": "3/32"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "422005541622638702392578125/618970019642690137449562112",
+          "conditional_avoidance_factor": "841/1024",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            1,
+            -1
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -1
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "3/2",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  -2
+                ],
+                "x": "3/32"
+              }
+            ],
+            "explicitly_checked_sites": 22,
+            "minimum_neighbor_product": "422005541622638702392578125/618970019642690137449562112",
+            "conditional_avoidance_factor": "29/32",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "4595233425827331580425549119488/4743457572409704815162110545234375"
+          }
+        ],
+        "total_uniform_defect": "4595233425827331580425549119488/4743457572409704815162110545234375",
+        "pressure_gap_coefficient": "2750453832627096880438430470753876532759165938669453312/35839737755587659952226068509868919404798065263487703979529"
+      },
+      {
+        "word": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "agreement_mask": 12,
+        "conditional_rate_lower_bound": "47568609/4294967296",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "7/4",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                -1,
+                1
+              ],
+              "x": "7/64"
+            },
+            {
+              "anchor": [
+                -1,
+                2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                1,
+                -2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                1,
+                -1
+              ],
+              "x": "7/64"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+          "conditional_avoidance_factor": "47568609/67108864",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            1,
+            -2
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -2
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  -4
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  -3
+                ],
+                "x": "7/64"
+              }
+            ],
+            "explicitly_checked_sites": 22,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "6897/8192",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "11083051691254255930412912550876998469595634048119922185073590272/24937975803007608637912605663014702594108784826601469708466775919583"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -1
+              ]
+            ],
+            "extra_avoided": [
+              [
+                1,
+                -2
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  -3
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  -2
+                ],
+                "x": "7/64"
+              }
+            ],
+            "explicitly_checked_sites": 23,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "6897/8192",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "22166103382508511860825825101753996939191268096239844370147180544/24937975803007608637912605663014702594108784826601469708466775919583"
+          }
+        ],
+        "total_uniform_defect": "33249155073762767791238737652630995408786902144359766555220770816/24937975803007608637912605663014702594108784826601469708466775919583",
+        "pressure_gap_coefficient": "83016352396037301928699834296865477199891968216626368729357519995584353545075769867763712/188490353947513028537821406879395220212583142979712483231333520075268886605333981915443272817"
+      },
+      {
+        "word": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "agreement_mask": 16,
+        "conditional_rate_lower_bound": "0",
+        "single_copy_certificate": null,
+        "ordered_neighbors": [
+          [
+            1,
+            0
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "7/32"
+              }
+            ],
+            "explicitly_checked_sites": 22,
+            "minimum_neighbor_product": "5703386807494157290929756225/9903520314283042199192993792",
+            "conditional_avoidance_factor": "25/32",
+            "exact_test_passed": true,
+            "pair_probability": "1/512",
+            "uniform_defect": "25/16384"
+          }
+        ],
+        "total_uniform_defect": "25/16384",
+        "pressure_gap_coefficient": "78339399677934272593168919/123860091890437352388108634647"
+      },
+      {
+        "word": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "agreement_mask": 32,
+        "conditional_rate_lower_bound": "841/65536",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "3/2",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                -1,
+                -1
+              ],
+              "x": "3/32"
+            },
+            {
+              "anchor": [
+                1,
+                1
+              ],
+              "x": "3/32"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "422005541622638702392578125/618970019642690137449562112",
+          "conditional_avoidance_factor": "841/1024",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            1,
+            1
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "3/2",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  2
+                ],
+                "x": "3/32"
+              }
+            ],
+            "explicitly_checked_sites": 25,
+            "minimum_neighbor_product": "422005541622638702392578125/618970019642690137449562112",
+            "conditional_avoidance_factor": "29/32",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "4595233425827331580425549119488/4743457572409704815162110545234375"
+          }
+        ],
+        "total_uniform_defect": "4595233425827331580425549119488/4743457572409704815162110545234375",
+        "pressure_gap_coefficient": "2750453832627096880438430470753876532759165938669453312/35839737755587659952226068509868919404798065263487703979529"
+      },
+      {
+        "word": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "agreement_mask": 36,
+        "conditional_rate_lower_bound": "3129361/268435456",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "3/2",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                -1,
+                -1
+              ],
+              "x": "3/32"
+            },
+            {
+              "anchor": [
+                -1,
+                2
+              ],
+              "x": "3/64"
+            },
+            {
+              "anchor": [
+                1,
+                -2
+              ],
+              "x": "3/64"
+            },
+            {
+              "anchor": [
+                1,
+                1
+              ],
+              "x": "3/32"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "1647509634494781494140625/2417851639229258349412352",
+          "conditional_avoidance_factor": "3129361/4194304",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            1,
+            -2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -2
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "3/2",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  -4
+                ],
+                "x": "3/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  -1
+                ],
+                "x": "3/32"
+              }
+            ],
+            "explicitly_checked_sites": 22,
+            "minimum_neighbor_product": "1647509634494781494140625/2417851639229258349412352",
+            "conditional_avoidance_factor": "1769/2048",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "42359134559246209225561185797326514778461711049106128896/92518927868409054185042952533382739851201998522660323359375"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "extra_avoided": [
+              [
+                1,
+                -2
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "3/2",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  3
+                ],
+                "x": "3/64"
+              },
+              {
+                "anchor": [
+                  1,
+                  -2
+                ],
+                "x": "3/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  -1
+                ],
+                "x": "3/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  2
+                ],
+                "x": "3/32"
+              }
+            ],
+            "explicitly_checked_sites": 28,
+            "minimum_neighbor_product": "1647509634494781494140625/2417851639229258349412352",
+            "conditional_avoidance_factor": "6582449/8388608",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "76962079929177316664215416187427715571609388092638625792/92518927868409054185042952533382739851201998522660323359375"
+          }
+        ],
+        "total_uniform_defect": "13257912720935947321086289109417136705563455460193861632/10279880874267672687226994725931415539022444280295591484375",
+        "pressure_gap_coefficient": "30842313997991561953737796985260040298415359825045955181488132854788364467437568/77695722834873175128770542139063047446070233754109138151354226819276535238831570681"
+      },
+      {
+        "word": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "agreement_mask": 42,
+        "conditional_rate_lower_bound": "0",
+        "single_copy_certificate": null,
+        "ordered_neighbors": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  4
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  1,
+                  3
+                ],
+                "x": "7/64"
+              }
+            ],
+            "explicitly_checked_sites": 14,
+            "minimum_neighbor_product": "2976755620489721612567193249/4951760157141521099596496896",
+            "conditional_avoidance_factor": "3249/4096",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "3249/4194304"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -1
+              ]
+            ],
+            "extra_avoided": [
+              [
+                0,
+                2
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  2
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  1,
+                  -3
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  -2
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "7/64"
+              }
+            ],
+            "explicitly_checked_sites": 26,
+            "minimum_neighbor_product": "2976755620489721612567193249/4951760157141521099596496896",
+            "conditional_avoidance_factor": "10556001/16777216",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "10556001/17179869184"
+          }
+        ],
+        "total_uniform_defect": "23863905/17179869184",
+        "pressure_gap_coefficient": "64418377225428463488631327637839/129858977467371420681385683954123087"
+      },
+      {
+        "word": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "agreement_mask": 68,
+        "conditional_rate_lower_bound": "547981281/41943040000",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "7/5",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                -1,
+                -2
+              ],
+              "x": "7/160"
+            },
+            {
+              "anchor": [
+                -1,
+                2
+              ],
+              "x": "7/160"
+            },
+            {
+              "anchor": [
+                1,
+                -2
+              ],
+              "x": "7/160"
+            },
+            {
+              "anchor": [
+                1,
+                2
+              ],
+              "x": "7/160"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "66125744487495497210316603857433/92233720368547758080000000000000",
+          "conditional_avoidance_factor": "547981281/655360000",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            -2
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/5",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  4
+                ],
+                "x": "7/160"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "7/160"
+              },
+              {
+                "anchor": [
+                  2,
+                  4
+                ],
+                "x": "7/160"
+              }
+            ],
+            "explicitly_checked_sites": 26,
+            "minimum_neighbor_product": "66125744487495497210316603857433/92233720368547758080000000000000",
+            "conditional_avoidance_factor": "3581577/4096000",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "97499799909567521532461026908932007638555688960000000000000000000000000/208276140278236213274448963291015168492721866035994834393412980488045884639"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -2
+              ]
+            ],
+            "extra_avoided": [
+              [
+                1,
+                2
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/5",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  1,
+                  2
+                ],
+                "x": "7/160"
+              },
+              {
+                "anchor": [
+                  2,
+                  -4
+                ],
+                "x": "7/160"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "7/160"
+              }
+            ],
+            "explicitly_checked_sites": 29,
+            "minimum_neighbor_product": "42341653998009453373839917407247409/59029581035870565171200000000000000",
+            "conditional_avoidance_factor": "3581577/4096000",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "97499799909567521532461026908932007638555688960000000000000000000000000/208276140278236213274448963291015168492721866035994834393412980488045884639"
+          }
+        ],
+        "total_uniform_defect": "194999599819135043064922053817864015277111377920000000000000000000000000/208276140278236213274448963291015168492721866035994834393412980488045884639",
+        "pressure_gap_coefficient": "69723496834800065699153539541527127401229254257512105610200844894711456985793418873784538497024/1573603177634234516910879606266994965502941470997270726079361562850048487252843904507951485180666737"
+      },
+      {
+        "word": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "agreement_mask": 70,
+        "conditional_rate_lower_bound": "696452004369/70368744177664",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "7/4",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                -1,
+                -2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                -1,
+                2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                0,
+                -2
+              ],
+              "x": "7/64"
+            },
+            {
+              "anchor": [
+                0,
+                2
+              ],
+              "x": "7/64"
+            },
+            {
+              "anchor": [
+                1,
+                -2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                1,
+                2
+              ],
+              "x": "7/128"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "190387492646630061724025838829713/324518553658426726783156020576256",
+          "conditional_avoidance_factor": "696452004369/1099511627776",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            -2
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  4
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  1,
+                  4
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 14,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "6897/8192",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "7024718564389475268496734956479740588385988755556981160318730339598583912233866631273445851136/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "extra_avoided": [
+              [
+                0,
+                2
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  4
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  1,
+                  4
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  4
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 27,
+            "minimum_neighbor_product": "190387492646630061724025838829713/324518553658426726783156020576256",
+            "conditional_avoidance_factor": "100978977/134217728",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "3138699478186837994569723403864132139726539958804619176276444424501430269135011027480301535232/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -2
+              ]
+            ],
+            "extra_avoided": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  2
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  1,
+                  -4
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  1,
+                  2
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  -4
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 30,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "5755801689/8589934592",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "2795404222760152588913659906566492686943949650810363953871208315571586333448369196349643554816/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375"
+          }
+        ],
+        "total_uniform_defect": "12958822265336465851980118266910365415056478365171964290466383079671600514817246855103390941184/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375",
+        "pressure_gap_coefficient": "44127776081993298838692348952343262976952480977690277686301462183975882469725148788409211120676673282962592237961609216/60252573765456040799413834040487139648554208478645112825958905556748219477624562027552310669162999231743088483968451964097"
+      },
+      {
+        "word": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "agreement_mask": 72,
+        "conditional_rate_lower_bound": "3129361/268435456",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "3/2",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                -1,
+                -2
+              ],
+              "x": "3/64"
+            },
+            {
+              "anchor": [
+                -1,
+                1
+              ],
+              "x": "3/32"
+            },
+            {
+              "anchor": [
+                1,
+                -1
+              ],
+              "x": "3/32"
+            },
+            {
+              "anchor": [
+                1,
+                2
+              ],
+              "x": "3/64"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "1647509634494781494140625/2417851639229258349412352",
+          "conditional_avoidance_factor": "3129361/4194304",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -1
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "3/2",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  -2
+                ],
+                "x": "3/32"
+              },
+              {
+                "anchor": [
+                  2,
+                  1
+                ],
+                "x": "3/64"
+              }
+            ],
+            "explicitly_checked_sites": 22,
+            "minimum_neighbor_product": "1647509634494781494140625/2417851639229258349412352",
+            "conditional_avoidance_factor": "1769/2048",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "84718269118492418451122371594653029556923422098212257792/92518927868409054185042952533382739851201998522660323359375"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "extra_avoided": [
+              [
+                1,
+                -1
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "3/2",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  3
+                ],
+                "x": "3/32"
+              },
+              {
+                "anchor": [
+                  1,
+                  -1
+                ],
+                "x": "3/32"
+              },
+              {
+                "anchor": [
+                  2,
+                  1
+                ],
+                "x": "3/32"
+              },
+              {
+                "anchor": [
+                  2,
+                  4
+                ],
+                "x": "3/64"
+              }
+            ],
+            "explicitly_checked_sites": 29,
+            "minimum_neighbor_product": "50127506256103515625/73786976294838206464",
+            "conditional_avoidance_factor": "1487729/2097152",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "34789093910474669881539997319874608328795213859666264064/92518927868409054185042952533382739851201998522660323359375"
+          }
+        ],
+        "total_uniform_defect": "4426198630702484753061569219056579180952542072514019328/3426626958089224229075664908643805179674148093431863828125",
+        "pressure_gap_coefficient": "10332765903090768407514330662851595451701947455729618657552222296690860762857472/25898626319233668904912604346015393950556072359979339410890984378932010666230524499"
+      },
+      {
+        "word": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "agreement_mask": 76,
+        "conditional_rate_lower_bound": "696452004369/70368744177664",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "7/4",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                -1,
+                -2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                -1,
+                1
+              ],
+              "x": "7/64"
+            },
+            {
+              "anchor": [
+                -1,
+                2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                1,
+                -2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                1,
+                -1
+              ],
+              "x": "7/64"
+            },
+            {
+              "anchor": [
+                1,
+                2
+              ],
+              "x": "7/128"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+          "conditional_avoidance_factor": "696452004369/1099511627776",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            -2
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -1
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  -3
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  -2
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  1
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 22,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "834537/1048576",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "6640554267899425839750819763547254774958629995487458753113799774151786354533577049875679281152/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "extra_avoided": [
+              [
+                1,
+                -1
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  3
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  0,
+                  4
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  1,
+                  -1
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  1
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  4
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 29,
+            "minimum_neighbor_product": "5809380979004472752385129/9671406556917033397649408",
+            "conditional_avoidance_factor": "328080696273/549755813888",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "2489656885895760899501228354285782549309455157752980396416544906055944078227453815498901291008/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -2
+              ]
+            ],
+            "extra_avoided": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  1,
+                  2
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  -4
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  -3
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 30,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "100978977/134217728",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "3138699478186837994569723403864132139726539958804619176276444424501430269135011027480301535232/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375"
+          }
+        ],
+        "total_uniform_defect": "12268910631982024733821771521697169463994625112045058325806789104709160701896041892854882107392/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375",
+        "pressure_gap_coefficient": "38924754933348783691056235330353821022738231797917015041904984829353446828970908784280240095187447667011951305184247808/60247366103910330347811961978264409959701322774268668638637802963244474416095233727187709229775933223243200218907891821761"
+      },
+      {
+        "word": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "agreement_mask": 86,
+        "conditional_rate_lower_bound": "0",
+        "single_copy_certificate": null,
+        "ordered_neighbors": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            -2
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  4
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  1,
+                  4
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 14,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "6897/8192",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "6897/8388608"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -2
+              ]
+            ],
+            "extra_avoided": [
+              [
+                0,
+                2
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "5/2",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  2
+                ],
+                "x": "5/32"
+              },
+              {
+                "anchor": [
+                  1,
+                  -4
+                ],
+                "x": "5/32"
+              },
+              {
+                "anchor": [
+                  2,
+                  -4
+                ],
+                "x": "5/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  -2
+                ],
+                "x": "5/16"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "5/64"
+              }
+            ],
+            "explicitly_checked_sites": 27,
+            "minimum_neighbor_product": "7463529281841060681/18446744073709551616",
+            "conditional_avoidance_factor": "27914139/67108864",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "27914139/137438953472"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "extra_avoided": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                -2
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "5/2",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  2
+                ],
+                "x": "5/32"
+              },
+              {
+                "anchor": [
+                  1,
+                  -2
+                ],
+                "x": "5/32"
+              },
+              {
+                "anchor": [
+                  2,
+                  -2
+                ],
+                "x": "5/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "5/16"
+              },
+              {
+                "anchor": [
+                  2,
+                  2
+                ],
+                "x": "5/64"
+              }
+            ],
+            "explicitly_checked_sites": 26,
+            "minimum_neighbor_product": "7463529281841060681/18446744073709551616",
+            "conditional_avoidance_factor": "27914139/67108864",
+            "exact_test_passed": true,
+            "pair_probability": "1/512",
+            "uniform_defect": "27914139/34359738368"
+          }
+        ],
+        "total_uniform_defect": "252571143/137438953472",
+        "pressure_gap_coefficient": "980359874265219980199883258289609/1039337247324536326982917246681177545"
+      },
+      {
+        "word": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "agreement_mask": 96,
+        "conditional_rate_lower_bound": "47568609/4294967296",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "7/4",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                -1,
+                -2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                -1,
+                -1
+              ],
+              "x": "7/64"
+            },
+            {
+              "anchor": [
+                1,
+                1
+              ],
+              "x": "7/64"
+            },
+            {
+              "anchor": [
+                1,
+                2
+              ],
+              "x": "7/128"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+          "conditional_avoidance_factor": "47568609/67108864",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  2
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  3
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 25,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "6897/8192",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "22166103382508511860825825101753996939191268096239844370147180544/24937975803007608637912605663014702594108784826601469708466775919583"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "extra_avoided": [
+              [
+                1,
+                1
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  3
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  4
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 27,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "6897/8192",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "11083051691254255930412912550876998469595634048119922185073590272/24937975803007608637912605663014702594108784826601469708466775919583"
+          }
+        ],
+        "total_uniform_defect": "33249155073762767791238737652630995408786902144359766555220770816/24937975803007608637912605663014702594108784826601469708466775919583",
+        "pressure_gap_coefficient": "83016352396037301928699834296865477199891968216626368729357519995584353545075769867763712/188490353947513028537821406879395220212583142979712483231333520075268886605333981915443272817"
+      },
+      {
+        "word": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "agreement_mask": 100,
+        "conditional_rate_lower_bound": "696452004369/70368744177664",
+        "single_copy_certificate": {
+          "fixed_anchors": [
+            [
+              0,
+              0
+            ]
+          ],
+          "extra_avoided": [],
+          "domain": "all other anchors",
+          "multiplier": "7/4",
+          "active_changed_sites": [
+            {
+              "anchor": [
+                -1,
+                -2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                -1,
+                -1
+              ],
+              "x": "7/64"
+            },
+            {
+              "anchor": [
+                -1,
+                2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                1,
+                -2
+              ],
+              "x": "7/128"
+            },
+            {
+              "anchor": [
+                1,
+                1
+              ],
+              "x": "7/64"
+            },
+            {
+              "anchor": [
+                1,
+                2
+              ],
+              "x": "7/128"
+            }
+          ],
+          "explicitly_checked_sites": 44,
+          "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+          "conditional_avoidance_factor": "696452004369/1099511627776",
+          "exact_test_passed": true
+        },
+        "ordered_neighbors": [
+          [
+            1,
+            -2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -2
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  2,
+                  -4
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  -1
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 22,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "834537/1048576",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "3320277133949712919875409881773627387479314997743729376556899887075893177266788524937839640576/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "extra_avoided": [
+              [
+                1,
+                -2
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  3
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  1,
+                  -2
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  -1
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  2
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  3
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 28,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "12218456217/17179869184",
+            "exact_test_passed": true,
+            "pair_probability": "1/1024",
+            "uniform_defect": "5934103700946990583483383310430624826670489609614983130147652740073016602583380223829945090048/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375"
+          },
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "extra_avoided": [
+              [
+                1,
+                -2
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  4
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  1,
+                  -2
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  0
+                ],
+                "x": "7/128"
+              },
+              {
+                "anchor": [
+                  2,
+                  3
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  2,
+                  4
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 32,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "12218456217/17179869184",
+            "exact_test_passed": true,
+            "pair_probability": "1/2048",
+            "uniform_defect": "2967051850473495291741691655215312413335244804807491565073826370036508301291690111914972545024/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375"
+          }
+        ],
+        "total_uniform_defect": "12221432685370198795100484847419564627485049412166204071778378997185418081141858860682757275648/7969309459853545057463456050663539712753882852789258461067577998125469448662120809705294923359375",
+        "pressure_gap_coefficient": "38566696381539098684103752075027542794990572063500654006029822851892255675215938840163727977133897913600095771756593152/60247007726018313159712502093267861285719392687589936253125553296764160262739249681741392909336528221468209010118263663809"
+      },
+      {
+        "word": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "agreement_mask": 127,
+        "conditional_rate_lower_bound": "0",
+        "single_copy_certificate": null,
+        "ordered_neighbors": [
+          [
+            0,
+            1
+          ]
+        ],
+        "witness_certificates": [
+          {
+            "fixed_anchors": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "extra_avoided": [],
+            "domain": "forward nonneighbors plus extras",
+            "multiplier": "7/4",
+            "active_changed_sites": [
+              {
+                "anchor": [
+                  0,
+                  3
+                ],
+                "x": "7/64"
+              },
+              {
+                "anchor": [
+                  1,
+                  3
+                ],
+                "x": "7/128"
+              }
+            ],
+            "explicitly_checked_sites": 11,
+            "minimum_neighbor_product": "391789137760420540242003585690897/649037107316853453566312041152512",
+            "conditional_avoidance_factor": "6897/8192",
+            "exact_test_passed": true,
+            "pair_probability": "1/256",
+            "uniform_defect": "6897/2097152"
+          }
+        ],
+        "total_uniform_defect": "6897/2097152",
+        "pressure_gap_coefficient": "37908650340357530520010931135/15881997835455105177332414200767"
+      }
+    ]
+  }
+}
