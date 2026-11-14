@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-14",
+  "status": "passed",
+  "lean": "4.35.0",
+  "mathlib": "v4.35.0",
+  "public_theorems": 193,
+  "modules": 25,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "method": "Fresh build of the exported project sources, with pinned dependency caches and compiler; followed by per-theorem transitive axiom audit",
+  "scope": "Through Stable.lean; finite process, measurable sampling and finite noise identities; excludes entrance-law and asymptotic theorems",
+  "axiom_report_sha256": "120b5a0dd5dca1a0699e4817a991bf970207577406fd18061fdb2188f1bcad48"
+}

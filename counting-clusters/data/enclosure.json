@@ -1,0 +1,11 @@
+{
+  "width": 17,
+  "lower": "0.06576983",
+  "upper": "0.06577780",
+  "diameter": "797/100000000",
+  "strict_width_bound": "0.000008",
+  "calculated_lower_rational": "5210822949699156578991075951/79228162514264337593543950336",
+  "calculated_upper_rational": "1302863446225390757314851937/19807040628566084398385987584",
+  "comparison": "Stronger than the valid thesis bounds and the first repaired draft; no best-published claim.",
+  "large_candidate_vectors": "Optional regenerable output, not included in the lightweight source bundle."
+}

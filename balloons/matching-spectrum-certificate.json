@@ -1,0 +1,87 @@
+{
+  "status": "rigorous outward integer-interval evaluation of the exact matching coefficient",
+  "scope": "pi_2 for the integer matching spectrum; not p_infinity or the survivor spectrum",
+  "python_version": "3.12.3",
+  "arithmetic": "integer intervals / 10**50; no floats",
+  "parameters": {
+    "horizon": 32,
+    "grid_power": 11,
+    "simpson_intervals": 65536,
+    "ein_series_degree": 128,
+    "fourth_derivative_bound": 157
+  },
+  "fourth_moment_exact": {
+    "numerator": 4697,
+    "denominator": 30
+  },
+  "gamma": {
+    "lower_numerator": "57721566490032020100414995041715581318973909612207",
+    "upper_numerator": "57721566490759613086286363940607415990625095289189",
+    "denominator": "100000000000000000000000000000000000000000000000000",
+    "outward_decimal_12": [
+      "0.577215664900",
+      "0.577215664908"
+    ],
+    "outward_decimal_9": [
+      "0.577215664",
+      "0.577215665"
+    ]
+  },
+  "simpson_value": {
+    "lower_numerator": "38847174968360725699509789170074390631260805150001",
+    "upper_numerator": "38847174968360725699509789170074738050646827113560",
+    "denominator": "100000000000000000000000000000000000000000000000000",
+    "outward_decimal_12": [
+      "0.388471749683",
+      "0.388471749684"
+    ],
+    "outward_decimal_9": [
+      "0.388471749",
+      "0.388471750"
+    ]
+  },
+  "simpson_error": {
+    "lower_numerator": "0",
+    "upper_numerator": "158656297975944148169623480902777777778",
+    "denominator": "100000000000000000000000000000000000000000000000000",
+    "outward_decimal_12": [
+      "0.000000000000",
+      "0.000000000002"
+    ],
+    "outward_decimal_9": [
+      "0.000000000",
+      "0.000000001"
+    ]
+  },
+  "tail": {
+    "lower_numerator": "320675406578941276943607572871529272561823136",
+    "upper_numerator": "320675406583616076465782544460724895107052216",
+    "denominator": "100000000000000000000000000000000000000000000000000",
+    "outward_decimal_12": [
+      "0.000003206754",
+      "0.000003206755"
+    ],
+    "outward_decimal_9": [
+      "0.000003206",
+      "0.000003207"
+    ]
+  },
+  "pi_2": {
+    "lower_numerator": "38847495643608648342810788629477638679630589195359",
+    "upper_numerator": "38847495643925965613562199100788822256444711943554",
+    "denominator": "100000000000000000000000000000000000000000000000000",
+    "outward_decimal_12": [
+      "0.388474956436",
+      "0.388474956440"
+    ],
+    "outward_decimal_9": [
+      "0.388474956",
+      "0.388474957"
+    ]
+  },
+  "implementation_checks": {
+    "integrand_comparisons": 129,
+    "decimal_precision": 100,
+    "status": "implementation validation only"
+  }
+}

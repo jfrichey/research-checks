@@ -1,0 +1,1631 @@
+{
+  "two_site": "all-parameter law and nonnegative determinant verified",
+  "preservation": "point and uniform-drive positive covariances verified",
+  "path3": {
+    "law_in_p": [
+      "-(p - 1)**3*(p**5 - 6*p**4 + 7*p**3 - 6*p**2 + 18*p + 18)/(2*(p**2 - 2*p - 1)*(p**3 + 2*p**2 + 3)*(p**3 - 3*p**2 - 3*p - 3))",
+      "p*(p - 1)**2*(2*p**5 - 12*p**4 + 14*p**3 - 11*p**2 + 36*p + 27)/(2*(p**2 - 2*p - 1)*(p**3 + 2*p**2 + 3)*(p**3 - 3*p**2 - 3*p - 3))",
+      "p*(p - 1)**2*(3*p**5 - 13*p**4 + 3*p**3 - 3*p**2 + 54*p + 36)/(2*(p**2 - 2*p - 1)*(p**3 + 2*p**2 + 3)*(p**3 - 3*p**2 - 3*p - 3))",
+      "-p**2*(p - 1)*(3*p**3 - 8*p**2 - 9*p - 18)/((p**3 + 2*p**2 + 3)*(p**3 - 3*p**2 - 3*p - 3))",
+      "p*(p - 1)**2*(2*p**5 - 12*p**4 + 14*p**3 - 11*p**2 + 36*p + 27)/(2*(p**2 - 2*p - 1)*(p**3 + 2*p**2 + 3)*(p**3 - 3*p**2 - 3*p - 3))",
+      "-2*p**2*(p - 1)*(p**3 - 4*p**2 - 9)/((p**3 + 2*p**2 + 3)*(p**3 - 3*p**2 - 3*p - 3))",
+      "-p**2*(p - 1)*(3*p**3 - 8*p**2 - 9*p - 18)/((p**3 + 2*p**2 + 3)*(p**3 - 3*p**2 - 3*p - 3))",
+      "6*p**3/(p**3 + 2*p**2 + 3)"
+    ],
+    "leading_Green_minors": {
+      "[0]": "3/2",
+      "[1]": "2",
+      "[0, 1]": "2",
+      "[2]": "3/2",
+      "[0, 2]": "2",
+      "[1, 2]": "2",
+      "[0, 1, 2]": "2"
+    },
+    "all_rates_NA_certified": true,
+    "NA_gap_certificates": [
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(192*rate**9 + 1520*rate**8 + 5152*rate**7 + 9900*rate**6 + 12022*rate**5 + 9669*rate**4 + 5194*rate**3 + 1815*rate**2 + 378*rate + 36)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)**2*(2*rate + 3)*(4*rate + 3)*(128*rate**8 + 672*rate**7 + 1432*rate**6 + 1634*rate**5 + 1105*rate**4 + 480*rate**3 + 170*rate**2 + 54*rate + 9)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**3*(rate + 1)*(2*rate + 3)**2*(4*rate + 3)*(40*rate**5 + 134*rate**4 + 179*rate**3 + 122*rate**2 + 41*rate + 6)",
+        "denominator": "2*(2*rate**2 + 4*rate + 1)*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(192*rate**9 + 1520*rate**8 + 5152*rate**7 + 9900*rate**6 + 12022*rate**5 + 9669*rate**4 + 5194*rate**3 + 1815*rate**2 + 378*rate + 36)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)**2*(2*rate + 3)*(4*rate + 3)*(128*rate**8 + 672*rate**7 + 1432*rate**6 + 1634*rate**5 + 1105*rate**4 + 480*rate**3 + 170*rate**2 + 54*rate + 9)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(128*rate**8 + 952*rate**7 + 2986*rate**6 + 5201*rate**5 + 5568*rate**4 + 3796*rate**3 + 1625*rate**2 + 405*rate + 45)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(192*rate**9 + 1520*rate**8 + 5152*rate**7 + 9900*rate**6 + 12022*rate**5 + 9669*rate**4 + 5194*rate**3 + 1815*rate**2 + 378*rate + 36)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**3*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(48*rate**6 + 260*rate**5 + 554*rate**4 + 613*rate**3 + 381*rate**2 + 126*rate + 18)",
+        "denominator": "(2*rate**2 + 4*rate + 1)*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(192*rate**9 + 1520*rate**8 + 5152*rate**7 + 9900*rate**6 + 12022*rate**5 + 9669*rate**4 + 5194*rate**3 + 1815*rate**2 + 378*rate + 36)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(192*rate**9 + 1520*rate**8 + 5152*rate**7 + 9900*rate**6 + 12022*rate**5 + 9669*rate**4 + 5194*rate**3 + 1815*rate**2 + 378*rate + 36)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(96*rate**8 + 760*rate**7 + 2496*rate**6 + 4486*rate**5 + 4891*rate**4 + 3352*rate**3 + 1419*rate**2 + 342*rate + 36)",
+        "denominator": "2*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**3*(rate + 1)*(2*rate + 3)**2*(4*rate + 3)*(40*rate**5 + 134*rate**4 + 179*rate**3 + 122*rate**2 + 41*rate + 6)",
+        "denominator": "2*(2*rate**2 + 4*rate + 1)*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)**2*(2*rate + 3)*(4*rate + 3)*(128*rate**8 + 672*rate**7 + 1432*rate**6 + 1634*rate**5 + 1105*rate**4 + 480*rate**3 + 170*rate**2 + 54*rate + 9)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(192*rate**9 + 1520*rate**8 + 5152*rate**7 + 9900*rate**6 + 12022*rate**5 + 9669*rate**4 + 5194*rate**3 + 1815*rate**2 + 378*rate + 36)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(128*rate**8 + 952*rate**7 + 2986*rate**6 + 5201*rate**5 + 5568*rate**4 + 3796*rate**3 + 1625*rate**2 + 405*rate + 45)",
+        "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+      }
+    ],
+    "strong_Rayleigh_certificates": {
+      "(0, 1)": {
+        "quadratic": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(192*rate**9*z2**2 + 1328*rate**8*z2**2 + 192*rate**8*z2 + 3680*rate**7*z2**2 + 1424*rate**7*z2 + 48*rate**7 + 5296*rate**6*z2**2 + 4216*rate**6*z2 + 388*rate**6 + 4288*rate**5*z2**2 + 6496*rate**5*z2 + 1238*rate**5 + 1940*rate**4*z2**2 + 5676*rate**4*z2 + 2053*rate**4 + 432*rate**3*z2**2 + 2820*rate**3*z2 + 1942*rate**3 + 36*rate**2*z2**2 + 720*rate**2*z2 + 1059*rate**2 + 72*rate*z2 + 306*rate + 36)/(4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "rate**4*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(24*rate**5 + 118*rate**4 + 212*rate**3 + 179*rate**2 + 72*rate + 9)",
+          "denominator": "(2*rate**2 + 4*rate + 1)*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(48*rate**7 + 388*rate**6 + 1238*rate**5 + 2053*rate**4 + 1942*rate**3 + 1059*rate**2 + 306*rate + 36)",
+          "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "rate**7*(rate + 1)**4*(2*rate + 3)**2*(4*rate + 3)**2*(8*rate**3 + 22*rate**2 + 22*rate + 9)*(24*rate**5 + 118*rate**4 + 224*rate**3 + 210*rate**2 + 99*rate + 18)",
+          "denominator": "(2*rate**2 + 4*rate + 1)**3*(6*rate**3 + 11*rate**2 + 9*rate + 3)**4*(8*rate**3 + 18*rate**2 + 12*rate + 3)**4"
+        }
+      },
+      "(0, 2)": {
+        "quadratic": "rate**2*(rate + 1)**2*(2*rate + 3)*(4*rate + 3)*(128*rate**8*z1**2 + 608*rate**7*z1**2 + 64*rate**7*z1 + 1120*rate**6*z1**2 + 304*rate**6*z1 + 8*rate**6 + 1024*rate**5*z1**2 + 560*rate**5*z1 + 50*rate**5 + 464*rate**4*z1**2 + 512*rate**4*z1 + 129*rate**4 + 72*rate**3*z1**2 + 232*rate**3*z1 + 176*rate**3 + 36*rate**2*z1 + 134*rate**2 + 54*rate + 9)/(4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "2*rate**5*(rate + 1)**2*(2*rate + 3)*(4*rate + 3)*(8*rate**3 + 22*rate**2 + 22*rate + 9)",
+          "denominator": "(2*rate**2 + 4*rate + 1)*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "rate**2*(rate + 1)**6*(2*rate + 3)**2*(4*rate + 3)**2",
+          "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "rate**7*(rate + 1)**4*(2*rate + 3)**2*(4*rate + 3)**2*(8*rate**3 + 22*rate**2 + 22*rate + 9)*(24*rate**5 + 118*rate**4 + 224*rate**3 + 210*rate**2 + 99*rate + 18)",
+          "denominator": "(2*rate**2 + 4*rate + 1)**3*(6*rate**3 + 11*rate**2 + 9*rate + 3)**4*(8*rate**3 + 18*rate**2 + 12*rate + 3)**4"
+        }
+      },
+      "(1, 2)": {
+        "quadratic": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(192*rate**9*z0**2 + 1328*rate**8*z0**2 + 192*rate**8*z0 + 3680*rate**7*z0**2 + 1424*rate**7*z0 + 48*rate**7 + 5296*rate**6*z0**2 + 4216*rate**6*z0 + 388*rate**6 + 4288*rate**5*z0**2 + 6496*rate**5*z0 + 1238*rate**5 + 1940*rate**4*z0**2 + 5676*rate**4*z0 + 2053*rate**4 + 432*rate**3*z0**2 + 2820*rate**3*z0 + 1942*rate**3 + 36*rate**2*z0**2 + 720*rate**2*z0 + 1059*rate**2 + 72*rate*z0 + 306*rate + 36)/(4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "rate**4*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(24*rate**5 + 118*rate**4 + 212*rate**3 + 179*rate**2 + 72*rate + 9)",
+          "denominator": "(2*rate**2 + 4*rate + 1)*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "rate**2*(rate + 1)*(2*rate + 3)*(4*rate + 3)*(48*rate**7 + 388*rate**6 + 1238*rate**5 + 2053*rate**4 + 1942*rate**3 + 1059*rate**2 + 306*rate + 36)",
+          "denominator": "4*(2*rate**2 + 4*rate + 1)**2*(6*rate**3 + 11*rate**2 + 9*rate + 3)**2*(8*rate**3 + 18*rate**2 + 12*rate + 3)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "rate**7*(rate + 1)**4*(2*rate + 3)**2*(4*rate + 3)**2*(8*rate**3 + 22*rate**2 + 22*rate + 9)*(24*rate**5 + 118*rate**4 + 224*rate**3 + 210*rate**2 + 99*rate + 18)",
+          "denominator": "(2*rate**2 + 4*rate + 1)**3*(6*rate**3 + 11*rate**2 + 9*rate + 3)**4*(8*rate**3 + 18*rate**2 + 12*rate + 3)**4"
+        }
+      }
+    },
+    "all_rates_strong_Rayleigh_certified": true
+  },
+  "triangle3": {
+    "law_in_p": [
+      "-(p - 1)**3*(43*p**3 + 96*p**2 + 192*p + 128)/((p + 2)*(2*p + 1)*(5*p**2 - 4*p + 8)*(11*p**2 + 8*p + 8))",
+      "3*p*(p - 1)**2*(35*p**3 + 69*p**2 + 120*p + 64)/((p + 2)*(2*p + 1)*(5*p**2 - 4*p + 8)*(11*p**2 + 8*p + 8))",
+      "3*p*(p - 1)**2*(35*p**3 + 69*p**2 + 120*p + 64)/((p + 2)*(2*p + 1)*(5*p**2 - 4*p + 8)*(11*p**2 + 8*p + 8))",
+      "-18*p**2*(p - 1)*(7*p**2 + 8*p + 12)/((p + 2)*(5*p**2 - 4*p + 8)*(11*p**2 + 8*p + 8))",
+      "3*p*(p - 1)**2*(35*p**3 + 69*p**2 + 120*p + 64)/((p + 2)*(2*p + 1)*(5*p**2 - 4*p + 8)*(11*p**2 + 8*p + 8))",
+      "-18*p**2*(p - 1)*(7*p**2 + 8*p + 12)/((p + 2)*(5*p**2 - 4*p + 8)*(11*p**2 + 8*p + 8))",
+      "-18*p**2*(p - 1)*(7*p**2 + 8*p + 12)/((p + 2)*(5*p**2 - 4*p + 8)*(11*p**2 + 8*p + 8))",
+      "27*p**3/((p + 2)*(5*p**2 - 4*p + 8))"
+    ],
+    "leading_Green_minors": {
+      "[0]": "3/2",
+      "[1]": "3/2",
+      "[0, 1]": "27/16",
+      "[2]": "3/2",
+      "[0, 2]": "27/16",
+      "[1, 2]": "27/16",
+      "[0, 1, 2]": "27/16"
+    },
+    "all_rates_NA_certified": true,
+    "NA_gap_certificates": [
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(26244*rate**8 + 123930*rate**7 + 261306*rate**6 + 322272*rate**5 + 256185*rate**4 + 136080*rate**3 + 47808*rate**2 + 10240*rate + 1024)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(26244*rate**8 + 123930*rate**7 + 261306*rate**6 + 322272*rate**5 + 256185*rate**4 + 136080*rate**3 + 47808*rate**2 + 10240*rate + 1024)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "27*rate**3*(5832*rate**6 + 22437*rate**5 + 36486*rate**4 + 31944*rate**3 + 15864*rate**2 + 4288*rate + 512)",
+        "denominator": "(3*rate + 1)*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(26244*rate**8 + 123930*rate**7 + 261306*rate**6 + 322272*rate**5 + 256185*rate**4 + 136080*rate**3 + 47808*rate**2 + 10240*rate + 1024)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(26244*rate**8 + 123930*rate**7 + 261306*rate**6 + 322272*rate**5 + 256185*rate**4 + 136080*rate**3 + 47808*rate**2 + 10240*rate + 1024)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(28431*rate**7 + 126927*rate**6 + 247590*rate**5 + 273762*rate**4 + 185976*rate**3 + 78144*rate**2 + 18944*rate + 2048)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(26244*rate**8 + 123930*rate**7 + 261306*rate**6 + 322272*rate**5 + 256185*rate**4 + 136080*rate**3 + 47808*rate**2 + 10240*rate + 1024)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "27*rate**3*(5832*rate**6 + 22437*rate**5 + 36486*rate**4 + 31944*rate**3 + 15864*rate**2 + 4288*rate + 512)",
+        "denominator": "(3*rate + 1)*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(26244*rate**8 + 123930*rate**7 + 261306*rate**6 + 322272*rate**5 + 256185*rate**4 + 136080*rate**3 + 47808*rate**2 + 10240*rate + 1024)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(26244*rate**8 + 123930*rate**7 + 261306*rate**6 + 322272*rate**5 + 256185*rate**4 + 136080*rate**3 + 47808*rate**2 + 10240*rate + 1024)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(28431*rate**7 + 126927*rate**6 + 247590*rate**5 + 273762*rate**4 + 185976*rate**3 + 78144*rate**2 + 18944*rate + 2048)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "27*rate**3*(5832*rate**6 + 22437*rate**5 + 36486*rate**4 + 31944*rate**3 + 15864*rate**2 + 4288*rate + 512)",
+        "denominator": "(3*rate + 1)*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(26244*rate**8 + 123930*rate**7 + 261306*rate**6 + 322272*rate**5 + 256185*rate**4 + 136080*rate**3 + 47808*rate**2 + 10240*rate + 1024)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(26244*rate**8 + 123930*rate**7 + 261306*rate**6 + 322272*rate**5 + 256185*rate**4 + 136080*rate**3 + 47808*rate**2 + 10240*rate + 1024)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(28431*rate**7 + 126927*rate**6 + 247590*rate**5 + 273762*rate**4 + 185976*rate**3 + 78144*rate**2 + 18944*rate + 2048)",
+        "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+      }
+    ],
+    "strong_Rayleigh_certificates": {
+      "(0, 1)": {
+        "quadratic": "9*rate**2*(26244*rate**8*z2**2 + 95499*rate**7*z2**2 + 28431*rate**7*z2 + 142965*rate**6*z2**2 + 109755*rate**6*z2 + 8586*rate**6 + 110376*rate**5*z2**2 + 176202*rate**5*z2 + 35694*rate**5 + 44856*rate**4*z2**2 + 148896*rate**4*z2 + 62433*rate**4 + 8640*rate**3*z2**2 + 68904*rate**3*z2 + 58536*rate**3 + 576*rate**2*z2**2 + 16320*rate**2*z2 + 30912*rate**2 + 1536*rate*z2 + 8704*rate + 1024)/((3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "81*rate**4*(972*rate**5 + 3213*rate**4 + 4224*rate**3 + 2680*rate**2 + 768*rate + 64)",
+          "denominator": "(3*rate + 1)*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "9*rate**2*(8586*rate**6 + 35694*rate**5 + 62433*rate**4 + 58536*rate**3 + 30912*rate**2 + 8704*rate + 1024)",
+          "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "729*rate**7*(9*rate + 8)*(21*rate + 16)*(9*rate**2 + 15*rate + 8)*(15*rate**2 + 26*rate + 12)**2",
+          "denominator": "(3*rate + 1)**3*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**4*(27*rate**2 + 24*rate + 8)**4"
+        }
+      },
+      "(0, 2)": {
+        "quadratic": "9*rate**2*(26244*rate**8*z1**2 + 95499*rate**7*z1**2 + 28431*rate**7*z1 + 142965*rate**6*z1**2 + 109755*rate**6*z1 + 8586*rate**6 + 110376*rate**5*z1**2 + 176202*rate**5*z1 + 35694*rate**5 + 44856*rate**4*z1**2 + 148896*rate**4*z1 + 62433*rate**4 + 8640*rate**3*z1**2 + 68904*rate**3*z1 + 58536*rate**3 + 576*rate**2*z1**2 + 16320*rate**2*z1 + 30912*rate**2 + 1536*rate*z1 + 8704*rate + 1024)/((3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "81*rate**4*(972*rate**5 + 3213*rate**4 + 4224*rate**3 + 2680*rate**2 + 768*rate + 64)",
+          "denominator": "(3*rate + 1)*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "9*rate**2*(8586*rate**6 + 35694*rate**5 + 62433*rate**4 + 58536*rate**3 + 30912*rate**2 + 8704*rate + 1024)",
+          "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "729*rate**7*(9*rate + 8)*(21*rate + 16)*(9*rate**2 + 15*rate + 8)*(15*rate**2 + 26*rate + 12)**2",
+          "denominator": "(3*rate + 1)**3*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**4*(27*rate**2 + 24*rate + 8)**4"
+        }
+      },
+      "(1, 2)": {
+        "quadratic": "9*rate**2*(26244*rate**8*z0**2 + 95499*rate**7*z0**2 + 28431*rate**7*z0 + 142965*rate**6*z0**2 + 109755*rate**6*z0 + 8586*rate**6 + 110376*rate**5*z0**2 + 176202*rate**5*z0 + 35694*rate**5 + 44856*rate**4*z0**2 + 148896*rate**4*z0 + 62433*rate**4 + 8640*rate**3*z0**2 + 68904*rate**3*z0 + 58536*rate**3 + 576*rate**2*z0**2 + 16320*rate**2*z0 + 30912*rate**2 + 1536*rate*z0 + 8704*rate + 1024)/((3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "81*rate**4*(972*rate**5 + 3213*rate**4 + 4224*rate**3 + 2680*rate**2 + 768*rate + 64)",
+          "denominator": "(3*rate + 1)*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "9*rate**2*(8586*rate**6 + 35694*rate**5 + 62433*rate**4 + 58536*rate**3 + 30912*rate**2 + 8704*rate + 1024)",
+          "denominator": "(3*rate + 1)**2*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**2*(27*rate**2 + 24*rate + 8)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "729*rate**7*(9*rate + 8)*(21*rate + 16)*(9*rate**2 + 15*rate + 8)*(15*rate**2 + 26*rate + 12)**2",
+          "denominator": "(3*rate + 1)**3*(3*rate + 2)**2*(9*rate**2 + 12*rate + 8)**4*(27*rate**2 + 24*rate + 8)**4"
+        }
+      }
+    },
+    "all_rates_strong_Rayleigh_certified": true
+  },
+  "path3_sink_endpoint": {
+    "law_in_p": [
+      "-(p - 1)**3*(p**2 - 2*p - 1)*(p**5 - 2*p**4 - 7*p**3 - 9*p**2 - 6*p - 9)/((p - 3)*(p + 1)*(3*p**2 - 6*p - 1)*(5*p**2 + 2*p + 1)*(5*p**3 + 4*p**2 + 3))",
+      "2*p*(p - 1)**2*(p**2 - 2*p - 1)*(p**5 - 2*p**4 - 7*p**3 - 9*p**2 - 6*p - 9)/((p - 3)*(p + 1)*(3*p**2 - 6*p - 1)*(5*p**2 + 2*p + 1)*(5*p**3 + 4*p**2 + 3))",
+      "2*p*(p - 2)*(p - 1)**2*(3*p + 1)*(p**5 - 2*p**4 - 7*p**3 - 9*p**2 - 6*p - 9)/((p - 3)*(p + 1)*(3*p**2 - 6*p - 1)*(5*p**2 + 2*p + 1)*(5*p**3 + 4*p**2 + 3))",
+      "-4*p**2*(p - 1)*(p**5 - 2*p**4 - 7*p**3 - 9*p**2 - 6*p - 9)/((p - 3)*(p + 1)*(5*p**2 + 2*p + 1)*(5*p**3 + 4*p**2 + 3))",
+      "p*(p - 1)**2*(5*p**7 + 10*p**6 - 66*p**5 + 3*p**4 + 65*p**3 + 40*p**2 + 108*p + 27)/((p - 3)*(p + 1)*(3*p**2 - 6*p - 1)*(5*p**2 + 2*p + 1)*(5*p**3 + 4*p**2 + 3))",
+      "-4*p**2*(p - 1)*(p**5 + 3*p**4 - 5*p**3 - 8*p**2 - 6*p - 9)/((p - 3)*(p + 1)*(5*p**2 + 2*p + 1)*(5*p**3 + 4*p**2 + 3))",
+      "2*p**2*(p - 1)*(2*p**5 - 15*p**4 + 11*p**3 + 41*p**2 + 39*p + 18)/((p - 3)*(p + 1)*(5*p**2 + 2*p + 1)*(5*p**3 + 4*p**2 + 3))",
+      "12*p**3/(5*p**3 + 4*p**2 + 3)"
+    ],
+    "leading_Green_minors": {
+      "[0]": "2",
+      "[1]": "4",
+      "[0, 1]": "4",
+      "[2]": "3",
+      "[0, 2]": "4",
+      "[1, 2]": "4",
+      "[0, 1, 2]": "4"
+    },
+    "all_rates_NA_certified": true,
+    "NA_gap_certificates": [
+      {
+        "certified": true,
+        "numerator": "4*rate**2*(30720*rate**15 + 353280*rate**14 + 1819136*rate**13 + 5559424*rate**12 + 11288928*rate**11 + 16184096*rate**10 + 17005632*rate**9 + 13421336*rate**8 + 8086512*rate**7 + 3760944*rate**6 + 1360884*rate**5 + 384528*rate**4 + 84096*rate**3 + 13671*rate**2 + 1485*rate + 81)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(1024*rate**10 + 8704*rate**9 + 28864*rate**8 + 48608*rate**7 + 45472*rate**6 + 24552*rate**5 + 7874*rate**4 + 1746*rate**3 + 399*rate**2 + 87*rate + 9)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**3*(11776*rate**12 + 111360*rate**11 + 459008*rate**10 + 1095968*rate**9 + 1698248*rate**8 + 1808856*rate**7 + 1362480*rate**6 + 731722*rate**5 + 277836*rate**4 + 72885*rate**3 + 12744*rate**2 + 1404*rate + 81)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**2*(30720*rate**15 + 353280*rate**14 + 1819136*rate**13 + 5559424*rate**12 + 11288928*rate**11 + 16184096*rate**10 + 17005632*rate**9 + 13421336*rate**8 + 8086512*rate**7 + 3760944*rate**6 + 1360884*rate**5 + 384528*rate**4 + 84096*rate**3 + 13671*rate**2 + 1485*rate + 81)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(1024*rate**10 + 8704*rate**9 + 28864*rate**8 + 48608*rate**7 + 45472*rate**6 + 24552*rate**5 + 7874*rate**4 + 1746*rate**3 + 399*rate**2 + 87*rate + 9)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(2*rate**2 + 4*rate + 1)*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(160*rate**6 + 784*rate**5 + 1380*rate**4 + 1102*rate**3 + 465*rate**2 + 135*rate + 27)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(2048*rate**10 + 15616*rate**9 + 51136*rate**8 + 95296*rate**7 + 112592*rate**6 + 88488*rate**5 + 47144*rate**4 + 16985*rate**3 + 4008*rate**2 + 564*rate + 36)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**3*(15872*rate**12 + 142080*rate**11 + 570368*rate**10 + 1360288*rate**9 + 2153288*rate**8 + 2393376*rate**7 + 1923668*rate**6 + 1130860*rate**5 + 484239*rate**4 + 147909*rate**3 + 30798*rate**2 + 3969*rate + 243)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**2*(30720*rate**15 + 353280*rate**14 + 1819136*rate**13 + 5559424*rate**12 + 11288928*rate**11 + 16184096*rate**10 + 17005632*rate**9 + 13421336*rate**8 + 8086512*rate**7 + 3760944*rate**6 + 1360884*rate**5 + 384528*rate**4 + 84096*rate**3 + 13671*rate**2 + 1485*rate + 81)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(2048*rate**10 + 15616*rate**9 + 51136*rate**8 + 95296*rate**7 + 112592*rate**6 + 88488*rate**5 + 47144*rate**4 + 16985*rate**3 + 4008*rate**2 + 564*rate + 36)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(1408*rate**9 + 10176*rate**8 + 30896*rate**7 + 52112*rate**6 + 54328*rate**5 + 36584*rate**4 + 16071*rate**3 + 4500*rate**2 + 738*rate + 54)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**3*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(384*rate**7 + 2144*rate**6 + 4672*rate**5 + 5184*rate**4 + 3196*rate**3 + 1111*rate**2 + 210*rate + 18)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(1024*rate**10 + 8704*rate**9 + 28864*rate**8 + 48608*rate**7 + 45472*rate**6 + 24552*rate**5 + 7874*rate**4 + 1746*rate**3 + 399*rate**2 + 87*rate + 9)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(2048*rate**10 + 15616*rate**9 + 51136*rate**8 + 95296*rate**7 + 112592*rate**6 + 88488*rate**5 + 47144*rate**4 + 16985*rate**3 + 4008*rate**2 + 564*rate + 36)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(512*rate**8 + 3520*rate**7 + 9936*rate**6 + 15136*rate**5 + 13756*rate**4 + 7707*rate**3 + 2649*rate**2 + 525*rate + 45)",
+        "denominator": "(rate + 1)**2*(2*rate + 1)*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+      }
+    ],
+    "strong_Rayleigh_certificates": {
+      "(0, 1)": {
+        "quadratic": "4*rate**2*(30720*rate**15*z2**2 + 336896*rate**14*z2**2 + 16384*rate**14*z2 + 1646080*rate**13*z2**2 + 171008*rate**13*z2 + 2048*rate**13 + 4736640*rate**12*z2**2 + 802304*rate**12*z2 + 20480*rate**12 + 8949088*rate**11*z2**2 + 2246144*rate**11*z2 + 93696*rate**11 + 11723776*rate**10*z2**2 + 4199328*rate**10*z2 + 260992*rate**10 + 10956800*rate**9*z2**2 + 5552640*rate**9*z2 + 496192*rate**9 + 7385288*rate**8*z2**2 + 5353488*rate**8*z2 + 682560*rate**8 + 3572910*rate**7*z2**2 + 3812720*rate**7*z2 + 700882*rate**7 + 1212968*rate**6*z2**2 + 2003118*rate**6*z2 + 544858*rate**6 + 275889*rate**5*z2**2 + 764124*rate**5*z2 + 320871*rate**5 + 38664*rate**4*z2**2 + 204543*rate**4*z2 + 141321*rate**4 + 2862*rate**3*z2**2 + 36063*rate**3*z2 + 45171*rate**3 + 81*rate**2*z2**2 + 3699*rate**2*z2 + 9891*rate**2 + 162*rate*z2 + 1323*rate + 81)/((rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "4*rate**4*(7680*rate**11 + 68864*rate**10 + 271872*rate**9 + 623200*rate**8 + 922904*rate**7 + 929336*rate**6 + 649802*rate**5 + 314384*rate**4 + 102009*rate**3 + 20628*rate**2 + 2214*rate + 81)",
+          "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "4*rate**2*(2*rate**2 + 4*rate + 1)*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)**2",
+          "denominator": "(rate + 1)*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+        },
+        "4ac-bb": {
+          "certified": false,
+          "numerator": "-16*rate**7*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)**2*(32*rate**5 + 200*rate**4 + 428*rate**3 + 402*rate**2 + 172*rate + 27)*(128*rate**8 + 544*rate**7 + 528*rate**6 - 1168*rate**5 - 3652*rate**4 - 4146*rate**3 - 2372*rate**2 - 669*rate - 72)",
+          "denominator": "(rate + 1)**4*(2*rate + 1)**4*(2*rate + 3)**4*(4*rate**2 + 8*rate + 1)**3*(8*rate**2 + 4*rate + 1)**4*(12*rate**3 + 13*rate**2 + 9*rate + 3)**4"
+        }
+      },
+      "(0, 2)": {
+        "quadratic": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(1024*rate**10*z1**2 + 8448*rate**9*z1**2 + 256*rate**9*z1 + 26752*rate**8*z1**2 + 2112*rate**8*z1 + 41856*rate**7*z1**2 + 6688*rate**7*z1 + 64*rate**7 + 34656*rate**6*z1**2 + 10464*rate**6*z1 + 352*rate**6 + 15088*rate**5*z1**2 + 8664*rate**5*z1 + 800*rate**5 + 3104*rate**4*z1**2 + 3772*rate**4*z1 + 998*rate**4 + 216*rate**3*z1**2 + 776*rate**3*z1 + 754*rate**3 + 54*rate**2*z1 + 345*rate**2 + 87*rate + 9)/((rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "16*rate**5*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(32*rate**5 + 200*rate**4 + 428*rate**3 + 402*rate**2 + 172*rate + 27)",
+          "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "2*rate**2*(2*rate**2 + 4*rate + 1)*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)**2",
+          "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+        },
+        "4ac-bb": {
+          "certified": false,
+          "numerator": "-16*rate**7*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)**2*(32*rate**5 + 200*rate**4 + 428*rate**3 + 402*rate**2 + 172*rate + 27)*(128*rate**8 + 544*rate**7 + 528*rate**6 - 1168*rate**5 - 3652*rate**4 - 4146*rate**3 - 2372*rate**2 - 669*rate - 72)",
+          "denominator": "(rate + 1)**4*(2*rate + 1)**4*(2*rate + 3)**4*(4*rate**2 + 8*rate + 1)**3*(8*rate**2 + 4*rate + 1)**4*(12*rate**3 + 13*rate**2 + 9*rate + 3)**4"
+        }
+      },
+      "(1, 2)": {
+        "quadratic": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(2048*rate**10*z0**2 + 13824*rate**9*z0**2 + 1792*rate**9*z0 + 38528*rate**8*z0**2 + 12224*rate**8*z0 + 384*rate**8 + 57984*rate**7*z0**2 + 34656*rate**7*z0 + 2656*rate**7 + 51072*rate**6*z0**2 + 53792*rate**6*z0 + 7728*rate**6 + 26000*rate**5*z0**2 + 49944*rate**5*z0 + 12544*rate**5 + 7048*rate**4*z0**2 + 27620*rate**4*z0 + 12476*rate**4 + 852*rate**3*z0**2 + 8540*rate**3*z0 + 7593*rate**3 + 36*rate**2*z0**2 + 1290*rate**2*z0 + 2682*rate**2 + 72*rate*z0 + 492*rate + 36)/((rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "8*rate**4*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(128*rate**6 + 608*rate**5 + 1160*rate**4 + 1152*rate**3 + 598*rate**2 + 141*rate + 9)",
+          "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "2*rate**2*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)*(384*rate**8 + 2656*rate**7 + 7728*rate**6 + 12544*rate**5 + 12476*rate**4 + 7593*rate**3 + 2682*rate**2 + 492*rate + 36)",
+          "denominator": "(rate + 1)**2*(2*rate + 1)**2*(2*rate + 3)**2*(4*rate**2 + 8*rate + 1)**2*(8*rate**2 + 4*rate + 1)**2*(12*rate**3 + 13*rate**2 + 9*rate + 3)**2"
+        },
+        "4ac-bb": {
+          "certified": false,
+          "numerator": "-16*rate**7*(32*rate**5 + 112*rate**4 + 160*rate**3 + 123*rate**2 + 51*rate + 9)**2*(32*rate**5 + 200*rate**4 + 428*rate**3 + 402*rate**2 + 172*rate + 27)*(128*rate**8 + 544*rate**7 + 528*rate**6 - 1168*rate**5 - 3652*rate**4 - 4146*rate**3 - 2372*rate**2 - 669*rate - 72)",
+          "denominator": "(rate + 1)**4*(2*rate + 1)**4*(2*rate + 3)**4*(4*rate**2 + 8*rate + 1)**3*(8*rate**2 + 4*rate + 1)**4*(12*rate**3 + 13*rate**2 + 9*rate + 3)**4"
+        }
+      }
+    },
+    "all_rates_strong_Rayleigh_certified": false
+  },
+  "path3_sink_center": {
+    "law_in_p": [
+      "(p - 1)**3*(p**4 - 2*p**3 - 3*p - 2)/((2*p**2 - 4*p - 1)*(p**3 + p**2 + 1)*(2*p**3 - 6*p**2 - 3*p - 2))",
+      "p*(p - 1)**2*(2*p**5 - 12*p**4 + 12*p**3 - 3*p**2 + 20*p + 8)/(2*(2*p**2 - 4*p - 1)*(p**3 + p**2 + 1)*(2*p**3 - 6*p**2 - 3*p - 2))",
+      "-3*p*(p - 1)**2*(p**4 - 2*p**3 - 3*p - 2)/((2*p**2 - 4*p - 1)*(p**3 + p**2 + 1)*(2*p**3 - 6*p**2 - 3*p - 2))",
+      "3*p**2*(p - 1)*(3*p**2 + 2*p + 4)/(2*(p**3 + p**2 + 1)*(2*p**3 - 6*p**2 - 3*p - 2))",
+      "p*(p - 1)**2*(2*p**5 - 12*p**4 + 12*p**3 - 3*p**2 + 20*p + 8)/(2*(2*p**2 - 4*p - 1)*(p**3 + p**2 + 1)*(2*p**3 - 6*p**2 - 3*p - 2))",
+      "-p**2*(p - 1)*(5*p**3 - 7*p**2 - p - 6)/((p**3 + p**2 + 1)*(2*p**3 - 6*p**2 - 3*p - 2))",
+      "3*p**2*(p - 1)*(3*p**2 + 2*p + 4)/(2*(p**3 + p**2 + 1)*(2*p**3 - 6*p**2 - 3*p - 2))",
+      "3*p**3/(p**3 + p**2 + 1)"
+    ],
+    "leading_Green_minors": {
+      "[0]": "2",
+      "[1]": "3",
+      "[0, 1]": "3",
+      "[2]": "2",
+      "[0, 2]": "3",
+      "[1, 2]": "3",
+      "[0, 1, 2]": "3"
+    },
+    "all_rates_NA_certified": true,
+    "NA_gap_certificates": [
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(405*rate**11 + 3267*rate**10 + 11430*rate**9 + 23196*rate**8 + 30773*rate**7 + 28363*rate**6 + 18756*rate**5 + 8998*rate**4 + 3110*rate**3 + 746*rate**2 + 112*rate + 8)",
+        "denominator": "2*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(729*rate**12 + 6804*rate**11 + 28188*rate**10 + 69120*rate**9 + 111906*rate**8 + 125544*rate**7 + 99760*rate**6 + 56568*rate**5 + 22881*rate**4 + 6636*rate**3 + 1404*rate**2 + 208*rate + 16)",
+        "denominator": "4*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**3*(81*rate**9 + 837*rate**8 + 3258*rate**7 + 6708*rate**6 + 8345*rate**5 + 6621*rate**4 + 3386*rate**3 + 1072*rate**2 + 192*rate + 16)",
+        "denominator": "4*(3*rate**2 + 6*rate + 1)*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(405*rate**11 + 3267*rate**10 + 11430*rate**9 + 23196*rate**8 + 30773*rate**7 + 28363*rate**6 + 18756*rate**5 + 8998*rate**4 + 3110*rate**3 + 746*rate**2 + 112*rate + 8)",
+        "denominator": "2*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(729*rate**12 + 6804*rate**11 + 28188*rate**10 + 69120*rate**9 + 111906*rate**8 + 125544*rate**7 + 99760*rate**6 + 56568*rate**5 + 22881*rate**4 + 6636*rate**3 + 1404*rate**2 + 208*rate + 16)",
+        "denominator": "4*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(243*rate**11 + 3159*rate**10 + 16173*rate**9 + 45459*rate**8 + 80259*rate**7 + 95251*rate**6 + 78645*rate**5 + 45687*rate**4 + 18480*rate**3 + 5016*rate**2 + 832*rate + 64)",
+        "denominator": "4*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(405*rate**11 + 3267*rate**10 + 11430*rate**9 + 23196*rate**8 + 30773*rate**7 + 28363*rate**6 + 18756*rate**5 + 8998*rate**4 + 3110*rate**3 + 746*rate**2 + 112*rate + 8)",
+        "denominator": "2*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**3*(135*rate**8 + 765*rate**7 + 1818*rate**6 + 2443*rate**5 + 2054*rate**4 + 1119*rate**3 + 388*rate**2 + 80*rate + 8)",
+        "denominator": "(3*rate**2 + 6*rate + 1)*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(405*rate**11 + 3267*rate**10 + 11430*rate**9 + 23196*rate**8 + 30773*rate**7 + 28363*rate**6 + 18756*rate**5 + 8998*rate**4 + 3110*rate**3 + 746*rate**2 + 112*rate + 8)",
+        "denominator": "2*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(405*rate**11 + 3267*rate**10 + 11430*rate**9 + 23196*rate**8 + 30773*rate**7 + 28363*rate**6 + 18756*rate**5 + 8998*rate**4 + 3110*rate**3 + 746*rate**2 + 112*rate + 8)",
+        "denominator": "2*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(rate + 1)*(6*rate**4 + 19*rate**3 + 21*rate**2 + 11*rate + 2)*(27*rate**5 + 96*rate**4 + 119*rate**3 + 76*rate**2 + 26*rate + 4)",
+        "denominator": "(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**3*(81*rate**9 + 837*rate**8 + 3258*rate**7 + 6708*rate**6 + 8345*rate**5 + 6621*rate**4 + 3386*rate**3 + 1072*rate**2 + 192*rate + 16)",
+        "denominator": "4*(3*rate**2 + 6*rate + 1)*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(729*rate**12 + 6804*rate**11 + 28188*rate**10 + 69120*rate**9 + 111906*rate**8 + 125544*rate**7 + 99760*rate**6 + 56568*rate**5 + 22881*rate**4 + 6636*rate**3 + 1404*rate**2 + 208*rate + 16)",
+        "denominator": "4*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(405*rate**11 + 3267*rate**10 + 11430*rate**9 + 23196*rate**8 + 30773*rate**7 + 28363*rate**6 + 18756*rate**5 + 8998*rate**4 + 3110*rate**3 + 746*rate**2 + 112*rate + 8)",
+        "denominator": "2*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(243*rate**11 + 3159*rate**10 + 16173*rate**9 + 45459*rate**8 + 80259*rate**7 + 95251*rate**6 + 78645*rate**5 + 45687*rate**4 + 18480*rate**3 + 5016*rate**2 + 832*rate + 64)",
+        "denominator": "4*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+      }
+    ],
+    "strong_Rayleigh_certificates": {
+      "(0, 1)": {
+        "quadratic": "3*rate**2*(405*rate**11*z2**2 + 2943*rate**10*z2**2 + 324*rate**10*z2 + 9000*rate**9*z2**2 + 2358*rate**9*z2 + 72*rate**9 + 15336*rate**8*z2**2 + 7332*rate**8*z2 + 528*rate**8 + 16185*rate**7*z2**2 + 12906*rate**7*z2 + 1682*rate**7 + 10971*rate**6*z2**2 + 14306*rate**6*z2 + 3086*rate**6 + 4734*rate**5*z2**2 + 10396*rate**5*z2 + 3626*rate**5 + 1218*rate**4*z2**2 + 4938*rate**4*z2 + 2842*rate**4 + 160*rate**3*z2**2 + 1464*rate**3*z2 + 1486*rate**3 + 8*rate**2*z2**2 + 240*rate**2*z2 + 498*rate**2 + 16*rate*z2 + 96*rate + 8)/(2*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "3*rate**4*(135*rate**7 + 711*rate**6 + 1533*rate**5 + 1809*rate**4 + 1266*rate**3 + 522*rate**2 + 112*rate + 8)",
+          "denominator": "2*(3*rate**2 + 6*rate + 1)*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "3*rate**2*(rate + 1)*(6*rate**4 + 19*rate**3 + 21*rate**2 + 11*rate + 2)**2",
+          "denominator": "(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "9*rate**7*(rate + 1)*(3*rate**3 + 10*rate**2 + 9*rate + 4)*(9*rate**3 + 21*rate**2 + 24*rate + 8)*(6*rate**4 + 19*rate**3 + 21*rate**2 + 11*rate + 2)**2",
+          "denominator": "(3*rate**2 + 6*rate + 1)**3*(3*rate**3 + 4*rate**2 + 3*rate + 1)**4*(9*rate**3 + 18*rate**2 + 9*rate + 2)**4"
+        }
+      },
+      "(0, 2)": {
+        "quadratic": "rate**2*(729*rate**12*z1**2 + 6318*rate**11*z1**2 + 486*rate**11*z1 + 23895*rate**10*z1**2 + 4212*rate**10*z1 + 81*rate**10 + 52488*rate**9*z1**2 + 15930*rate**9*z1 + 702*rate**9 + 74115*rate**8*z1**2 + 34992*rate**8*z1 + 2799*rate**8 + 69390*rate**7*z1**2 + 49410*rate**7*z1 + 6744*rate**7 + 42813*rate**6*z1**2 + 46260*rate**6*z1 + 10687*rate**6 + 16596*rate**5*z1**2 + 28542*rate**5*z1 + 11430*rate**5 + 3528*rate**4*z1**2 + 11064*rate**4*z1 + 8289*rate**4 + 288*rate**3*z1**2 + 2352*rate**3*z1 + 3996*rate**3 + 192*rate**2*z1 + 1212*rate**2 + 208*rate + 16)/(4*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "9*rate**5*(rate + 1)*(3*rate**3 + 10*rate**2 + 9*rate + 4)*(9*rate**3 + 21*rate**2 + 24*rate + 8)",
+          "denominator": "4*(3*rate**2 + 6*rate + 1)*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "rate**2*(81*rate**10 + 702*rate**9 + 2799*rate**8 + 6744*rate**7 + 10687*rate**6 + 11430*rate**5 + 8289*rate**4 + 3996*rate**3 + 1212*rate**2 + 208*rate + 16)",
+          "denominator": "4*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "9*rate**7*(rate + 1)*(3*rate**3 + 10*rate**2 + 9*rate + 4)*(9*rate**3 + 21*rate**2 + 24*rate + 8)*(6*rate**4 + 19*rate**3 + 21*rate**2 + 11*rate + 2)**2",
+          "denominator": "(3*rate**2 + 6*rate + 1)**3*(3*rate**3 + 4*rate**2 + 3*rate + 1)**4*(9*rate**3 + 18*rate**2 + 9*rate + 2)**4"
+        }
+      },
+      "(1, 2)": {
+        "quadratic": "3*rate**2*(405*rate**11*z0**2 + 2943*rate**10*z0**2 + 324*rate**10*z0 + 9000*rate**9*z0**2 + 2358*rate**9*z0 + 72*rate**9 + 15336*rate**8*z0**2 + 7332*rate**8*z0 + 528*rate**8 + 16185*rate**7*z0**2 + 12906*rate**7*z0 + 1682*rate**7 + 10971*rate**6*z0**2 + 14306*rate**6*z0 + 3086*rate**6 + 4734*rate**5*z0**2 + 10396*rate**5*z0 + 3626*rate**5 + 1218*rate**4*z0**2 + 4938*rate**4*z0 + 2842*rate**4 + 160*rate**3*z0**2 + 1464*rate**3*z0 + 1486*rate**3 + 8*rate**2*z0**2 + 240*rate**2*z0 + 498*rate**2 + 16*rate*z0 + 96*rate + 8)/(2*(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "3*rate**4*(135*rate**7 + 711*rate**6 + 1533*rate**5 + 1809*rate**4 + 1266*rate**3 + 522*rate**2 + 112*rate + 8)",
+          "denominator": "2*(3*rate**2 + 6*rate + 1)*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "3*rate**2*(rate + 1)*(6*rate**4 + 19*rate**3 + 21*rate**2 + 11*rate + 2)**2",
+          "denominator": "(3*rate**2 + 6*rate + 1)**2*(3*rate**3 + 4*rate**2 + 3*rate + 1)**2*(9*rate**3 + 18*rate**2 + 9*rate + 2)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "9*rate**7*(rate + 1)*(3*rate**3 + 10*rate**2 + 9*rate + 4)*(9*rate**3 + 21*rate**2 + 24*rate + 8)*(6*rate**4 + 19*rate**3 + 21*rate**2 + 11*rate + 2)**2",
+          "denominator": "(3*rate**2 + 6*rate + 1)**3*(3*rate**3 + 4*rate**2 + 3*rate + 1)**4*(9*rate**3 + 18*rate**2 + 9*rate + 2)**4"
+        }
+      }
+    },
+    "all_rates_strong_Rayleigh_certified": true
+  },
+  "path3_sink_endpoint_center": {
+    "law_in_p": [
+      "-(p - 1)**3*(5*p**7 - 31*p**6 - 97*p**5 - 657*p**4 + 1398*p**3 + 390*p**2 + 3780*p + 2700)/(54*(p**2 - 2*p - 5)*(p**2 - 2*p - 1)*(p**2 + p + 1)*(3*p**3 + 7*p**2 + 10))",
+      "p*(p - 1)**2*(5*p**7 - 30*p**6 - 39*p**5 - 659*p**4 + 1320*p**3 + 315*p**2 + 3120*p + 1800)/(27*(p**2 - 2*p - 5)*(p**2 - 2*p - 1)*(p**2 + p + 1)*(3*p**3 + 7*p**2 + 10))",
+      "p*(p - 1)**2*(3*p**7 - 40*p**6 - 64*p**5 - 412*p**4 + 957*p**3 + 480*p**2 + 2820*p + 1800)/(18*(p**2 - 2*p - 5)*(p**2 - 2*p - 1)*(p**2 + p + 1)*(3*p**3 + 7*p**2 + 10))",
+      "-p**2*(p - 1)*(p**5 - 11*p**4 - 23*p**3 - 195*p**2 - 120*p - 300)/(3*(p**2 - 2*p - 5)*(p**2 + p + 1)*(3*p**3 + 7*p**2 + 10))",
+      "p*(p - 1)**2*(2*p**7 + 252*p**6 - 501*p**5 - 893*p**4 + 351*p**3 + 549*p**2 + 4470*p + 2250)/(27*(p**2 - 2*p - 5)*(p**2 - 2*p - 1)*(p**2 + p + 1)*(3*p**3 + 7*p**2 + 10))",
+      "-p**2*(p - 1)*(p**5 + 45*p**4 + 13*p**3 - 159*p**2 - 140*p - 300)/(3*(p**2 - 2*p - 5)*(p**2 + p + 1)*(3*p**3 + 7*p**2 + 10))",
+      "p**2*(p - 1)*(p**5 - 38*p**4 + 55*p**3 + 162*p**2 + 330*p + 300)/(3*(p**2 - 2*p - 5)*(p**2 + p + 1)*(3*p**3 + 7*p**2 + 10))",
+      "20*p**3/(3*p**3 + 7*p**2 + 10)"
+    ],
+    "leading_Green_minors": {
+      "[0]": "4/3",
+      "[1]": "2",
+      "[0, 1]": "2",
+      "[2]": "5/3",
+      "[0, 2]": "2",
+      "[1, 2]": "2",
+      "[0, 1, 2]": "2"
+    },
+    "all_rates_NA_certified": true,
+    "NA_gap_certificates": [
+      {
+        "certified": true,
+        "numerator": "rate**2*(10497600*rate**16 + 150115680*rate**15 + 989017776*rate**14 + 3991857552*rate**13 + 11067142536*rate**12 + 22390136820*rate**11 + 34265447496*rate**10 + 40561451372*rate**9 + 37638277526*rate**8 + 27557741919*rate**7 + 15925327485*rate**6 + 7216024785*rate**5 + 2523532770*rate**4 + 660913200*rate**3 + 122606100*rate**2 + 14418000*rate + 810000)",
+        "denominator": "486*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(4199040*rate**16 + 56564568*rate**15 + 354541860*rate**14 + 1370544300*rate**13 + 3652086204*rate**12 + 7105366170*rate**11 + 10434797361*rate**10 + 11801680005*rate**9 + 10402045190*rate**8 + 7190680314*rate**7 + 3907953882*rate**6 + 1668235803*rate**5 + 556178580*rate**4 + 142398270*rate**3 + 26785800*rate**2 + 3321000*rate + 202500)",
+        "denominator": "729*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**3*(1341360*rate**13 + 15431472*rate**12 + 81151956*rate**11 + 258255000*rate**10 + 554812344*rate**9 + 849651546*rate**8 + 954306631*rate**7 + 796001517*rate**6 + 493124307*rate**5 + 224149140*rate**4 + 72734490*rate**3 + 15998400*rate**2 + 2151000*rate + 135000)",
+        "denominator": "81*(rate + 1)**2*(2*rate**2 + 4*rate + 1)*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(10497600*rate**16 + 150115680*rate**15 + 989017776*rate**14 + 3991857552*rate**13 + 11067142536*rate**12 + 22390136820*rate**11 + 34265447496*rate**10 + 40561451372*rate**9 + 37638277526*rate**8 + 27557741919*rate**7 + 15925327485*rate**6 + 7216024785*rate**5 + 2523532770*rate**4 + 660913200*rate**3 + 122606100*rate**2 + 14418000*rate + 810000)",
+        "denominator": "486*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(4199040*rate**16 + 56564568*rate**15 + 354541860*rate**14 + 1370544300*rate**13 + 3652086204*rate**12 + 7105366170*rate**11 + 10434797361*rate**10 + 11801680005*rate**9 + 10402045190*rate**8 + 7190680314*rate**7 + 3907953882*rate**6 + 1668235803*rate**5 + 556178580*rate**4 + 142398270*rate**3 + 26785800*rate**2 + 3321000*rate + 202500)",
+        "denominator": "729*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(24494400*rate**15 + 328539888*rate**14 + 2039862528*rate**13 + 7781432832*rate**12 + 20409340716*rate**11 + 39018959712*rate**10 + 56231214264*rate**9 + 62280909704*rate**8 + 53533600563*rate**7 + 35774380737*rate**6 + 18473507367*rate**5 + 7256771010*rate**4 + 2104629480*rate**3 + 426523500*rate**2 + 54108000*rate + 3240000)",
+        "denominator": "1458*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(31166208*rate**15 + 389799216*rate**14 + 2256652872*rate**13 + 8037244872*rate**12 + 19729586952*rate**11 + 35415779448*rate**10 + 48092836502*rate**9 + 50368749458*rate**8 + 41061125988*rate**7 + 26075379129*rate**6 + 12801200865*rate**5 + 4772835720*rate**4 + 1308382650*rate**3 + 248920200*rate**2 + 29376000*rate + 1620000)",
+        "denominator": "486*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**3*(583200*rate**13 + 8606736*rate**12 + 53805600*rate**11 + 195015168*rate**10 + 465395796*rate**9 + 780719056*rate**8 + 954186944*rate**7 + 864929018*rate**6 + 583922161*rate**5 + 290977200*rate**4 + 104348280*rate**3 + 25576800*rate**2 + 3852000*rate + 270000)",
+        "denominator": "54*(rate + 1)**2*(2*rate**2 + 4*rate + 1)*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(10497600*rate**16 + 150115680*rate**15 + 989017776*rate**14 + 3991857552*rate**13 + 11067142536*rate**12 + 22390136820*rate**11 + 34265447496*rate**10 + 40561451372*rate**9 + 37638277526*rate**8 + 27557741919*rate**7 + 15925327485*rate**6 + 7216024785*rate**5 + 2523532770*rate**4 + 660913200*rate**3 + 122606100*rate**2 + 14418000*rate + 810000)",
+        "denominator": "486*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(31166208*rate**15 + 389799216*rate**14 + 2256652872*rate**13 + 8037244872*rate**12 + 19729586952*rate**11 + 35415779448*rate**10 + 48092836502*rate**9 + 50368749458*rate**8 + 41061125988*rate**7 + 26075379129*rate**6 + 12801200865*rate**5 + 4772835720*rate**4 + 1308382650*rate**3 + 248920200*rate**2 + 29376000*rate + 1620000)",
+        "denominator": "486*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(5365440*rate**15 + 95224896*rate**14 + 723775176*rate**13 + 3222466632*rate**12 + 9557395596*rate**11 + 20211413772*rate**10 + 31708364062*rate**9 + 37771300942*rate**8 + 34575719349*rate**7 + 24391958925*rate**6 + 13181510370*rate**5 + 5367133170*rate**4 + 1595572650*rate**3 + 327138300*rate**2 + 41364000*rate + 2430000)",
+        "denominator": "486*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**3*(466560*rate**13 + 7793496*rate**12 + 52178256*rate**11 + 197619264*rate**10 + 486107388*rate**9 + 833022834*rate**8 + 1033021088*rate**7 + 944559978*rate**6 + 639585507*rate**5 + 317727555*rate**4 + 112817880*rate**3 + 27170550*rate**2 + 3987000*rate + 270000)",
+        "denominator": "81*(rate + 1)**2*(2*rate**2 + 4*rate + 1)*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(4199040*rate**16 + 56564568*rate**15 + 354541860*rate**14 + 1370544300*rate**13 + 3652086204*rate**12 + 7105366170*rate**11 + 10434797361*rate**10 + 11801680005*rate**9 + 10402045190*rate**8 + 7190680314*rate**7 + 3907953882*rate**6 + 1668235803*rate**5 + 556178580*rate**4 + 142398270*rate**3 + 26785800*rate**2 + 3321000*rate + 202500)",
+        "denominator": "729*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(31166208*rate**15 + 389799216*rate**14 + 2256652872*rate**13 + 8037244872*rate**12 + 19729586952*rate**11 + 35415779448*rate**10 + 48092836502*rate**9 + 50368749458*rate**8 + 41061125988*rate**7 + 26075379129*rate**6 + 12801200865*rate**5 + 4772835720*rate**4 + 1308382650*rate**3 + 248920200*rate**2 + 29376000*rate + 1620000)",
+        "denominator": "486*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(5598720*rate**15 + 139618080*rate**14 + 1240724952*rate**13 + 6052417848*rate**12 + 19064524824*rate**11 + 42070191588*rate**10 + 68109140970*rate**9 + 83086652882*rate**8 + 77455671132*rate**7 + 55407586149*rate**6 + 30256422657*rate**5 + 12412688040*rate**4 + 3708887130*rate**3 + 762697800*rate**2 + 96552000*rate + 5670000)",
+        "denominator": "1458*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+      }
+    ],
+    "strong_Rayleigh_certificates": {
+      "(0, 1)": {
+        "quadratic": "rate**2*(10497600*rate**16*z2**2 + 138451680*rate**15*z2**2 + 11664000*rate**15*z2 + 834038208*rate**14*z2**2 + 151760304*rate**14*z2 + 3219264*rate**14 + 3043604160*rate**13*z2**2 + 906352416*rate**13*z2 + 41900976*rate**13 + 7519694400*rate**12*z2**2 + 3296091312*rate**12*z2 + 251356824*rate**12 + 13306887360*rate**11*z2**2 + 8160831360*rate**11*z2 + 922418100*rate**11 + 17387538624*rate**10*z2**2 + 14561481264*rate**10*z2 + 2316427608*rate**10 + 17028062640*rate**9*z2**2 + 19317722304*rate**9*z2 + 4215666428*rate**9 + 12540955356*rate**8*z2**2 + 19358591124*rate**8*z2 + 5738731046*rate**8 + 6895966554*rate**7*z2**2 + 14721854904*rate**7*z2 + 5939920461*rate**7 + 2777073372*rate**6*z2**2 + 8448951105*rate**6*z2 + 4699303008*rate**6 + 790237620*rate**5*z2**2 + 3597702390*rate**5*z2 + 2828084775*rate**5 + 149180400*rate**4*z2**2 + 1100210580*rate**4*z2 + 1274141790*rate**4 + 16578000*rate**3*z2**2 + 227850300*rate**3*z2 + 416484900*rate**3 + 810000*rate**2*z2**2 + 28512000*rate**2*z2 + 93284100*rate**2 + 1620000*rate*z2 + 12798000*rate + 810000)/(486*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "rate**4*(291600*rate**12 + 3262680*rate**11 + 16496568*rate**10 + 49920084*rate**9 + 100791948*rate**8 + 143091822*rate**7 + 146407566*rate**6 + 108640697*rate**5 + 57874694*rate**4 + 21484890*rate**3 + 5233800*rate**2 + 741000*rate + 45000)",
+          "denominator": "27*(rate + 1)**2*(2*rate**2 + 4*rate + 1)*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "rate**2*(1656*rate**6 + 9180*rate**5 + 20786*rate**4 + 24978*rate**3 + 16875*rate**2 + 6060*rate + 900)*(1944*rate**7 + 12582*rate**6 + 34278*rate**5 + 51319*rate**4 + 45891*rate**3 + 24570*rate**2 + 7260*rate + 900)",
+          "denominator": "486*(rate + 1)*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+        },
+        "4ac-bb": {
+          "certified": false,
+          "numerator": "-rate**7*(51840*rate**11 + 551448*rate**10 + 2693664*rate**9 + 7952724*rate**8 + 15732256*rate**7 + 21866882*rate**6 + 21780316*rate**5 + 15545311*rate**4 + 7790930*rate**3 + 2609940*rate**2 + 525300*rate + 48000)*(933120*rate**14 - 13961808*rate**13 - 240649056*rate**12 - 1456316928*rate**11 - 5084222256*rate**10 - 11821937352*rate**9 - 19551010720*rate**8 - 23777284992*rate**7 - 21585479004*rate**6 - 14645694081*rate**5 - 7338092310*rate**4 - 2638246140*rate**3 - 643913100*rate**2 - 95472000*rate - 6480000)",
+          "denominator": "26244*(rate + 1)**4*(2*rate**2 + 4*rate + 1)**3*(3*rate**2 + 3*rate + 1)**4*(6*rate**2 + 12*rate + 5)**4*(20*rate**3 + 37*rate**2 + 30*rate + 10)**4"
+        }
+      },
+      "(0, 2)": {
+        "quadratic": "rate**2*(16796160*rate**16*z1**2 + 212261472*rate**15*z1**2 + 13996800*rate**15*z1 + 1238483520*rate**14*z1**2 + 176884560*rate**14*z1 + 2799360*rate**14 + 4411511424*rate**13*z1**2 + 1032069600*rate**13*z1 + 38596176*rate**13 + 10686989664*rate**12*z1**2 + 3676259520*rate**12*z1 + 245095632*rate**12 + 18567712944*rate**11*z1**2 + 8905824720*rate**11*z1 + 947927016*rate**11 + 23775187392*rate**10*z1**2 + 15473094120*rate**10*z1 + 2490907932*rate**10 + 22692760416*rate**9*z1**2 + 19812656160*rate**9*z1 + 4701303444*rate**9 + 16126034040*rate**8*z1**2 + 18910633680*rate**8*z1 + 6571513040*rate**8 + 8412483582*rate**7*z1**2 + 13438361700*rate**7*z1 + 6911875974*rate**7 + 3123568980*rate**6*z1**2 + 7010402985*rate**6*z1 + 5497843563*rate**6 + 778756680*rate**5*z1**2 + 2602974150*rate**5*z1 + 3291212382*rate**5 + 116202600*rate**4*z1**2 + 648963900*rate**4*z1 + 1459547820*rate**4 + 7776000*rate**3*z1**2 + 96835500*rate**3*z1 + 464981580*rate**3 + 6480000*rate**2*z1 + 100663200*rate**2 + 13284000*rate + 810000)/(1458*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "rate**5*(51840*rate**11 + 551448*rate**10 + 2693664*rate**9 + 7952724*rate**8 + 15732256*rate**7 + 21866882*rate**6 + 21780316*rate**5 + 15545311*rate**4 + 7790930*rate**3 + 2609940*rate**2 + 525300*rate + 48000)",
+          "denominator": "9*(rate + 1)**2*(2*rate**2 + 4*rate + 1)*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "rate**2*(2799360*rate**14 + 38596176*rate**13 + 245095632*rate**12 + 947927016*rate**11 + 2490907932*rate**10 + 4701303444*rate**9 + 6571513040*rate**8 + 6911875974*rate**7 + 5497843563*rate**6 + 3291212382*rate**5 + 1459547820*rate**4 + 464981580*rate**3 + 100663200*rate**2 + 13284000*rate + 810000)",
+          "denominator": "1458*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+        },
+        "4ac-bb": {
+          "certified": false,
+          "numerator": "-rate**7*(51840*rate**11 + 551448*rate**10 + 2693664*rate**9 + 7952724*rate**8 + 15732256*rate**7 + 21866882*rate**6 + 21780316*rate**5 + 15545311*rate**4 + 7790930*rate**3 + 2609940*rate**2 + 525300*rate + 48000)*(933120*rate**14 - 13961808*rate**13 - 240649056*rate**12 - 1456316928*rate**11 - 5084222256*rate**10 - 11821937352*rate**9 - 19551010720*rate**8 - 23777284992*rate**7 - 21585479004*rate**6 - 14645694081*rate**5 - 7338092310*rate**4 - 2638246140*rate**3 - 643913100*rate**2 - 95472000*rate - 6480000)",
+          "denominator": "26244*(rate + 1)**4*(2*rate**2 + 4*rate + 1)**3*(3*rate**2 + 3*rate + 1)**4*(6*rate**2 + 12*rate + 5)**4*(20*rate**3 + 37*rate**2 + 30*rate + 10)**4"
+        }
+      },
+      "(1, 2)": {
+        "quadratic": "rate**2*(32099328*rate**15*z0**2 - 933120*rate**15*z0 + 357081696*rate**14*z0**2 + 33184080*rate**14*z0 - 466560*rate**14 + 1809195264*rate**13*z0**2 + 437519232*rate**13*z0 + 9938376*rate**13 + 5537179008*rate**12*z0**2 + 2354003424*rate**12*z0 + 146062440*rate**12 + 11436926112*rate**11*z0**2 + 7476198048*rate**11*z0 + 816462792*rate**11 + 16849829520*rate**10*z0**2 + 15903408792*rate**10*z0 + 2662541136*rate**10 + 18223087392*rate**9*z0**2 + 24071825256*rate**9*z0 + 5797923854*rate**9 + 14643068544*rate**8*z0**2 + 26744813160*rate**8*z0 + 8980867754*rate**8 + 8731993608*rate**7*z0**2 + 22108521888*rate**7*z0 + 10220610492*rate**7 + 3808076310*rate**6*z0**2 + 13598244909*rate**6*z0 + 8669057910*rate**6 + 1176361920*rate**5*z0**2 + 6140529090*rate**5*z0 + 5484309855*rate**5 + 242508600*rate**4*z0**2 + 1974882060*rate**4*z0 + 2555445060*rate**4 + 29700000*rate**3*z0**2 + 427040100*rate**3*z0 + 851642550*rate**3 + 1620000*rate**2*z0**2 + 55404000*rate**2*z0 + 191896200*rate**2 + 3240000*rate*z0 + 26136000*rate + 1620000)/(486*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "rate**4*(891648*rate**11 + 8135640*rate**10 + 33538320*rate**9 + 82666068*rate**8 + 135591096*rate**7 + 155535594*rate**6 + 127330136*rate**5 + 74323835*rate**4 + 30242640*rate**3 + 8132700*rate**2 + 1290000*rate + 90000)",
+          "denominator": "27*(rate + 1)**2*(2*rate**2 + 4*rate + 1)*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+        },
+        "c": {
+          "certified": false,
+          "numerator": "-rate**2*(466560*rate**14 - 9938376*rate**13 - 146062440*rate**12 - 816462792*rate**11 - 2662541136*rate**10 - 5797923854*rate**9 - 8980867754*rate**8 - 10220610492*rate**7 - 8669057910*rate**6 - 5484309855*rate**5 - 2555445060*rate**4 - 851642550*rate**3 - 191896200*rate**2 - 26136000*rate - 1620000)",
+          "denominator": "486*(rate + 1)**2*(2*rate**2 + 4*rate + 1)**2*(3*rate**2 + 3*rate + 1)**2*(6*rate**2 + 12*rate + 5)**2*(20*rate**3 + 37*rate**2 + 30*rate + 10)**2"
+        },
+        "4ac-bb": {
+          "certified": false,
+          "numerator": "-rate**7*(51840*rate**11 + 551448*rate**10 + 2693664*rate**9 + 7952724*rate**8 + 15732256*rate**7 + 21866882*rate**6 + 21780316*rate**5 + 15545311*rate**4 + 7790930*rate**3 + 2609940*rate**2 + 525300*rate + 48000)*(933120*rate**14 - 13961808*rate**13 - 240649056*rate**12 - 1456316928*rate**11 - 5084222256*rate**10 - 11821937352*rate**9 - 19551010720*rate**8 - 23777284992*rate**7 - 21585479004*rate**6 - 14645694081*rate**5 - 7338092310*rate**4 - 2638246140*rate**3 - 643913100*rate**2 - 95472000*rate - 6480000)",
+          "denominator": "26244*(rate + 1)**4*(2*rate**2 + 4*rate + 1)**3*(3*rate**2 + 3*rate + 1)**4*(6*rate**2 + 12*rate + 5)**4*(20*rate**3 + 37*rate**2 + 30*rate + 10)**4"
+        }
+      }
+    },
+    "all_rates_strong_Rayleigh_certified": false
+  },
+  "path3_sink_all": {
+    "law_in_p": [
+      "-(p - 1)**3*(17*p**5 - 87*p**4 + 74*p**3 - 180*p**2 + 480*p + 800)/(4*(p**2 - 2*p - 2)*(p**3 + 4*p**2 + 10)*(p**3 - 3*p**2 - 6*p - 10))",
+      "p*(p - 1)**2*(31*p**5 - 146*p**4 + 97*p**3 - 236*p**2 + 820*p + 1000)/(4*(p**2 - 2*p - 2)*(p**3 + 4*p**2 + 10)*(p**3 - 3*p**2 - 6*p - 10))",
+      "3*p*(p - 1)**2*(5*p**5 - 36*p**4 + 13*p**3 - 50*p**2 + 340*p + 400)/(4*(p**2 - 2*p - 2)*(p**3 + 4*p**2 + 10)*(p**3 - 3*p**2 - 6*p - 10))",
+      "-3*p**2*(p - 1)*(5*p**3 - 19*p**2 - 30*p - 100)/(2*(p**3 + 4*p**2 + 10)*(p**3 - 3*p**2 - 6*p - 10))",
+      "p*(p - 1)**2*(31*p**5 - 146*p**4 + 97*p**3 - 236*p**2 + 820*p + 1000)/(4*(p**2 - 2*p - 2)*(p**3 + 4*p**2 + 10)*(p**3 - 3*p**2 - 6*p - 10))",
+      "-2*p**2*(p - 1)*(7*p**3 - 17*p**2 - 5*p - 75)/((p**3 + 4*p**2 + 10)*(p**3 - 3*p**2 - 6*p - 10))",
+      "-3*p**2*(p - 1)*(5*p**3 - 19*p**2 - 30*p - 100)/(2*(p**3 + 4*p**2 + 10)*(p**3 - 3*p**2 - 6*p - 10))",
+      "15*p**3/(p**3 + 4*p**2 + 10)"
+    ],
+    "leading_Green_minors": {
+      "[0]": "5/4",
+      "[1]": "3/2",
+      "[0, 1]": "3/2",
+      "[2]": "5/4",
+      "[0, 2]": "3/2",
+      "[1, 2]": "3/2",
+      "[0, 1, 2]": "3/2"
+    },
+    "all_rates_NA_certified": true,
+    "NA_gap_certificates": [
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(174960*rate**12 + 2021112*rate**11 + 10584432*rate**10 + 33286392*rate**9 + 70141896*rate**8 + 104532004*rate**7 + 113183103*rate**6 + 89876818*rate**5 + 52040400*rate**4 + 21464480*rate**3 + 5996000*rate**2 + 1020000*rate + 80000)",
+        "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(186624*rate**12 + 1928448*rate**11 + 9012384*rate**10 + 25190568*rate**9 + 46941192*rate**8 + 61582824*rate**7 + 58629601*rate**6 + 41223128*rate**5 + 21603976*rate**4 + 8425200*rate**3 + 2376400*rate**2 + 440000*rate + 40000)",
+        "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**3*(39528*rate**9 + 338148*rate**8 + 1273752*rate**7 + 2776518*rate**6 + 3864707*rate**5 + 3566506*rate**4 + 2184400*rate**3 + 857200*rate**2 + 196000*rate + 20000)",
+        "denominator": "8*(3*rate**2 + 6*rate + 2)*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(174960*rate**12 + 2021112*rate**11 + 10584432*rate**10 + 33286392*rate**9 + 70141896*rate**8 + 104532004*rate**7 + 113183103*rate**6 + 89876818*rate**5 + 52040400*rate**4 + 21464480*rate**3 + 5996000*rate**2 + 1020000*rate + 80000)",
+        "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(186624*rate**12 + 1928448*rate**11 + 9012384*rate**10 + 25190568*rate**9 + 46941192*rate**8 + 61582824*rate**7 + 58629601*rate**6 + 41223128*rate**5 + 21603976*rate**4 + 8425200*rate**3 + 2376400*rate**2 + 440000*rate + 40000)",
+        "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(241056*rate**11 + 2595240*rate**10 + 12579786*rate**9 + 36281241*rate**8 + 69267030*rate**7 + 92044505*rate**6 + 86993755*rate**5 + 58562588*rate**4 + 27558120*rate**3 + 8646200*rate**2 + 1630000*rate + 140000)",
+        "denominator": "8*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(174960*rate**12 + 2021112*rate**11 + 10584432*rate**10 + 33286392*rate**9 + 70141896*rate**8 + 104532004*rate**7 + 113183103*rate**6 + 89876818*rate**5 + 52040400*rate**4 + 21464480*rate**3 + 5996000*rate**2 + 1020000*rate + 80000)",
+        "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**3*(29160*rate**9 + 256932*rate**8 + 994554*rate**7 + 2226717*rate**6 + 3186830*rate**5 + 3031090*rate**4 + 1920310*rate**3 + 783100*rate**2 + 187000*rate + 20000)",
+        "denominator": "4*(3*rate**2 + 6*rate + 2)*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(174960*rate**12 + 2021112*rate**11 + 10584432*rate**10 + 33286392*rate**9 + 70141896*rate**8 + 104532004*rate**7 + 113183103*rate**6 + 89876818*rate**5 + 52040400*rate**4 + 21464480*rate**3 + 5996000*rate**2 + 1020000*rate + 80000)",
+        "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(174960*rate**12 + 2021112*rate**11 + 10584432*rate**10 + 33286392*rate**9 + 70141896*rate**8 + 104532004*rate**7 + 113183103*rate**6 + 89876818*rate**5 + 52040400*rate**4 + 21464480*rate**3 + 5996000*rate**2 + 1020000*rate + 80000)",
+        "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(129600*rate**11 + 1417284*rate**10 + 6963714*rate**9 + 20322096*rate**8 + 39196636*rate**7 + 52540843*rate**6 + 50010138*rate**5 + 33839960*rate**4 + 15968080*rate**3 + 5008000*rate**2 + 940000*rate + 80000)",
+        "denominator": "8*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**3*(39528*rate**9 + 338148*rate**8 + 1273752*rate**7 + 2776518*rate**6 + 3864707*rate**5 + 3566506*rate**4 + 2184400*rate**3 + 857200*rate**2 + 196000*rate + 20000)",
+        "denominator": "8*(3*rate**2 + 6*rate + 2)*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(186624*rate**12 + 1928448*rate**11 + 9012384*rate**10 + 25190568*rate**9 + 46941192*rate**8 + 61582824*rate**7 + 58629601*rate**6 + 41223128*rate**5 + 21603976*rate**4 + 8425200*rate**3 + 2376400*rate**2 + 440000*rate + 40000)",
+        "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(174960*rate**12 + 2021112*rate**11 + 10584432*rate**10 + 33286392*rate**9 + 70141896*rate**8 + 104532004*rate**7 + 113183103*rate**6 + 89876818*rate**5 + 52040400*rate**4 + 21464480*rate**3 + 5996000*rate**2 + 1020000*rate + 80000)",
+        "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "rate**2*(241056*rate**11 + 2595240*rate**10 + 12579786*rate**9 + 36281241*rate**8 + 69267030*rate**7 + 92044505*rate**6 + 86993755*rate**5 + 58562588*rate**4 + 27558120*rate**3 + 8646200*rate**2 + 1630000*rate + 140000)",
+        "denominator": "8*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+      }
+    ],
+    "strong_Rayleigh_certificates": {
+      "(0, 1)": {
+        "quadratic": "3*rate**2*(174960*rate**12*z2**2 + 1761912*rate**11*z2**2 + 259200*rate**11*z2 + 7848360*rate**10*z2**2 + 2637576*rate**10*z2 + 98496*rate**10 + 20371572*rate**9*z2**2 + 11902212*rate**9*z2 + 1012608*rate**9 + 34126056*rate**8*z2**2 + 31387488*rate**8*z2 + 4628352*rate**8 + 38536464*rate**7*z2**2 + 53597808*rate**7*z2 + 12397732*rate**7 + 29673072*rate**6*z2**2 + 61938376*rate**6*z2 + 21571655*rate**6 + 15347760*rate**5*z2**2 + 49037840*rate**5*z2 + 25491218*rate**5 + 5083200*rate**4*z2**2 + 26234480*rate**4*z2 + 20722720*rate**4 + 968000*rate**3*z2**2 + 9056800*rate**3*z2 + 11439680*rate**3 + 80000*rate**2*z2**2 + 1816000*rate**2*z2 + 4100000*rate**2 + 160000*rate*z2 + 860000*rate + 80000)/(16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "3*rate**4*(14580*rate**8 + 117666*rate**7 + 408978*rate**6 + 801231*rate**5 + 968724*rate**4 + 739770*rate**3 + 347400*rate**2 + 91000*rate + 10000)",
+          "denominator": "4*(3*rate**2 + 6*rate + 2)*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "3*rate**2*(98496*rate**10 + 1012608*rate**9 + 4628352*rate**8 + 12397732*rate**7 + 21571655*rate**6 + 25491218*rate**5 + 20722720*rate**4 + 11439680*rate**3 + 4100000*rate**2 + 860000*rate + 80000)",
+          "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "9*rate**7*(rate + 1)*(3*rate + 4)*(24*rate**3 + 73*rate**2 + 76*rate + 30)*(72*rate**3 + 237*rate**2 + 270*rate + 100)*(78*rate**4 + 335*rate**3 + 534*rate**2 + 380*rate + 100)*(90*rate**5 + 483*rate**4 + 1001*rate**3 + 1015*rate**2 + 510*rate + 100)",
+          "denominator": "16*(3*rate**2 + 6*rate + 2)**3*(15*rate**3 + 34*rate**2 + 30*rate + 10)**4*(18*rate**3 + 45*rate**2 + 36*rate + 10)**4"
+        }
+      },
+      "(0, 2)": {
+        "quadratic": "rate**2*(186624*rate**12*z1**2 + 1741824*rate**11*z1**2 + 186624*rate**11*z1 + 7202844*rate**10*z1**2 + 1741824*rate**10*z1 + 67716*rate**10 + 17320716*rate**9*z1**2 + 7202844*rate**9*z1 + 667008*rate**9 + 26684640*rate**8*z1**2 + 17320716*rate**8*z1 + 2935836*rate**8 + 27296352*rate**7*z1**2 + 26684640*rate**7*z1 + 7601832*rate**7 + 18514944*rate**6*z1**2 + 27296352*rate**6*z1 + 12818305*rate**6 + 8008560*rate**5*z1**2 + 18514944*rate**5*z1 + 14699624*rate**5 + 1994400*rate**4*z1**2 + 8008560*rate**4*z1 + 11601016*rate**4 + 216000*rate**3*z1**2 + 1994400*rate**3*z1 + 6214800*rate**3 + 216000*rate**2*z1 + 2160400*rate**2 + 440000*rate + 40000)/(16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "9*rate**5*(rate + 1)*(24*rate**3 + 73*rate**2 + 76*rate + 30)*(72*rate**3 + 237*rate**2 + 270*rate + 100)",
+          "denominator": "4*(3*rate**2 + 6*rate + 2)*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "rate**2*(67716*rate**10 + 667008*rate**9 + 2935836*rate**8 + 7601832*rate**7 + 12818305*rate**6 + 14699624*rate**5 + 11601016*rate**4 + 6214800*rate**3 + 2160400*rate**2 + 440000*rate + 40000)",
+          "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "9*rate**7*(rate + 1)*(3*rate + 4)*(24*rate**3 + 73*rate**2 + 76*rate + 30)*(72*rate**3 + 237*rate**2 + 270*rate + 100)*(78*rate**4 + 335*rate**3 + 534*rate**2 + 380*rate + 100)*(90*rate**5 + 483*rate**4 + 1001*rate**3 + 1015*rate**2 + 510*rate + 100)",
+          "denominator": "16*(3*rate**2 + 6*rate + 2)**3*(15*rate**3 + 34*rate**2 + 30*rate + 10)**4*(18*rate**3 + 45*rate**2 + 36*rate + 10)**4"
+        }
+      },
+      "(1, 2)": {
+        "quadratic": "3*rate**2*(174960*rate**12*z0**2 + 1761912*rate**11*z0**2 + 259200*rate**11*z0 + 7848360*rate**10*z0**2 + 2637576*rate**10*z0 + 98496*rate**10 + 20371572*rate**9*z0**2 + 11902212*rate**9*z0 + 1012608*rate**9 + 34126056*rate**8*z0**2 + 31387488*rate**8*z0 + 4628352*rate**8 + 38536464*rate**7*z0**2 + 53597808*rate**7*z0 + 12397732*rate**7 + 29673072*rate**6*z0**2 + 61938376*rate**6*z0 + 21571655*rate**6 + 15347760*rate**5*z0**2 + 49037840*rate**5*z0 + 25491218*rate**5 + 5083200*rate**4*z0**2 + 26234480*rate**4*z0 + 20722720*rate**4 + 968000*rate**3*z0**2 + 9056800*rate**3*z0 + 11439680*rate**3 + 80000*rate**2*z0**2 + 1816000*rate**2*z0 + 4100000*rate**2 + 160000*rate*z0 + 860000*rate + 80000)/(16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "3*rate**4*(14580*rate**8 + 117666*rate**7 + 408978*rate**6 + 801231*rate**5 + 968724*rate**4 + 739770*rate**3 + 347400*rate**2 + 91000*rate + 10000)",
+          "denominator": "4*(3*rate**2 + 6*rate + 2)*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "3*rate**2*(98496*rate**10 + 1012608*rate**9 + 4628352*rate**8 + 12397732*rate**7 + 21571655*rate**6 + 25491218*rate**5 + 20722720*rate**4 + 11439680*rate**3 + 4100000*rate**2 + 860000*rate + 80000)",
+          "denominator": "16*(3*rate**2 + 6*rate + 2)**2*(15*rate**3 + 34*rate**2 + 30*rate + 10)**2*(18*rate**3 + 45*rate**2 + 36*rate + 10)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "9*rate**7*(rate + 1)*(3*rate + 4)*(24*rate**3 + 73*rate**2 + 76*rate + 30)*(72*rate**3 + 237*rate**2 + 270*rate + 100)*(78*rate**4 + 335*rate**3 + 534*rate**2 + 380*rate + 100)*(90*rate**5 + 483*rate**4 + 1001*rate**3 + 1015*rate**2 + 510*rate + 100)",
+          "denominator": "16*(3*rate**2 + 6*rate + 2)**3*(15*rate**3 + 34*rate**2 + 30*rate + 10)**4*(18*rate**3 + 45*rate**2 + 36*rate + 10)**4"
+        }
+      }
+    },
+    "all_rates_strong_Rayleigh_certified": true
+  },
+  "triangle3_sink_one": {
+    "law_in_p": [
+      "(p - 1)**3*(p + 1)*(18*p**5 - 29*p**4 - 88*p**3 - 90*p**2 - 210*p - 225)/(3*(2*p**2 - 7*p - 1)*(34*p**3 + 11*p**2 + 15)*(3*p**4 - 38*p**2 - 8*p - 5))",
+      "-p*(p - 1)**2*(p + 1)*(18*p**5 - 29*p**4 - 88*p**3 - 90*p**2 - 210*p - 225)/((2*p**2 - 7*p - 1)*(34*p**3 + 11*p**2 + 15)*(3*p**4 - 38*p**2 - 8*p - 5))",
+      "-2*p*(p - 1)**2*(18*p**6 + p**5 - 31*p**4 - 526*p**3 - 524*p**2 - 1155*p - 375)/(3*(2*p**2 - 7*p - 1)*(34*p**3 + 11*p**2 + 15)*(3*p**4 - 38*p**2 - 8*p - 5))",
+      "4*p**2*(p - 1)*(p**2 + 3)*(9*p**2 + 20*p + 25)/((34*p**3 + 11*p**2 + 15)*(3*p**4 - 38*p**2 - 8*p - 5))",
+      "-2*p*(p - 1)**2*(18*p**6 + p**5 - 31*p**4 - 526*p**3 - 524*p**2 - 1155*p - 375)/(3*(2*p**2 - 7*p - 1)*(34*p**3 + 11*p**2 + 15)*(3*p**4 - 38*p**2 - 8*p - 5))",
+      "4*p**2*(p - 1)*(p**2 + 3)*(9*p**2 + 20*p + 25)/((34*p**3 + 11*p**2 + 15)*(3*p**4 - 38*p**2 - 8*p - 5))",
+      "-4*p**2*(p - 1)*(33*p**4 + 40*p**3 - 158*p**2 - 80*p - 75)/((34*p**3 + 11*p**2 + 15)*(3*p**4 - 38*p**2 - 8*p - 5))",
+      "60*p**3/(34*p**3 + 11*p**2 + 15)"
+    ],
+    "leading_Green_minors": {
+      "[0]": "3",
+      "[1]": "10/3",
+      "[0, 1]": "4",
+      "[2]": "10/3",
+      "[0, 2]": "4",
+      "[1, 2]": "4",
+      "[0, 1, 2]": "4"
+    },
+    "all_rates_NA_certified": true,
+    "NA_gap_certificates": [
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(29528064*rate**13 + 230473728*rate**12 + 811252224*rate**11 + 1707635712*rate**10 + 2400781952*rate**9 + 2384551808*rate**8 + 1728339808*rate**7 + 934097632*rate**6 + 383717040*rate**5 + 122401740*rate**4 + 30745350*rate**3 + 5904225*rate**2 + 769500*rate + 50625)",
+        "denominator": "3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(29528064*rate**13 + 230473728*rate**12 + 811252224*rate**11 + 1707635712*rate**10 + 2400781952*rate**9 + 2384551808*rate**8 + 1728339808*rate**7 + 934097632*rate**6 + 383717040*rate**5 + 122401740*rate**4 + 30745350*rate**3 + 5904225*rate**2 + 769500*rate + 50625)",
+        "denominator": "3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "8*rate**3*(820224*rate**10 + 5036928*rate**9 + 13782336*rate**8 + 22147520*rate**7 + 23101840*rate**6 + 16308416*rate**5 + 7876080*rate**4 + 2572890*rate**3 + 553350*rate**2 + 75375*rate + 5625)",
+        "denominator": "(6*rate**2 + 9*rate + 1)*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(29528064*rate**13 + 230473728*rate**12 + 811252224*rate**11 + 1707635712*rate**10 + 2400781952*rate**9 + 2384551808*rate**8 + 1728339808*rate**7 + 934097632*rate**6 + 383717040*rate**5 + 122401740*rate**4 + 30745350*rate**3 + 5904225*rate**2 + 769500*rate + 50625)",
+        "denominator": "3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(29528064*rate**13 + 230473728*rate**12 + 811252224*rate**11 + 1707635712*rate**10 + 2400781952*rate**9 + 2384551808*rate**8 + 1728339808*rate**7 + 934097632*rate**6 + 383717040*rate**5 + 122401740*rate**4 + 30745350*rate**3 + 5904225*rate**2 + 769500*rate + 50625)",
+        "denominator": "3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**2*(2*rate + 1)*(624*rate**5 + 2440*rate**4 + 3868*rate**3 + 3180*rate**2 + 1335*rate + 225)*(3888*rate**6 + 13440*rate**5 + 17884*rate**4 + 12412*rate**3 + 5250*rate**2 + 1485*rate + 225)",
+        "denominator": "3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**2*(11943936*rate**14 + 119439360*rate**13 + 561447936*rate**12 + 1625757696*rate**11 + 3208868352*rate**10 + 4538190720*rate**9 + 4726757440*rate**8 + 3679953216*rate**7 + 2156068804*rate**6 + 951843300*rate**5 + 315494341*rate**4 + 77578050*rate**3 + 13677225*rate**2 + 1575000*rate + 90000)",
+        "denominator": "9*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**3*(663552*rate**11 + 7879680*rate**10 + 36059904*rate**9 + 90559488*rate**8 + 143057792*rate**7 + 151500896*rate**6 + 110554240*rate**5 + 55761256*rate**4 + 19097850*rate**3 + 4270875*rate**2 + 580500*rate + 39375)",
+        "denominator": "3*(6*rate**2 + 9*rate + 1)*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(29528064*rate**13 + 230473728*rate**12 + 811252224*rate**11 + 1707635712*rate**10 + 2400781952*rate**9 + 2384551808*rate**8 + 1728339808*rate**7 + 934097632*rate**6 + 383717040*rate**5 + 122401740*rate**4 + 30745350*rate**3 + 5904225*rate**2 + 769500*rate + 50625)",
+        "denominator": "3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**2*(11943936*rate**14 + 119439360*rate**13 + 561447936*rate**12 + 1625757696*rate**11 + 3208868352*rate**10 + 4538190720*rate**9 + 4726757440*rate**8 + 3679953216*rate**7 + 2156068804*rate**6 + 951843300*rate**5 + 315494341*rate**4 + 77578050*rate**3 + 13677225*rate**2 + 1575000*rate + 90000)",
+        "denominator": "9*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(7962624*rate**13 + 86676480*rate**12 + 430617600*rate**11 + 1283991552*rate**10 + 2556217344*rate**9 + 3587822528*rate**8 + 3658586304*rate**7 + 2752474640*rate**6 + 1535234784*rate**5 + 632081552*rate**4 + 189002400*rate**3 + 39457875*rate**2 + 5222250*rate + 331875)",
+        "denominator": "9*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**3*(663552*rate**11 + 7879680*rate**10 + 36059904*rate**9 + 90559488*rate**8 + 143057792*rate**7 + 151500896*rate**6 + 110554240*rate**5 + 55761256*rate**4 + 19097850*rate**3 + 4270875*rate**2 + 580500*rate + 39375)",
+        "denominator": "3*(6*rate**2 + 9*rate + 1)*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(29528064*rate**13 + 230473728*rate**12 + 811252224*rate**11 + 1707635712*rate**10 + 2400781952*rate**9 + 2384551808*rate**8 + 1728339808*rate**7 + 934097632*rate**6 + 383717040*rate**5 + 122401740*rate**4 + 30745350*rate**3 + 5904225*rate**2 + 769500*rate + 50625)",
+        "denominator": "3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "4*rate**2*(11943936*rate**14 + 119439360*rate**13 + 561447936*rate**12 + 1625757696*rate**11 + 3208868352*rate**10 + 4538190720*rate**9 + 4726757440*rate**8 + 3679953216*rate**7 + 2156068804*rate**6 + 951843300*rate**5 + 315494341*rate**4 + 77578050*rate**3 + 13677225*rate**2 + 1575000*rate + 90000)",
+        "denominator": "9*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "2*rate**2*(7962624*rate**13 + 86676480*rate**12 + 430617600*rate**11 + 1283991552*rate**10 + 2556217344*rate**9 + 3587822528*rate**8 + 3658586304*rate**7 + 2752474640*rate**6 + 1535234784*rate**5 + 632081552*rate**4 + 189002400*rate**3 + 39457875*rate**2 + 5222250*rate + 331875)",
+        "denominator": "9*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+      }
+    ],
+    "strong_Rayleigh_certificates": {
+      "(0, 1)": {
+        "quadratic": "2*rate**2*(29528064*rate**13*z2**2 + 220769280*rate**12*z2**2 + 9704448*rate**12*z2 + 735685632*rate**11*z2**2 + 74787840*rate**11*z2 + 778752*rate**11 + 1442400768*rate**10*z2**2 + 258755328*rate**10*z2 + 6479616*rate**10 + 1844477568*rate**9*z2**2 + 531697536*rate**9*z2 + 24606848*rate**9 + 1606892928*rate**8*z2**2 + 721189056*rate**8*z2 + 56469824*rate**8 + 964405248*rate**7*z2**2 + 676798272*rate**7*z2 + 87136288*rate**7 + 392406144*rate**6*z2**2 + 446753424*rate**6*z2 + 94938064*rate**6 + 102981240*rate**5*z2**2 + 206263800*rate**5*z2 + 74472000*rate**5 + 15662100*rate**4*z2**2 + 64739280*rate**4*z2 + 42000360*rate**4 + 1098000*rate**3*z2**2 + 12989700*rate**3*z2 + 16657650*rate**3 + 22500*rate**2*z2**2 + 1467000*rate**2*z2 + 4414725*rate**2 + 67500*rate*z2 + 702000*rate + 50625)/(3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "8*rate**4*(410112*rate**9 + 2451072*rate**8 + 6472896*rate**7 + 9915488*rate**6 + 9665696*rate**5 + 6166832*rate**4 + 2533320*rate**3 + 622300*rate**2 + 74625*rate + 1875)",
+          "denominator": "(6*rate**2 + 9*rate + 1)*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "2*rate**2*(2*rate + 1)*(624*rate**5 + 2440*rate**4 + 3868*rate**3 + 3180*rate**2 + 1335*rate + 225)**2",
+          "denominator": "3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+        },
+        "4ac-bb": {
+          "certified": false,
+          "numerator": "-256*rate**7*(2*rate + 1)*(12*rate**4 - 164*rate**3 - 483*rate**2 - 395*rate - 100)*(204*rate**4 + 648*rate**3 + 757*rate**2 + 412*rate + 90)*(624*rate**5 + 2440*rate**4 + 3868*rate**3 + 3180*rate**2 + 1335*rate + 225)**2",
+          "denominator": "3*(6*rate**2 + 9*rate + 1)**3*(60*rate**3 + 56*rate**2 + 45*rate + 15)**4*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**4"
+        }
+      },
+      "(0, 2)": {
+        "quadratic": "2*rate**2*(29528064*rate**13*z1**2 + 220769280*rate**12*z1**2 + 9704448*rate**12*z1 + 735685632*rate**11*z1**2 + 74787840*rate**11*z1 + 778752*rate**11 + 1442400768*rate**10*z1**2 + 258755328*rate**10*z1 + 6479616*rate**10 + 1844477568*rate**9*z1**2 + 531697536*rate**9*z1 + 24606848*rate**9 + 1606892928*rate**8*z1**2 + 721189056*rate**8*z1 + 56469824*rate**8 + 964405248*rate**7*z1**2 + 676798272*rate**7*z1 + 87136288*rate**7 + 392406144*rate**6*z1**2 + 446753424*rate**6*z1 + 94938064*rate**6 + 102981240*rate**5*z1**2 + 206263800*rate**5*z1 + 74472000*rate**5 + 15662100*rate**4*z1**2 + 64739280*rate**4*z1 + 42000360*rate**4 + 1098000*rate**3*z1**2 + 12989700*rate**3*z1 + 16657650*rate**3 + 22500*rate**2*z1**2 + 1467000*rate**2*z1 + 4414725*rate**2 + 67500*rate*z1 + 702000*rate + 50625)/(3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "8*rate**4*(410112*rate**9 + 2451072*rate**8 + 6472896*rate**7 + 9915488*rate**6 + 9665696*rate**5 + 6166832*rate**4 + 2533320*rate**3 + 622300*rate**2 + 74625*rate + 1875)",
+          "denominator": "(6*rate**2 + 9*rate + 1)*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "2*rate**2*(2*rate + 1)*(624*rate**5 + 2440*rate**4 + 3868*rate**3 + 3180*rate**2 + 1335*rate + 225)**2",
+          "denominator": "3*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+        },
+        "4ac-bb": {
+          "certified": false,
+          "numerator": "-256*rate**7*(2*rate + 1)*(12*rate**4 - 164*rate**3 - 483*rate**2 - 395*rate - 100)*(204*rate**4 + 648*rate**3 + 757*rate**2 + 412*rate + 90)*(624*rate**5 + 2440*rate**4 + 3868*rate**3 + 3180*rate**2 + 1335*rate + 225)**2",
+          "denominator": "3*(6*rate**2 + 9*rate + 1)**3*(60*rate**3 + 56*rate**2 + 45*rate + 15)**4*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**4"
+        }
+      },
+      "(1, 2)": {
+        "quadratic": "4*rate**2*(11943936*rate**14*z0**2 + 111476736*rate**13*z0**2 + 7962624*rate**13*z0 + 490655232*rate**12*z0**2 + 69465600*rate**12*z0 + 1327104*rate**12 + 1320427008*rate**11*z0**2 + 294561792*rate**11*z0 + 10768896*rate**11 + 2376508032*rate**10*z0**2 + 788300928*rate**10*z0 + 44059392*rate**10 + 2972438208*rate**9*z0**2 + 1446654528*rate**9*z0 + 119097984*rate**9 + 2619070560*rate**8*z0**2 + 1878744288*rate**8*z0 + 228942592*rate**8 + 1616794848*rate**7*z0**2 + 1744336704*rate**7*z0 + 318821664*rate**7 + 681122124*rate**6*z0**2 + 1152363048*rate**6*z0 + 322583632*rate**6 + 185293440*rate**5*z0**2 + 530676636*rate**5*z0 + 235873224*rate**5 + 29272725*rate**4*z0**2 + 163471680*rate**4*z0 + 122749936*rate**4 + 2166750*rate**3*z0**2 + 31277700*rate**3*z0 + 44133600*rate**3 + 50625*rate**2*z0**2 + 3240000*rate**2*z0 + 10386600*rate**2 + 135000*rate*z0 + 1440000*rate + 90000)/(9*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "4*rate**4*(221184*rate**10 + 1732608*rate**9 + 6450432*rate**8 + 14487936*rate**7 + 21202432*rate**6 + 20826848*rate**5 + 13727296*rate**4 + 5878560*rate**3 + 1507650*rate**2 + 190125*rate + 5625)",
+          "denominator": "(6*rate**2 + 9*rate + 1)*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "32*rate**2*(165888*rate**12 + 1346112*rate**11 + 5507424*rate**10 + 14887248*rate**9 + 28617824*rate**8 + 39852708*rate**7 + 40322954*rate**6 + 29484153*rate**5 + 15343742*rate**4 + 5516700*rate**3 + 1298325*rate**2 + 180000*rate + 11250)",
+          "denominator": "9*(6*rate**2 + 9*rate + 1)**2*(60*rate**3 + 56*rate**2 + 45*rate + 15)**2*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**2"
+        },
+        "4ac-bb": {
+          "certified": false,
+          "numerator": "-256*rate**7*(2*rate + 1)*(12*rate**4 - 164*rate**3 - 483*rate**2 - 395*rate - 100)*(204*rate**4 + 648*rate**3 + 757*rate**2 + 412*rate + 90)*(624*rate**5 + 2440*rate**4 + 3868*rate**3 + 3180*rate**2 + 1335*rate + 225)**2",
+          "denominator": "3*(6*rate**2 + 9*rate + 1)**3*(60*rate**3 + 56*rate**2 + 45*rate + 15)**4*(48*rate**4 + 120*rate**3 + 92*rate**2 + 28*rate + 5)**4"
+        }
+      }
+    },
+    "all_rates_strong_Rayleigh_certified": false
+  },
+  "triangle3_sink_two": {
+    "law_in_p": [
+      "(p - 1)**3*(11*p**6 - 3*p**5 + 120*p**4 - 370*p**3 - 480*p**2 - 2160*p - 1600)/((p**2 - 3*p - 1)*(29*p**3 + 21*p**2 + 40)*(5*p**4 + 19*p**3 - 102*p**2 - 44*p - 40))",
+      "-3*p*(p - 1)**2*(22*p**6 - 15*p**5 + 224*p**4 - 725*p**3 - 858*p**2 - 3560*p - 2000)/(2*(p**2 - 3*p - 1)*(29*p**3 + 21*p**2 + 40)*(5*p**4 + 19*p**3 - 102*p**2 - 44*p - 40))",
+      "-3*p*(p - 1)**2*(22*p**6 - 15*p**5 + 224*p**4 - 725*p**3 - 858*p**2 - 3560*p - 2000)/(2*(p**2 - 3*p - 1)*(29*p**3 + 21*p**2 + 40)*(5*p**4 + 19*p**3 - 102*p**2 - 44*p - 40))",
+      "9*p**2*(p - 1)*(11*p**4 + 21*p**3 + 178*p**2 + 200*p + 400)/((29*p**3 + 21*p**2 + 40)*(5*p**4 + 19*p**3 - 102*p**2 - 44*p - 40))",
+      "p*(p - 1)**2*(113*p**6 + 105*p**5 - 2283*p**4 + 1097*p**3 + 1740*p**2 + 6720*p + 3200)/((p**2 - 3*p - 1)*(29*p**3 + 21*p**2 + 40)*(5*p**4 + 19*p**3 - 102*p**2 - 44*p - 40))",
+      "-3*p**2*(p - 1)*(77*p**4 + 300*p**3 - 969*p**2 - 800*p - 1200)/((29*p**3 + 21*p**2 + 40)*(5*p**4 + 19*p**3 - 102*p**2 - 44*p - 40))",
+      "-3*p**2*(p - 1)*(77*p**4 + 300*p**3 - 969*p**2 - 800*p - 1200)/((29*p**3 + 21*p**2 + 40)*(5*p**4 + 19*p**3 - 102*p**2 - 44*p - 40))",
+      "90*p**3/(29*p**3 + 21*p**2 + 40)"
+    ],
+    "leading_Green_minors": {
+      "[0]": "15/8",
+      "[1]": "15/8",
+      "[0, 1]": "9/4",
+      "[2]": "2",
+      "[0, 2]": "9/4",
+      "[1, 2]": "9/4",
+      "[0, 1, 2]": "9/4"
+    },
+    "all_rates_NA_certified": true,
+    "NA_gap_certificates": [
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(34012224*rate**14 + 382112640*rate**13 + 1961359920*rate**12 + 6090124320*rate**11 + 12781185372*rate**10 + 19210440168*rate**9 + 21403179801*rate**8 + 18070397994*rate**7 + 11731038181*rate**6 + 5906643100*rate**5 + 2307510484*rate**4 + 688253440*rate**3 + 149270400*rate**2 + 21024000*rate + 1440000)",
+        "denominator": "4*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(37791360*rate**14 + 476905968*rate**13 + 2687665536*rate**12 + 9040722660*rate**11 + 20403687456*rate**10 + 32845364892*rate**9 + 39068708238*rate**8 + 35048725929*rate**7 + 23963492265*rate**6 + 12513583146*rate**5 + 4954832640*rate**4 + 1456164880*rate**3 + 302856000*rate**2 + 40128000*rate + 2560000)",
+        "denominator": "2*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**3*(9867744*rate**11 + 96834528*rate**10 + 420180048*rate**9 + 1067926356*rate**8 + 1771531506*rate**7 + 2018714013*rate**6 + 1615929711*rate**5 + 910942322*rate**4 + 355959640*rate**3 + 92666800*rate**2 + 14736000*rate + 1120000)",
+        "denominator": "2*(3*rate**2 + 5*rate + 1)*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(34012224*rate**14 + 382112640*rate**13 + 1961359920*rate**12 + 6090124320*rate**11 + 12781185372*rate**10 + 19210440168*rate**9 + 21403179801*rate**8 + 18070397994*rate**7 + 11731038181*rate**6 + 5906643100*rate**5 + 2307510484*rate**4 + 688253440*rate**3 + 149270400*rate**2 + 21024000*rate + 1440000)",
+        "denominator": "4*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(37791360*rate**14 + 476905968*rate**13 + 2687665536*rate**12 + 9040722660*rate**11 + 20403687456*rate**10 + 32845364892*rate**9 + 39068708238*rate**8 + 35048725929*rate**7 + 23963492265*rate**6 + 12513583146*rate**5 + 4954832640*rate**4 + 1456164880*rate**3 + 302856000*rate**2 + 40128000*rate + 2560000)",
+        "denominator": "2*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(61096032*rate**13 + 731927664*rate**12 + 3942735264*rate**11 + 12704492952*rate**10 + 27431694738*rate**9 + 42069611655*rate**8 + 47321508636*rate**7 + 39688977627*rate**6 + 24934650060*rate**5 + 11651186892*rate**4 + 3958849280*rate**3 + 931507200*rate**2 + 136608000*rate + 9440000)",
+        "denominator": "4*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(37791360*rate**14 + 476905968*rate**13 + 2687665536*rate**12 + 9040722660*rate**11 + 20403687456*rate**10 + 32845364892*rate**9 + 39068708238*rate**8 + 35048725929*rate**7 + 23963492265*rate**6 + 12513583146*rate**5 + 4954832640*rate**4 + 1456164880*rate**3 + 302856000*rate**2 + 40128000*rate + 2560000)",
+        "denominator": "2*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**3*(9867744*rate**11 + 96834528*rate**10 + 420180048*rate**9 + 1067926356*rate**8 + 1771531506*rate**7 + 2018714013*rate**6 + 1615929711*rate**5 + 910942322*rate**4 + 355959640*rate**3 + 92666800*rate**2 + 14736000*rate + 1120000)",
+        "denominator": "2*(3*rate**2 + 5*rate + 1)*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**2*(34012224*rate**14 + 382112640*rate**13 + 1961359920*rate**12 + 6090124320*rate**11 + 12781185372*rate**10 + 19210440168*rate**9 + 21403179801*rate**8 + 18070397994*rate**7 + 11731038181*rate**6 + 5906643100*rate**5 + 2307510484*rate**4 + 688253440*rate**3 + 149270400*rate**2 + 21024000*rate + 1440000)",
+        "denominator": "4*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(37791360*rate**14 + 476905968*rate**13 + 2687665536*rate**12 + 9040722660*rate**11 + 20403687456*rate**10 + 32845364892*rate**9 + 39068708238*rate**8 + 35048725929*rate**7 + 23963492265*rate**6 + 12513583146*rate**5 + 4954832640*rate**4 + 1456164880*rate**3 + 302856000*rate**2 + 40128000*rate + 2560000)",
+        "denominator": "2*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(61096032*rate**13 + 731927664*rate**12 + 3942735264*rate**11 + 12704492952*rate**10 + 27431694738*rate**9 + 42069611655*rate**8 + 47321508636*rate**7 + 39688977627*rate**6 + 24934650060*rate**5 + 11651186892*rate**4 + 3958849280*rate**3 + 931507200*rate**2 + 136608000*rate + 9440000)",
+        "denominator": "4*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "9*rate**3*(4199040*rate**11 + 44591472*rate**10 + 204051960*rate**9 + 539655696*rate**8 + 925162614*rate**7 + 1085630535*rate**6 + 892879818*rate**5 + 515995200*rate**4 + 205943760*rate**3 + 54363200*rate**2 + 8640000*rate + 640000)",
+        "denominator": "(3*rate**2 + 5*rate + 1)*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(37791360*rate**14 + 476905968*rate**13 + 2687665536*rate**12 + 9040722660*rate**11 + 20403687456*rate**10 + 32845364892*rate**9 + 39068708238*rate**8 + 35048725929*rate**7 + 23963492265*rate**6 + 12513583146*rate**5 + 4954832640*rate**4 + 1456164880*rate**3 + 302856000*rate**2 + 40128000*rate + 2560000)",
+        "denominator": "2*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(37791360*rate**14 + 476905968*rate**13 + 2687665536*rate**12 + 9040722660*rate**11 + 20403687456*rate**10 + 32845364892*rate**9 + 39068708238*rate**8 + 35048725929*rate**7 + 23963492265*rate**6 + 12513583146*rate**5 + 4954832640*rate**4 + 1456164880*rate**3 + 302856000*rate**2 + 40128000*rate + 2560000)",
+        "denominator": "2*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      },
+      {
+        "certified": true,
+        "numerator": "3*rate**2*(12597120*rate**13 + 169728696*rate**12 + 989267580*rate**11 + 3370232610*rate**10 + 7578283779*rate**9 + 11972844009*rate**8 + 13754680254*rate**7 + 11691430971*rate**6 + 7387172346*rate**5 + 3443793360*rate**4 + 1157715280*rate**3 + 267336000*rate**2 + 38208000*rate + 2560000)",
+        "denominator": "(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+      }
+    ],
+    "strong_Rayleigh_certificates": {
+      "(0, 1)": {
+        "quadratic": "9*rate**2*(34012224*rate**14*z2**2 + 358178112*rate**13*z2**2 + 23934528*rate**13*z2 + 1703923776*rate**12*z2**2 + 253225440*rate**12*z2 + 4210704*rate**12 + 4827492432*rate**11*z2**2 + 1215797040*rate**11*z2 + 46834848*rate**11 + 9043093692*rate**10*z2**2 + 3500164872*rate**10*z2 + 237926808*rate**10 + 11757369024*rate**9*z2**2 + 6722724168*rate**9*z2 + 730346976*rate**9 + 10829932884*rate**8*z2**2 + 9063878076*rate**8*z2 + 1509368841*rate**8 + 7075489416*rate**7*z2**2 + 8781718404*rate**7*z2 + 2213190174*rate**7 + 3221831524*rate**6*z2**2 + 6147669524*rate**6*z2 + 2361537133*rate**6 + 980987200*rate**5*z2**2 + 3077774888*rate**5*z2 + 1847881012*rate**5 + 184259200*rate**4*z2**2 + 1070769120*rate**4*z2 + 1052482164*rate**4 + 18176000*rate**3*z2**2 + 244542400*rate**3*z2 + 425535040*rate**3 + 640000*rate**2*z2**2 + 32704000*rate**2*z2 + 115926400*rate**2 + 1920000*rate*z2 + 19104000*rate + 1440000)/(4*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "9*rate**4*(2834352*rate**10 + 25124256*rate**9 + 99175104*rate**8 + 228624444*rate**7 + 339492033*rate**6 + 337752549*rate**5 + 226409481*rate**4 + 99690800*rate**3 + 26864800*rate**2 + 3744000*rate + 160000)",
+          "denominator": "(3*rate**2 + 5*rate + 1)*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "9*rate**2*(rate + 1)**2*(3*rate + 2)**2*(684*rate**4 + 2664*rate**3 + 3851*rate**2 + 2480*rate + 600)**2",
+          "denominator": "4*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "81*rate**7*(3*rate + 2)**2*(576*rate**4 + 2574*rate**3 + 4187*rate**2 + 2938*rate + 760)*(684*rate**4 + 2664*rate**3 + 3851*rate**2 + 2480*rate + 600)**2*(2430*rate**6 + 13149*rate**5 + 29925*rate**4 + 36897*rate**3 + 26040*rate**2 + 9960*rate + 1600)",
+          "denominator": "(3*rate**2 + 5*rate + 1)**3*(90*rate**3 + 141*rate**2 + 120*rate + 40)**4*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**4"
+        }
+      },
+      "(0, 2)": {
+        "quadratic": "3*rate**2*(37791360*rate**14*z1**2 + 451711728*rate**13*z1**2 + 25194240*rate**13*z1 + 2352407184*rate**12*z1**2 + 331059312*rate**12*z1 + 4199040*rate**12 + 7126561116*rate**11*z1**2 + 1849787928*rate**11*z1 + 64373616*rate**11 + 14061063780*rate**10*z1**2 + 5944782132*rate**10*z1 + 397841544*rate**10 + 19073853918*rate**9*z1**2 + 12386454390*rate**9*z1 + 1385056584*rate**9 + 18224542242*rate**8*z1**2 + 17742643974*rate**8*z1 + 3101522022*rate**8 + 12308587506*rate**7*z1**2 + 17970916338*rate**7*z1 + 4769222085*rate**7 + 5784852276*rate**6*z1**2 + 12974418036*rate**6*z1 + 5204221953*rate**6 + 1819095120*rate**5*z1**2 + 6614631360*rate**5*z1 + 4079856666*rate**5 + 354571200*rate**4*z1**2 + 2312936160*rate**4*z1 + 2287325280*rate**4 + 36864000*rate**3*z1**2 + 523171200*rate**3*z1 + 896129680*rate**3 + 1440000*rate**2*z1**2 + 68160000*rate**2*z1 + 233256000*rate**2 + 3840000*rate*z1 + 36288000*rate + 2560000)/(2*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "27*rate**4*(699840*rate**10 + 7198632*rate**9 + 31332096*rate**8 + 77353650*rate**7 + 121023288*rate**6 + 125729487*rate**5 + 87601282*rate**4 + 40024840*rate**3 + 11218400*rate**2 + 1648000*rate + 80000)",
+          "denominator": "(3*rate**2 + 5*rate + 1)*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "3*rate**2*(4199040*rate**12 + 64373616*rate**11 + 397841544*rate**10 + 1385056584*rate**9 + 3101522022*rate**8 + 4769222085*rate**7 + 5204221953*rate**6 + 4079856666*rate**5 + 2287325280*rate**4 + 896129680*rate**3 + 233256000*rate**2 + 36288000*rate + 2560000)",
+          "denominator": "2*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "81*rate**7*(3*rate + 2)**2*(576*rate**4 + 2574*rate**3 + 4187*rate**2 + 2938*rate + 760)*(684*rate**4 + 2664*rate**3 + 3851*rate**2 + 2480*rate + 600)**2*(2430*rate**6 + 13149*rate**5 + 29925*rate**4 + 36897*rate**3 + 26040*rate**2 + 9960*rate + 1600)",
+          "denominator": "(3*rate**2 + 5*rate + 1)**3*(90*rate**3 + 141*rate**2 + 120*rate + 40)**4*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**4"
+        }
+      },
+      "(1, 2)": {
+        "quadratic": "3*rate**2*(37791360*rate**14*z0**2 + 451711728*rate**13*z0**2 + 25194240*rate**13*z0 + 2352407184*rate**12*z0**2 + 331059312*rate**12*z0 + 4199040*rate**12 + 7126561116*rate**11*z0**2 + 1849787928*rate**11*z0 + 64373616*rate**11 + 14061063780*rate**10*z0**2 + 5944782132*rate**10*z0 + 397841544*rate**10 + 19073853918*rate**9*z0**2 + 12386454390*rate**9*z0 + 1385056584*rate**9 + 18224542242*rate**8*z0**2 + 17742643974*rate**8*z0 + 3101522022*rate**8 + 12308587506*rate**7*z0**2 + 17970916338*rate**7*z0 + 4769222085*rate**7 + 5784852276*rate**6*z0**2 + 12974418036*rate**6*z0 + 5204221953*rate**6 + 1819095120*rate**5*z0**2 + 6614631360*rate**5*z0 + 4079856666*rate**5 + 354571200*rate**4*z0**2 + 2312936160*rate**4*z0 + 2287325280*rate**4 + 36864000*rate**3*z0**2 + 523171200*rate**3*z0 + 896129680*rate**3 + 1440000*rate**2*z0**2 + 68160000*rate**2*z0 + 233256000*rate**2 + 3840000*rate*z0 + 36288000*rate + 2560000)/(2*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2)",
+        "a": {
+          "certified": true,
+          "numerator": "27*rate**4*(699840*rate**10 + 7198632*rate**9 + 31332096*rate**8 + 77353650*rate**7 + 121023288*rate**6 + 125729487*rate**5 + 87601282*rate**4 + 40024840*rate**3 + 11218400*rate**2 + 1648000*rate + 80000)",
+          "denominator": "(3*rate**2 + 5*rate + 1)*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+        },
+        "c": {
+          "certified": true,
+          "numerator": "3*rate**2*(4199040*rate**12 + 64373616*rate**11 + 397841544*rate**10 + 1385056584*rate**9 + 3101522022*rate**8 + 4769222085*rate**7 + 5204221953*rate**6 + 4079856666*rate**5 + 2287325280*rate**4 + 896129680*rate**3 + 233256000*rate**2 + 36288000*rate + 2560000)",
+          "denominator": "2*(3*rate**2 + 5*rate + 1)**2*(90*rate**3 + 141*rate**2 + 120*rate + 40)**2*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**2"
+        },
+        "4ac-bb": {
+          "certified": true,
+          "numerator": "81*rate**7*(3*rate + 2)**2*(576*rate**4 + 2574*rate**3 + 4187*rate**2 + 2938*rate + 760)*(684*rate**4 + 2664*rate**3 + 3851*rate**2 + 2480*rate + 600)**2*(2430*rate**6 + 13149*rate**5 + 29925*rate**4 + 36897*rate**3 + 26040*rate**2 + 9960*rate + 1600)",
+          "denominator": "(3*rate**2 + 5*rate + 1)**3*(90*rate**3 + 141*rate**2 + 120*rate + 40)**4*(162*rate**4 + 477*rate**3 + 474*rate**2 + 204*rate + 40)**4"
+        }
+      }
+    },
+    "all_rates_strong_Rayleigh_certified": true
+  },
+  "stationary_counterexamples": {
+    "Rayleigh_failure": {
+      "neighbors": [
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ]
+      ],
+      "lambda": 64,
+      "law": [
+        "1814654063895559/2531592036822241959111",
+        "180686831358078208/2531592036822241959111",
+        "429455544970993792/4219320061370403265185",
+        "1517412921991168/166462305652361355",
+        "1011348447433783616/12657960184111209795555",
+        "424848592674816/55487435217453785",
+        "1900277935726592/166462305652361355",
+        "2621440/2698181"
+      ],
+      "pair": [
+        1,
+        2
+      ],
+      "external_field": [
+        "1/100",
+        "1",
+        "1"
+      ],
+      "Rayleigh_difference": "-1356631018599034504351686468980948992/33379990838030144205088397496430705187032921875"
+    },
+    "strong_Rayleigh_failure": {
+      "neighbors": [
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ]
+      ],
+      "lambda": 3,
+      "law": [
+        "25761/22793260",
+        "77283/11396630",
+        "32409/2279326",
+        "7479/93415",
+        "265159/22793260",
+        "6459/93415",
+        "12063/93415",
+        "108/157"
+      ],
+      "pair": [
+        0,
+        1
+      ],
+      "remaining_field": "-1/12",
+      "Rayleigh_difference": "-68136427/519532701427600"
+    },
+    "large_lambda_conditioned_covariance_coefficient": "4/1215"
+  },
+  "targeted_NA_diagnostics": [
+    {
+      "neighbors": [
+        [
+          1,
+          4,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "rates": [
+        "64",
+        "64",
+        "64",
+        "64"
+      ],
+      "tests": 174,
+      "largest_covariance": "-516597714451225896689544602437319877800257435429291145653694453909094400/1696733131126987651658660609787554051436045302080480148152268011762188538621881729",
+      "witness": [
+        [
+          2
+        ],
+        [
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "neighbors": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          2,
+          4,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "rates": [
+        "64",
+        "64",
+        "64",
+        "64"
+      ],
+      "tests": 174,
+      "largest_covariance": "-38249689791474129714579671426280760897341408694734266920375186898944/98651029468395161044098233259298027664429272193455926756536336490627645767025",
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "neighbors": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "rates": [
+        "64",
+        "64",
+        "64",
+        "64"
+      ],
+      "tests": 174,
+      "largest_covariance": "-3110375362214958898715854185505574430336992078930896242008294266217031223726393012174443299976031087075010647982420370391040/64355388994569295916343459205208594261238422338321377624423799454363964310045986247821778538785695993091263678301214245562607810300843",
+      "witness": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          3
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "neighbors": [
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ]
+      ],
+      "rates": [
+        "1/64",
+        "64",
+        "64"
+      ],
+      "tests": 15,
+      "largest_covariance": "-170989817828159876853330133818368/587120883901795358595539096551270409835",
+      "witness": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "neighbors": [
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ]
+      ],
+      "rates": [
+        "1",
+        "64",
+        "64"
+      ],
+      "tests": 15,
+      "largest_covariance": "-1596741463530263103213066444800/2398164287881883133915028753332701031",
+      "witness": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "neighbors": [
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ]
+      ],
+      "rates": [
+        "64",
+        "64",
+        "64"
+      ],
+      "tests": 15,
+      "largest_covariance": "-734099046108195579657675380723556352/22889136574649241740632043997552483556822575",
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "neighbors": [
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ]
+      ],
+      "rates": [
+        "4096",
+        "64",
+        "64"
+      ],
+      "tests": 15,
+      "largest_covariance": "-310791063122831421412140120024663375843055859025264640/609987216206726397507889881519060578156716970978345289506667543",
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          1
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "status": "rigorous rational evaluation of the proved analytic cutoff bound",
+  "scope": "early-label agreement error; not an enclosure of p_infinity",
+  "python_version": "3.12.3",
+  "arithmetic": "fractions.Fraction; all decimal output rounded upwards",
+  "gamma_certificate": {
+    "harmonic_count": 1024,
+    "log_two_positive_series_terms": 40,
+    "gamma_upper": "577703867/1000000000",
+    "exponential_upper_degree": 40,
+    "exponential_upper_decimal": "1.781942153569",
+    "euler_constant_exponential_upper": "891/500"
+  },
+  "cutoff_certificates": [
+    {
+      "cutoff": "1/100",
+      "factorial_index": 10,
+      "second_moment_upper": "1239381/62500",
+      "exponential_moment_upper": 7,
+      "empty_tail_taylor_degree": 90,
+      "second_moment_tail_taylor_degree": 85,
+      "main_upper_decimal": "0.055640040985",
+      "empty_tail_upper_decimal": "0.000000000125",
+      "second_moment_tail_upper_decimal": "0.000000095931",
+      "total_upper_decimal": "0.055640137041",
+      "certified_strict_upper": "55641/1000000"
+    },
+    {
+      "cutoff": "1/200",
+      "factorial_index": 10,
+      "second_moment_upper": "1239381/62500",
+      "exponential_moment_upper": 7,
+      "empty_tail_taylor_degree": 140,
+      "second_moment_tail_taylor_degree": 135,
+      "main_upper_decimal": "0.027820020493",
+      "empty_tail_upper_decimal": "0.000000000001",
+      "second_moment_tail_upper_decimal": "0.000000000001",
+      "total_upper_decimal": "0.027820020493",
+      "certified_strict_upper": "27821/1000000"
+    },
+    {
+      "cutoff": "1/1000",
+      "factorial_index": 10,
+      "second_moment_upper": "1239381/62500",
+      "exponential_moment_upper": 7,
+      "empty_tail_taylor_degree": 540,
+      "second_moment_tail_taylor_degree": 535,
+      "main_upper_decimal": "0.005564004099",
+      "empty_tail_upper_decimal": "0.000000000001",
+      "second_moment_tail_upper_decimal": "0.000000000001",
+      "total_upper_decimal": "0.005564004099",
+      "certified_strict_upper": "1113/200000"
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "schema_version": 2,
+  "release": "research-2026-11-14",
+  "python": "3.12",
+  "projects": {
+    "arw-monotonicity": {
+      "title": "Directed three-cycle killed-return order",
+      "paper": {
+        "url": "https://jfrichey.github.io/pagedocs/ai/arw-monotonicity.pdf",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/arw-monotonicity.pdf",
+        "sha256": "96ce27cc1a10ecfe9785c3a956a0f6a6a65d515b718b4c5a825fe09668ed36a3",
+        "pages": 92,
+        "result": "Theorem 8.1, pages 68\u201369"
+      },
+      "kind": "Exact symbolic and rational certificate",
+      "scope": "Six polynomial identities reconstructed from 2,232 Bernstein coefficients for the directed three-cycle killed-return kernel, plus an independent rational kernel calculation and cylinder obstruction.",
+      "limits": "Does not certify the general add-one conjecture, entrance-law order or an all-length theorem; this is not a Lean proof.",
+      "commands": [
+        [
+          "arw-monotonicity/verify_cycle_return.py"
+        ]
+      ],
+      "timeout_seconds_per_command": 900
+    },
+    "combinatorial-processes": {
+      "title": "Some combinatorial processes",
+      "paper": {
+        "url": "https://jfrichey.github.io/pagedocs/combinatorial_processes.pdf",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/combinatorial_processes.pdf",
+        "sha256": "0c11bc357e3d665da5ee38bde1462cac38bf462d6ff267e194baf3ff047ba15e",
+        "pages": 49,
+        "result": "The illustrated November 8, 2026 revision"
+      },
+      "kind": "Mixed exact finite checks, symbolic identities and numerical validation",
+      "scope": "Finite sock, seating, coupon, permutation, arrow and Egyptian-fraction enumerations; symbolic identities; numerical integrals and asymptotic diagnostics; saved certificate and figure provenance hashes.",
+      "limits": "Individual checks use different arithmetic. Passing them does not establish all asymptotic statements in the notes, and this is not a Lean proof.",
+      "commands": [
+        [
+          "combinatorial-processes/code/check_formulas.py"
+        ],
+        [
+          "combinatorial-processes/code/check_illustrated.py"
+        ],
+        [
+          "combinatorial-processes/code/check_extensions.py"
+        ]
+      ],
+      "timeout_seconds_per_command": 900
+    },
+    "word-potentials": {
+      "kind": "Mixed symbolic identities and floating-point validation",
+      "scope": "Default word-frequency, overlap, conjugacy and crossing checks in the supplied script.",
+      "limits": "The optional --scan modes are not part of the default suite; numerical scans are not universal proofs.",
+      "commands": [
+        [
+          "word-potentials/word_potentials.py"
+        ]
+      ],
+      "timeout_seconds_per_command": 1200,
+      "paper": {
+        "url": "https://jfrichey.github.io/pagedocs/ai/word-potentials.pdf",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/word-potentials.pdf",
+        "sha256": "7ca00c2cb0f25b4019263a0f348da0173f48aea4aa09e13d70ce4fdcbbda6118",
+        "pages": 18
+      }
+    },
+    "higher-dimensional-sfts": {
+      "kind": "Exact finite conjugacy checks",
+      "scope": "32,768 local contexts, the explicit simultaneous-swap example, the replacement obstruction and finite agreement-class graphs (Theorem 5.1 example and Corollary 6.2).",
+      "limits": "This selected export does not certify the entropy comparisons over all rectangular supports.",
+      "commands": [
+        [
+          "higher-dimensional-sfts/swap_conjugacy_checks.py"
+        ]
+      ],
+      "timeout_seconds_per_command": 1200,
+      "paper": {
+        "url": "https://jfrichey.github.io/pagedocs/ai/higher-dimensional-sfts.pdf",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/higher-dimensional-sfts.pdf",
+        "sha256": "2e71b8f4316c089ca681a309709306311f5ee1510ee324381c8145ac8d38e4e9",
+        "pages": 6
+      }
+    },
+    "arw-negative-association": {
+      "kind": "Exact symbolic and rational checks",
+      "scope": "Recheck all 7,656 event-gap polynomials in 44 saved four-site laws and finite complete-graph deletion-source identities.",
+      "limits": "The saved-law check does not recompute absorption; four_site.py provides the longer reconstruction. The analytic theorems are supported by the selected technical proofs, not by these finite tests alone.",
+      "commands": [
+        [
+          "arw-negative-association/verify_saved_laws.py"
+        ],
+        [
+          "arw-negative-association/trace_source_check.py",
+          "n4-half"
+        ]
+      ],
+      "timeout_seconds_per_command": 1200,
+      "paper": {
+        "url": "https://jfrichey.github.io/pagedocs/ai/arw-negative-association.pdf",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/arw-negative-association.pdf",
+        "sha256": "321893cc27e79466f7d80b94e5261d513c99465d417fb590f8fab969f654d8e2",
+        "pages": 20
+      }
+    },
+    "counting-clusters": {
+      "kind": "Exact finite enumeration and polynomial identities",
+      "scope": "Small-strip slopes, all-length formula certificates, Euler identities and free/wired comparisons.",
+      "limits": "The width-17 enclosure has a separate multi-GB verification command; it is not rerun by this default suite.",
+      "commands": [
+        [
+          "counting-clusters/code/check_strips.py"
+        ],
+        [
+          "counting-clusters/code/check_formulas.py"
+        ],
+        [
+          "counting-clusters/code/check_identities.py"
+        ],
+        [
+          "counting-clusters/code/certify_bounds.py",
+          "--max-width",
+          "4"
+        ]
+      ],
+      "timeout_seconds_per_command": 1200,
+      "paper": {
+        "url": "https://jfrichey.github.io/pagedocs/ai/counting-clusters.pdf",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/counting-clusters.pdf",
+        "sha256": "7885da3a0e967e44488692780bc462f99c472f0952eb74f2083061ad013d565c",
+        "pages": 25
+      }
+    },
+    "independent-coupons": {
+      "kind": "Floating-point numerical diagnostics",
+      "scope": "Truncated sums for the stretched-exponential example.",
+      "limits": "These sums corroborate scales and are not certified error bounds or proofs.",
+      "commands": [
+        [
+          "independent-coupons/code/check_scales.py"
+        ]
+      ],
+      "timeout_seconds_per_command": 1200,
+      "paper": {
+        "url": "https://jfrichey.github.io/pagedocs/ai/independent-coupons.pdf",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/independent-coupons.pdf",
+        "sha256": "7badd2111fb73bf028d7f186f0e8521ec1530075e14f59ac0a287275b5fb60e7",
+        "pages": 11
+      }
+    },
+    "sandpile": {
+      "kind": "Auxiliary exact rational obstruction",
+      "scope": "The specified three-site multi-toppling obstruction.",
+      "limits": "This checks an auxiliary calculation, not the reader article\u2019s depletion or scaling theorems.",
+      "commands": [
+        [
+          "sandpile/code/check_backward.py"
+        ]
+      ],
+      "timeout_seconds_per_command": 1200,
+      "paper": {
+        "url": "https://jfrichey.github.io/pagedocs/ai/soc-sandpile-reader.pdf",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/soc-sandpile-reader.pdf",
+        "sha256": "26df302b713c31b5acf88a5c416158ff1bf47928c5df014825dbb01e4118aac2",
+        "pages": 7
+      }
+    },
+    "balloons": {
+      "kind": "Exact rational cutoff bound",
+      "scope": "Rigorous evaluation of the early-label cutoff budget.",
+      "limits": "The cutoff certificate does not enclose the survivor-noise constant. Separate interval programs evaluate the bounds and matching coefficient; the Lean package covers specified finite statements only.",
+      "commands": [
+        [
+          "balloons/certify_cutoff_budget.py"
+        ]
+      ],
+      "timeout_seconds_per_command": 1200,
+      "paper": {
+        "url": "https://jfrichey.github.io/pagedocs/ai/balloons-sketch.pdf",
+        "snapshot_url": "https://raw.githubusercontent.com/jfrichey/jfrichey.github.io/research-2026-11-14/pagedocs/ai/balloons-sketch.pdf",
+        "sha256": "1df58a74cb6624036ab8a9325e43547ea667c2830c34c99b28a9bdab412dec04",
+        "pages": 18
+      }
+    }
+  },
+  "lean_projects": [
+    {
+      "path": "balloons/lean",
+      "scope": "Finite process through Stable.lean; asymptotic results not formalized",
+      "command": "python3 bootstrap.py && ./cache.sh && python3 check.py",
+      "expected_public_theorems": 193
+    }
+  ]
+}

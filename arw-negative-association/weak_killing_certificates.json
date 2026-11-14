@@ -1,0 +1,1146 @@
+{
+  "path3_symbolic": {
+    "rates": [
+      "r",
+      "h",
+      "r"
+    ],
+    "parameters": "r,h>0",
+    "method": "raw closed Green/loss hierarchy; exact residuals checked",
+    "coefficients_by_vacancy_mask": [
+      "1",
+      "(8*h*r**2 + 10*h*r + 2*h + 5*r**2 + 6*r + 2)/(r**2*(2*h*r + 2*h + r))",
+      "(4*h*r**2 + 10*h*r + 2*h + 2*r**2 + 4*r + 2)/(h*r*(2*h*r + 2*h + r))",
+      "(26*h**2*r**3 + 80*h**2*r**2 + 68*h**2*r + 14*h**2 + 42*h*r**3 + 107*h*r**2 + 72*h*r + 18*h + 16*r**3 + 36*r**2 + 24*r + 4)/(2*h*r**2*(h*r + h + r)*(2*h*r + 2*h + r))",
+      "(8*h*r**2 + 10*h*r + 2*h + 5*r**2 + 6*r + 2)/(r**2*(2*h*r + 2*h + r))",
+      "(24*h**2*r**3 + 56*h**2*r**2 + 40*h**2*r + 8*h**2 + 44*h*r**3 + 86*h*r**2 + 54*h*r + 12*h + 19*r**3 + 36*r**2 + 22*r + 4)/(r**3*(h*r + h + r)*(2*h*r + 2*h + r))",
+      "(26*h**2*r**3 + 80*h**2*r**2 + 68*h**2*r + 14*h**2 + 42*h*r**3 + 107*h*r**2 + 72*h*r + 18*h + 16*r**3 + 36*r**2 + 24*r + 4)/(2*h*r**2*(h*r + h + r)*(2*h*r + 2*h + r))",
+      "(32*h**2*r**3 + 90*h**2*r**2 + 74*h**2*r + 16*h**2 + 57*h*r**3 + 138*h*r**2 + 98*h*r + 24*h + 24*r**3 + 56*r**2 + 40*r + 8)/(h*r**3*(h*r + h + r)*(2*h*r + 2*h + r))"
+    ],
+    "distinct_cylinder_gaps": {
+      "leaf_center": "(12*h**3*r**5 + 92*h**3*r**4 + 192*h**3*r**3 + 164*h**3*r**2 + 60*h**3*r + 8*h**3 + 26*h**2*r**5 + 186*h**2*r**4 + 350*h**2*r**3 + 282*h**2*r**2 + 108*h**2*r + 16*h**2 + 18*h*r**5 + 125*h*r**4 + 224*h*r**3 + 162*h*r**2 + 56*h*r + 8*h + 4*r**5 + 28*r**4 + 52*r**3 + 36*r**2 + 8*r)/(2*h*r**3*(h*r + h + r)*(2*h*r + 2*h + r)**2)",
+      "leaf_leaf": "(r + 1)*(4*h*r**2 + 6*h*r + 2*h + 3*r**2 + 6*r + 2)*(4*h**2*r**2 + 6*h**2*r + 2*h**2 + 5*h*r**2 + 4*h*r + 2*h + 2*r**2 + 2*r)/(r**4*(h*r + h + r)*(2*h*r + 2*h + r)**2)",
+      "leaf_pair": "(80*h**3*r**5 + 412*h**3*r**4 + 740*h**3*r**3 + 592*h**3*r**2 + 212*h**3*r + 28*h**3 + 174*h**2*r**5 + 872*h**2*r**4 + 1510*h**2*r**3 + 1196*h**2*r**2 + 448*h**2*r + 64*h**2 + 128*h*r**5 + 639*h*r**4 + 1090*h*r**3 + 840*h*r**2 + 308*h*r + 44*h + 32*r**5 + 164*r**4 + 288*r**3 + 220*r**2 + 72*r + 8)/(2*h*r**4*(h*r + h + r)*(2*h*r + 2*h + r)**2)",
+      "center_pair": "(32*h**3*r**5 + 220*h**3*r**4 + 440*h**3*r**3 + 364*h**3*r**2 + 128*h**3*r + 16*h**3 + 78*h**2*r**5 + 512*h**2*r**4 + 970*h**2*r**3 + 788*h**2*r**2 + 292*h**2*r + 40*h**2 + 59*h*r**5 + 384*h*r**4 + 736*h*r**3 + 600*h*r**2 + 224*h*r + 32*h + 14*r**5 + 92*r**4 + 186*r**3 + 160*r**2 + 60*r + 8)/(h*r**4*(h*r + h + r)*(2*h*r + 2*h + r)**2)"
+    },
+    "positive_coefficients": true,
+    "disjoint_cylinder_pairs_checked": 6,
+    "NA_event_types": {
+      "order_two": 6,
+      "order_three": 3
+    },
+    "conclusion": "NA for sufficiently small killing, for every fixed r,h>0",
+    "block_sizes": {
+      "1": 3,
+      "2": 9,
+      "3": 14
+    }
+  },
+  "cycle4_raw": {
+    "rates": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "opposite_priorities_agree": true,
+    "coefficient_classes": {
+      "singleton": "61/6",
+      "neighbor_pair": "205/4",
+      "opposite_pair": "57",
+      "triple": "1079/6",
+      "full": "440"
+    },
+    "strict_disjoint_cylinder_gaps": 25,
+    "block_sizes": {
+      "1": 4,
+      "2": 19,
+      "3": 42,
+      "4": 62
+    },
+    "matches_previous_independent_IDLA_algebra": true,
+    "conclusion": "NA for sufficiently small uniform killing at fixed sleep rate one",
+    "NA_reduction": "strict leading disjoint-cylinder gaps and minimum-size event witnesses; no further event enumeration"
+  },
+  "rescaled_audit": {
+    "case": "closed path3, rates (1,1,1)",
+    "rescaled_coefficients_match_raw": true,
+    "admissible_product_orders_agree": true,
+    "one_vacancy_source": [
+      "6",
+      "6",
+      "6"
+    ],
+    "closed_source_factorization_checked": true,
+    "closed_two_particle_transient_states": 9,
+    "normalizer_derivative": "18",
+    "first_loss_departure_mass": [
+      "9/2",
+      "9",
+      "9/2"
+    ],
+    "failed_local_bound": {
+      "state": [
+        0,
+        2,
+        0
+      ],
+      "first_loss_weight": "1",
+      "u_0": "2/5",
+      "u_2": "2/5",
+      "v_02": "8/3",
+      "gap": "-2/75"
+    },
+    "closed_nonreversibility": {
+      "rates": [
+        1,
+        2,
+        3
+      ],
+      "occupied_mask_order": [
+        3,
+        5,
+        6
+      ],
+      "kernel": [
+        [
+          "65/116",
+          "17/116",
+          "11/116"
+        ],
+        [
+          "33/232",
+          "105/232",
+          "27/232"
+        ],
+        [
+          "69/232",
+          "93/232",
+          "183/232"
+        ]
+      ],
+      "cycle_gap": "-9/26912",
+      "validation": "parent raw kernel in both priorities; column sums and cycle arithmetic checked here"
+    },
+    "normalizer_derivative_interpretation": "expected total closed saturated jumps, including self-loops",
+    "departure_mass_interpretation": "also the expected closed saturated jumps from each vertex"
+  },
+  "uniform_renewal": {
+    "scope": "actual saturated uniform closed ARW; fixed holding inverse sleep x",
+    "selected_n": 3,
+    "d_from_positive_product": [
+      "1",
+      "x**2/9 + x/2 + 1",
+      "x**3/54 + 7*x**2/36 + 16*x/27 + 3/4",
+      "x**3/54 + 17*x**2/108 + 23*x/54 + 49/108"
+    ],
+    "all_stage_thinning_normalizations_pass": true,
+    "all_stage_marked_loss_recursions_pass": true,
+    "all_stage_triangular_and_macro_chain_residuals_pass": true,
+    "degrees": [
+      2,
+      3,
+      3
+    ],
+    "leading_coefficients": [
+      "1/9",
+      "1/54",
+      "1/54"
+    ],
+    "coefficientwise_lower_bounds_pass": [
+      true,
+      true,
+      true
+    ],
+    "gap_degrees": [
+      4,
+      6
+    ],
+    "saved_raw_x1_values_matched_not_rerun": [
+      "1",
+      "29/6",
+      "14",
+      "57/2"
+    ],
+    "matrix_dimensions": [
+      [
+        4,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "limitations": "TN of the individual kernels does not prove all-x LC across loss levels"
+  },
+  "uniform_rank_quotient": {
+    "scope": "General positive quotient and active-kernel identity; symbolic n=3 audit",
+    "last_column": "B_h(s,n-h)=h/n for s<=n-h, zero in the stable input row",
+    "stable_mass_recurrence": "z_h=(h/n)*(Z_(h-1)-z_(h-1)), z_0=0",
+    "positive_quotient": "F_n(y)=(1+y/n)*G_n(y), G_n=sum_(h=0)^(n-1)(Z_h-z_h)*y^h/h!",
+    "active_kernel_identity": "Btilde_h^(n)=B_h^(n-1)+1*[binom(h+j-1,j)*t^(n-h-j)/binom(n,h)]_j",
+    "selected_n": 3,
+    "rows": [
+      {
+        "losses": 1,
+        "total": "x**2/3 + 3*x/2 + 3",
+        "stable_mass": "1/3",
+        "active_mass": "x**2/3 + 3*x/2 + 8/3"
+      },
+      {
+        "losses": 2,
+        "total": "x**3/9 + 7*x**2/6 + 32*x/9 + 9/2",
+        "stable_mass": "2*x**2/9 + x + 16/9",
+        "active_mass": "x**3/9 + 17*x**2/18 + 23*x/9 + 49/18"
+      },
+      {
+        "losses": 3,
+        "total": "x**3/9 + 17*x**2/18 + 23*x/9 + 49/18",
+        "stable_mass": "x**3/9 + 17*x**2/18 + 23*x/9 + 49/18",
+        "active_mass": "0"
+      }
+    ],
+    "rank_polynomial": "(y + 3)*(2*x**3*y**2 + 17*x**2*y**2 + 12*x**2*y + 46*x*y**2 + 54*x*y + 49*y**2 + 96*y + 36)/108",
+    "quotient_polynomial": "x**3*y**2/18 + 17*x**2*y**2/36 + x**2*y/3 + 23*x*y**2/18 + 3*x*y/2 + 49*y**2/36 + 8*y/3 + 1",
+    "last_column_recurrence_and_rankone_identity_pass": true,
+    "G3_at_minus2": "t*(t + 1)*(2*t + 3)/9",
+    "G3_at_minus2_over_tplus2": "-t*(t + 1)*(4*t + 3)/(9*(t + 2)**2)",
+    "small_interlacing": "For every formal t>0, the roots of G_3 and F_2 alternate, and F_2 strictly interlaces F_3",
+    "stagewise_obstruction": {
+      "n": 3,
+      "t": 1,
+      "polynomial": "13*y**2/12 + 2*y + 1",
+      "discriminant": "-1/3",
+      "actual_family_counterexample": false
+    },
+    "partial_interpolation_obstruction": {
+      "n": 4,
+      "t": 1,
+      "polynomial": "2137*y**4/6912 + 125*y**3/54 + 21*y**2/4 + 4*y + 1",
+      "row_residuals": [
+        "0",
+        "3",
+        "0",
+        "0"
+      ],
+      "quotient_discriminant": "-9991/6912",
+      "actual_family_counterexample": false
+    },
+    "all_size_interlacing_or_LC_proved": false
+  },
+  "uniform_parking_jensen": {
+    "status": "finite n=16 Jensen check passed; all-size real-rootedness OPEN",
+    "degree": 16,
+    "physical_inverse_rate": 0,
+    "negative_real_roots": 16,
+    "positive_real_roots": 0,
+    "nonreal_roots": 0,
+    "gcd_with_derivative_degree": 0,
+    "fixed_root_minus_n": true,
+    "independent_positive_loss_product_matches_all_d_values": true,
+    "primitive_integer_coefficients_ascending": [
+      3106092057019859457635198842328409844677456307987598050703966208000000000000000,
+      49697472912317751322163181477254557514839300927801568811263459328000000000000000,
+      279548285131787351187167895809556886020971067718883824563356958720000000000000000,
+      789177463376156884421387557717514501277309269362774912141822525440000000000000000,
+      1306131482553602764466870781710245420999539041871856660632683151360000000000000000,
+      1382328769091920031850693395810902423038843857380722075532001328318382080000000000,
+      987367360202319330769107941602486023747331922608156755422399781383700480000000000,
+      492899947544545892919245304867661158146369516164079924093627568803020800000000000,
+      175844898205174622184444826318599405165382518300332472698435710589337600000000000,
+      45405894784561498999191106997930887299547832585193748023164040275558400000000000,
+      8523203570768693575689850456370446092015065877416479759235677009019614003200000,
+      1158248546631388929797571549996014251290061259631803295861973583194698547200000,
+      112316851463125510859735876005303053659819175488075492950871424878247936000000,
+      7548542056611721859837208633942028118665749394514560613671701590310912000000,
+      332943954015776715343332533150024242345525752641404406181233204133888000000,
+      8641459787522195451456449186122293691612143386350783962659406137306120192,
+      99741715748757994656637165296315507729221329128255573679336515991866887
+    ],
+    "coefficient_sha256": "1110da1ea65eee77108d10aae06ac40bc62b0d5df92556a297c51c200f16f788",
+    "method": "Exact rational Sturm root count; gcd certifies simplicity",
+    "all_size_real_rootedness_proved": false,
+    "prefix_approximation_obstruction": {
+      "degree": 3,
+      "polynomial": "109*y**3/10368 + 5*y**2/32 + 3*y/4 + 1",
+      "discriminant": "-149/1990656",
+      "actual_Jensen_or_D_counterexample": false
+    },
+    "root_size_or_rate_sweep": false
+  },
+  "uniform_parking_spectrum": {
+    "status": "PASS: bounded exact normalization and obstruction checks",
+    "physical_inverse_rate": 0,
+    "sequence_convention": "a_n=d_n(0)/n!; D(z)=sum a_n*z^n; f(lambda)=D(-lambda)",
+    "analytical_theorem": {
+      "proved_scope": "D has exactly one zero of minimum modulus; it is negative and simple",
+      "nearest_zero": "z_*=-1/r(T)",
+      "proof_input": "The report's all-degree chain normalization, regularized determinant identity, and strict-square-kernel Perron argument; these are distinct from the finite checks here",
+      "remaining_zero_reality": "OPEN",
+      "all_zero_reality_proved": false,
+      "all_size_Jensen_real_rootedness_proved": false,
+      "positive_inverse_rate_extension_proved": false,
+      "stationary_ULC_or_NA_proved_here": false
+    },
+    "operator": {
+      "space": "L2(Omega,dr dv), Omega={0<r<exp(v),v<0}",
+      "area": "1",
+      "K_kernel": "1_(s<r,w<v)",
+      "P": "1 integral_Omega",
+      "T": "P-K",
+      "hilbert_schmidt_norm_squares": {
+        "K": "3/8",
+        "T": "5/8"
+      },
+      "ordinary_trace_or_determinant_of_T_used": false
+    },
+    "normalization": {
+      "degrees_checked": [
+        1,
+        2,
+        3
+      ],
+      "V_polynomials": [
+        "L",
+        "L**2/2 + L",
+        "L**3/12 + 3*L**2/8 + 3*L/8",
+        "L**4/144 + 11*L**3/216 + 49*L**2/432 + 49*L/648"
+      ],
+      "W_polynomials": [
+        "1",
+        "L + 1",
+        "L**2/4 + 3*L/4 + 3/8",
+        "L**3/36 + 11*L**2/72 + 49*L/216 + 49/648"
+      ],
+      "polynomial_recurrence": "n V_nprime-V_ndoubleprime=V_(n-1), V_n(0)=0",
+      "polynomial_recurrence_checked": true,
+      "original_coordinate_antiderivatives_and_zero_limits_checked": true,
+      "triangle_moment_formula": "integral_Omega r^j*(v-log r)^k=k!/(j+1)^(k+2)",
+      "chain_integrals_a1_a2_a3": [
+        "1",
+        "3/8",
+        "49/648"
+      ],
+      "corner_values_and_chain_integrals_agree": true,
+      "independent_triangular_parking_recurrence_checked": true,
+      "W_coefficient_sha256": "c9e844b84b7ad05083632fe570a59f195d6ce1e5ecf7dc0f7017474244c6d082"
+    },
+    "regularized_determinant": {
+      "identity": "D(z)=exp(z)*det_2(I+z*T); f(lambda)=exp(-lambda)*det_2(I-lambda*T)",
+      "trace_T_squared": "1/4",
+      "trace_T_cubed": "11/108",
+      "series_through_degree_3": "49*z**3/648 + 3*z**2/8 + z + 1",
+      "log_series_convention": "z+sum_(k>=2)(-1)^(k+1)*tr(T^k)*z^k/k",
+      "rank_one_product_anomaly_exponent_checked": true
+    },
+    "rectangle_quadratic_obstruction": {
+      "rectangle": "(1/4,1/2) times (-log(2),0)",
+      "rescaled_test_function": "cos(2*pi*(u-y))",
+      "rectangle_area": "log(2)/4",
+      "volterra_cos_sin_pairings": [
+        [
+          "0",
+          "-1/(4*pi)"
+        ],
+        [
+          "1/(4*pi)",
+          "0"
+        ]
+      ],
+      "direct_tensor_antiderivative_and_zero_mean_checked": true,
+      "quadratic_value": "-log(2)**2/(128*pi**2)",
+      "scope": "Negative full-space quadratic form; does not automatically restrict to the cyclic space"
+    },
+    "cyclic_observable_metric_obstruction": {
+      "beta_0_1_2": [
+        "1",
+        "5/8",
+        "211/648"
+      ],
+      "required_Gram_matrix": [
+        [
+          "1",
+          "5/8"
+        ],
+        [
+          "5/8",
+          "211/648"
+        ]
+      ],
+      "Hankel_determinant": "-337/5184",
+      "test_polynomial": "t-5/8",
+      "hypothetical_symmetric_norm_squared": "-337/5184",
+      "actual_L2_norm_squared": "359/5184",
+      "reciprocal_transfer_series": "211*z**2/648 + 5*z/8 + 1",
+      "transfer_identity": "L((I-lambda*T)^(-1)1)=(1/f(lambda)-1)/lambda",
+      "scope": "No positive Hermitian form can both symmetrize T and retain [1,g]=c*integral(g), c>0; these beta moments are not the trace moments p_k"
+    },
+    "pointwise_Gram_obstruction": {
+      "points_in_log_r_v_coordinates": [
+        [
+          "-4",
+          "-3"
+        ],
+        [
+          "-2",
+          "-1"
+        ],
+        [
+          "-5",
+          "-1/2"
+        ]
+      ],
+      "sample_poset": "A<C; B incomparable to both",
+      "pair_principal_minors": [
+        "1",
+        "0",
+        "0"
+      ],
+      "sampled_T_determinant": "0",
+      "Hermitian_phase_identity": "det=1-|u|^2-|v|^2",
+      "forced_normalized_Gram_determinant": "-1",
+      "scope": "No positive Gram kernel can preserve these pointwise pair minors; a different integrated determinant representation is not excluded",
+      "integrated_determinant_obstructed": false
+    },
+    "conditional_bridges": {
+      "Hankel": {
+        "status": "CONDITIONAL; positivity not proved",
+        "required_forms": [
+          "(p_(i+j+2))_(i,j>=0)",
+          "(p_(i+j+3))_(i,j>=0)"
+        ],
+        "p_k": "tr(T^k), k>=2",
+        "consequence_if_proved": "Compactly supported Stieltjes representation continues -f'/f and excludes nonreal zeros",
+        "positive_individual_traces_suffice": false
+      },
+      "Ferrers": {
+        "status": "CONDITIONAL root implication; required real-rootedness not proved",
+        "partitions": "lambda_(N,j)=floor(N*exp(-j/N)), positive rows only",
+        "proved_limit_input": "M_(lambda_N)(z/N^2) converges locally uniformly to D(z)",
+        "unproved_antecedent": "Real-rootedness of these ordinary Ferrers non-nesting rook polynomials",
+        "consequence_if_proved": "All zeros of D are negative, hence the earlier all-size x=0 Jensen statement",
+        "Ferrers_shapes_computed": 0
+      }
+    },
+    "root_search": false,
+    "root_counts_performed": 0,
+    "size_or_rate_sweep": false,
+    "new_size_or_rate_cases": 0,
+    "all_real_spectrum_counterexample": false,
+    "unrelated_certificate_helpers_called": false
+  },
+  "weighted_columns_path3": {
+    "scope": "one closed three-site path, uniform killing, common sleep rate one",
+    "transition": [
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "1/2",
+        "0",
+        "1/2"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "leading_coefficients_by_hole_mask": [
+      "1",
+      "33/5",
+      "24/5",
+      "169/10",
+      "33/5",
+      "27",
+      "169/10",
+      "219/5"
+    ],
+    "M": "18",
+    "weighted_column_bounds": [
+      {
+        "entrance": 0,
+        "holes_mask": 1,
+        "B": "777/50",
+        "D": "5163/50",
+        "stronger_margin": "2193/50",
+        "normalized_ratio": "259/1980"
+      },
+      {
+        "entrance": 0,
+        "holes_mask": 2,
+        "B": "811/50",
+        "D": "3509/50",
+        "stronger_margin": "1349/50",
+        "normalized_ratio": "811/4320"
+      },
+      {
+        "entrance": 0,
+        "holes_mask": 3,
+        "B": "73/20",
+        "D": "6011/20",
+        "stronger_margin": "391/4",
+        "normalized_ratio": "73/6084"
+      },
+      {
+        "entrance": 0,
+        "holes_mask": 4,
+        "B": "726/25",
+        "D": "2244/25",
+        "stronger_margin": "759/25",
+        "normalized_ratio": "11/45"
+      },
+      {
+        "entrance": 0,
+        "holes_mask": 5,
+        "B": "73/5",
+        "D": "2357/5",
+        "stronger_margin": "737/5",
+        "normalized_ratio": "73/2430"
+      },
+      {
+        "entrance": 0,
+        "holes_mask": 6,
+        "B": "511/20",
+        "D": "5573/20",
+        "stronger_margin": "1517/20",
+        "normalized_ratio": "511/6084"
+      },
+      {
+        "entrance": 0,
+        "holes_mask": 7,
+        "B": "0",
+        "D": "3942/5",
+        "stronger_margin": "1971/10",
+        "normalized_ratio": "0"
+      },
+      {
+        "entrance": 1,
+        "holes_mask": 1,
+        "B": "608/25",
+        "D": "2362/25",
+        "stronger_margin": "877/25",
+        "normalized_ratio": "304/1485"
+      },
+      {
+        "entrance": 1,
+        "holes_mask": 2,
+        "B": "304/25",
+        "D": "1856/25",
+        "stronger_margin": "776/25",
+        "normalized_ratio": "19/135"
+      },
+      {
+        "entrance": 1,
+        "holes_mask": 3,
+        "B": "73/10",
+        "D": "2969/10",
+        "stronger_margin": "941/10",
+        "normalized_ratio": "73/3042"
+      },
+      {
+        "entrance": 1,
+        "holes_mask": 4,
+        "B": "608/25",
+        "D": "2362/25",
+        "stronger_margin": "877/25",
+        "normalized_ratio": "304/1485"
+      },
+      {
+        "entrance": 1,
+        "holes_mask": 5,
+        "B": "146/5",
+        "D": "2284/5",
+        "stronger_margin": "664/5",
+        "normalized_ratio": "73/1215"
+      },
+      {
+        "entrance": 1,
+        "holes_mask": 6,
+        "B": "73/10",
+        "D": "2969/10",
+        "stronger_margin": "941/10",
+        "normalized_ratio": "73/3042"
+      },
+      {
+        "entrance": 1,
+        "holes_mask": 7,
+        "B": "0",
+        "D": "3942/5",
+        "stronger_margin": "1971/10",
+        "normalized_ratio": "0"
+      },
+      {
+        "entrance": 2,
+        "holes_mask": 1,
+        "B": "726/25",
+        "D": "2244/25",
+        "stronger_margin": "759/25",
+        "normalized_ratio": "11/45"
+      },
+      {
+        "entrance": 2,
+        "holes_mask": 2,
+        "B": "811/50",
+        "D": "3509/50",
+        "stronger_margin": "1349/50",
+        "normalized_ratio": "811/4320"
+      },
+      {
+        "entrance": 2,
+        "holes_mask": 3,
+        "B": "511/20",
+        "D": "5573/20",
+        "stronger_margin": "1517/20",
+        "normalized_ratio": "511/6084"
+      },
+      {
+        "entrance": 2,
+        "holes_mask": 4,
+        "B": "777/50",
+        "D": "5163/50",
+        "stronger_margin": "2193/50",
+        "normalized_ratio": "259/1980"
+      },
+      {
+        "entrance": 2,
+        "holes_mask": 5,
+        "B": "73/5",
+        "D": "2357/5",
+        "stronger_margin": "737/5",
+        "normalized_ratio": "73/2430"
+      },
+      {
+        "entrance": 2,
+        "holes_mask": 6,
+        "B": "73/20",
+        "D": "6011/20",
+        "stronger_margin": "391/4",
+        "normalized_ratio": "73/6084"
+      },
+      {
+        "entrance": 2,
+        "holes_mask": 7,
+        "B": "0",
+        "D": "3942/5",
+        "stronger_margin": "1971/10",
+        "normalized_ratio": "0"
+      }
+    ],
+    "one_loss_all_active_columns": [
+      [
+        "17/20",
+        "31/30",
+        "27/20"
+      ],
+      [
+        "2",
+        "4/3",
+        "2"
+      ],
+      [
+        "27/20",
+        "31/30",
+        "17/20"
+      ]
+    ],
+    "positive_source": [
+      "6",
+      "6",
+      "6"
+    ],
+    "positive_correction": [
+      "5/2",
+      "5",
+      "5/2"
+    ],
+    "transport_checks": [
+      {
+        "entrance": 0,
+        "closed_addition": [
+          [
+            "7/30",
+            "1/5",
+            "11/30"
+          ],
+          [
+            "1/5",
+            "1/10",
+            "3/5"
+          ],
+          [
+            "17/30",
+            "7/10",
+            "1/30"
+          ]
+        ],
+        "one_loss_transport_slack": [
+          [
+            "413/75",
+            "857/150",
+            "418/75"
+          ],
+          [
+            "181/50",
+            "96/25",
+            "191/50"
+          ],
+          [
+            "701/150",
+            "757/150",
+            "661/150"
+          ]
+        ]
+      },
+      {
+        "entrance": 1,
+        "closed_addition": [
+          [
+            "1/15",
+            "2/5",
+            "11/15"
+          ],
+          [
+            "1/5",
+            "1/5",
+            "1/5"
+          ],
+          [
+            "11/15",
+            "2/5",
+            "1/15"
+          ]
+        ],
+        "one_loss_transport_slack": [
+          [
+            "713/150",
+            "131/25",
+            "763/150"
+          ],
+          [
+            "99/25",
+            "103/25",
+            "99/25"
+          ],
+          [
+            "763/150",
+            "131/25",
+            "713/150"
+          ]
+        ]
+      },
+      {
+        "entrance": 2,
+        "closed_addition": [
+          [
+            "1/30",
+            "7/10",
+            "17/30"
+          ],
+          [
+            "3/5",
+            "1/10",
+            "1/5"
+          ],
+          [
+            "11/30",
+            "1/5",
+            "7/30"
+          ]
+        ],
+        "one_loss_transport_slack": [
+          [
+            "661/150",
+            "757/150",
+            "701/150"
+          ],
+          [
+            "191/50",
+            "96/25",
+            "181/50"
+          ],
+          [
+            "418/75",
+            "857/150",
+            "413/75"
+          ]
+        ]
+      }
+    ],
+    "checks": {
+      "raw_leading_recursion_both_priorities": true,
+      "independent_rescaled_IDLA_residual": true,
+      "all_21_closed_additions_both_priorities": true,
+      "addition_transient_counts": [
+        35,
+        35
+      ],
+      "closed_additions_normalized_nonnegative_conserve_particles": true,
+      "all_21_D_and_stronger_bounds_strict": true,
+      "all_27_transport_slacks_strict": true,
+      "positive_source_transport_identity": true
+    },
+    "general_kernel_transport_lemma_proved_by_computation": false
+  },
+  "weighted_sources_path4": {
+    "scope": "one closed path4, common rate one, physical uniform killing; exact leading data only",
+    "leading_coefficients_by_hole_mask": [
+      "1",
+      "227/21",
+      "172/21",
+      "334505/7462",
+      "172/21",
+      "45853/861",
+      "127167/3731",
+      "15473023/111930",
+      "227/21",
+      "280667/3731",
+      "45853/861",
+      "24612347/111930",
+      "334505/7462",
+      "24612347/111930",
+      "15473023/111930",
+      "385540/861"
+    ],
+    "u": [
+      "37/4",
+      "39/4",
+      "39/4",
+      "37/4"
+    ],
+    "M": "38",
+    "G": [
+      "171/2",
+      "103",
+      "103",
+      "171/2"
+    ],
+    "source_potential_constant": "93/2",
+    "pair_order": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "paired_source": [
+      "403/7",
+      "853/14",
+      "1262/21",
+      "2305/42",
+      "853/14",
+      "403/7"
+    ],
+    "product_source_gaps": [
+      "3653/112",
+      "3277/112",
+      "8557/336",
+      "13501/336",
+      "3277/112",
+      "3653/112"
+    ],
+    "entrance_checks": [
+      {
+        "entrance": 0,
+        "source_margin": [
+          "703/2",
+          "4381/14",
+          "10697/42",
+          "3631/21"
+        ],
+        "weighted_transport_slack": [
+          "25495627/75264",
+          "12236215/50176",
+          "34359515/150528",
+          "21160373/75264"
+        ],
+        "one_hole_D": [
+          "26191343/75264",
+          "37953217/150528",
+          "12007189/50176",
+          "7503707/25088"
+        ]
+      },
+      {
+        "entrance": 1,
+        "source_margin": [
+          "61345/252",
+          "741/2",
+          "23953/84",
+          "12155/63"
+        ],
+        "weighted_transport_slack": [
+          "1954299/6272",
+          "9489631/37632",
+          "2969483/12544",
+          "5485583/18816"
+        ],
+        "one_hole_D": [
+          "6103375/18816",
+          "9781601/37632",
+          "9278623/37632",
+          "1929659/6272"
+        ]
+      },
+      {
+        "entrance": 2,
+        "source_margin": [
+          "12155/63",
+          "23953/84",
+          "741/2",
+          "61345/252"
+        ],
+        "weighted_transport_slack": [
+          "5485583/18816",
+          "2969483/12544",
+          "9489631/37632",
+          "1954299/6272"
+        ],
+        "one_hole_D": [
+          "1929659/6272",
+          "9278623/37632",
+          "9781601/37632",
+          "6103375/18816"
+        ]
+      },
+      {
+        "entrance": 3,
+        "source_margin": [
+          "3631/21",
+          "10697/42",
+          "4381/14",
+          "703/2"
+        ],
+        "weighted_transport_slack": [
+          "21160373/75264",
+          "34359515/150528",
+          "12236215/50176",
+          "25495627/75264"
+        ],
+        "one_hole_D": [
+          "7503707/25088",
+          "12007189/50176",
+          "37953217/150528",
+          "26191343/75264"
+        ]
+      }
+    ],
+    "disjoint_cylinder_gaps": [
+      {
+        "I": 1,
+        "J": 2,
+        "gap": "20547089/470106"
+      },
+      {
+        "I": 1,
+        "J": 4,
+        "gap": "637891/18081"
+      },
+      {
+        "I": 1,
+        "J": 6,
+        "gap": "180357929/783510"
+      },
+      {
+        "I": 1,
+        "J": 8,
+        "gap": "9782936/235053"
+      },
+      {
+        "I": 1,
+        "J": 10,
+        "gap": "836262743/2350530"
+      },
+      {
+        "I": 1,
+        "J": 12,
+        "gap": "34562791/130585"
+      },
+      {
+        "I": 1,
+        "J": 14,
+        "gap": "2459852021/2350530"
+      },
+      {
+        "I": 2,
+        "J": 4,
+        "gap": "7756751/235053"
+      },
+      {
+        "I": 2,
+        "J": 5,
+        "gap": "700339597/2350530"
+      },
+      {
+        "I": 2,
+        "J": 8,
+        "gap": "637891/18081"
+      },
+      {
+        "I": 2,
+        "J": 9,
+        "gap": "103486937/261170"
+      },
+      {
+        "I": 2,
+        "J": 12,
+        "gap": "59787713/261170"
+      },
+      {
+        "I": 2,
+        "J": 13,
+        "gap": "1590399742/1175265"
+      },
+      {
+        "I": 3,
+        "J": 4,
+        "gap": "59787713/261170"
+      },
+      {
+        "I": 3,
+        "J": 8,
+        "gap": "34562791/130585"
+      },
+      {
+        "I": 3,
+        "J": 12,
+        "gap": "260881398595/167044332"
+      },
+      {
+        "I": 4,
+        "J": 8,
+        "gap": "20547089/470106"
+      },
+      {
+        "I": 4,
+        "J": 9,
+        "gap": "103486937/261170"
+      },
+      {
+        "I": 4,
+        "J": 10,
+        "gap": "700339597/2350530"
+      },
+      {
+        "I": 4,
+        "J": 11,
+        "gap": "1590399742/1175265"
+      },
+      {
+        "I": 5,
+        "J": 8,
+        "gap": "836262743/2350530"
+      },
+      {
+        "I": 5,
+        "J": 10,
+        "gap": "1770547669/741321"
+      },
+      {
+        "I": 6,
+        "J": 8,
+        "gap": "180357929/783510"
+      },
+      {
+        "I": 6,
+        "J": 9,
+        "gap": "88374894547/41761083"
+      },
+      {
+        "I": 7,
+        "J": 8,
+        "gap": "2459852021/2350530"
+      }
+    ],
+    "one_hole_inverse_matrix": [
+      [
+        "37/12",
+        "-11/6",
+        "-2/3",
+        "-1/3"
+      ],
+      [
+        "-5/4",
+        "5",
+        "-3/2",
+        "-1/2"
+      ],
+      [
+        "-1/2",
+        "-3/2",
+        "5",
+        "-5/4"
+      ],
+      [
+        "-1/3",
+        "-2/3",
+        "-11/6",
+        "37/12"
+      ]
+    ],
+    "one_hole_matrix": [
+      [
+        "373/768",
+        "1427/5376",
+        "1133/5376",
+        "139/768"
+      ],
+      [
+        "283/1536",
+        "3677/10752",
+        "1955/10752",
+        "229/1536"
+      ],
+      [
+        "229/1536",
+        "1955/10752",
+        "3677/10752",
+        "283/1536"
+      ],
+      [
+        "139/768",
+        "1133/5376",
+        "1427/5376",
+        "373/768"
+      ]
+    ],
+    "generator_cycle_difference": "1/8",
+    "stabilization_cycle_difference": "1955/14450688",
+    "checks": {
+      "rescaled_IDLA_full_residual": true,
+      "both_admissible_factor_orders": true,
+      "separate_explicit_source_formula": true,
+      "source_mixture_and_potential": true,
+      "all_25_cylinder_gaps_positive": true,
+      "raw_absorption_performed": false,
+      "general_sign_theorem": false,
+      "block_residuals_with_audited_intertwining": true
+    }
+  }
+}

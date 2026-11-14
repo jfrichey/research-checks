@@ -1,0 +1,89 @@
+{
+  "version": "1.3.0",
+  "packagesDir": ".lake/packages",
+  "packages": [
+    {
+      "type": "path",
+      "name": "mathlib",
+      "dir": ".lake/packages/mathlib",
+      "scope": "",
+      "inherited": false,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "plausible",
+      "dir": ".lake/packages/plausible",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "LeanSearchClient",
+      "dir": ".lake/packages/LeanSearchClient",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "importGraph",
+      "dir": ".lake/packages/importGraph",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "proofwidgets",
+      "dir": ".lake/packages/proofwidgets",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "aesop",
+      "dir": ".lake/packages/aesop",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "Qq",
+      "dir": ".lake/packages/Qq",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "batteries",
+      "dir": ".lake/packages/batteries",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "Cli",
+      "dir": ".lake/packages/Cli",
+      "scope": "leanprover",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    }
+  ],
+  "name": "balloons",
+  "lakeDir": ".lake"
+}

@@ -1,0 +1,180 @@
+{
+  "square_free_1": {
+    "random_width": 1,
+    "wired": false,
+    "triangular": false,
+    "states": 2,
+    "augmented_dimension": 3,
+    "annihilator_roots": [
+      "1",
+      "1"
+    ],
+    "krylov_checks": 3,
+    "initial_values": [
+      "1/2",
+      "3/4"
+    ],
+    "verified_for_all_positive_lengths": true
+  },
+  "square_free_2": {
+    "random_width": 2,
+    "wired": false,
+    "triangular": false,
+    "states": 4,
+    "augmented_dimension": 5,
+    "annihilator_roots": [
+      "1",
+      "1"
+    ],
+    "krylov_checks": 5,
+    "initial_values": [
+      "3/4",
+      "17/16"
+    ],
+    "verified_for_all_positive_lengths": true
+  },
+  "square_free_3": {
+    "random_width": 3,
+    "wired": false,
+    "triangular": false,
+    "states": 9,
+    "augmented_dimension": 10,
+    "annihilator_roots": [
+      "1",
+      "1",
+      "1/8"
+    ],
+    "krylov_checks": 10,
+    "initial_values": [
+      "1",
+      "11/8",
+      "897/512"
+    ],
+    "verified_for_all_positive_lengths": true
+  },
+  "square_wired_1": {
+    "random_width": 1,
+    "wired": true,
+    "triangular": false,
+    "states": 2,
+    "augmented_dimension": 3,
+    "annihilator_roots": [
+      "1",
+      "1"
+    ],
+    "krylov_checks": 3,
+    "initial_values": [
+      "1",
+      "1"
+    ],
+    "verified_for_all_positive_lengths": true
+  },
+  "square_wired_2": {
+    "random_width": 2,
+    "wired": true,
+    "triangular": false,
+    "states": 5,
+    "augmented_dimension": 6,
+    "annihilator_roots": [
+      "1",
+      "1",
+      "1/4"
+    ],
+    "krylov_checks": 6,
+    "initial_values": [
+      "5/4",
+      "21/16",
+      "89/64"
+    ],
+    "verified_for_all_positive_lengths": true
+  },
+  "triangular_free_1": {
+    "random_width": 1,
+    "wired": false,
+    "triangular": true,
+    "states": 2,
+    "augmented_dimension": 3,
+    "annihilator_roots": [
+      "1",
+      "1"
+    ],
+    "krylov_checks": 3,
+    "initial_values": [
+      "1/2",
+      "3/4"
+    ],
+    "verified_for_all_positive_lengths": true
+  },
+  "triangular_free_2": {
+    "random_width": 2,
+    "wired": false,
+    "triangular": true,
+    "states": 4,
+    "augmented_dimension": 5,
+    "annihilator_roots": [
+      "1",
+      "1"
+    ],
+    "krylov_checks": 5,
+    "initial_values": [
+      "3/4",
+      "1"
+    ],
+    "verified_for_all_positive_lengths": true
+  },
+  "triangular_free_3": {
+    "random_width": 3,
+    "wired": false,
+    "triangular": true,
+    "states": 9,
+    "augmented_dimension": 10,
+    "annihilator_roots": [
+      "1",
+      "1",
+      "1/8"
+    ],
+    "krylov_checks": 10,
+    "initial_values": [
+      "1",
+      "5/4",
+      "193/128"
+    ],
+    "verified_for_all_positive_lengths": true
+  },
+  "triangular_wired_1": {
+    "random_width": 1,
+    "wired": true,
+    "triangular": true,
+    "states": 2,
+    "augmented_dimension": 3,
+    "annihilator_roots": [
+      "1",
+      "1"
+    ],
+    "krylov_checks": 3,
+    "initial_values": [
+      "1",
+      "1"
+    ],
+    "verified_for_all_positive_lengths": true
+  },
+  "triangular_wired_2": {
+    "random_width": 2,
+    "wired": true,
+    "triangular": true,
+    "states": 5,
+    "augmented_dimension": 6,
+    "annihilator_roots": [
+      "1",
+      "1",
+      "1/4"
+    ],
+    "krylov_checks": 6,
+    "initial_values": [
+      "5/4",
+      "5/4",
+      "41/32"
+    ],
+    "verified_for_all_positive_lengths": true
+  }
+}

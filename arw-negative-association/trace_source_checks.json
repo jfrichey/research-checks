@@ -1,0 +1,495 @@
+{
+  "status": "Exact checks of a sufficient coefficient inequality; no all-size proof",
+  "source": "trace_source_check.py",
+  "cases": [
+    {
+      "scope": "One exact actual-clock law; stronger centered coefficient test only",
+      "n": 4,
+      "p": "1/2",
+      "alpha": "1",
+      "ordinary_loopless_lambda": "5/4",
+      "count_state_dimension": 15,
+      "stationary_equations_and_binomial_active_marginal_pass": true,
+      "positive_kappa_lift_vs_direct_service_flux_pass": true,
+      "kappa_killed_queue_resolvent_pass": true,
+      "kappa_reduced_state_count": 6,
+      "stationary_counts": {
+        "0,0": "779/77376",
+        "0,1": "779/38688",
+        "0,2": "1559/77376",
+        "0,3": "49/4836",
+        "0,4": "1/496",
+        "1,0": "3115/38688",
+        "1,1": "3893/38688",
+        "1,2": "183/3224",
+        "1,3": "3/248",
+        "2,0": "1981/9672",
+        "2,1": "667/4836",
+        "2,2": "1/31",
+        "3,0": "49/248",
+        "3,1": "13/248",
+        "4,0": "1/16"
+      },
+      "kappa": {
+        "1,0": "389/38688",
+        "2,0": "25/2496",
+        "2,1": "435/12896",
+        "3,0": "59/19344",
+        "3,1": "23/1612",
+        "3,2": "437/19344"
+      },
+      "centered_rows": [
+        {
+          "k": 2,
+          "m": 2,
+          "s": 1,
+          "j": 0,
+          "ell": 2,
+          "a_weights": [
+            "389/116064",
+            "3385/464256"
+          ],
+          "kappa_weighted_tail": "3385/4941",
+          "ordinary_block_tail": "193481/464256",
+          "centered_coefficient": "68390771/23948181504",
+          "sign": 1
+        },
+        {
+          "k": 2,
+          "m": 2,
+          "s": 2,
+          "j": 0,
+          "ell": 2,
+          "a_weights": [
+            "25/14976",
+            "197/58032"
+          ],
+          "kappa_weighted_tail": "1576/2351",
+          "ordinary_block_tail": "193481/464256",
+          "centered_coefficient": "276793625/215533633536",
+          "sign": 1
+        },
+        {
+          "k": 2,
+          "m": 2,
+          "s": 2,
+          "j": 1,
+          "ell": 2,
+          "a_weights": [
+            "145/25792",
+            "575/58032"
+          ],
+          "kappa_weighted_tail": "460/721",
+          "ordinary_block_tail": "193481/464256",
+          "centered_coefficient": "370289795/107766816768",
+          "sign": 1
+        },
+        {
+          "k": 3,
+          "m": 1,
+          "s": 1,
+          "j": 0,
+          "ell": 2,
+          "a_weights": [
+            "389/154752",
+            "3385/309504",
+            "193/19344"
+          ],
+          "kappa_weighted_tail": "6473/7251",
+          "ordinary_block_tail": "37475/51584",
+          "centered_coefficient": "62172007/15965454336",
+          "sign": 1
+        },
+        {
+          "k": 3,
+          "m": 1,
+          "s": 1,
+          "j": 0,
+          "ell": 3,
+          "a_weights": [
+            "389/154752",
+            "3385/309504",
+            "193/19344"
+          ],
+          "kappa_weighted_tail": "3088/7251",
+          "ordinary_block_tail": "2533/9672",
+          "centered_coefficient": "1277817/332613632",
+          "sign": 1
+        }
+      ],
+      "checked_coefficient_count": 5,
+      "negative_count": 0,
+      "all_centered_coefficients_nonnegative": true,
+      "source_sha256": "a1461648537e51bd8986c85e96000b733768c535f79bb38dd8849e30bb79674e",
+      "elapsed_seconds": 0.008381121995626017,
+      "peak_rss_mib": 17.1953125,
+      "limits": {
+        "cpu_seconds": 45,
+        "address_space_mib": 1900
+      }
+    },
+    {
+      "scope": "One exact actual-clock law; stronger centered coefficient test only",
+      "n": 5,
+      "p": "4/5",
+      "alpha": "1",
+      "ordinary_loopless_lambda": "24/5",
+      "count_state_dimension": 21,
+      "stationary_equations_and_binomial_active_marginal_pass": true,
+      "positive_kappa_lift_vs_direct_service_flux_pass": true,
+      "kappa_killed_queue_resolvent_pass": true,
+      "kappa_reduced_state_count": 10,
+      "stationary_counts": {
+        "0,0": "358514189/45753488176725",
+        "0,1": "1434056756/45753488176725",
+        "0,2": "3277909216/45753488176725",
+        "0,3": "432974464/4316366809125",
+        "0,4": "1872896/23281374375",
+        "0,5": "1024/36028125",
+        "1,0": "1297458188/3050232545115",
+        "1,1": "59000083808/45753488176725",
+        "1,2": "9088187008/4316366809125",
+        "1,3": "43513856/23281374375",
+        "1,4": "1024/1441125",
+        "2,0": "7082733472/863273361825",
+        "2,1": "75471640192/4316366809125",
+        "2,2": "418566656/23281374375",
+        "2,3": "54272/7205625",
+        "3,0": "107939456/1552091625",
+        "3,1": "708864512/7760458125",
+        "3,2": "105472/2401875",
+        "4,0": "616192/2401875",
+        "4,1": "367616/2401875",
+        "5,0": "1024/3125"
+      },
+      "kappa": {
+        "1,0": "312160096/10893687661125",
+        "2,0": "131098112/1830139527069",
+        "2,1": "40675889536/45753488176725",
+        "3,0": "345524224/4316366809125",
+        "3,1": "6126395392/4316366809125",
+        "3,2": "34737662464/4316366809125",
+        "4,0": "836608/23281374375",
+        "4,1": "17606656/23281374375",
+        "4,2": "142296064/23281374375",
+        "4,3": "23160832/1108636875"
+      },
+      "centered_rows": [
+        {
+          "k": 2,
+          "m": 3,
+          "s": 1,
+          "j": 0,
+          "ell": 2,
+          "a_weights": [
+            "156080048/18156146101875",
+            "90438976/941429797875"
+          ],
+          "kappa_weighted_tail": "763078860/831363881",
+          "ordinary_block_tail": "35748784998512/45753488176725",
+          "centered_coefficient": "83092335384340415814848/5814949112049206568977015625",
+          "sign": 1
+        },
+        {
+          "k": 2,
+          "m": 3,
+          "s": 2,
+          "j": 0,
+          "ell": 2,
+          "a_weights": [
+            "131098112/9150697635345",
+            "25249792/159865437375"
+          ],
+          "kappa_weighted_tail": "70571196/76972471",
+          "ordinary_block_tail": "35748784998512/45753488176725",
+          "centered_coefficient": "244329505392713036773376/10466908401688571824158628125",
+          "sign": 1
+        },
+        {
+          "k": 2,
+          "m": 3,
+          "s": 2,
+          "j": 1,
+          "ell": 2,
+          "a_weights": [
+            "40675889536/228767440883625",
+            "360008192/205541276625"
+          ],
+          "kappa_weighted_tail": "3130383732/3448164119",
+          "ordinary_block_tail": "35748784998512/45753488176725",
+          "centered_coefficient": "2554662059642845983586816/10466908401688571824158628125",
+          "sign": 1
+        },
+        {
+          "k": 2,
+          "m": 3,
+          "s": 3,
+          "j": 0,
+          "ell": 2,
+          "a_weights": [
+            "172762112/21581834045625",
+            "2011648/23281374375"
+          ],
+          "kappa_weighted_tail": "3642183/3979609",
+          "ordinary_block_tail": "35748784998512/45753488176725",
+          "centered_coefficient": "12480711838118629819904/987444188838544511713078125",
+          "sign": 1
+        },
+        {
+          "k": 2,
+          "m": 3,
+          "s": 3,
+          "j": 1,
+          "ell": 2,
+          "a_weights": [
+            "3063197696/21581834045625",
+            "31980544/23281374375"
+          ],
+          "kappa_weighted_tail": "28951137/31942541",
+          "ordinary_block_tail": "35748784998512/45753488176725",
+          "centered_coefficient": "187093477291101375828992/987444188838544511713078125",
+          "sign": 1
+        },
+        {
+          "k": 2,
+          "m": 3,
+          "s": 3,
+          "j": 2,
+          "ell": 2,
+          "a_weights": [
+            "17368831232/21581834045625",
+            "160142848/23281374375"
+          ],
+          "kappa_weighted_tail": "579892266/647739263",
+          "ordinary_block_tail": "35748784998512/45753488176725",
+          "centered_coefficient": "864307785759654331441664/987444188838544511713078125",
+          "sign": 1
+        },
+        {
+          "k": 3,
+          "m": 2,
+          "s": 1,
+          "j": 0,
+          "ell": 2,
+          "a_weights": [
+            "156080048/18156146101875",
+            "180877952/941429797875",
+            "1373652736/1438788936375"
+          ],
+          "kappa_weighted_tail": "27329596600/27534451663",
+          "ordinary_block_tail": "4911224600272/5083720908525",
+          "centered_coefficient": "59330644714365925802624/1938316370683068856325671875",
+          "sign": 1
+        },
+        {
+          "k": 3,
+          "m": 2,
+          "s": 1,
+          "j": 0,
+          "ell": 3,
+          "a_weights": [
+            "156080048/18156146101875",
+            "180877952/941429797875",
+            "1373652736/1438788936375"
+          ],
+          "kappa_weighted_tail": "22751123440/27534451663",
+          "ordinary_block_tail": "28322252288/41108255325",
+          "centered_coefficient": "355248696436308944128/2239102469021642883703125",
+          "sign": 1
+        },
+        {
+          "k": 3,
+          "m": 2,
+          "s": 2,
+          "j": 0,
+          "ell": 2,
+          "a_weights": [
+            "65549056/9150697635345",
+            "25249792/159865437375",
+            "1200128/1552091625"
+          ],
+          "kappa_weighted_tail": "832120776/838522051",
+          "ordinary_block_tail": "4911224600272/5083720908525",
+          "centered_coefficient": "28697513632643946887168/1162989822409841313795403125",
+          "sign": 1
+        },
+        {
+          "k": 3,
+          "m": 2,
+          "s": 2,
+          "j": 0,
+          "ell": 3,
+          "a_weights": [
+            "65549056/9150697635345",
+            "25249792/159865437375",
+            "1200128/1552091625"
+          ],
+          "kappa_weighted_tail": "690978384/838522051",
+          "ordinary_block_tail": "28322252288/41108255325",
+          "centered_coefficient": "1191957185550001180672/9404230369890900111553125",
+          "sign": 1
+        },
+        {
+          "k": 3,
+          "m": 2,
+          "s": 2,
+          "j": 1,
+          "ell": 2,
+          "a_weights": [
+            "20337944768/228767440883625",
+            "360008192/205541276625",
+            "11742208/1552091625"
+          ],
+          "kappa_weighted_tail": "33303255960/33621036347",
+          "ordinary_block_tail": "4911224600272/5083720908525",
+          "centered_coefficient": "267775862514327230247424/1162989822409841313795403125",
+          "sign": 1
+        },
+        {
+          "k": 3,
+          "m": 2,
+          "s": 2,
+          "j": 1,
+          "ell": 3,
+          "a_weights": [
+            "20337944768/228767440883625",
+            "360008192/205541276625",
+            "11742208/1552091625"
+          ],
+          "kappa_weighted_tail": "27042488496/33621036347",
+          "ordinary_block_tail": "28322252288/41108255325",
+          "centered_coefficient": "10204547079244245072896/9404230369890900111553125",
+          "sign": 1
+        },
+        {
+          "k": 4,
+          "m": 1,
+          "s": 1,
+          "j": 0,
+          "ell": 2,
+          "a_weights": [
+            "312160096/54468438305625",
+            "180877952/941429797875",
+            "2747305472/1438788936375",
+            "8628224/1552091625"
+          ],
+          "kappa_weighted_tail": "13039544140/13049299143",
+          "ordinary_block_tail": "15185722862048/15251162725575",
+          "centered_coefficient": "2507268326753584908928/92300779556336612205984375",
+          "sign": 1
+        },
+        {
+          "k": 4,
+          "m": 1,
+          "s": 1,
+          "j": 0,
+          "ell": 3,
+          "a_weights": [
+            "312160096/54468438305625",
+            "180877952/941429797875",
+            "2747305472/1438788936375",
+            "8628224/1552091625"
+          ],
+          "kappa_weighted_tail": "88987572400/91345094001",
+          "ordinary_block_tail": "269464617728/287757787275",
+          "centered_coefficient": "504175793010880081408/1741524142572388909546875",
+          "sign": 1
+        },
+        {
+          "k": 4,
+          "m": 1,
+          "s": 1,
+          "j": 0,
+          "ell": 4,
+          "a_weights": [
+            "312160096/54468438305625",
+            "180877952/941429797875",
+            "2747305472/1438788936375",
+            "8628224/1552091625"
+          ],
+          "kappa_weighted_tail": "7359605440/10149454889",
+          "ordinary_block_tail": "188262656/310418325",
+          "centered_coefficient": "1708768269670230016/1878666820466438953125",
+          "sign": 1
+        }
+      ],
+      "checked_coefficient_count": 15,
+      "negative_count": 0,
+      "all_centered_coefficients_nonnegative": true,
+      "source_sha256": "a1461648537e51bd8986c85e96000b733768c535f79bb38dd8849e30bb79674e",
+      "elapsed_seconds": 0.015100035001523793,
+      "peak_rss_mib": 17.40234375,
+      "limits": {
+        "cpu_seconds": 45,
+        "address_space_mib": 1900
+      }
+    }
+  ],
+  "particle_palm_audit": {
+    "n": 4,
+    "p": "1/2",
+    "alpha": "1",
+    "particle_palm_checks": [
+      {
+        "marks": 1,
+        "states": 20,
+        "stationary_source_residual_pass": true,
+        "factorial_mass_and_conditional_rank_pass": true,
+        "conditional_remaining_rank": [
+          "3894/100751",
+          "3599/14393",
+          "6672/14393",
+          "24960/100751"
+        ],
+        "all_active_source": [
+          "779/38688",
+          "3115/25792",
+          "1981/9672",
+          "49/496"
+        ],
+        "selected_lifetimes": {
+          "1,0,1": "1159809/194984",
+          "1,1,1": "2411640121/403616880"
+        },
+        "transformed_common_service_rate": "2400804630/2411640121"
+      },
+      {
+        "marks": 2,
+        "states": 18,
+        "stationary_source_residual_pass": true,
+        "factorial_mass_and_conditional_rank_pass": true,
+        "conditional_remaining_rank": [
+          "25193/193481",
+          "93408/193481",
+          "74880/193481"
+        ],
+        "all_active_source": [
+          "3115/12896",
+          "1981/2418",
+          "147/248"
+        ],
+        "selected_lifetimes": {
+          "0,0,2": "209339/67291",
+          "0,1,2": "43894216/13929237"
+        },
+        "transformed_common_service_rate": "43333173/43894216",
+        "largest_entrance_lifetime": "200206/67291",
+        "largest_entrance_full_time": "130080/67291",
+        "largest_entrance_normalized_full": "65040/100103",
+        "unconditioned_outside_full": "193481/464256",
+        "largest_entrance_excess": "10827181697/46473418368",
+        "actual_averaged_full": "74880/193481",
+        "actual_averaged_gap": "2671408081/89824715136",
+        "two_minus_one_mark_service_rate": "-877418425986147/105857052385440136"
+      }
+    ],
+    "source_sha256": "49993ffd4975fdf2d60c3788a8d4324225ff5dcff4b1a298d2e2f8b64fc7a67a",
+    "elapsed_seconds": 0.025025010982062668,
+    "peak_rss_mib": 18.00390625,
+    "limits": {
+      "cpu_seconds": 45,
+      "address_space_mib": 1900
+    },
+    "scope": "Same saved n4 law; marked-source identities and failure of per-entrance domination, not a universal sign proof"
+  }
+}

@@ -1,0 +1,11 @@
+name = "balloons"
+version = "0.1.0"
+defaultTargets = ["Balloons"]
+weakLeanArgs = ["-j1"]
+
+[[require]]
+name = "mathlib"
+path = ".lake/packages/mathlib"
+
+[[lean_lib]]
+name = "Balloons"

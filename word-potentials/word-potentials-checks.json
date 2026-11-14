@@ -1,0 +1,2184 @@
+{
+  "date": "2026-10-11",
+  "exact_and_validation": {
+    "validation_words": 60,
+    "density_reversal_certificates": [
+      {
+        "word": "01001",
+        "t": 2,
+        "root_interval": [
+          "43511131330/21097475539",
+          "33208738189/16102098939"
+        ],
+        "density_interval": [
+          "0.060284386",
+          "0.060284387"
+        ],
+        "method": "exact rational root isolation and rational interval evaluation"
+      },
+      {
+        "word": "00100",
+        "t": 2,
+        "root_interval": [
+          "36653268485/17741219316",
+          "11705025646/5665563691"
+        ],
+        "density_interval": [
+          "0.066836786",
+          "0.066836787"
+        ],
+        "method": "exact rational root isolation and rational interval evaluation"
+      },
+      {
+        "word": "01001",
+        "t": 64,
+        "root_interval": [
+          "18573650134/4502747513",
+          "120290961645/29161733126"
+        ],
+        "density_interval": [
+          "0.307729696",
+          "0.307729697"
+        ],
+        "method": "exact rational root isolation and rational interval evaluation"
+      },
+      {
+        "word": "00100",
+        "t": 64,
+        "root_interval": [
+          "219979292611/50330317650",
+          "11866530852/2715011309"
+        ],
+        "density_interval": [
+          "0.300579885",
+          "0.300579886"
+        ],
+        "method": "exact rational root isolation and rational interval evaluation"
+      }
+    ],
+    "conjugacy_obstruction_checks": [
+      {
+        "word": "0001",
+        "det_I_minus_z_M": "-t*z**4 + z**4 - 2*z + 1",
+        "avoidance_scc_sizes": [
+          1,
+          7
+        ]
+      },
+      {
+        "word": "0011",
+        "det_I_minus_z_M": "-t*z**4 + z**4 - 2*z + 1",
+        "avoidance_scc_sizes": [
+          8
+        ]
+      }
+    ],
+    "checked_on": "2026-10-10"
+  },
+  "numerical_scans": {
+    "status": "floating-point evidence, not universal inequalities",
+    "comparison_tolerance": 1e-10,
+    "order_scans": [
+      {
+        "q": 2,
+        "lengths": [
+          2,
+          16
+        ],
+        "border_classes_total": 344,
+        "negative_beta": [
+          -12,
+          -6,
+          -3,
+          -1,
+          -0.2,
+          -0.02
+        ],
+        "positive_beta": [
+          0.02,
+          0.2,
+          1,
+          3,
+          6,
+          12,
+          24
+        ],
+        "failures": []
+      },
+      {
+        "q": 3,
+        "lengths": [
+          2,
+          9
+        ],
+        "border_classes_total": 63,
+        "negative_beta": [
+          -12,
+          -6,
+          -3,
+          -1,
+          -0.2,
+          -0.02
+        ],
+        "positive_beta": [
+          0.02,
+          0.2,
+          1,
+          3,
+          6,
+          12,
+          24
+        ],
+        "failures": []
+      },
+      {
+        "q": 4,
+        "lengths": [
+          2,
+          7
+        ],
+        "border_classes_total": 33,
+        "negative_beta": [
+          -12,
+          -6,
+          -3,
+          -1,
+          -0.2,
+          -0.02
+        ],
+        "positive_beta": [
+          0.02,
+          0.2,
+          1,
+          3,
+          6,
+          12,
+          24
+        ],
+        "failures": []
+      }
+    ],
+    "crossing_scans": [
+      {
+        "q": 2,
+        "m": 5,
+        "classes": 6,
+        "beta_grid": {
+          "segments": [
+            [
+              0.02,
+              8,
+              140
+            ],
+            [
+              8.2,
+              30,
+              90
+            ]
+          ]
+        },
+        "sign_tolerance": 1e-09,
+        "maximum_observed_sign_changes": 1,
+        "multiple_crossings": []
+      },
+      {
+        "q": 2,
+        "m": 8,
+        "classes": 13,
+        "beta_grid": {
+          "segments": [
+            [
+              0.02,
+              8,
+              140
+            ],
+            [
+              8.2,
+              30,
+              90
+            ]
+          ]
+        },
+        "sign_tolerance": 1e-09,
+        "maximum_observed_sign_changes": 1,
+        "multiple_crossings": []
+      },
+      {
+        "q": 2,
+        "m": 12,
+        "classes": 30,
+        "beta_grid": {
+          "segments": [
+            [
+              0.02,
+              8,
+              140
+            ],
+            [
+              8.2,
+              30,
+              90
+            ]
+          ]
+        },
+        "sign_tolerance": 1e-09,
+        "maximum_observed_sign_changes": 1,
+        "multiple_crossings": []
+      },
+      {
+        "q": 2,
+        "m": 16,
+        "classes": 62,
+        "beta_grid": {
+          "segments": [
+            [
+              0.02,
+              8,
+              140
+            ],
+            [
+              8.2,
+              30,
+              90
+            ]
+          ]
+        },
+        "sign_tolerance": 1e-09,
+        "maximum_observed_sign_changes": 1,
+        "multiple_crossings": []
+      }
+    ],
+    "checked_on": "2026-10-10"
+  },
+  "polynomial_scans": {
+    "status": "floating-point consistency check, not the proof",
+    "negative": [
+      {
+        "q": 2,
+        "L_range": [
+          1,
+          8
+        ],
+        "profiles_total": 510,
+        "t_grid": [
+          0.0001,
+          0.02,
+          0.2,
+          0.8,
+          0.99
+        ],
+        "tolerance": 1e-12,
+        "failures": []
+      },
+      {
+        "q": 3,
+        "L_range": [
+          1,
+          8
+        ],
+        "profiles_total": 510,
+        "t_grid": [
+          0.0001,
+          0.02,
+          0.2,
+          0.8,
+          0.99
+        ],
+        "tolerance": 1e-12,
+        "failures": []
+      },
+      {
+        "q": 4,
+        "L_range": [
+          1,
+          8
+        ],
+        "profiles_total": 510,
+        "t_grid": [
+          0.0001,
+          0.02,
+          0.2,
+          0.8,
+          0.99
+        ],
+        "tolerance": 1e-12,
+        "failures": []
+      }
+    ],
+    "positive": [
+      {
+        "q": 2,
+        "L_range": [
+          1,
+          11
+        ],
+        "profiles_total": 4094,
+        "beta_grid": [
+          0.001,
+          0.03,
+          0.1,
+          0.3,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          12,
+          20
+        ],
+        "tolerance": 1e-11,
+        "failures": []
+      }
+    ],
+    "checked_on": "2026-10-10"
+  },
+  "crossing_certificates": {
+    "status": "exact enumeration and rational theorem-hypothesis checks",
+    "q": 2,
+    "length_range": [
+      2,
+      70
+    ],
+    "enumeration": "recursive longest-border candidates and equality closure; all finite-alphabet profiles, containing every binary profile",
+    "enumerator_validation": [
+      {
+        "q": 2,
+        "length_range": [
+          1,
+          16
+        ],
+        "method": "equality with exhaustive word enumeration"
+      },
+      {
+        "q": 3,
+        "length_range": [
+          1,
+          9
+        ],
+        "method": "equality with exhaustive word enumeration"
+      }
+    ],
+    "rows": [
+      {
+        "m": 2,
+        "realized_border_classes": 2,
+        "same_period_pairs": 0,
+        "rational_gap_criterion": 0,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 0,
+        "noninclusion_strict_gap_assertions": 0,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 3,
+        "realized_border_classes": 3,
+        "same_period_pairs": 0,
+        "rational_gap_criterion": 0,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 0,
+        "noninclusion_strict_gap_assertions": 0,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 4,
+        "realized_border_classes": 4,
+        "same_period_pairs": 0,
+        "rational_gap_criterion": 0,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 0,
+        "noninclusion_strict_gap_assertions": 0,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 5,
+        "realized_border_classes": 6,
+        "same_period_pairs": 1,
+        "rational_gap_criterion": 1,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 1,
+        "noninclusion_strict_gap_assertions": 0,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 6,
+        "realized_border_classes": 8,
+        "same_period_pairs": 2,
+        "rational_gap_criterion": 2,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 2,
+        "noninclusion_strict_gap_assertions": 0,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 7,
+        "realized_border_classes": 10,
+        "same_period_pairs": 4,
+        "rational_gap_criterion": 4,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 4,
+        "noninclusion_strict_gap_assertions": 0,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 8,
+        "realized_border_classes": 13,
+        "same_period_pairs": 6,
+        "rational_gap_criterion": 6,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 6,
+        "noninclusion_strict_gap_assertions": 0,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 9,
+        "realized_border_classes": 17,
+        "same_period_pairs": 12,
+        "rational_gap_criterion": 12,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 11,
+        "noninclusion_strict_gap_assertions": 1,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 10,
+        "realized_border_classes": 21,
+        "same_period_pairs": 21,
+        "rational_gap_criterion": 21,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 17,
+        "noninclusion_strict_gap_assertions": 4,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 11,
+        "realized_border_classes": 27,
+        "same_period_pairs": 32,
+        "rational_gap_criterion": 32,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 27,
+        "noninclusion_strict_gap_assertions": 5,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 12,
+        "realized_border_classes": 30,
+        "same_period_pairs": 36,
+        "rational_gap_criterion": 36,
+        "common_mean_criterion": 0,
+        "inclusion_mean_assertions": 31,
+        "noninclusion_strict_gap_assertions": 5,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 13,
+        "realized_border_classes": 37,
+        "same_period_pairs": 63,
+        "rational_gap_criterion": 62,
+        "common_mean_criterion": 1,
+        "inclusion_mean_assertions": 48,
+        "noninclusion_strict_gap_assertions": 15,
+        "small_common_mean_examples": [
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              13
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              13
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "1229/159",
+            "first_new_period": 8,
+            "upper_gap": 5,
+            "mean_criterion": "-2817/848"
+          }
+        ],
+        "uncovered": []
+      },
+      {
+        "m": 14,
+        "realized_border_classes": 47,
+        "same_period_pairs": 100,
+        "rational_gap_criterion": 99,
+        "common_mean_criterion": 1,
+        "inclusion_mean_assertions": 70,
+        "noninclusion_strict_gap_assertions": 30,
+        "small_common_mean_examples": [
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              14
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              14
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "392/45",
+            "first_new_period": 9,
+            "upper_gap": 5,
+            "mean_criterion": "-823/240"
+          }
+        ],
+        "uncovered": []
+      },
+      {
+        "m": 15,
+        "realized_border_classes": 57,
+        "same_period_pairs": 133,
+        "rational_gap_criterion": 131,
+        "common_mean_criterion": 2,
+        "inclusion_mean_assertions": 94,
+        "noninclusion_strict_gap_assertions": 39,
+        "small_common_mean_examples": [
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              15
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              15
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "1949/201",
+            "first_new_period": 10,
+            "upper_gap": 5,
+            "mean_criterion": "-3767/1072"
+          },
+          {
+            "u_borders": [
+              1,
+              3,
+              5,
+              7,
+              15
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              15
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "3234/367",
+            "first_new_period": 9,
+            "upper_gap": 6,
+            "mean_criterion": "-11273/2936"
+          }
+        ],
+        "uncovered": []
+      },
+      {
+        "m": 16,
+        "realized_border_classes": 62,
+        "same_period_pairs": 159,
+        "rational_gap_criterion": 157,
+        "common_mean_criterion": 2,
+        "inclusion_mean_assertions": 109,
+        "noninclusion_strict_gap_assertions": 50,
+        "small_common_mean_examples": [
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              16
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              16
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "1186/111",
+            "first_new_period": 11,
+            "upper_gap": 5,
+            "mean_criterion": "-2121/592"
+          },
+          {
+            "u_borders": [
+              1,
+              3,
+              5,
+              7,
+              16
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              16
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "617/63",
+            "first_new_period": 10,
+            "upper_gap": 6,
+            "mean_criterion": "-667/168"
+          }
+        ],
+        "uncovered": []
+      },
+      {
+        "m": 17,
+        "realized_border_classes": 75,
+        "same_period_pairs": 227,
+        "rational_gap_criterion": 224,
+        "common_mean_criterion": 3,
+        "inclusion_mean_assertions": 148,
+        "noninclusion_strict_gap_assertions": 79,
+        "small_common_mean_examples": [
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              17
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              17
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "2837/243",
+            "first_new_period": 12,
+            "upper_gap": 5,
+            "mean_criterion": "-4717/1296"
+          },
+          {
+            "u_borders": [
+              1,
+              3,
+              5,
+              7,
+              17
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              17
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "1218/113",
+            "first_new_period": 11,
+            "upper_gap": 6,
+            "mean_criterion": "-3685/904"
+          },
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              8,
+              17
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              17
+            ],
+            "gap_criterion": "79/64",
+            "common_period_mean": "617/63",
+            "first_new_period": 10,
+            "upper_gap": 7,
+            "mean_criterion": "-20515/4032"
+          }
+        ],
+        "uncovered": []
+      },
+      {
+        "m": 18,
+        "realized_border_classes": 87,
+        "same_period_pairs": 309,
+        "rational_gap_criterion": 305,
+        "common_mean_criterion": 4,
+        "inclusion_mean_assertions": 185,
+        "noninclusion_strict_gap_assertions": 124,
+        "small_common_mean_examples": [
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              18
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              18
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "38/3",
+            "first_new_period": 13,
+            "upper_gap": 5,
+            "mean_criterion": "-59/16"
+          },
+          {
+            "u_borders": [
+              1,
+              3,
+              5,
+              7,
+              18
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              18
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "11637/989",
+            "first_new_period": 12,
+            "upper_gap": 6,
+            "mean_criterion": "-32947/7912"
+          },
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              8,
+              18
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              18
+            ],
+            "gap_criterion": "79/64",
+            "common_period_mean": "1218/113",
+            "first_new_period": 11,
+            "upper_gap": 7,
+            "mean_criterion": "-37707/7232"
+          },
+          {
+            "u_borders": [
+              4,
+              11,
+              18
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              11,
+              18
+            ],
+            "gap_criterion": "1/8",
+            "common_period_mean": "462/65",
+            "first_new_period": 13,
+            "upper_gap": 5,
+            "mean_criterion": "-39751/1040"
+          }
+        ],
+        "uncovered": []
+      },
+      {
+        "m": 19,
+        "realized_border_classes": 102,
+        "same_period_pairs": 408,
+        "rational_gap_criterion": 404,
+        "common_mean_criterion": 4,
+        "inclusion_mean_assertions": 237,
+        "noninclusion_strict_gap_assertions": 171,
+        "small_common_mean_examples": [
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              19
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              19
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "3893/285",
+            "first_new_period": 14,
+            "upper_gap": 5,
+            "mean_criterion": "-5667/1520"
+          },
+          {
+            "u_borders": [
+              1,
+              3,
+              5,
+              7,
+              19
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              19
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "6850/537",
+            "first_new_period": 13,
+            "upper_gap": 6,
+            "mean_criterion": "-6069/1432"
+          },
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              8,
+              19
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              19
+            ],
+            "gap_criterion": "79/64",
+            "common_period_mean": "11637/989",
+            "first_new_period": 12,
+            "upper_gap": 7,
+            "mean_criterion": "-336617/63296"
+          },
+          {
+            "u_borders": [
+              1,
+              3,
+              5,
+              7,
+              9,
+              19
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              19
+            ],
+            "gap_criterion": "79/64",
+            "common_period_mean": "19650/1817",
+            "first_new_period": 11,
+            "upper_gap": 8,
+            "mean_criterion": "-348959/58144"
+          }
+        ],
+        "uncovered": []
+      },
+      {
+        "m": 20,
+        "realized_border_classes": 116,
+        "same_period_pairs": 501,
+        "rational_gap_criterion": 496,
+        "common_mean_criterion": 5,
+        "inclusion_mean_assertions": 283,
+        "noninclusion_strict_gap_assertions": 218,
+        "small_common_mean_examples": [
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              20
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              20
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "2242/153",
+            "first_new_period": 15,
+            "upper_gap": 5,
+            "mean_criterion": "-3071/816"
+          },
+          {
+            "u_borders": [
+              1,
+              3,
+              5,
+              7,
+              20
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              20
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "15933/1159",
+            "first_new_period": 14,
+            "upper_gap": 6,
+            "mean_criterion": "-2099/488"
+          },
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              8,
+              20
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              20
+            ],
+            "gap_criterion": "79/64",
+            "common_period_mean": "6850/537",
+            "first_new_period": 13,
+            "upper_gap": 7,
+            "mean_criterion": "-185789/34368"
+          },
+          {
+            "u_borders": [
+              1,
+              3,
+              5,
+              7,
+              9,
+              20
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              20
+            ],
+            "gap_criterion": "79/64",
+            "common_period_mean": "46909/3975",
+            "first_new_period": 12,
+            "upper_gap": 8,
+            "mean_criterion": "-780233/127200"
+          },
+          {
+            "u_borders": [
+              2,
+              4,
+              6,
+              13,
+              20
+            ],
+            "v_borders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              13,
+              20
+            ],
+            "gap_criterion": "11/16",
+            "common_period_mean": "52418/7321",
+            "first_new_period": 15,
+            "upper_gap": 5,
+            "mean_criterion": "-5542909/117136"
+          }
+        ],
+        "uncovered": []
+      },
+      {
+        "m": 21,
+        "realized_border_classes": 135,
+        "same_period_pairs": 689,
+        "rational_gap_criterion": 683,
+        "common_mean_criterion": 6,
+        "inclusion_mean_assertions": 368,
+        "noninclusion_strict_gap_assertions": 321,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 22,
+        "realized_border_classes": 155,
+        "same_period_pairs": 966,
+        "rational_gap_criterion": 958,
+        "common_mean_criterion": 8,
+        "inclusion_mean_assertions": 458,
+        "noninclusion_strict_gap_assertions": 508,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 23,
+        "realized_border_classes": 180,
+        "same_period_pairs": 1158,
+        "rational_gap_criterion": 1149,
+        "common_mean_criterion": 9,
+        "inclusion_mean_assertions": 563,
+        "noninclusion_strict_gap_assertions": 595,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 24,
+        "realized_border_classes": 194,
+        "same_period_pairs": 1307,
+        "rational_gap_criterion": 1294,
+        "common_mean_criterion": 13,
+        "inclusion_mean_assertions": 630,
+        "noninclusion_strict_gap_assertions": 677,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 25,
+        "realized_border_classes": 220,
+        "same_period_pairs": 1671,
+        "rational_gap_criterion": 1659,
+        "common_mean_criterion": 12,
+        "inclusion_mean_assertions": 758,
+        "noninclusion_strict_gap_assertions": 913,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 26,
+        "realized_border_classes": 254,
+        "same_period_pairs": 2287,
+        "rational_gap_criterion": 2270,
+        "common_mean_criterion": 17,
+        "inclusion_mean_assertions": 933,
+        "noninclusion_strict_gap_assertions": 1354,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 27,
+        "realized_border_classes": 289,
+        "same_period_pairs": 2709,
+        "rational_gap_criterion": 2687,
+        "common_mean_criterion": 22,
+        "inclusion_mean_assertions": 1110,
+        "noninclusion_strict_gap_assertions": 1599,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 28,
+        "realized_border_classes": 312,
+        "same_period_pairs": 3180,
+        "rational_gap_criterion": 3158,
+        "common_mean_criterion": 22,
+        "inclusion_mean_assertions": 1248,
+        "noninclusion_strict_gap_assertions": 1932,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 29,
+        "realized_border_classes": 359,
+        "same_period_pairs": 4084,
+        "rational_gap_criterion": 4056,
+        "common_mean_criterion": 28,
+        "inclusion_mean_assertions": 1529,
+        "noninclusion_strict_gap_assertions": 2555,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 30,
+        "realized_border_classes": 392,
+        "same_period_pairs": 4962,
+        "rational_gap_criterion": 4923,
+        "common_mean_criterion": 39,
+        "inclusion_mean_assertions": 1757,
+        "noninclusion_strict_gap_assertions": 3205,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 31,
+        "realized_border_classes": 438,
+        "same_period_pairs": 6012,
+        "rational_gap_criterion": 5974,
+        "common_mean_criterion": 38,
+        "inclusion_mean_assertions": 2064,
+        "noninclusion_strict_gap_assertions": 3948,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 32,
+        "realized_border_classes": 479,
+        "same_period_pairs": 7042,
+        "rational_gap_criterion": 6991,
+        "common_mean_criterion": 51,
+        "inclusion_mean_assertions": 2336,
+        "noninclusion_strict_gap_assertions": 4706,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 33,
+        "realized_border_classes": 538,
+        "same_period_pairs": 8565,
+        "rational_gap_criterion": 8500,
+        "common_mean_criterion": 65,
+        "inclusion_mean_assertions": 2749,
+        "noninclusion_strict_gap_assertions": 5816,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 34,
+        "realized_border_classes": 595,
+        "same_period_pairs": 10828,
+        "rational_gap_criterion": 10760,
+        "common_mean_criterion": 68,
+        "inclusion_mean_assertions": 3169,
+        "noninclusion_strict_gap_assertions": 7659,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 35,
+        "realized_border_classes": 664,
+        "same_period_pairs": 12351,
+        "rational_gap_criterion": 12269,
+        "common_mean_criterion": 82,
+        "inclusion_mean_assertions": 3663,
+        "noninclusion_strict_gap_assertions": 8688,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 36,
+        "realized_border_classes": 701,
+        "same_period_pairs": 13823,
+        "rational_gap_criterion": 13718,
+        "common_mean_criterion": 105,
+        "inclusion_mean_assertions": 3976,
+        "noninclusion_strict_gap_assertions": 9847,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 37,
+        "realized_border_classes": 772,
+        "same_period_pairs": 16744,
+        "rational_gap_criterion": 16636,
+        "common_mean_criterion": 108,
+        "inclusion_mean_assertions": 4585,
+        "noninclusion_strict_gap_assertions": 12159,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 38,
+        "realized_border_classes": 863,
+        "same_period_pairs": 21231,
+        "rational_gap_criterion": 21097,
+        "common_mean_criterion": 134,
+        "inclusion_mean_assertions": 5332,
+        "noninclusion_strict_gap_assertions": 15899,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 39,
+        "realized_border_classes": 956,
+        "same_period_pairs": 24219,
+        "rational_gap_criterion": 24061,
+        "common_mean_criterion": 158,
+        "inclusion_mean_assertions": 6097,
+        "noninclusion_strict_gap_assertions": 18122,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 40,
+        "realized_border_classes": 1005,
+        "same_period_pairs": 27032,
+        "rational_gap_criterion": 26863,
+        "common_mean_criterion": 169,
+        "inclusion_mean_assertions": 6580,
+        "noninclusion_strict_gap_assertions": 20452,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 41,
+        "realized_border_classes": 1115,
+        "same_period_pairs": 32155,
+        "rational_gap_criterion": 31954,
+        "common_mean_criterion": 201,
+        "inclusion_mean_assertions": 7570,
+        "noninclusion_strict_gap_assertions": 24585,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 42,
+        "realized_border_classes": 1205,
+        "same_period_pairs": 38257,
+        "rational_gap_criterion": 38017,
+        "common_mean_criterion": 240,
+        "inclusion_mean_assertions": 8480,
+        "noninclusion_strict_gap_assertions": 29777,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 43,
+        "realized_border_classes": 1317,
+        "same_period_pairs": 43885,
+        "rational_gap_criterion": 43644,
+        "common_mean_criterion": 241,
+        "inclusion_mean_assertions": 9554,
+        "noninclusion_strict_gap_assertions": 34331,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 44,
+        "realized_border_classes": 1414,
+        "same_period_pairs": 50157,
+        "rational_gap_criterion": 49866,
+        "common_mean_criterion": 291,
+        "inclusion_mean_assertions": 10502,
+        "noninclusion_strict_gap_assertions": 39655,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 45,
+        "realized_border_classes": 1552,
+        "same_period_pairs": 59154,
+        "rational_gap_criterion": 58811,
+        "common_mean_criterion": 343,
+        "inclusion_mean_assertions": 11989,
+        "noninclusion_strict_gap_assertions": 47165,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 46,
+        "realized_border_classes": 1677,
+        "same_period_pairs": 71946,
+        "rational_gap_criterion": 71586,
+        "common_mean_criterion": 360,
+        "inclusion_mean_assertions": 13408,
+        "noninclusion_strict_gap_assertions": 58538,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 47,
+        "realized_border_classes": 1836,
+        "same_period_pairs": 80096,
+        "rational_gap_criterion": 79678,
+        "common_mean_criterion": 418,
+        "inclusion_mean_assertions": 15056,
+        "noninclusion_strict_gap_assertions": 65040,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 48,
+        "realized_border_classes": 1920,
+        "same_period_pairs": 87992,
+        "rational_gap_criterion": 87510,
+        "common_mean_criterion": 482,
+        "inclusion_mean_assertions": 16138,
+        "noninclusion_strict_gap_assertions": 71854,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 49,
+        "realized_border_classes": 2074,
+        "same_period_pairs": 101107,
+        "rational_gap_criterion": 100602,
+        "common_mean_criterion": 505,
+        "inclusion_mean_assertions": 17945,
+        "noninclusion_strict_gap_assertions": 83162,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 50,
+        "realized_border_classes": 2249,
+        "same_period_pairs": 120596,
+        "rational_gap_criterion": 120018,
+        "common_mean_criterion": 578,
+        "inclusion_mean_assertions": 19994,
+        "noninclusion_strict_gap_assertions": 100602,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 51,
+        "realized_border_classes": 2444,
+        "same_period_pairs": 135068,
+        "rational_gap_criterion": 134405,
+        "common_mean_criterion": 663,
+        "inclusion_mean_assertions": 22278,
+        "noninclusion_strict_gap_assertions": 112790,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 52,
+        "realized_border_classes": 2575,
+        "same_period_pairs": 151569,
+        "rational_gap_criterion": 150864,
+        "common_mean_criterion": 705,
+        "inclusion_mean_assertions": 23903,
+        "noninclusion_strict_gap_assertions": 127666,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 53,
+        "realized_border_classes": 2811,
+        "same_period_pairs": 174475,
+        "rational_gap_criterion": 173684,
+        "common_mean_criterion": 791,
+        "inclusion_mean_assertions": 26850,
+        "noninclusion_strict_gap_assertions": 147625,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 54,
+        "realized_border_classes": 2999,
+        "same_period_pairs": 202625,
+        "rational_gap_criterion": 201733,
+        "common_mean_criterion": 892,
+        "inclusion_mean_assertions": 29426,
+        "noninclusion_strict_gap_assertions": 173199,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 55,
+        "realized_border_classes": 3226,
+        "same_period_pairs": 224754,
+        "rational_gap_criterion": 223812,
+        "common_mean_criterion": 942,
+        "inclusion_mean_assertions": 32434,
+        "noninclusion_strict_gap_assertions": 192320,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 56,
+        "realized_border_classes": 3401,
+        "same_period_pairs": 250797,
+        "rational_gap_criterion": 249728,
+        "common_mean_criterion": 1069,
+        "inclusion_mean_assertions": 34906,
+        "noninclusion_strict_gap_assertions": 215891,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 57,
+        "realized_border_classes": 3676,
+        "same_period_pairs": 285788,
+        "rational_gap_criterion": 284580,
+        "common_mean_criterion": 1208,
+        "inclusion_mean_assertions": 38755,
+        "noninclusion_strict_gap_assertions": 247033,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 58,
+        "realized_border_classes": 3915,
+        "same_period_pairs": 335803,
+        "rational_gap_criterion": 334561,
+        "common_mean_criterion": 1242,
+        "inclusion_mean_assertions": 42332,
+        "noninclusion_strict_gap_assertions": 293471,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 59,
+        "realized_border_classes": 4238,
+        "same_period_pairs": 369506,
+        "rational_gap_criterion": 368115,
+        "common_mean_criterion": 1391,
+        "inclusion_mean_assertions": 46775,
+        "noninclusion_strict_gap_assertions": 322731,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 60,
+        "realized_border_classes": 4399,
+        "same_period_pairs": 400754,
+        "rational_gap_criterion": 399193,
+        "common_mean_criterion": 1561,
+        "inclusion_mean_assertions": 49445,
+        "noninclusion_strict_gap_assertions": 351309,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 61,
+        "realized_border_classes": 4712,
+        "same_period_pairs": 455030,
+        "rational_gap_criterion": 453379,
+        "common_mean_criterion": 1651,
+        "inclusion_mean_assertions": 54336,
+        "noninclusion_strict_gap_assertions": 400694,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 62,
+        "realized_border_classes": 5075,
+        "same_period_pairs": 534270,
+        "rational_gap_criterion": 532445,
+        "common_mean_criterion": 1825,
+        "inclusion_mean_assertions": 59838,
+        "noninclusion_strict_gap_assertions": 474432,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 63,
+        "realized_border_classes": 5430,
+        "same_period_pairs": 582364,
+        "rational_gap_criterion": 580356,
+        "common_mean_criterion": 2008,
+        "inclusion_mean_assertions": 65398,
+        "noninclusion_strict_gap_assertions": 516966,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 64,
+        "realized_border_classes": 5651,
+        "same_period_pairs": 640897,
+        "rational_gap_criterion": 638797,
+        "common_mean_criterion": 2100,
+        "inclusion_mean_assertions": 69204,
+        "noninclusion_strict_gap_assertions": 571693,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 65,
+        "realized_border_classes": 6088,
+        "same_period_pairs": 719634,
+        "rational_gap_criterion": 717291,
+        "common_mean_criterion": 2343,
+        "inclusion_mean_assertions": 76148,
+        "noninclusion_strict_gap_assertions": 643486,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 66,
+        "realized_border_classes": 6420,
+        "same_period_pairs": 817028,
+        "rational_gap_criterion": 814464,
+        "common_mean_criterion": 2564,
+        "inclusion_mean_assertions": 82080,
+        "noninclusion_strict_gap_assertions": 734948,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 67,
+        "realized_border_classes": 6846,
+        "same_period_pairs": 897562,
+        "rational_gap_criterion": 894859,
+        "common_mean_criterion": 2703,
+        "inclusion_mean_assertions": 89220,
+        "noninclusion_strict_gap_assertions": 808342,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 68,
+        "realized_border_classes": 7217,
+        "same_period_pairs": 997446,
+        "rational_gap_criterion": 994498,
+        "common_mean_criterion": 2948,
+        "inclusion_mean_assertions": 95488,
+        "noninclusion_strict_gap_assertions": 901958,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 69,
+        "realized_border_classes": 7729,
+        "same_period_pairs": 1116390,
+        "rational_gap_criterion": 1113123,
+        "common_mean_criterion": 3267,
+        "inclusion_mean_assertions": 104692,
+        "noninclusion_strict_gap_assertions": 1011698,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      },
+      {
+        "m": 70,
+        "realized_border_classes": 8103,
+        "same_period_pairs": 1268872,
+        "rational_gap_criterion": 1265496,
+        "common_mean_criterion": 3376,
+        "inclusion_mean_assertions": 112158,
+        "noninclusion_strict_gap_assertions": 1156714,
+        "small_common_mean_examples": [],
+        "uncovered": []
+      }
+    ],
+    "checked_on": "2026-10-11"
+  },
+  "binary_proof_checks": {
+    "status": "exact arithmetic checks for the working binary proof",
+    "checked_on": "2026-10-11",
+    "nonconstant_moment_affine_bounds": [
+      {
+        "slope": "5/9",
+        "intercept": "56/27",
+        "slack_at_five": "4/27"
+      },
+      {
+        "slope": "7/16",
+        "intercept": "3/2",
+        "slack_at_five": "21/16"
+      },
+      {
+        "slope": "7/16",
+        "intercept": "17/8",
+        "slack_at_five": "11/16"
+      },
+      {
+        "slope": "25/64",
+        "intercept": "59/32",
+        "slack_at_five": "77/64"
+      },
+      {
+        "slope": "3/8",
+        "intercept": "17/8",
+        "slack_at_five": "1"
+      },
+      {
+        "slope": "5/16",
+        "intercept": "2",
+        "slack_at_five": "23/16"
+      }
+    ],
+    "period_two_excluding_multiples_three": "-1376/27783",
+    "small_period_bounds": [
+      {
+        "least_period": 3,
+        "finite_lengths": [
+          4,
+          10
+        ],
+        "finite_upper_bounds": [
+          "-3",
+          "-3",
+          "-7/4",
+          "-3/2",
+          "-3/16",
+          "-1/2",
+          "-51/64"
+        ],
+        "infinite_multiples_sum": "-192/343",
+        "additional_tail_bound": "15/32",
+        "large_length_upper_bound": "-999/10976"
+      },
+      {
+        "least_period": 4,
+        "finite_lengths": [
+          5,
+          11
+        ],
+        "finite_upper_bounds": [
+          "-4",
+          "-4",
+          "-5/2",
+          "-3/4",
+          "-3/4",
+          "-11/8",
+          "-19/32"
+        ],
+        "infinite_multiples_sum": "-7168/3375",
+        "additional_tail_bound": "83/64",
+        "large_length_upper_bound": "-178627/216000"
+      }
+    ]
+  },
+  "marker_swap_checks": {
+    "status": "exhaustive finite-window proof of the local identities",
+    "checked_on": "2026-10-11",
+    "u": "1100011",
+    "v": "1101011",
+    "border_lengths": [
+      1,
+      2,
+      7
+    ],
+    "radius": 3,
+    "input_window_length": 13,
+    "windows_checked": 8192,
+    "identities": [
+      "h squared is identity",
+      "u indicator equals v after h",
+      "v indicator equals u after h",
+      "11-marker field unchanged"
+    ]
+  },
+  "increment_lift_checks": {
+    "status": "exact finite enumeration and integer-vectorized local proof",
+    "checked_on": "2026-10-11",
+    "partition_function_cases": 96,
+    "partition_checks": {
+      "q_2_lengths": [
+        2,
+        5
+      ],
+      "q_3_lengths": [
+        2,
+        3
+      ],
+      "n": "m+2",
+      "fugacity": 2
+    },
+    "f_words": [
+      "0100000010",
+      "1011111101"
+    ],
+    "g_words": [
+      "0100110010",
+      "1011001101"
+    ],
+    "radius": 5,
+    "involution_and_indicator_window_length": 21,
+    "involution_and_indicator_windows": 2097152,
+    "factor_identity_window_length": 12,
+    "factor_identity_windows": 4096,
+    "two_letter_obstruction": {
+      "common_row_sum": "t + 1",
+      "formal_trace_difference": "2*t - 2"
+    }
+  },
+  "many_crossing_checks": {
+    "status": "exact parameter, envelope, and comparison-bound certificate",
+    "checked_on": "2026-10-11",
+    "parameter_checks_N": [
+      1,
+      12
+    ],
+    "graph": "Binary de Bruijn graph on L-letter states. Use cycles of 1^k 0^(L-k) and their complements, sharing the central cycle. Put the displayed weight on one distinguished edge per noncentral cycle, and 1 on its other edges. Add epsilon to the base weight of every de Bruijn edge. Tilt by the first bit of the current state.",
+    "bound_method": "positive-vector Perron comparison and convex secants; no floating-point eigenvalues",
+    "example": {
+      "N": 3,
+      "cycle_length": 10,
+      "vertices": 1024,
+      "local_background_range": 11,
+      "used_cycle_states": 90,
+      "observed_word": "1",
+      "cycle_mark_counts": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "cycle_weight_log2": [
+        [
+          0,
+          -1,
+          -100,
+          -11,
+          -100
+        ],
+        [
+          0,
+          -100,
+          -6,
+          -100,
+          -20
+        ]
+      ],
+      "pressure_error_bound": "1/640",
+      "frequency_error_bound": "1/160",
+      "reference_frequencies": [
+        "1/2",
+        "1/2"
+      ],
+      "samples": [
+        {
+          "coupling": "2*log(2)",
+          "limiting_frequencies": [
+            "3/5",
+            "1/2"
+          ],
+          "certified_frequency_intervals": [
+            [
+              "19/32",
+              "97/160"
+            ],
+            [
+              "79/160",
+              "81/160"
+            ]
+          ]
+        },
+        {
+          "coupling": "4*log(2)",
+          "limiting_frequencies": [
+            "3/5",
+            "7/10"
+          ],
+          "certified_frequency_intervals": [
+            [
+              "19/32",
+              "97/160"
+            ],
+            [
+              "111/160",
+              "113/160"
+            ]
+          ]
+        },
+        {
+          "coupling": "6*log(2)",
+          "limiting_frequencies": [
+            "4/5",
+            "7/10"
+          ],
+          "certified_frequency_intervals": [
+            [
+              "127/160",
+              "129/160"
+            ],
+            [
+              "111/160",
+              "113/160"
+            ]
+          ]
+        },
+        {
+          "coupling": "8*log(2)",
+          "limiting_frequencies": [
+            "4/5",
+            "9/10"
+          ],
+          "certified_frequency_intervals": [
+            [
+              "127/160",
+              "129/160"
+            ],
+            [
+              "143/160",
+              "29/32"
+            ]
+          ]
+        }
+      ],
+      "epsilon": "2^(-2210)"
+    }
+  },
+  "biased_overlap_scan": {
+    "status": "floating-point evidence only, not a universal assertion",
+    "checked_on": "2026-10-11",
+    "q": 2,
+    "length_range": [
+      3,
+      12
+    ],
+    "bias_means_probability_of_one": [
+      0.65,
+      0.8,
+      0.95
+    ],
+    "hypothesis": "equal word composition and coordinatewise weighted overlap domination",
+    "negative_beta": [
+      -12,
+      -8,
+      -4,
+      -2,
+      -1,
+      -0.3,
+      -0.05
+    ],
+    "positive_beta_grid": [
+      [
+        0.05,
+        8,
+        80
+      ],
+      [
+        8.2,
+        32,
+        100
+      ]
+    ],
+    "negative_tolerance": 1e-11,
+    "positive_tolerance": 1e-10,
+    "rows": [
+      {
+        "m": 3,
+        "bias": 0.65,
+        "classes": 4,
+        "pairs": 2,
+        "failures": []
+      },
+      {
+        "m": 3,
+        "bias": 0.8,
+        "classes": 4,
+        "pairs": 2,
+        "failures": []
+      },
+      {
+        "m": 3,
+        "bias": 0.95,
+        "classes": 4,
+        "pairs": 2,
+        "failures": []
+      },
+      {
+        "m": 4,
+        "bias": 0.65,
+        "classes": 8,
+        "pairs": 6,
+        "failures": []
+      },
+      {
+        "m": 4,
+        "bias": 0.8,
+        "classes": 8,
+        "pairs": 6,
+        "failures": []
+      },
+      {
+        "m": 4,
+        "bias": 0.95,
+        "classes": 8,
+        "pairs": 6,
+        "failures": []
+      },
+      {
+        "m": 5,
+        "bias": 0.65,
+        "classes": 16,
+        "pairs": 19,
+        "failures": []
+      },
+      {
+        "m": 5,
+        "bias": 0.8,
+        "classes": 16,
+        "pairs": 19,
+        "failures": []
+      },
+      {
+        "m": 5,
+        "bias": 0.95,
+        "classes": 16,
+        "pairs": 19,
+        "failures": []
+      },
+      {
+        "m": 6,
+        "bias": 0.65,
+        "classes": 25,
+        "pairs": 35,
+        "failures": []
+      },
+      {
+        "m": 6,
+        "bias": 0.8,
+        "classes": 25,
+        "pairs": 35,
+        "failures": []
+      },
+      {
+        "m": 6,
+        "bias": 0.95,
+        "classes": 25,
+        "pairs": 35,
+        "failures": []
+      },
+      {
+        "m": 7,
+        "bias": 0.65,
+        "classes": 40,
+        "pairs": 68,
+        "failures": []
+      },
+      {
+        "m": 7,
+        "bias": 0.8,
+        "classes": 40,
+        "pairs": 68,
+        "failures": []
+      },
+      {
+        "m": 7,
+        "bias": 0.95,
+        "classes": 40,
+        "pairs": 68,
+        "failures": []
+      },
+      {
+        "m": 8,
+        "bias": 0.65,
+        "classes": 60,
+        "pairs": 124,
+        "failures": []
+      },
+      {
+        "m": 8,
+        "bias": 0.8,
+        "classes": 60,
+        "pairs": 124,
+        "failures": []
+      },
+      {
+        "m": 8,
+        "bias": 0.95,
+        "classes": 60,
+        "pairs": 124,
+        "failures": []
+      },
+      {
+        "m": 9,
+        "bias": 0.65,
+        "classes": 92,
+        "pairs": 227,
+        "failures": []
+      },
+      {
+        "m": 9,
+        "bias": 0.8,
+        "classes": 92,
+        "pairs": 227,
+        "failures": []
+      },
+      {
+        "m": 9,
+        "bias": 0.95,
+        "classes": 92,
+        "pairs": 227,
+        "failures": []
+      },
+      {
+        "m": 10,
+        "bias": 0.65,
+        "classes": 126,
+        "pairs": 351,
+        "failures": []
+      },
+      {
+        "m": 10,
+        "bias": 0.8,
+        "classes": 126,
+        "pairs": 351,
+        "failures": []
+      },
+      {
+        "m": 10,
+        "bias": 0.95,
+        "classes": 126,
+        "pairs": 351,
+        "failures": []
+      },
+      {
+        "m": 11,
+        "bias": 0.65,
+        "classes": 178,
+        "pairs": 556,
+        "failures": []
+      },
+      {
+        "m": 11,
+        "bias": 0.8,
+        "classes": 178,
+        "pairs": 556,
+        "failures": []
+      },
+      {
+        "m": 11,
+        "bias": 0.95,
+        "classes": 178,
+        "pairs": 556,
+        "failures": []
+      },
+      {
+        "m": 12,
+        "bias": 0.65,
+        "classes": 240,
+        "pairs": 858,
+        "failures": []
+      },
+      {
+        "m": 12,
+        "bias": 0.8,
+        "classes": 240,
+        "pairs": 858,
+        "failures": []
+      },
+      {
+        "m": 12,
+        "bias": 0.95,
+        "classes": 240,
+        "pairs": 858,
+        "failures": []
+      }
+    ]
+  },
+  "weighted_profile_checks": {
+    "checked_on": "2026-10-11",
+    "transfer_validation": {
+      "status": "floating-point formula consistency",
+      "comparisons": 240,
+      "length_range": [
+        2,
+        5
+      ],
+      "one_probabilities": [
+        "13/20",
+        "4/5"
+      ],
+      "fugacities": [
+        "1/2",
+        "2"
+      ]
+    },
+    "pressure_crossing": {
+      "status": "exact rational polynomial certificate",
+      "u": "1110000111",
+      "v": "0011111100",
+      "one_probability": "13/20",
+      "common_word_probability": "11589168409/10240000000000",
+      "normalized_D_u_minus_D_v": "9800*x**2 - 15600*x - 3549",
+      "positive_root_interval": [
+        "35870352/19997627",
+        "9257212355/5160871567"
+      ],
+      "polynomial_value_at_one": -9349
+    }
+  }
+}

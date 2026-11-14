@@ -1,0 +1,136 @@
+{
+  "status": "rigorous outward integer-interval evaluation of proved exact bounds",
+  "scope": "c_star, c_dagger, c_ddagger, u_star; does not certify the candidate p_infinity near .658",
+  "python_version": "3.12.3",
+  "arithmetic": "integer intervals / 10**50; no floats",
+  "parameters": {
+    "horizon": 16,
+    "grid_power": 12,
+    "simpson_intervals": 65536,
+    "gamma_harmonic_count": 262144,
+    "log_terms": 60,
+    "exponential_degree": 128,
+    "exponential_integral_degree": 128
+  },
+  "gamma": {
+    "lower_numerator": "57721566490032020100414995041715581318973909612207",
+    "upper_numerator": "57721566490759613086286363940607415990625095289189",
+    "denominator": "100000000000000000000000000000000000000000000000000",
+    "outward_decimal_12": [
+      "0.577215664900",
+      "0.577215664908"
+    ],
+    "outward_decimal_9": [
+      "0.577215664",
+      "0.577215665"
+    ]
+  },
+  "implementation_checks": {
+    "exp_log_comparisons": 431,
+    "decimal_precision": 100,
+    "status": "implementation validation only; certificate uses integer bounds"
+  },
+  "error_bounds": {
+    "simpson_g": "0.000000000159101",
+    "simpson_h": "0.000000000005660",
+    "tail_g": "0.000000000000001",
+    "tail_h": "0.000000000000105"
+  },
+  "constants": {
+    "c_star": {
+      "lower_numerator": "18681877111573804079790418088507658874999328082459",
+      "upper_numerator": "18681877127528367418364122812452116321172819585234",
+      "denominator": "100000000000000000000000000000000000000000000000000",
+      "outward_decimal_12": [
+        "0.186818771115",
+        "0.186818771276"
+      ],
+      "outward_decimal_9": [
+        "0.186818771",
+        "0.186818772"
+      ]
+    },
+    "laplace_second_moment_integral": {
+      "lower_numerator": "9153097803138703589846056498567501096291118736990",
+      "upper_numerator": "9153097804635470737520855688624312983008622220795",
+      "denominator": "100000000000000000000000000000000000000000000000000",
+      "outward_decimal_12": [
+        "0.091530978031",
+        "0.091530978047"
+      ],
+      "outward_decimal_9": [
+        "0.091530978",
+        "0.091530979"
+      ]
+    },
+    "c_dagger": {
+      "lower_numerator": "19541703565487447639779538582810070046190965524692",
+      "upper_numerator": "19541703581503024526746660804820453605047192392976",
+      "denominator": "100000000000000000000000000000000000000000000000000",
+      "outward_decimal_12": [
+        "0.195417035654",
+        "0.195417035816"
+      ],
+      "outward_decimal_9": [
+        "0.195417035",
+        "0.195417036"
+      ]
+    },
+    "half_interval_extra": {
+      "lower_numerator": "714566387616516429192516370211886242996993922776",
+      "upper_numerator": "714566387616516429192516370211886242996993922794",
+      "denominator": "100000000000000000000000000000000000000000000000000",
+      "outward_decimal_12": [
+        "0.007145663876",
+        "0.007145663877"
+      ],
+      "outward_decimal_9": [
+        "0.007145663",
+        "0.007145664"
+      ]
+    },
+    "eta_plus": {
+      "lower_numerator": "7054206484618559679645693833466627673358925401930",
+      "upper_numerator": "7054206484618559679645693833466627673358925401954",
+      "denominator": "100000000000000000000000000000000000000000000000000",
+      "outward_decimal_12": [
+        "0.070542064846",
+        "0.070542064847"
+      ],
+      "outward_decimal_9": [
+        "0.070542064",
+        "0.070542065"
+      ]
+    },
+    "c_ddagger": {
+      "lower_numerator": "20169822287413002725116846178094771221955735617834",
+      "upper_numerator": "20169822303473151108881466839811895002533536512643",
+      "denominator": "100000000000000000000000000000000000000000000000000",
+      "outward_decimal_12": [
+        "0.201698222874",
+        "0.201698223035"
+      ],
+      "outward_decimal_9": [
+        "0.201698222",
+        "0.201698224"
+      ]
+    },
+    "u_star": {
+      "lower_numerator": "81120156728311488415122577602412448427529261636350",
+      "upper_numerator": "81120156729059871988959977197440854370888013378284",
+      "denominator": "100000000000000000000000000000000000000000000000000",
+      "outward_decimal_12": [
+        "0.811201567283",
+        "0.811201567291"
+      ],
+      "outward_decimal_9": [
+        "0.811201567",
+        "0.811201568"
+      ]
+    }
+  },
+  "certified_p_infinity_enclosure": [
+    "0.2016982228",
+    "0.8112015673"
+  ]
+}

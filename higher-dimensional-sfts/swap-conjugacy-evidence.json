@@ -1,0 +1,1486 @@
+{
+  "status": "Exact local and finite graph checks; all-dimensional conjugacy uses the working proof.",
+  "local_example": {
+    "shape": [
+      2,
+      3
+    ],
+    "u": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "v": [
+      0,
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    "positive_agreements": [
+      [
+        1,
+        -2
+      ]
+    ],
+    "exact_local_contexts": 32768
+  },
+  "naive_replacement_failure": {
+    "u": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "v": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "input_patch": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "exterior": 1,
+    "old_v_anchors": [
+      [
+        0,
+        0
+      ]
+    ],
+    "new_v_anchors": [
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  "systems": [
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "q": 2,
+      "groups": [
+        {
+          "g": 1,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 2,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 4,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 8,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 10,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 15,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "shape": [
+        2,
+        3
+      ],
+      "q": 2,
+      "groups": [
+        {
+          "g": 2,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 3,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 4,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 8,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 12,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 16,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 32,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 36,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 42,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 64,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 68,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 70,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 72,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 76,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 86,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 96,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 100,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 127,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "shape": [
+        2,
+        4
+      ],
+      "q": 2,
+      "groups": [
+        {
+          "g": 0,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 4,
+          "patterns": 16,
+          "swap_edges": 20,
+          "relabel_edges": 8,
+          "components": [
+            16
+          ]
+        },
+        {
+          "g": 7,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 8,
+          "patterns": 20,
+          "swap_edges": 28,
+          "relabel_edges": 10,
+          "components": [
+            10,
+            10
+          ]
+        },
+        {
+          "g": 10,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 16,
+          "patterns": 6,
+          "swap_edges": 4,
+          "relabel_edges": 3,
+          "components": [
+            6
+          ]
+        },
+        {
+          "g": 20,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 24,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 32,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 40,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 56,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 64,
+          "patterns": 6,
+          "swap_edges": 0,
+          "relabel_edges": 3,
+          "components": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 128,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 136,
+          "patterns": 8,
+          "swap_edges": 0,
+          "relabel_edges": 4,
+          "components": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 148,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 256,
+          "patterns": 6,
+          "swap_edges": 4,
+          "relabel_edges": 3,
+          "components": [
+            6
+          ]
+        },
+        {
+          "g": 260,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 264,
+          "patterns": 12,
+          "swap_edges": 8,
+          "relabel_edges": 6,
+          "components": [
+            6,
+            6
+          ]
+        },
+        {
+          "g": 276,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 280,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 292,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 338,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 512,
+          "patterns": 20,
+          "swap_edges": 28,
+          "relabel_edges": 10,
+          "components": [
+            10,
+            10
+          ]
+        },
+        {
+          "g": 514,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 520,
+          "patterns": 16,
+          "swap_edges": 16,
+          "relabel_edges": 8,
+          "components": [
+            16
+          ]
+        },
+        {
+          "g": 524,
+          "patterns": 12,
+          "swap_edges": 12,
+          "relabel_edges": 6,
+          "components": [
+            6,
+            6
+          ]
+        },
+        {
+          "g": 528,
+          "patterns": 12,
+          "swap_edges": 8,
+          "relabel_edges": 6,
+          "components": [
+            6,
+            6
+          ]
+        },
+        {
+          "g": 536,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 540,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 544,
+          "patterns": 8,
+          "swap_edges": 0,
+          "relabel_edges": 4,
+          "components": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 568,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 588,
+          "patterns": 6,
+          "swap_edges": 0,
+          "relabel_edges": 3,
+          "components": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 640,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 668,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 682,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 768,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 776,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 780,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 784,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 792,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 812,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 896,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 904,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 1023,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "shape": [
+        3,
+        3
+      ],
+      "q": 2,
+      "groups": [
+        {
+          "g": 2,
+          "patterns": 20,
+          "swap_edges": 16,
+          "relabel_edges": 10,
+          "components": [
+            2,
+            2,
+            8,
+            8
+          ]
+        },
+        {
+          "g": 3,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 4,
+          "patterns": 12,
+          "swap_edges": 16,
+          "relabel_edges": 6,
+          "components": [
+            12
+          ]
+        },
+        {
+          "g": 64,
+          "patterns": 12,
+          "swap_edges": 16,
+          "relabel_edges": 6,
+          "components": [
+            12
+          ]
+        },
+        {
+          "g": 128,
+          "patterns": 24,
+          "swap_edges": 48,
+          "relabel_edges": 12,
+          "components": [
+            12,
+            12
+          ]
+        },
+        {
+          "g": 132,
+          "patterns": 16,
+          "swap_edges": 24,
+          "relabel_edges": 8,
+          "components": [
+            8,
+            8
+          ]
+        },
+        {
+          "g": 136,
+          "patterns": 8,
+          "swap_edges": 0,
+          "relabel_edges": 4,
+          "components": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 192,
+          "patterns": 16,
+          "swap_edges": 16,
+          "relabel_edges": 8,
+          "components": [
+            8,
+            8
+          ]
+        },
+        {
+          "g": 256,
+          "patterns": 12,
+          "swap_edges": 16,
+          "relabel_edges": 6,
+          "components": [
+            12
+          ]
+        },
+        {
+          "g": 324,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 384,
+          "patterns": 16,
+          "swap_edges": 24,
+          "relabel_edges": 8,
+          "components": [
+            8,
+            8
+          ]
+        },
+        {
+          "g": 388,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 396,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 448,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 512,
+          "patterns": 20,
+          "swap_edges": 16,
+          "relabel_edges": 10,
+          "components": [
+            2,
+            2,
+            8,
+            8
+          ]
+        },
+        {
+          "g": 528,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 580,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 1024,
+          "patterns": 12,
+          "swap_edges": 16,
+          "relabel_edges": 6,
+          "components": [
+            12
+          ]
+        },
+        {
+          "g": 1092,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 1152,
+          "patterns": 16,
+          "swap_edges": 16,
+          "relabel_edges": 8,
+          "components": [
+            8,
+            8
+          ]
+        },
+        {
+          "g": 1156,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 1216,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 1224,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 1282,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 1284,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 1344,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 2048,
+          "patterns": 24,
+          "swap_edges": 48,
+          "relabel_edges": 12,
+          "components": [
+            12,
+            12
+          ]
+        },
+        {
+          "g": 2052,
+          "patterns": 16,
+          "swap_edges": 16,
+          "relabel_edges": 8,
+          "components": [
+            8,
+            8
+          ]
+        },
+        {
+          "g": 2080,
+          "patterns": 8,
+          "swap_edges": 0,
+          "relabel_edges": 4,
+          "components": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 2112,
+          "patterns": 16,
+          "swap_edges": 24,
+          "relabel_edges": 8,
+          "components": [
+            8,
+            8
+          ]
+        },
+        {
+          "g": 2176,
+          "patterns": 16,
+          "swap_edges": 0,
+          "relabel_edges": 8,
+          "components": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 2178,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 2180,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 2184,
+          "patterns": 8,
+          "swap_edges": 0,
+          "relabel_edges": 4,
+          "components": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 2208,
+          "patterns": 8,
+          "swap_edges": 0,
+          "relabel_edges": 4,
+          "components": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 2240,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 2246,
+          "patterns": 8,
+          "swap_edges": 0,
+          "relabel_edges": 4,
+          "components": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 2304,
+          "patterns": 16,
+          "swap_edges": 16,
+          "relabel_edges": 8,
+          "components": [
+            8,
+            8
+          ]
+        },
+        {
+          "g": 2308,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 2340,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 2368,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 2432,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 2444,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 2468,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 2496,
+          "patterns": 4,
+          "swap_edges": 2,
+          "relabel_edges": 2,
+          "components": [
+            4
+          ]
+        },
+        {
+          "g": 2688,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 2690,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 2730,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 2758,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 2774,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 3072,
+          "patterns": 16,
+          "swap_edges": 24,
+          "relabel_edges": 8,
+          "components": [
+            8,
+            8
+          ]
+        },
+        {
+          "g": 3076,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 3136,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 3168,
+          "patterns": 4,
+          "swap_edges": 0,
+          "relabel_edges": 2,
+          "components": [
+            2,
+            2
+          ]
+        },
+        {
+          "g": 3200,
+          "patterns": 8,
+          "swap_edges": 4,
+          "relabel_edges": 4,
+          "components": [
+            4,
+            4
+          ]
+        },
+        {
+          "g": 3204,
+          "patterns": 4,
+          "swap_edges": 2,
+          "relabel_edges": 2,
+          "components": [
+            4
+          ]
+        },
+        {
+          "g": 3272,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 3296,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 3968,
+          "patterns": 8,
+          "swap_edges": 0,
+          "relabel_edges": 4,
+          "components": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "g": 3970,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 3971,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 4038,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        },
+        {
+          "g": 4095,
+          "patterns": 2,
+          "swap_edges": 0,
+          "relabel_edges": 1,
+          "components": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "q": 3,
+      "groups": [
+        {
+          "g": 0,
+          "patterns": 24,
+          "swap_edges": 48,
+          "relabel_edges": 60,
+          "components": [
+            24
+          ]
+        },
+        {
+          "g": 1,
+          "patterns": 6,
+          "swap_edges": 0,
+          "relabel_edges": 15,
+          "components": [
+            6
+          ]
+        },
+        {
+          "g": 2,
+          "patterns": 18,
+          "swap_edges": 18,
+          "relabel_edges": 45,
+          "components": [
+            18
+          ]
+        },
+        {
+          "g": 4,
+          "patterns": 6,
+          "swap_edges": 0,
+          "relabel_edges": 15,
+          "components": [
+            6
+          ]
+        },
+        {
+          "g": 8,
+          "patterns": 18,
+          "swap_edges": 18,
+          "relabel_edges": 45,
+          "components": [
+            18
+          ]
+        },
+        {
+          "g": 10,
+          "patterns": 6,
+          "swap_edges": 0,
+          "relabel_edges": 15,
+          "components": [
+            6
+          ]
+        },
+        {
+          "g": 15,
+          "patterns": 3,
+          "swap_edges": 0,
+          "relabel_edges": 3,
+          "components": [
+            3
+          ]
+        }
+      ]
+    }
+  ]
+}
